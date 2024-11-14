@@ -1,19 +1,36 @@
-# frontend: React + TypeScript + Vite
+# Frontend: React + TypeScript + Vite
 
-## How to build docker image:
+## How to set up and run the application:
 
-```bash
-docker build -t react-vite-app .
-```
+1. **Clone the repository**:
 
-## How to run it:
+   ```bash
+   git clone https://github.com/PBL-Akatsuki/frontend.git
+   ```
 
-```bash
-docker run -p 80:80 react-vite-app
-```
+2. **Navigate to the project root directory**:
 
-And the website will be availabe on [http://localhost:80](http://localhost:80)
+   ```bash
+   cd frontend
+   ```
 
-#### How it works:
+3. **Build the Docker image**:
 
-The Dockerfile compiles the application into optimized static files and uses Nginx to efficiently serve the app to users. This setup ensures a lightweight, production-ready environment for hosting your frontend.
+   ```bash
+   docker build -t react-vite-app .
+   ```
+
+4. **Run the Docker container**:
+
+   ```bash
+   docker run -p 80:80 react-vite-app
+   ```
+
+5. **Access the application**:  
+   The website will be available at [http://localhost:80](http://localhost:80)
+
+---
+
+## How it works:
+
+The Dockerfile compiles the React application using Vite into optimized static files for production. These files are then served through Nginx, which acts as a high-performance web server. This setup ensures a lightweight, production-ready environment for hosting your frontend application.
