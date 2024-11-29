@@ -1,8 +1,6 @@
 // Home.tsx
 import React from "react";
 import { Brain, Target } from "lucide-react";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -93,7 +91,6 @@ const Home: React.FC = () => {
             />
           </div>
         </main>
-        <Footer />
       </div>
     </div>
   );

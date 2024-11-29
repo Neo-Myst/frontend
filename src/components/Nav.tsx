@@ -1,16 +1,13 @@
-import React from "react";
-import { ArrowRight, Brain, Target, Users, Zap } from "lucide-react";
 import "../css/Nav.css";
 
 const Nav = () => {
   return (
     <nav className="fixed top-0 left-0 w-full absolute flex items-center justify-between px-6 py-4 shadow-md bg-blue-1000">
-      {/* Left: Company Name */}
-      <div className="text-4xl font-bold text-white">ML</div>
+      <div className="text-4xl font-bold text-white">
+        Machine <span className="text-blue-500">Learning</span>
+      </div>
 
-      {/* Right: Clickables */}
       <div className="flex items-center space-x-10">
-        {/* Link without background */}
         <a
           href="#"
           className="text-white hover:text-white transition duration-300"
@@ -18,7 +15,6 @@ const Nav = () => {
           Log In
         </a>
 
-        {/* Button with background */}
         <button className="px-4 py-2 bg-blue-600 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 transition duration-300">
           Get Started
         </button>
