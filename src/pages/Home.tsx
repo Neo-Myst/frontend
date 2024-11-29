@@ -42,18 +42,18 @@ const DotGrid: React.FC = () => (
 const Home: React.FC = () => {
   return (
     <div
-      className="min-h-screen bg-slate-900 text-white p-1 mt-28"
+      className="min-h-screen bg-slate-900 text-white p-1 mt-24"
       style={{ backgroundColor: "#001A27" }}
     >
       <div className="max-w-5xl mx-auto">
-        <main className="space-y-8">
+        <main className="space-y-5">
           {/* Hero Section */}
-          <div className="text-center space-y-4 mb-12">
+          <div className="text-center space-y-4 mb-12 mt-5 space-y-8">
             <h1 className="text-5xl font-bold">
               Learn Machine Learning{" "}
-              <span className="text-cyan-400">The Interactive Way</span>
+              <span className="text-cyan-500">The Interactive Way</span>
             </h1>
-            <p className="text-xl text-slate-400">
+            <p className="text-xl text-slate-00 space-y-8">
               Master ML concepts through hands-on experiments and real-time
               visualizations. No prior experience needed.
             </p>
