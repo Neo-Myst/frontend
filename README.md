@@ -1,4 +1,3 @@
-
 # Frontend: React + TypeScript + Vite
 
 ## Prerequisites
@@ -27,26 +26,35 @@
    cd frontend
    ```
 
-3. **Run the application during development**:
+3. **Install dependencies**:  
+   Ensure all required packages are installed by running:
+
+   ```bash
+   npm install
+   ```
+
+4. **Run the application during development**:
    Use Vite's development server with hot reloading:
+
    ```bash
    npm run dev
    ```
+
    The website will be available at the address displayed in the terminal, typically [http://localhost:5173](http://localhost:5173).
 
-4. **Build the Docker image for production**:
+5. **Build the Docker image for production**:
 
    ```bash
    docker build -t react-vite-app .
    ```
 
-5. **Run the Docker container** for a production-grade environment:
+6. **Run the Docker container** for a production-grade environment:
 
    ```bash
    docker run -p 80:80 react-vite-app
    ```
 
-6. **Access the application**:  
+7. **Access the application**:  
    The website will be available at [http://localhost:80](http://localhost:80).
 
 ---
