@@ -1,6 +1,6 @@
 // Home.tsx
-import React from "react";
 import { Brain, Target } from "lucide-react";
+import React, { useState, useEffect } from "react";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -22,22 +22,44 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   </div>
 );
 
-const DotGrid: React.FC = () => (
-  <div className="grid grid-cols-3 gap-4 w-fit mx-auto">
-    {[...Array(9)].map((_, i) => (
-      <div
-        key={i}
-        className={`w-5 h-5 rounded-full ${
-          i % 3 === 0
-            ? "bg-cyan-400"
-            : i % 3 === 1
-            ? "bg-green-400"
-            : "bg-red-400"
-        }`}
-      />
-    ))}
-  </div>
-);
+const DotGrid = () => {
+  const [colorShift, setColorShift] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColorShift((prev) => (prev + 1) % 3);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="grid grid-cols-3 gap-4 w-fit mx-auto">
+      {[...Array(9)].map((_, i) => {
+        const row = Math.floor(i / 3);
+        const opacity = 1 - row * 0.2;
+        const colorIndex = ((i % 3) + colorShift) % 3;
+
+        return (
+          <div
+            key={i}
+            className={`w-5 h-5 rounded-full animate-bounce transition-colors duration-500 ${
+              colorIndex === 0
+                ? "bg-cyan-400"
+                : colorIndex === 1
+                ? "bg-green-400"
+                : "bg-red-400"
+            }`}
+            style={{
+              animationDelay: `${i * 0.1}s`,
+              animationDuration: "1s",
+              opacity,
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+};
 
 const Home: React.FC = () => {
   return (
@@ -46,7 +68,7 @@ const Home: React.FC = () => {
       style={{ backgroundColor: "#001A27" }}
     >
       <div className="max-w-5xl mx-auto">
-        <main className="space-y-5">
+        <main className="space-y-8">
           {/* Hero Section */}
           <div className="text-center space-y-4 mb-12 mt-5 space-y-8">
             <h1 className="text-5xl font-bold">
@@ -78,7 +100,7 @@ const Home: React.FC = () => {
           </div>
 
           {/* Features Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             <FeatureCard
               icon={<Brain className="w-8 h-8 text-cyan-400" />}
               title="Interactive Learning"
