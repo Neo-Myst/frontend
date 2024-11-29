@@ -100,7 +100,7 @@ const Home: React.FC = () => {
           </div>
 
           {/* Features Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
             <FeatureCard
               icon={<Brain className="w-8 h-8 text-cyan-400" />}
               title="Interactive Learning"
