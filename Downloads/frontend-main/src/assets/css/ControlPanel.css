@@ -1,0 +1,109 @@
+.control-panel {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr; /* Large, medium, small column sizes */
+    gap: 20px; /* Space between columns */
+    max-width: 1000px; /* Adjust the max width of the container */
+    color: #333333; /* Dark text for better readability */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.panel-group {
+    display: flex;
+    flex-direction: column; /* Stack controls vertically */
+    gap: 15px; /* Space between stacked controls */
+    background-color: #ffffff; /* White background for each group */
+    padding: 15px; /* Add padding inside the group */
+    border-radius: 8px; /* Rounded corners for groups */
+    border: 2px solid #e0e0e0; /* Subtle border for visual separation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a light shadow for depth */
+    align-items: center; /* Align items to the start */
+}
+
+.control {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    gap: 10px; /* Space between elements inside a control */
+    margin-top: -10px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #001f3f; /* Blue track */
+    opacity: 70%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ffffff; /* White thumb for contrast */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for thumb */
+}
+
+input[type="number"], select {
+    width: 60px; /* Compact width */
+    height: 30px; /* Adjust height */
+    border-radius: 4px; /* Rounded input corners */
+    border: 1px solid #ddd; /* Light gray border */
+    text-align: center; /* Center align text */
+    font-size: 0.9rem; /* Smaller font size */
+    background-color: #f9f9f9; /* Light input background */
+}
+
+button {
+    background-color: #001f3f; /* Blue background */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 8px 12px; /* Compact padding */
+    border-radius: 4px; /* Rounded buttons */
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+h3, h5 {
+    font-weight: 600; /* Slightly bolder titles */
+    margin: 0 0 0 0; /* Add some spacing below titles */
+    text-align: center; /* Center-align headings */
+}
+
+h5 {
+    margin: 0 0 3px 0;
+}
+
+.update-btn {
+    margin-top: 10px;
+    text-align: center; /* Center-align the button */
+}
+
+.update-btn button {
+    width: auto; /* Let the button size itself based on content */
+    min-width: 100px; /* Optional: Consistent minimum width */
+    padding: 10px; /* Larger button padding */
+    font-size: 1rem; /* Readable text size */
+    font-weight: bold; /* Make the button text bold */
+    background: #007bff;
+}
+
+.control-data-size {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+@media (max-width: 768px) {
+    .control-panel {
+        grid-template-columns: 1fr; /* Stack columns vertically on smaller screens */
+    }
+}

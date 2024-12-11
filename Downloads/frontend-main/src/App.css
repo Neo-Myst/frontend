@@ -1,0 +1,65 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f2e8; /* Light beige background */
+    min-height: 100vh;
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Left side (LearningCard) and right side (visualization and control) */
+    grid-template-rows: auto 1fr; /* Adjust row sizes */
+    grid-template-areas:
+        "left visualization"
+        "left control";
+    gap: 20px;
+    padding: 20px;
+}
+
+.left-section {
+    grid-area: left;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.visualization-section {
+    grid-area: visualization;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 400px; /* Adjust as needed */
+}
+
+.visualization-placeholder {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #999;
+}
+
+.control-section {
+    grid-area: control;
+    display: flex;
+    justify-content: flex-start; /* Align Control Panel to the bottom */
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}

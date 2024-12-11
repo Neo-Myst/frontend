@@ -1,0 +1,25 @@
+.card-title {
+    font-size: 2rem; /* Slightly larger title */
+    color: #01497c; /* Deep blue for a professional look */
+    margin-bottom: 20px; /* Add spacing below the title */
+    text-align: center; /* Center align the title */
+    text-transform: uppercase; /* Make the title stand out */
+}
+
+.card-content {
+    font-size: 1.1rem; /* Larger font for better readability */
+    line-height: 1.8; /* Add good spacing between lines */
+}
+
+.learning-card {
+    max-height: 83vh; /* Limit the card's height to the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling if content overflows */
+    padding: 20px; /* Add padding for readability */
+    background-color: #ffffff; /* Optional: Background color for distinction */
+    border-radius: 8px; /* Optional: Rounded corners */
+    border: 2px solid #e0e0e0; /* Optional: Subtle border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Light shadow */
+}
+
+
