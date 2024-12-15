@@ -41,6 +41,7 @@ const DotGrid = () => {
         return (
           <div
             key={i}
+            role="gridcell"
             className={`w-5 h-5 rounded-full animate-bounce transition-colors duration-500 ${
               colorIndex === 0
                 ? "bg-cyan-400"
