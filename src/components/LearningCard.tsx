@@ -1,4 +1,4 @@
-import '../assets/css/LearningCard.css';
+import '../css/LearningCard.css';
 
 function LearningCard() {
     return (
@@ -66,8 +66,8 @@ function LearningCard() {
                         </li>
                         <li><b>Real-Time Feedback:</b> The plot dynamically updates as you interact, showing clusters, trends, and outliers.</li>
                     </ul>
-                    <button className="reset-button">Reset</button>
-                    <button className="submit-button">Submit</button>
+                    {/* <button className="reset-button">Reset</button>
+                    <button className="submit-button">Submit</button> */}
                 </div>
             </div>
         </div>
