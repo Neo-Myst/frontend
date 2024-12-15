@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import "../css/ControlPanel.css"
-=======
 import "../css/ControlPanel.css";
->>>>>>> af1f1a4 (Completed MVP)
 import React from "react";
 
 export interface ControlPanelProps {
@@ -40,11 +36,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             className="slider"
             type="range"
             min="0"
-<<<<<<< HEAD
-            max="12"
-=======
             max="10"
->>>>>>> af1f1a4 (Completed MVP)
             step="1"
             value={sunlight}
             onChange={(e) => onUpdate({ sunlight: parseInt(e.target.value, 10) })}
@@ -53,11 +45,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             className="number-input"
             type="number"
             min="0"
-<<<<<<< HEAD
-            max="12"
-=======
             max="10"
->>>>>>> af1f1a4 (Completed MVP)
             step="1"
             value={sunlight}
             onChange={(e) => onUpdate({ sunlight: parseInt(e.target.value, 10) })}
