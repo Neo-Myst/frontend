@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container { /* Parent container if needed */
   margin: 0;
   padding: 0;
@@ -13,10 +14,38 @@
   margin: 0;
 }
 
+=======
+/* Parent Container */
+.container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%; /* Ensures it stretches to the available height */
+  overflow: visible; /* Ensure no content is clipped */
+}
+
+/* Control Panel Container */
+.control-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr; /* Adjust column widths */
+  gap: 20px; /* Consistent spacing between columns */
+  padding: 20px; /* Adds breathing space */
+  background-color: #ffffff; /* Light background for clarity */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  color: #333; /* Ensures readable text color */
+  overflow: auto; /* Add scrolling if content overflows */
+  box-sizing: border-box;
+}
+
+/* Group for Panels */
+>>>>>>> af1f1a4 (Completed MVP)
 .panel-group {
   display: flex;
   flex-direction: column;
   gap: 16px;
+<<<<<<< HEAD
   margin-bottom: 0;
 }
 
@@ -26,23 +55,51 @@
   color: #333;
 }
 
+=======
+  margin: 0; /* Remove unnecessary bottom margin */
+  padding: 0;
+}
+
+/* Panel Headers */
+.panel-header {
+  font-size: 18px;
+  font-weight: 600;
+  color: #01497c; /* Dark blue for better visibility */
+  margin: 0; /* Remove default margins */
+}
+
+/* Controls Row */
+>>>>>>> af1f1a4 (Completed MVP)
 .control {
   display: flex;
   align-items: center;
   gap: 8px;
+<<<<<<< HEAD
   margin-bottom: 0; 
 }
 
+=======
+  margin: 0;
+  padding: 0;
+}
+
+/* Sliders */
+>>>>>>> af1f1a4 (Completed MVP)
 .slider {
   width: 70%;
   margin-right: 8px;
 }
 
+<<<<<<< HEAD
+=======
+/* Number Input */
+>>>>>>> af1f1a4 (Completed MVP)
 .number-input {
   width: 50px;
   padding: 4px;
   border: 1px solid #ddd;
   border-radius: 4px;
+<<<<<<< HEAD
 }
 
 .train-label {
@@ -51,11 +108,26 @@
   color: #555;
 }
 
+=======
+  box-sizing: border-box;
+}
+
+/* Labels */
+.train-label,
+.axis-label {
+  font-size: 14px;
+  margin: 0 8px 0 0; /* Adjust margin for better alignment */
+  color: #555;
+}
+
+/* Dropdowns */
+>>>>>>> af1f1a4 (Completed MVP)
 .dropdown {
   padding: 6px;
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 100%;
+<<<<<<< HEAD
 }
 
 .axis-label {
@@ -65,21 +137,40 @@
 }
 
 .reset-button {
+=======
+  box-sizing: border-box;
+}
+
+/* Buttons */
+.reset-button,
+.submit-button {
+>>>>>>> af1f1a4 (Completed MVP)
   padding: 10px 16px;
   font-size: 14px;
   font-weight: 600;
   color: #fff;
+<<<<<<< HEAD
   background-color: #007bff;
+=======
+>>>>>>> af1f1a4 (Completed MVP)
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
+<<<<<<< HEAD
+=======
+.reset-button {
+  background-color: #007bff;
+}
+
+>>>>>>> af1f1a4 (Completed MVP)
 .reset-button:hover {
   background-color: #0056b3;
 }
 
 .submit-button {
+<<<<<<< HEAD
   padding: 10px 16px;
   font-size: 14px;
   font-weight: 600;
@@ -94,3 +185,25 @@
 .submit-button:hover {
   background-color: #218838;
 }
+=======
+  background-color: #28a745;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+/* Ensure visibility of all elements */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #f8f9fa; /* Optional: Light gray background */
+  color: #333; /* Dark text for readability */
+}
+
+* {
+  box-sizing: border-box; /* Consistent box sizing across elements */
+}
+>>>>>>> af1f1a4 (Completed MVP)

@@ -14,8 +14,12 @@
     "lucide-react": "^0.460.0",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
+<<<<<<< HEAD
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.2"
+=======
+    "react-dom": "^18.3.1"
+>>>>>>> af1f1a4 (Completed MVP)
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

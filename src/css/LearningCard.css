@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .card-title {
     font-size: 2rem; /* Slightly larger title */
     color: #01497c; /* Deep blue for a professional look */
@@ -23,3 +24,92 @@
 }
 
 
+=======
+/* Main Title */
+.card-title {
+    font-size: 2.5rem; /* Larger font for better visibility */
+    color: #01497c; /* Deep blue for a professional look */
+    margin-bottom: 24px; /* Add spacing below the title */
+    text-align: center; /* Center align the title */
+    text-transform: uppercase; /* Make the title stand out */
+    font-weight: bold; /* Make the title bolder */
+}
+
+/* Content Container */
+.card-content {
+    font-size: 1.1rem; /* Slightly larger font for readability */
+    line-height: 1.8; /* Add good spacing between lines */
+    color: #333; /* Darker gray text for better contrast */
+    padding-bottom: 20px; /* Add padding at the bottom */
+}
+
+/* Learning Card Wrapper */
+.learning-card {
+    max-height: 83vh; /* Limit the card's height to the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    padding: 20px 30px; /* Add consistent padding */
+    background-color: #ffffff; /* Light background for distinction */
+    border-radius: 10px; /* Slightly larger rounded corners */
+    border: 1px solid #d9d9d9; /* Subtle border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhance light shadow */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Section Headings */
+.section-heading {
+    font-size: 1.5rem; /* Larger subheading */
+    color: #0056b3; /* Distinct blue for subheadings */
+    margin: 20px 0 10px; /* Add spacing above and below */
+    font-weight: bold; /* Bold subheadings */
+    text-transform: capitalize; /* Capitalize headings */
+}
+
+/* Paragraphs */
+.card-content p {
+    margin-bottom: 15px; /* Add space between paragraphs */
+}
+
+/* Lists */
+.card-content ul, .card-content ol {
+    margin-left: 20px; /* Indent lists */
+    margin-bottom: 15px; /* Space below lists */
+}
+
+.card-content li {
+    margin-bottom: 8px; /* Space between list items */
+}
+
+/* Bold Text Enhancements */
+.card-content b,
+.card-content strong {
+    color: #000; /* Make bold text darker */
+    font-weight: 600; /* Semi-bold */
+}
+
+/* Highlighted Example Box */
+.card-content .example {
+    background-color: #f1f9ff; /* Light blue background */
+    border-left: 4px solid #007bff; /* Accent border */
+    padding: 10px 15px;
+    margin: 15px 0; /* Space around the example */
+    color: #01497c;
+    font-style: italic;
+}
+
+/* Story Title */
+.story-title {
+    font-size: 1.8rem; /* Slightly larger */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Section Dividers */
+.story-section {
+    border-bottom: 1px solid #e0e0e0; /* Add subtle dividers */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+>>>>>>> af1f1a4 (Completed MVP)

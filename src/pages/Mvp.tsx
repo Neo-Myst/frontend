@@ -1,5 +1,9 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import "../css/Mvp.css";
+=======
+import "../Mvp.css";
+>>>>>>> af1f1a4 (Completed MVP)
 import Header from "../components/Header.tsx";
 import LearningCard from "../components/LearningCard.tsx";
 import ControlPanel from "../components/ControlPanel.tsx";
@@ -69,7 +73,11 @@ const App: React.FC = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="App">
+=======
+    <div className="Mvp">
+>>>>>>> af1f1a4 (Completed MVP)
       <Header />
       <div className="main-layout">
         <div className="left-section">

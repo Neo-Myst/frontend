@@ -1,14 +1,17 @@
-import "./App.css";
-import Home from "./pages/Home";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
+// import "./App.css";
+// import Home from "./pages/Home";
+// import Nav from "./components/Nav";
+// import Footer from "./components/Footer";
 
+import Mvp from "./pages/Mvp";
+import "./Mvp.css"
 function App() {
   return (
     <>
-      <Nav />
+      {/* <Nav />
       <Home />
-      <Footer />
+      <Footer /> */}
+      <Mvp/>
     </>
   );
 }
