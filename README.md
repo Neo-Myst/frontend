@@ -14,6 +14,8 @@
 
 ## How to set up and run the application:
 
+### Development Setup
+
 1. **Clone the repository**:
 
    ```bash
@@ -33,7 +35,7 @@
    npm install
    ```
 
-4. **Run the application during development**:
+4. **Run the application during development**:  
    Use Vite's development server with hot reloading:
 
    ```bash
@@ -41,6 +43,33 @@
    ```
 
    The website will be available at the address displayed in the terminal, typically [http://localhost:5173](http://localhost:5173).
+
+### Running Tests
+
+1. **Run all tests**:  
+   Execute the following command to run all unit and integration tests:
+
+   ```bash
+   npm run test
+   ```
+
+2. **Run tests in watch mode**:  
+   This will watch for file changes and re-run relevant tests automatically:
+
+   ```bash
+   npm run test:watch
+   ```
+
+3. **Run the Vitest UI**:  
+   Use this to run tests interactively in a browser-based interface:
+
+   ```bash
+   npm run test:ui
+   ```
+
+---
+
+### Production Setup
 
 5. **Build the Docker image for production**:
 
@@ -62,4 +91,5 @@
 ## How it works:
 
 - During development, `npm run dev` uses Vite's development server to provide fast, hot-reloading of code changes.
+- Testing: Tests are implemented using **Vitest** and **React Testing Library** to ensure components behave as expected.
 - For production, the Dockerfile compiles the React application into optimized static files using Vite's build process. These files are then served through Nginx, a high-performance web server, ensuring a lightweight, production-ready environment for hosting your frontend application.
