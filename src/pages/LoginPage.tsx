@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useUser from "../hooks/useUser";
 
 const LoginPage: React.FC = () => {
+  const { login } = useUser(); // Destructure login from the hook
+  const navigate = useNavigate();
+
   const [usernameOrEmail, setUsernameOrEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({});
-  const navigate = useNavigate();
 
   const validateForm = () => {
     let valid = true;
@@ -44,9 +47,18 @@ const LoginPage: React.FC = () => {
       }
 
       const data = await response.json();
+
+      // Ensure the backend response includes the username
+      if (!data.username) {
+        throw new Error("Username not found in response");
+      }
+
+      // Store token and username
       localStorage.setItem("token", data.access_token);
+      login(data.username); // Update user context with the username
       navigate("/"); // Redirect to homepage
-    } catch {
+    } catch (error) {
+      console.error("Login failed:", error);
       setError("Invalid credentials. Please try again.");
     }
   };

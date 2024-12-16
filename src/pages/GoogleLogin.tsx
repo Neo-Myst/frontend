@@ -1,32 +1,36 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import useUser from "../hooks/useUser";
 
 const GoogleLogin: React.FC = () => {
-    const navigate = useNavigate();
+  const { login } = useUser();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    const handleGoogleLogin = async () => {
-        try {
-            const response = await fetch('http://127.0.0.1:8000/user/google/login', {
-                method: 'GET',
-                credentials: 'include',
-            });
-            if (response.ok) {
-                alert('Successfully logged in with Google!');
-                navigate('/'); // Redirect to homepage
-            } else {
-                alert('Google Login Failed');
-            }
-        } catch (error) {
-            console.error('Error during Google login:', error);
-            alert('An error occurred. Please try again.');
-        }
-    };
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const token = params.get("token");
+    const username = params.get("username");
 
-    return (
-        <div className="text-center">
-            <button onClick={handleGoogleLogin}>Login with Google</button>
-        </div>
-    );
+    if (token && username) {
+      // Check if the token is already stored to prevent repeated login attempts
+      if (!localStorage.getItem("token")) {
+        localStorage.setItem("token", token);
+        login(username);
+        navigate("/"); // Redirect to homepage after successful login
+        window.location.reload(); // Force a full page reload
+      }
+    } else {
+      console.error("Token or username missing in URL");
+      navigate("/login"); // Redirect to login page if there's an error
+    }
+  }, [location, login, navigate]);
+
+  return (
+    <div className="text-center mt-20">
+      <p>Logging in with Google...</p>
+    </div>
+  );
 };
 
 export default GoogleLogin;
