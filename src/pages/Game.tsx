@@ -1,6 +1,6 @@
 import React from "react";
 
-const MVP: React.FC = () => {
+const Game: React.FC = () => {
   return (
     <div className="text-center mt-20">
       <h1 className="text-4xl font-bold">Welcome to the MVP Page!</h1>
@@ -11,4 +11,4 @@ const MVP: React.FC = () => {
   );
 };
 
-export default MVP;
+export default Game;

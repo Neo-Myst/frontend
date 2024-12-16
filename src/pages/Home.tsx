@@ -68,7 +68,7 @@ const Home: React.FC = () => {
 
   const handleStartLearning = () => {
     if (user) {
-      navigate("/mvp"); // Redirect to MVP page if logged in
+      navigate("/game"); // Redirect to MVP page if logged in
     } else {
       navigate("/login"); // Redirect to login page if not logged in
     }

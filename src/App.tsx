@@ -6,7 +6,7 @@ import SignupPage from "./pages/SignupPage";
 import GoogleLogin from "./pages/GoogleLogin";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import MVP from "./pages/Mvp";
+import Game from "./pages/Game";
 
 const App: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/google-login" element={<GoogleLogin />} />
-        <Route path="/mvp" element={<MVP />} /> {/* Add MVP route */}
+        <Route path="/game" element={<Game />} />
       </Routes>
       <Footer />
     </Router>
