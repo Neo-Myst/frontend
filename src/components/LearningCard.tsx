@@ -3,7 +3,6 @@ import '../css/LearningCard.css';
 function LearningCard() {
     return (
         <div className="learning-card">
-<<<<<<< HEAD
             <h2 className="card-title">Module 1: Basics of Machine Learning</h2>
 
             <div className="card-content">
@@ -70,113 +69,9 @@ function LearningCard() {
                     {/* <button className="reset-button">Reset</button>
                     <button className="submit-button">Submit</button> */}
                 </div>
-=======
-
-            <div className="card-content">
-                {/* Story Title */}
-                <h2 className="story-title">Alex and the Magic Plant: Learning Machine Learning</h2>
-
-                {/* The Challenge */}
-                <section className="story-section">
-                    <h3 className="section-heading">The Challenge</h3>
-                    <p>
-                        Alex loves gardening and has discovered a magical plant. The plant grows differently based on
-                        how much <b>sunlight</b> and <b>water</b> it gets. However, Alex faces a big challenge: 
-                        <strong> there are too many combinations to test manually!</strong>
-                    </p>
-                    <p>
-                        To solve this, Alex decides to learn about <strong>Machine Learning (ML)</strong>—a way to teach 
-                        computers to analyze data and make predictions.
-                    </p>
-                </section>
-
-                {/* What is Machine Learning */}
-                <section className="story-section">
-                    <h3 className="section-heading">What is Machine Learning?</h3>
-                    <p>
-                        <strong>Machine Learning (ML)</strong> helps computers identify <b>patterns</b> in data and make decisions 
-                        <b>without being explicitly programmed.</b>
-                    </p>
-                    <p>
-                        <strong>Example:</strong> Instead of manually testing every combination of sunlight and water, Alex 
-                        collects data, uses ML to identify patterns, and predicts the best conditions for the plant to grow.
-                    </p>
-                </section>
-
-                {/* Alex's ML Journey */}
-                <section className="story-section">
-                    <h3 className="section-heading">Alex's Machine Learning Journey</h3>
-                    <ol className="story-list">
-                        <li>
-                            <strong>Step 1: Data Collection</strong>
-                            <p>Alex records data from experiments with the magical plant:</p>
-                            <ul>
-                                <li><b>Sunlight:</b> Hours per day</li>
-                                <li><b>Water:</b> Liters per day</li>
-                                <li><b>Growth:</b> Plant height in cm</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Step 2: Identifying Features</strong>
-                            <p>Features are the inputs that influence growth:</p>
-                            <ul>
-                                <li><b>Sunlight:</b> How many hours the plant gets</li>
-                                <li><b>Water:</b> How much water it receives</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Step 3: Defining Labels</strong>
-                            <p>
-                                The label is the outcome Alex wants to predict: 
-                                <b>Plant height (Growth in cm)</b>.
-                            </p>
-                        </li>
-                        <li>
-                            <strong>Step 4: Training the Model</strong>
-                            <p>Alex uses past data to find patterns:</p>
-                            <ul>
-                                <li>4 hours of sunlight + 2 liters of water → 15 cm tall</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Step 5: Making Predictions</strong>
-                            <p>
-                                Alex predicts growth for new conditions:<br />
-                                  <b> 6 hours of sunlight + 4 liters of water → 60 cm tall</b>
-                            </p>
-                        </li>
-                    </ol>
-                </section>
-
-                {/* Let’s Explore Data */}
-                <section className="story-section">
-                    <h3 className="section-heading">Let’s Explore Data!</h3>
-                    <p>
-                        On the right, you see a scatter plot. Each dot represents an experiment conducted by Alex, 
-                        with axes showing features like sunlight, water, and growth.
-                    </p>
-                    <p>
-                        <b>Your Task:</b> Use the controls to explore relationships in the data:
-                    </p>
-                    <ul>
-                        <li><b>X-axis:</b> Sunlight or Water</li>
-                        <li><b>Y-axis:</b> Growth</li>
-                    </ul>
-                    <p>Apply filters to focus on specific groups of data:</p>
-                    <ul>
-                        <li>Show experiments with <b>sunlight &gt; 6 hours</b></li>
-                        <li>Highlight experiments with <b>water &gt; 3 liters</b></li>
-                        <li>Filter experiments where the plant grew <b>taller than 50 cm</b></li>
-                    </ul>
-                </section>
->>>>>>> af1f1a4 (Completed MVP)
             </div>
         </div>
     );
 }
 
-<<<<<<< HEAD
 export default LearningCard;
-=======
-export default LearningCard;
->>>>>>> af1f1a4 (Completed MVP)
