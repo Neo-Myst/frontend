@@ -1,0 +1,116 @@
+/* Main Card Container */
+.learning-card {
+    max-height: 83vh; /* Limit the card height to the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    padding: 20px 30px; /* Padding inside the container */
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #e0e0e0; /* Subtle border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    box-sizing: border-box; /* Ensures padding does not affect dimensions */
+}
+
+/* Main Title */
+.card-title {
+    font-size: 2.5rem; /* Large font size for the main title */
+    color: #01497c; /* Deep blue for professionalism */
+    text-align: center; /* Center align title */
+    margin-bottom: 20px; /* Add spacing below the title */
+    text-transform: uppercase; /* Capitalize title for emphasis */
+    font-weight: bold; /* Make it bold */
+}
+
+/* Story Section Container */
+.card-content {
+    font-size: 1.1rem; /* Slightly larger font for readability */
+    line-height: 1.8; /* Proper line spacing */
+    color: #333; /* Dark gray for text for good contrast */
+    margin-bottom: 20px; /* Space between content sections */
+}
+
+/* Story Titles (h3) */
+.story-title {
+    font-size: 1.8rem; /* Slightly smaller than the main title */
+    font-weight: bold; /* Make the title bold */
+    color: #333; /* Dark gray */
+    margin-bottom: 15px; /* Add space below */
+    text-align: center; /* Center align for balance */
+}
+
+/* Subheadings (h4) */
+.story-subheading {
+    font-size: 1.4rem; /* Subheading font size */
+    font-weight: bold; /* Make the subheading bold */
+    color: #0056b3; /* Slightly lighter blue for distinction */
+    margin: 20px 0 10px; /* Spacing above and below the subheading */
+}
+
+/* Paragraphs */
+.card-content p {
+    font-size: 1.1rem; /* Paragraph font size */
+    margin-bottom: 10px; /* Space between paragraphs */
+    color: #444; /* Slightly lighter gray for better visibility */
+}
+
+/* Unordered and Ordered Lists */
+.card-content ul,
+.card-content ol {
+    margin-left: 20px; /* Indentation for lists */
+    margin-bottom: 15px; /* Add spacing after lists */
+}
+
+.card-content li {
+    margin-bottom: 8px; /* Space between list items */
+    line-height: 1.6; /* Improve list readability */
+    color: #333; /* Dark text for lists */
+}
+
+/* Nested Lists */
+.card-content ul ul {
+    margin-left: 15px; /* Add more indent for nested lists */
+    list-style-type: circle; /* Change bullet style */
+}
+
+/* Bold Text */
+.card-content b,
+.card-content strong {
+    color: #000; /* Black for bold text */
+    font-weight: 600; /* Semi-bold weight */
+}
+
+/* Interactive Section (Right Panel) */
+.right-panel {
+    background-color: #f9f9f9; /* Light gray background for distinction */
+    border: 1px solid #ddd; /* Light border for separation */
+    padding: 15px; /* Padding inside the right panel */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 20px; /* Add spacing above */
+}
+
+/* Visualization Title */
+.visualization-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #01497c;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .learning-card {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .card-title {
+        font-size: 2rem; /* Reduce title size */
+    }
+
+    .story-title {
+        font-size: 1.5rem;
+    }
+
+    .story-subheading {
+        font-size: 1.2rem;
+    }
+}

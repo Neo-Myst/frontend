@@ -1,0 +1,124 @@
+/* Parent Container */
+.container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding in dimensions */
+  width: 100%;
+  height: auto; /* Ensure height adjusts to content */
+  overflow: visible; /* Prevent clipping */
+}
+
+/* Control Panel Main Grid */
+.control-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr; /* Define responsive grid */
+  gap: 20px; /* Spacing between columns */
+  padding: 20px; /* Inner padding for content */
+  background-color: #ffffff; /* Light background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 0 auto; /* Center align horizontally */
+  box-sizing: border-box;
+}
+
+/* Panel Group Styling */
+.panel-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Add space between elements */
+  margin: 0; /* Remove unwanted margins */
+}
+
+/* Panel Headers */
+.panel-header {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333; /* Dark gray for visibility */
+  margin-bottom: 8px; /* Add spacing below header */
+}
+
+/* Control Row */
+.control {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between controls */
+  margin-bottom: 8px; /* Add spacing for readability */
+}
+
+/* Slider Input */
+.slider {
+  width: 70%; /* Adjust slider width */
+  margin-right: 8px;
+}
+
+/* Number Input */
+.number-input {
+  width: 50px;
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333; /* Ensure visible text */
+  box-sizing: border-box;
+}
+
+/* Label Styling */
+.train-label,
+.axis-label {
+  font-size: 14px;
+  color: #555; /* Light gray for labels */
+  margin: 0;
+}
+
+/* Dropdown Input */
+.dropdown {
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  background-color: #fff; /* Ensure dropdown is visible */
+  color: #333; /* Text color */
+  box-sizing: border-box;
+}
+
+/* Buttons Styling */
+.reset-button,
+.submit-button {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff; /* White text for buttons */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.reset-button {
+  background-color: #007bff; /* Blue color */
+}
+
+.reset-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.submit-button {
+  background-color: #28a745; /* Green for submit */
+}
+
+.submit-button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Ensure Content is Visible */
+* {
+  box-sizing: border-box; /* Prevent content overflow issues */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* Set readable default font */
+  color: #333; /* Default dark gray text */
+  background-color: #f9f9f9; /* Light gray background */
+}
+
