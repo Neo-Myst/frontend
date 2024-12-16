@@ -1,31 +1,44 @@
 import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import { describe, it, expect } from "vitest";
 import Home from "./Home";
+import UserProvider from "../contexts/UserProvider";
+import React from "react";
 
 describe("Home Component", () => {
+  const renderWithProviders = (ui: React.ReactNode) => {
+    return render(
+      <MemoryRouter>
+        <UserProvider>{ui}</UserProvider>
+      </MemoryRouter>
+    );
+  };
+
   it("renders the hero section", () => {
-    render(<Home />);
-    expect(screen.getByText(/Learn Machine Learning/i)).toBeTruthy();
+    renderWithProviders(<Home />);
+    expect(screen.getByText(/Learn Machine Learning/i)).toBeInTheDocument();
     expect(
-      screen.getByText(/hands-on experiments and real-time visualizations/i)
-    ).toBeTruthy();
+      screen.getByText(
+        /Master ML concepts through hands-on experiments and real-time visualizations/i
+      )
+    ).toBeInTheDocument();
   });
 
   it("renders two CTA buttons", () => {
-    render(<Home />);
-    expect(screen.getByText("Start Learning")).toBeTruthy();
-    expect(screen.getByText("Watch Demo")).toBeTruthy();
+    renderWithProviders(<Home />);
+    expect(screen.getByText("Start Learning")).toBeInTheDocument();
+    expect(screen.getByText("Watch Demo")).toBeInTheDocument();
   });
 
   it("renders the FeatureCards with correct titles", () => {
-    render(<Home />);
-    expect(screen.getByText("Interactive Learning")).toBeTruthy();
-    expect(screen.getByText("Guided Modules")).toBeTruthy();
+    renderWithProviders(<Home />);
+    expect(screen.getByText("Interactive Learning")).toBeInTheDocument();
+    expect(screen.getByText("Guided Modules")).toBeInTheDocument();
   });
 
   it("renders the DotGrid", () => {
-    render(<Home />);
+    renderWithProviders(<Home />);
     const dots = screen.getAllByRole("gridcell");
-    expect(dots.length).toBeGreaterThan(0);
+    expect(dots.length).toBe(9); // Assuming a 3x3 grid
   });
 });
