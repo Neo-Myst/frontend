@@ -57,6 +57,7 @@
   padding: 4px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  background-color: #fff;
   color: #333; /* Ensure visible text */
   box-sizing: border-box;
 }
@@ -81,6 +82,13 @@
 }
 
 /* Buttons Styling */
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
 .reset-button,
 .submit-button {
   padding: 10px 16px;
@@ -96,6 +104,7 @@
 
 .reset-button {
   background-color: #007bff; /* Blue color */
+  margin-right: 8px; /* Add spacing between buttons */
 }
 
 .reset-button:hover {
@@ -121,4 +130,3 @@ body {
   color: #333; /* Default dark gray text */
   background-color: #f9f9f9; /* Light gray background */
 }
-

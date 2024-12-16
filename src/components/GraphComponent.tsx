@@ -11,8 +11,18 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import dataset from "../data/dataset";
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 interface GraphProps {
   sunlight: number;
@@ -32,32 +42,6 @@ const Graph: React.FC<GraphProps> = ({
   trainSplit,
 }) => {
   // Dataset for one type of plant
-  const dataset = [
-    { sunlight: 2, water: 1, growth: 15 },
-    { sunlight: 4, water: 2, growth: 30 },
-    { sunlight: 6, water: 3, growth: 50 },
-    { sunlight: 8, water: 4, growth: 70 },
-    { sunlight: 10, water: 5, growth: 60 },
-    { sunlight: 12, water: 6, growth: 40 },
-    { sunlight: 3, water: 1, growth: 20 },
-    { sunlight: 5, water: 4, growth: 45 },
-    { sunlight: 9, water: 5, growth: 65 },
-    { sunlight: 7, water: 3, growth: 55 },
-    { sunlight: 4, water: 5, growth: 35 },
-    { sunlight: 11, water: 4, growth: 50 },
-    { sunlight: 6, water: 2, growth: 40 },
-    { sunlight: 8, water: 6, growth: 60 },
-    { sunlight: 10, water: 7, growth: 50 },
-    { sunlight: 9, water: 3, growth: 55 },
-    { sunlight: 3, water: 2, growth: 25 },
-    { sunlight: 5, water: 1, growth: 20 },
-    { sunlight: 12, water: 8, growth: 45 },
-    { sunlight: 8, water: 5, growth: 65 },
-    { sunlight: 7, water: 4, growth: 55 },
-    { sunlight: 6, water: 3, growth: 50 },
-    { sunlight: 4, water: 2, growth: 30 },
-    { sunlight: 2, water: 1, growth: 10 },
-  ];
 
   // Filter the data based on sunlight and water values
   const filteredData = dataset.filter(
@@ -92,9 +76,44 @@ const Graph: React.FC<GraphProps> = ({
     ],
   };
 
+  // const options = {
+  //   scales: {
+  //     x: {
+  //       min: 1, // Leave space before 0
+  //       max: 10, // Leave space after 10
+  //       ticks: {
+  //         stepSize: 1, // Ticks at every integer (0, 1, 2, ..., 10)
+  //         callback: function (value: number) {
+  //           return value.toString(); // Ensure ticks display as whole numbers
+  //         },
+  //       },
+  //       title: {
+  //         display: true,
+  //         text: xAxis,
+  //       },
+  //     },
+  //     y: {
+  //       min: 0, // Leave space below 0
+  //       max: 100, // Leave space above 100
+  //       ticks: {
+  //         stepSize: 10, // Ticks at every 10 units (0, 10, 20, ..., 100)
+  //         callback: function (value: number) {
+  //           return value.toString(); // Ensure ticks display as whole numbers
+  //         },
+  //       },
+  //       title: {
+  //         display: true,
+  //         text: yAxis,
+  //       },
+  //     },
+  //   },
+  // };
+
   const options = {
     scales: {
       x: {
+        min: 1,
+        max: 10,
         ticks: {
           callback: function (value: any) {
             return parseFloat(value).toFixed(2); // Limit to 2 decimal places
@@ -106,6 +125,8 @@ const Graph: React.FC<GraphProps> = ({
         },
       },
       y: {
+        min: 0,
+        max: 100,
         title: {
           display: true,
           text: yAxis,

@@ -39,7 +39,9 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             max="10"
             step="1"
             value={sunlight}
-            onChange={(e) => onUpdate({ sunlight: parseInt(e.target.value, 10) })}
+            onChange={(e) =>
+              onUpdate({ sunlight: parseInt(e.target.value, 10) })
+            }
           />
           <input
             className="number-input"
@@ -48,7 +50,9 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             max="10"
             step="1"
             value={sunlight}
-            onChange={(e) => onUpdate({ sunlight: parseInt(e.target.value, 10) })}
+            onChange={(e) =>
+              onUpdate({ sunlight: parseInt(e.target.value, 10) })
+            }
           />
         </div>
         <h3 className="panel-header">Water (liters)</h3>
@@ -106,7 +110,9 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             max="90"
             step="10"
             value={trainSplit}
-            onChange={(e) => onUpdate({ trainSplit: parseInt(e.target.value, 10) })}
+            onChange={(e) =>
+              onUpdate({ trainSplit: parseInt(e.target.value, 10) })
+            }
           />
           <span className="train-label">% Training</span>
         </div>
@@ -151,7 +157,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
         </button>
         <button className="submit-button" onClick={onPredict}>
           Submit
-        </button> 
+        </button>
       </div>
     </div>
   );

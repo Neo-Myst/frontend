@@ -1,0 +1,2502 @@
+[
+    {
+        "Sunlight (hours)":4.37,
+        "Water (liters)":7.28,
+        "Growth (cm)":45.48
+    },
+    {
+        "Sunlight (hours)":9.56,
+        "Water (liters)":5.82,
+        "Growth (cm)":51.9
+    },
+    {
+        "Sunlight (hours)":7.59,
+        "Water (liters)":3.79,
+        "Growth (cm)":53.1
+    },
+    {
+        "Sunlight (hours)":6.39,
+        "Water (liters)":8.32,
+        "Growth (cm)":63.02
+    },
+    {
+        "Sunlight (hours)":2.4,
+        "Water (liters)":7.16,
+        "Growth (cm)":39.11
+    },
+    {
+        "Sunlight (hours)":2.4,
+        "Water (liters)":2.46,
+        "Growth (cm)":30.22
+    },
+    {
+        "Sunlight (hours)":1.52,
+        "Water (liters)":9.2,
+        "Growth (cm)":43.55
+    },
+    {
+        "Sunlight (hours)":8.8,
+        "Water (liters)":8.4,
+        "Growth (cm)":73.78
+    },
+    {
+        "Sunlight (hours)":6.41,
+        "Water (liters)":9.55,
+        "Growth (cm)":59.99
+    },
+    {
+        "Sunlight (hours)":7.37,
+        "Water (liters)":7.53,
+        "Growth (cm)":42.85
+    },
+    {
+        "Sunlight (hours)":1.19,
+        "Water (liters)":6.52,
+        "Growth (cm)":29.78
+    },
+    {
+        "Sunlight (hours)":9.73,
+        "Water (liters)":4.76,
+        "Growth (cm)":65.02
+    },
+    {
+        "Sunlight (hours)":8.49,
+        "Water (liters)":9.39,
+        "Growth (cm)":73.36
+    },
+    {
+        "Sunlight (hours)":2.91,
+        "Water (liters)":8.79,
+        "Growth (cm)":28.17
+    },
+    {
+        "Sunlight (hours)":2.64,
+        "Water (liters)":1.41,
+        "Growth (cm)":6.59
+    },
+    {
+        "Sunlight (hours)":2.65,
+        "Water (liters)":1.24,
+        "Growth (cm)":27.5
+    },
+    {
+        "Sunlight (hours)":3.74,
+        "Water (liters)":4.39,
+        "Growth (cm)":31.46
+    },
+    {
+        "Sunlight (hours)":5.72,
+        "Water (liters)":8.29,
+        "Growth (cm)":60.31
+    },
+    {
+        "Sunlight (hours)":4.89,
+        "Water (liters)":9.89,
+        "Growth (cm)":54.38
+    },
+    {
+        "Sunlight (hours)":3.62,
+        "Water (liters)":2.35,
+        "Growth (cm)":25.46
+    },
+    {
+        "Sunlight (hours)":6.51,
+        "Water (liters)":6.35,
+        "Growth (cm)":60.96
+    },
+    {
+        "Sunlight (hours)":2.26,
+        "Water (liters)":4.43,
+        "Growth (cm)":19.4
+    },
+    {
+        "Sunlight (hours)":3.63,
+        "Water (liters)":9.73,
+        "Growth (cm)":48.3
+    },
+    {
+        "Sunlight (hours)":4.3,
+        "Water (liters)":8.58,
+        "Growth (cm)":42.6
+    },
+    {
+        "Sunlight (hours)":5.1,
+        "Water (liters)":8.54,
+        "Growth (cm)":46.81
+    },
+    {
+        "Sunlight (hours)":8.07,
+        "Water (liters)":5.22,
+        "Growth (cm)":52.9
+    },
+    {
+        "Sunlight (hours)":2.8,
+        "Water (liters)":4.73,
+        "Growth (cm)":30.41
+    },
+    {
+        "Sunlight (hours)":5.63,
+        "Water (liters)":3.46,
+        "Growth (cm)":33.74
+    },
+    {
+        "Sunlight (hours)":6.33,
+        "Water (liters)":1.51,
+        "Growth (cm)":48.74
+    },
+    {
+        "Sunlight (hours)":1.42,
+        "Water (liters)":8.78,
+        "Growth (cm)":24.49
+    },
+    {
+        "Sunlight (hours)":6.47,
+        "Water (liters)":8.32,
+        "Growth (cm)":55.42
+    },
+    {
+        "Sunlight (hours)":2.53,
+        "Water (liters)":10.0,
+        "Growth (cm)":38.27
+    },
+    {
+        "Sunlight (hours)":1.59,
+        "Water (liters)":9.97,
+        "Growth (cm)":52.31
+    },
+    {
+        "Sunlight (hours)":9.54,
+        "Water (liters)":6.0,
+        "Growth (cm)":67.66
+    },
+    {
+        "Sunlight (hours)":9.69,
+        "Water (liters)":7.92,
+        "Growth (cm)":82.53
+    },
+    {
+        "Sunlight (hours)":8.28,
+        "Water (liters)":9.5,
+        "Growth (cm)":55.03
+    },
+    {
+        "Sunlight (hours)":3.74,
+        "Water (liters)":8.65,
+        "Growth (cm)":47.32
+    },
+    {
+        "Sunlight (hours)":1.88,
+        "Water (liters)":3.23,
+        "Growth (cm)":27.97
+    },
+    {
+        "Sunlight (hours)":7.16,
+        "Water (liters)":5.05,
+        "Growth (cm)":51.78
+    },
+    {
+        "Sunlight (hours)":4.96,
+        "Water (liters)":2.16,
+        "Growth (cm)":41.95
+    },
+    {
+        "Sunlight (hours)":2.1,
+        "Water (liters)":9.59,
+        "Growth (cm)":34.08
+    },
+    {
+        "Sunlight (hours)":5.46,
+        "Water (liters)":6.46,
+        "Growth (cm)":60.74
+    },
+    {
+        "Sunlight (hours)":1.31,
+        "Water (liters)":3.06,
+        "Growth (cm)":38.71
+    },
+    {
+        "Sunlight (hours)":9.18,
+        "Water (liters)":7.05,
+        "Growth (cm)":63.43
+    },
+    {
+        "Sunlight (hours)":3.33,
+        "Water (liters)":6.56,
+        "Growth (cm)":31.88
+    },
+    {
+        "Sunlight (hours)":6.96,
+        "Water (liters)":4.22,
+        "Growth (cm)":62.02
+    },
+    {
+        "Sunlight (hours)":3.81,
+        "Water (liters)":2.02,
+        "Growth (cm)":40.89
+    },
+    {
+        "Sunlight (hours)":5.68,
+        "Water (liters)":7.04,
+        "Growth (cm)":44.31
+    },
+    {
+        "Sunlight (hours)":5.92,
+        "Water (liters)":5.68,
+        "Growth (cm)":42.45
+    },
+    {
+        "Sunlight (hours)":2.66,
+        "Water (liters)":7.95,
+        "Growth (cm)":34.35
+    },
+    {
+        "Sunlight (hours)":9.73,
+        "Water (liters)":5.68,
+        "Growth (cm)":52.23
+    },
+    {
+        "Sunlight (hours)":7.98,
+        "Water (liters)":8.67,
+        "Growth (cm)":56.7
+    },
+    {
+        "Sunlight (hours)":9.46,
+        "Water (liters)":5.97,
+        "Growth (cm)":55.14
+    },
+    {
+        "Sunlight (hours)":9.05,
+        "Water (liters)":6.05,
+        "Growth (cm)":55.73
+    },
+    {
+        "Sunlight (hours)":6.38,
+        "Water (liters)":8.89,
+        "Growth (cm)":58.23
+    },
+    {
+        "Sunlight (hours)":9.3,
+        "Water (liters)":4.63,
+        "Growth (cm)":62.72
+    },
+    {
+        "Sunlight (hours)":1.8,
+        "Water (liters)":2.21,
+        "Growth (cm)":31.11
+    },
+    {
+        "Sunlight (hours)":2.76,
+        "Water (liters)":1.26,
+        "Growth (cm)":7.61
+    },
+    {
+        "Sunlight (hours)":1.41,
+        "Water (liters)":7.8,
+        "Growth (cm)":40.27
+    },
+    {
+        "Sunlight (hours)":3.93,
+        "Water (liters)":6.58,
+        "Growth (cm)":37.25
+    },
+    {
+        "Sunlight (hours)":4.5,
+        "Water (liters)":7.34,
+        "Growth (cm)":44.01
+    },
+    {
+        "Sunlight (hours)":3.44,
+        "Water (liters)":2.92,
+        "Growth (cm)":32.71
+    },
+    {
+        "Sunlight (hours)":8.46,
+        "Water (liters)":2.23,
+        "Growth (cm)":37.75
+    },
+    {
+        "Sunlight (hours)":4.21,
+        "Water (liters)":1.13,
+        "Growth (cm)":28.27
+    },
+    {
+        "Sunlight (hours)":3.53,
+        "Water (liters)":4.16,
+        "Growth (cm)":31.77
+    },
+    {
+        "Sunlight (hours)":5.88,
+        "Water (liters)":6.31,
+        "Growth (cm)":53.27
+    },
+    {
+        "Sunlight (hours)":2.27,
+        "Water (liters)":4.53,
+        "Growth (cm)":27.82
+    },
+    {
+        "Sunlight (hours)":8.22,
+        "Water (liters)":4.94,
+        "Growth (cm)":80.46
+    },
+    {
+        "Sunlight (hours)":1.67,
+        "Water (liters)":9.14,
+        "Growth (cm)":29.39
+    },
+    {
+        "Sunlight (hours)":9.88,
+        "Water (liters)":4.13,
+        "Growth (cm)":56.5
+    },
+    {
+        "Sunlight (hours)":7.95,
+        "Water (liters)":5.63,
+        "Growth (cm)":50.4
+    },
+    {
+        "Sunlight (hours)":2.79,
+        "Water (liters)":8.05,
+        "Growth (cm)":32.55
+    },
+    {
+        "Sunlight (hours)":1.05,
+        "Water (liters)":4.57,
+        "Growth (cm)":12.58
+    },
+    {
+        "Sunlight (hours)":8.34,
+        "Water (liters)":6.6,
+        "Growth (cm)":73.38
+    },
+    {
+        "Sunlight (hours)":7.36,
+        "Water (liters)":8.76,
+        "Growth (cm)":77.3
+    },
+    {
+        "Sunlight (hours)":7.56,
+        "Water (liters)":9.55,
+        "Growth (cm)":60.73
+    },
+    {
+        "Sunlight (hours)":7.94,
+        "Water (liters)":2.32,
+        "Growth (cm)":38.35
+    },
+    {
+        "Sunlight (hours)":1.67,
+        "Water (liters)":9.34,
+        "Growth (cm)":41.06
+    },
+    {
+        "Sunlight (hours)":4.23,
+        "Water (liters)":5.43,
+        "Growth (cm)":31.9
+    },
+    {
+        "Sunlight (hours)":2.04,
+        "Water (liters)":3.32,
+        "Growth (cm)":26.52
+    },
+    {
+        "Sunlight (hours)":8.77,
+        "Water (liters)":5.13,
+        "Growth (cm)":61.27
+    },
+    {
+        "Sunlight (hours)":6.61,
+        "Water (liters)":9.82,
+        "Growth (cm)":47.35
+    },
+    {
+        "Sunlight (hours)":3.98,
+        "Water (liters)":5.43,
+        "Growth (cm)":51.67
+    },
+    {
+        "Sunlight (hours)":1.57,
+        "Water (liters)":3.96,
+        "Growth (cm)":37.7
+    },
+    {
+        "Sunlight (hours)":3.8,
+        "Water (liters)":6.7,
+        "Growth (cm)":32.97
+    },
+    {
+        "Sunlight (hours)":3.93,
+        "Water (liters)":3.16,
+        "Growth (cm)":25.24
+    },
+    {
+        "Sunlight (hours)":7.57,
+        "Water (liters)":1.68,
+        "Growth (cm)":45.74
+    },
+    {
+        "Sunlight (hours)":6.74,
+        "Water (liters)":2.16,
+        "Growth (cm)":43.51
+    },
+    {
+        "Sunlight (hours)":8.98,
+        "Water (liters)":2.15,
+        "Growth (cm)":57.97
+    },
+    {
+        "Sunlight (hours)":5.25,
+        "Water (liters)":2.37,
+        "Growth (cm)":53.45
+    },
+    {
+        "Sunlight (hours)":2.08,
+        "Water (liters)":2.25,
+        "Growth (cm)":15.36
+    },
+    {
+        "Sunlight (hours)":7.42,
+        "Water (liters)":6.77,
+        "Growth (cm)":49.42
+    },
+    {
+        "Sunlight (hours)":7.85,
+        "Water (liters)":2.64,
+        "Growth (cm)":33.35
+    },
+    {
+        "Sunlight (hours)":6.05,
+        "Water (liters)":4.11,
+        "Growth (cm)":35.28
+    },
+    {
+        "Sunlight (hours)":7.94,
+        "Water (liters)":9.07,
+        "Growth (cm)":66.58
+    },
+    {
+        "Sunlight (hours)":5.44,
+        "Water (liters)":5.27,
+        "Growth (cm)":60.96
+    },
+    {
+        "Sunlight (hours)":5.7,
+        "Water (liters)":7.01,
+        "Growth (cm)":44.37
+    },
+    {
+        "Sunlight (hours)":4.85,
+        "Water (liters)":2.55,
+        "Growth (cm)":34.13
+    },
+    {
+        "Sunlight (hours)":1.23,
+        "Water (liters)":2.73,
+        "Growth (cm)":14.17
+    },
+    {
+        "Sunlight (hours)":1.97,
+        "Water (liters)":1.37,
+        "Growth (cm)":25.84
+    },
+    {
+        "Sunlight (hours)":1.28,
+        "Water (liters)":2.52,
+        "Growth (cm)":39.24
+    },
+    {
+        "Sunlight (hours)":6.73,
+        "Water (liters)":3.51,
+        "Growth (cm)":38.85
+    },
+    {
+        "Sunlight (hours)":3.83,
+        "Water (liters)":2.59,
+        "Growth (cm)":22.03
+    },
+    {
+        "Sunlight (hours)":5.58,
+        "Water (liters)":1.8,
+        "Growth (cm)":43.72
+    },
+    {
+        "Sunlight (hours)":9.17,
+        "Water (liters)":2.09,
+        "Growth (cm)":58.92
+    },
+    {
+        "Sunlight (hours)":3.24,
+        "Water (liters)":5.15,
+        "Growth (cm)":50.13
+    },
+    {
+        "Sunlight (hours)":4.69,
+        "Water (liters)":2.86,
+        "Growth (cm)":37.88
+    },
+    {
+        "Sunlight (hours)":7.8,
+        "Water (liters)":4.28,
+        "Growth (cm)":48.24
+    },
+    {
+        "Sunlight (hours)":3.06,
+        "Water (liters)":5.53,
+        "Growth (cm)":37.79
+    },
+    {
+        "Sunlight (hours)":1.69,
+        "Water (liters)":7.21,
+        "Growth (cm)":41.19
+    },
+    {
+        "Sunlight (hours)":3.61,
+        "Water (liters)":1.35,
+        "Growth (cm)":30.31
+    },
+    {
+        "Sunlight (hours)":2.45,
+        "Water (liters)":8.19,
+        "Growth (cm)":41.91
+    },
+    {
+        "Sunlight (hours)":9.37,
+        "Water (liters)":6.65,
+        "Growth (cm)":77.46
+    },
+    {
+        "Sunlight (hours)":8.27,
+        "Water (liters)":1.74,
+        "Growth (cm)":58.27
+    },
+    {
+        "Sunlight (hours)":6.7,
+        "Water (liters)":8.86,
+        "Growth (cm)":73.91
+    },
+    {
+        "Sunlight (hours)":8.84,
+        "Water (liters)":9.29,
+        "Growth (cm)":78.57
+    },
+    {
+        "Sunlight (hours)":8.23,
+        "Water (liters)":1.55,
+        "Growth (cm)":44.14
+    },
+    {
+        "Sunlight (hours)":2.68,
+        "Water (liters)":3.49,
+        "Growth (cm)":25.34
+    },
+    {
+        "Sunlight (hours)":9.03,
+        "Water (liters)":8.26,
+        "Growth (cm)":82.0
+    },
+    {
+        "Sunlight (hours)":5.85,
+        "Water (liters)":7.73,
+        "Growth (cm)":44.3
+    },
+    {
+        "Sunlight (hours)":8.27,
+        "Water (liters)":2.66,
+        "Growth (cm)":53.0
+    },
+    {
+        "Sunlight (hours)":9.06,
+        "Water (liters)":2.88,
+        "Growth (cm)":50.04
+    },
+    {
+        "Sunlight (hours)":3.86,
+        "Water (liters)":4.33,
+        "Growth (cm)":32.6
+    },
+    {
+        "Sunlight (hours)":1.99,
+        "Water (liters)":5.36,
+        "Growth (cm)":38.82
+    },
+    {
+        "Sunlight (hours)":3.05,
+        "Water (liters)":6.56,
+        "Growth (cm)":36.86
+    },
+    {
+        "Sunlight (hours)":4.84,
+        "Water (liters)":4.32,
+        "Growth (cm)":37.64
+    },
+    {
+        "Sunlight (hours)":8.36,
+        "Water (liters)":5.16,
+        "Growth (cm)":43.7
+    },
+    {
+        "Sunlight (hours)":8.75,
+        "Water (liters)":7.73,
+        "Growth (cm)":74.38
+    },
+    {
+        "Sunlight (hours)":1.06,
+        "Water (liters)":1.33,
+        "Growth (cm)":15.76
+    },
+    {
+        "Sunlight (hours)":5.6,
+        "Water (liters)":3.27,
+        "Growth (cm)":59.43
+    },
+    {
+        "Sunlight (hours)":4.76,
+        "Water (liters)":7.42,
+        "Growth (cm)":42.97
+    },
+    {
+        "Sunlight (hours)":3.0,
+        "Water (liters)":9.06,
+        "Growth (cm)":44.36
+    },
+    {
+        "Sunlight (hours)":2.08,
+        "Water (liters)":5.61,
+        "Growth (cm)":29.7
+    },
+    {
+        "Sunlight (hours)":4.04,
+        "Water (liters)":5.79,
+        "Growth (cm)":53.33
+    },
+    {
+        "Sunlight (hours)":9.49,
+        "Water (liters)":1.96,
+        "Growth (cm)":52.37
+    },
+    {
+        "Sunlight (hours)":3.91,
+        "Water (liters)":5.03,
+        "Growth (cm)":37.41
+    },
+    {
+        "Sunlight (hours)":5.67,
+        "Water (liters)":5.79,
+        "Growth (cm)":51.81
+    },
+    {
+        "Sunlight (hours)":7.33,
+        "Water (liters)":3.18,
+        "Growth (cm)":48.05
+    },
+    {
+        "Sunlight (hours)":4.27,
+        "Water (liters)":3.42,
+        "Growth (cm)":27.17
+    },
+    {
+        "Sunlight (hours)":9.75,
+        "Water (liters)":4.4,
+        "Growth (cm)":63.86
+    },
+    {
+        "Sunlight (hours)":9.66,
+        "Water (liters)":1.18,
+        "Growth (cm)":62.59
+    },
+    {
+        "Sunlight (hours)":3.27,
+        "Water (liters)":3.9,
+        "Growth (cm)":17.76
+    },
+    {
+        "Sunlight (hours)":5.48,
+        "Water (liters)":2.9,
+        "Growth (cm)":37.41
+    },
+    {
+        "Sunlight (hours)":3.71,
+        "Water (liters)":3.95,
+        "Growth (cm)":23.38
+    },
+    {
+        "Sunlight (hours)":3.56,
+        "Water (liters)":2.08,
+        "Growth (cm)":36.0
+    },
+    {
+        "Sunlight (hours)":1.33,
+        "Water (liters)":9.01,
+        "Growth (cm)":18.47
+    },
+    {
+        "Sunlight (hours)":6.49,
+        "Water (liters)":6.34,
+        "Growth (cm)":45.87
+    },
+    {
+        "Sunlight (hours)":5.52,
+        "Water (liters)":7.11,
+        "Growth (cm)":52.73
+    },
+    {
+        "Sunlight (hours)":1.46,
+        "Water (liters)":8.1,
+        "Growth (cm)":47.28
+    },
+    {
+        "Sunlight (hours)":3.51,
+        "Water (liters)":5.49,
+        "Growth (cm)":33.34
+    },
+    {
+        "Sunlight (hours)":9.17,
+        "Water (liters)":1.78,
+        "Growth (cm)":45.67
+    },
+    {
+        "Sunlight (hours)":3.16,
+        "Water (liters)":5.83,
+        "Growth (cm)":52.09
+    },
+    {
+        "Sunlight (hours)":2.3,
+        "Water (liters)":6.28,
+        "Growth (cm)":15.88
+    },
+    {
+        "Sunlight (hours)":5.41,
+        "Water (liters)":7.71,
+        "Growth (cm)":28.16
+    },
+    {
+        "Sunlight (hours)":9.87,
+        "Water (liters)":4.88,
+        "Growth (cm)":68.41
+    },
+    {
+        "Sunlight (hours)":3.18,
+        "Water (liters)":2.15,
+        "Growth (cm)":17.32
+    },
+    {
+        "Sunlight (hours)":7.05,
+        "Water (liters)":3.55,
+        "Growth (cm)":35.7
+    },
+    {
+        "Sunlight (hours)":7.85,
+        "Water (liters)":4.27,
+        "Growth (cm)":59.16
+    },
+    {
+        "Sunlight (hours)":3.14,
+        "Water (liters)":6.81,
+        "Growth (cm)":38.57
+    },
+    {
+        "Sunlight (hours)":7.55,
+        "Water (liters)":6.14,
+        "Growth (cm)":50.54
+    },
+    {
+        "Sunlight (hours)":4.31,
+        "Water (liters)":4.2,
+        "Growth (cm)":21.36
+    },
+    {
+        "Sunlight (hours)":6.69,
+        "Water (liters)":9.88,
+        "Growth (cm)":71.81
+    },
+    {
+        "Sunlight (hours)":6.7,
+        "Water (liters)":6.45,
+        "Growth (cm)":59.37
+    },
+    {
+        "Sunlight (hours)":5.82,
+        "Water (liters)":3.14,
+        "Growth (cm)":37.52
+    },
+    {
+        "Sunlight (hours)":1.81,
+        "Water (liters)":1.92,
+        "Growth (cm)":33.28
+    },
+    {
+        "Sunlight (hours)":8.52,
+        "Water (liters)":2.38,
+        "Growth (cm)":39.01
+    },
+    {
+        "Sunlight (hours)":3.89,
+        "Water (liters)":3.21,
+        "Growth (cm)":13.82
+    },
+    {
+        "Sunlight (hours)":2.68,
+        "Water (liters)":2.45,
+        "Growth (cm)":13.81
+    },
+    {
+        "Sunlight (hours)":1.37,
+        "Water (liters)":2.68,
+        "Growth (cm)":14.42
+    },
+    {
+        "Sunlight (hours)":6.32,
+        "Water (liters)":3.57,
+        "Growth (cm)":44.72
+    },
+    {
+        "Sunlight (hours)":7.1,
+        "Water (liters)":2.56,
+        "Growth (cm)":40.76
+    },
+    {
+        "Sunlight (hours)":1.15,
+        "Water (liters)":9.07,
+        "Growth (cm)":36.48
+    },
+    {
+        "Sunlight (hours)":5.61,
+        "Water (liters)":1.72,
+        "Growth (cm)":20.7
+    },
+    {
+        "Sunlight (hours)":3.04,
+        "Water (liters)":5.72,
+        "Growth (cm)":46.79
+    },
+    {
+        "Sunlight (hours)":6.81,
+        "Water (liters)":4.69,
+        "Growth (cm)":47.29
+    },
+    {
+        "Sunlight (hours)":2.57,
+        "Water (liters)":9.84,
+        "Growth (cm)":53.54
+    },
+    {
+        "Sunlight (hours)":7.22,
+        "Water (liters)":2.01,
+        "Growth (cm)":45.54
+    },
+    {
+        "Sunlight (hours)":4.48,
+        "Water (liters)":4.58,
+        "Growth (cm)":40.71
+    },
+    {
+        "Sunlight (hours)":9.43,
+        "Water (liters)":9.73,
+        "Growth (cm)":82.03
+    },
+    {
+        "Sunlight (hours)":2.24,
+        "Water (liters)":8.79,
+        "Growth (cm)":42.03
+    },
+    {
+        "Sunlight (hours)":4.07,
+        "Water (liters)":8.35,
+        "Growth (cm)":51.84
+    },
+    {
+        "Sunlight (hours)":2.02,
+        "Water (liters)":3.32,
+        "Growth (cm)":33.36
+    },
+    {
+        "Sunlight (hours)":9.32,
+        "Water (liters)":2.54,
+        "Growth (cm)":56.19
+    },
+    {
+        "Sunlight (hours)":8.9,
+        "Water (liters)":7.02,
+        "Growth (cm)":72.62
+    },
+    {
+        "Sunlight (hours)":3.32,
+        "Water (liters)":9.36,
+        "Growth (cm)":43.8
+    },
+    {
+        "Sunlight (hours)":6.94,
+        "Water (liters)":6.01,
+        "Growth (cm)":67.13
+    },
+    {
+        "Sunlight (hours)":8.35,
+        "Water (liters)":6.14,
+        "Growth (cm)":53.44
+    },
+    {
+        "Sunlight (hours)":6.0,
+        "Water (liters)":3.52,
+        "Growth (cm)":58.55
+    },
+    {
+        "Sunlight (hours)":5.77,
+        "Water (liters)":7.93,
+        "Growth (cm)":52.21
+    },
+    {
+        "Sunlight (hours)":3.18,
+        "Water (liters)":2.68,
+        "Growth (cm)":9.63
+    },
+    {
+        "Sunlight (hours)":1.84,
+        "Water (liters)":3.91,
+        "Growth (cm)":22.21
+    },
+    {
+        "Sunlight (hours)":9.07,
+        "Water (liters)":4.83,
+        "Growth (cm)":53.05
+    },
+    {
+        "Sunlight (hours)":9.1,
+        "Water (liters)":5.57,
+        "Growth (cm)":70.63
+    },
+    {
+        "Sunlight (hours)":6.7,
+        "Water (liters)":3.18,
+        "Growth (cm)":36.51
+    },
+    {
+        "Sunlight (hours)":4.05,
+        "Water (liters)":2.03,
+        "Growth (cm)":21.9
+    },
+    {
+        "Sunlight (hours)":4.14,
+        "Water (liters)":6.5,
+        "Growth (cm)":21.31
+    },
+    {
+        "Sunlight (hours)":7.53,
+        "Water (liters)":3.6,
+        "Growth (cm)":43.94
+    },
+    {
+        "Sunlight (hours)":9.07,
+        "Water (liters)":6.23,
+        "Growth (cm)":39.82
+    },
+    {
+        "Sunlight (hours)":8.98,
+        "Water (liters)":2.39,
+        "Growth (cm)":36.25
+    },
+    {
+        "Sunlight (hours)":8.02,
+        "Water (liters)":5.33,
+        "Growth (cm)":63.69
+    },
+    {
+        "Sunlight (hours)":6.78,
+        "Water (liters)":5.79,
+        "Growth (cm)":59.13
+    },
+    {
+        "Sunlight (hours)":1.76,
+        "Water (liters)":1.47,
+        "Growth (cm)":17.44
+    },
+    {
+        "Sunlight (hours)":2.45,
+        "Water (liters)":4.03,
+        "Growth (cm)":14.69
+    },
+    {
+        "Sunlight (hours)":9.09,
+        "Water (liters)":2.21,
+        "Growth (cm)":51.59
+    },
+    {
+        "Sunlight (hours)":6.46,
+        "Water (liters)":1.57,
+        "Growth (cm)":36.96
+    },
+    {
+        "Sunlight (hours)":1.08,
+        "Water (liters)":9.91,
+        "Growth (cm)":23.56
+    },
+    {
+        "Sunlight (hours)":1.91,
+        "Water (liters)":3.9,
+        "Growth (cm)":36.3
+    },
+    {
+        "Sunlight (hours)":6.97,
+        "Water (liters)":8.29,
+        "Growth (cm)":68.5
+    },
+    {
+        "Sunlight (hours)":1.05,
+        "Water (liters)":3.29,
+        "Growth (cm)":12.89
+    },
+    {
+        "Sunlight (hours)":2.45,
+        "Water (liters)":7.13,
+        "Growth (cm)":33.91
+    },
+    {
+        "Sunlight (hours)":5.94,
+        "Water (liters)":7.84,
+        "Growth (cm)":55.3
+    },
+    {
+        "Sunlight (hours)":7.23,
+        "Water (liters)":6.36,
+        "Growth (cm)":34.8
+    },
+    {
+        "Sunlight (hours)":6.87,
+        "Water (liters)":5.24,
+        "Growth (cm)":47.6
+    },
+    {
+        "Sunlight (hours)":3.02,
+        "Water (liters)":4.71,
+        "Growth (cm)":22.39
+    },
+    {
+        "Sunlight (hours)":7.41,
+        "Water (liters)":4.14,
+        "Growth (cm)":39.45
+    },
+    {
+        "Sunlight (hours)":3.14,
+        "Water (liters)":9.37,
+        "Growth (cm)":40.96
+    },
+    {
+        "Sunlight (hours)":3.93,
+        "Water (liters)":8.48,
+        "Growth (cm)":63.05
+    },
+    {
+        "Sunlight (hours)":7.72,
+        "Water (liters)":9.69,
+        "Growth (cm)":74.06
+    },
+    {
+        "Sunlight (hours)":6.85,
+        "Water (liters)":2.12,
+        "Growth (cm)":34.88
+    },
+    {
+        "Sunlight (hours)":8.64,
+        "Water (liters)":7.58,
+        "Growth (cm)":71.67
+    },
+    {
+        "Sunlight (hours)":6.92,
+        "Water (liters)":9.45,
+        "Growth (cm)":76.92
+    },
+    {
+        "Sunlight (hours)":6.11,
+        "Water (liters)":2.63,
+        "Growth (cm)":47.71
+    },
+    {
+        "Sunlight (hours)":1.84,
+        "Water (liters)":1.6,
+        "Growth (cm)":14.61
+    },
+    {
+        "Sunlight (hours)":4.31,
+        "Water (liters)":7.67,
+        "Growth (cm)":38.09
+    },
+    {
+        "Sunlight (hours)":3.39,
+        "Water (liters)":6.17,
+        "Growth (cm)":42.43
+    },
+    {
+        "Sunlight (hours)":3.2,
+        "Water (liters)":8.58,
+        "Growth (cm)":45.64
+    },
+    {
+        "Sunlight (hours)":9.76,
+        "Water (liters)":2.26,
+        "Growth (cm)":64.51
+    },
+    {
+        "Sunlight (hours)":4.54,
+        "Water (liters)":8.16,
+        "Growth (cm)":53.51
+    },
+    {
+        "Sunlight (hours)":9.03,
+        "Water (liters)":2.81,
+        "Growth (cm)":64.08
+    },
+    {
+        "Sunlight (hours)":6.68,
+        "Water (liters)":2.47,
+        "Growth (cm)":35.47
+    },
+    {
+        "Sunlight (hours)":8.15,
+        "Water (liters)":2.48,
+        "Growth (cm)":61.38
+    },
+    {
+        "Sunlight (hours)":5.52,
+        "Water (liters)":8.33,
+        "Growth (cm)":54.59
+    },
+    {
+        "Sunlight (hours)":6.19,
+        "Water (liters)":6.99,
+        "Growth (cm)":72.67
+    },
+    {
+        "Sunlight (hours)":5.43,
+        "Water (liters)":5.71,
+        "Growth (cm)":37.39
+    },
+    {
+        "Sunlight (hours)":2.76,
+        "Water (liters)":4.23,
+        "Growth (cm)":43.83
+    },
+    {
+        "Sunlight (hours)":7.5,
+        "Water (liters)":8.89,
+        "Growth (cm)":66.17
+    },
+    {
+        "Sunlight (hours)":3.53,
+        "Water (liters)":4.53,
+        "Growth (cm)":24.72
+    },
+    {
+        "Sunlight (hours)":1.22,
+        "Water (liters)":8.35,
+        "Growth (cm)":26.3
+    },
+    {
+        "Sunlight (hours)":6.81,
+        "Water (liters)":4.95,
+        "Growth (cm)":45.7
+    },
+    {
+        "Sunlight (hours)":2.59,
+        "Water (liters)":4.39,
+        "Growth (cm)":30.39
+    },
+    {
+        "Sunlight (hours)":9.46,
+        "Water (liters)":5.16,
+        "Growth (cm)":68.04
+    },
+    {
+        "Sunlight (hours)":9.59,
+        "Water (liters)":3.71,
+        "Growth (cm)":53.33
+    },
+    {
+        "Sunlight (hours)":9.23,
+        "Water (liters)":7.73,
+        "Growth (cm)":69.11
+    },
+    {
+        "Sunlight (hours)":4.33,
+        "Water (liters)":5.52,
+        "Growth (cm)":59.65
+    },
+    {
+        "Sunlight (hours)":1.14,
+        "Water (liters)":3.09,
+        "Growth (cm)":32.24
+    },
+    {
+        "Sunlight (hours)":9.35,
+        "Water (liters)":9.1,
+        "Growth (cm)":78.43
+    },
+    {
+        "Sunlight (hours)":4.85,
+        "Water (liters)":4.46,
+        "Growth (cm)":38.01
+    },
+    {
+        "Sunlight (hours)":9.7,
+        "Water (liters)":5.89,
+        "Growth (cm)":67.38
+    },
+    {
+        "Sunlight (hours)":9.67,
+        "Water (liters)":9.16,
+        "Growth (cm)":81.97
+    },
+    {
+        "Sunlight (hours)":8.68,
+        "Water (liters)":6.62,
+        "Growth (cm)":53.01
+    },
+    {
+        "Sunlight (hours)":3.65,
+        "Water (liters)":2.05,
+        "Growth (cm)":21.83
+    },
+    {
+        "Sunlight (hours)":4.47,
+        "Water (liters)":9.46,
+        "Growth (cm)":34.02
+    },
+    {
+        "Sunlight (hours)":8.66,
+        "Water (liters)":6.65,
+        "Growth (cm)":67.24
+    },
+    {
+        "Sunlight (hours)":3.85,
+        "Water (liters)":4.01,
+        "Growth (cm)":37.78
+    },
+    {
+        "Sunlight (hours)":2.53,
+        "Water (liters)":2.25,
+        "Growth (cm)":14.56
+    },
+    {
+        "Sunlight (hours)":6.01,
+        "Water (liters)":8.15,
+        "Growth (cm)":70.23
+    },
+    {
+        "Sunlight (hours)":9.43,
+        "Water (liters)":6.58,
+        "Growth (cm)":54.61
+    },
+    {
+        "Sunlight (hours)":7.26,
+        "Water (liters)":5.8,
+        "Growth (cm)":39.08
+    },
+    {
+        "Sunlight (hours)":6.13,
+        "Water (liters)":9.05,
+        "Growth (cm)":60.03
+    },
+    {
+        "Sunlight (hours)":1.87,
+        "Water (liters)":8.1,
+        "Growth (cm)":44.14
+    },
+    {
+        "Sunlight (hours)":6.54,
+        "Water (liters)":2.37,
+        "Growth (cm)":56.61
+    },
+    {
+        "Sunlight (hours)":9.91,
+        "Water (liters)":3.81,
+        "Growth (cm)":56.38
+    },
+    {
+        "Sunlight (hours)":2.26,
+        "Water (liters)":3.24,
+        "Growth (cm)":31.8
+    },
+    {
+        "Sunlight (hours)":5.66,
+        "Water (liters)":7.7,
+        "Growth (cm)":51.03
+    },
+    {
+        "Sunlight (hours)":8.9,
+        "Water (liters)":1.3,
+        "Growth (cm)":46.66
+    },
+    {
+        "Sunlight (hours)":7.67,
+        "Water (liters)":6.13,
+        "Growth (cm)":65.56
+    },
+    {
+        "Sunlight (hours)":7.27,
+        "Water (liters)":7.86,
+        "Growth (cm)":66.48
+    },
+    {
+        "Sunlight (hours)":7.32,
+        "Water (liters)":8.89,
+        "Growth (cm)":47.52
+    },
+    {
+        "Sunlight (hours)":4.24,
+        "Water (liters)":4.08,
+        "Growth (cm)":48.18
+    },
+    {
+        "Sunlight (hours)":3.64,
+        "Water (liters)":8.39,
+        "Growth (cm)":57.19
+    },
+    {
+        "Sunlight (hours)":8.28,
+        "Water (liters)":2.0,
+        "Growth (cm)":41.15
+    },
+    {
+        "Sunlight (hours)":8.29,
+        "Water (liters)":8.62,
+        "Growth (cm)":71.27
+    },
+    {
+        "Sunlight (hours)":8.8,
+        "Water (liters)":2.15,
+        "Growth (cm)":55.4
+    },
+    {
+        "Sunlight (hours)":9.22,
+        "Water (liters)":4.58,
+        "Growth (cm)":62.43
+    },
+    {
+        "Sunlight (hours)":5.6,
+        "Water (liters)":8.18,
+        "Growth (cm)":47.03
+    },
+    {
+        "Sunlight (hours)":5.51,
+        "Water (liters)":2.35,
+        "Growth (cm)":27.9
+    },
+    {
+        "Sunlight (hours)":8.18,
+        "Water (liters)":3.06,
+        "Growth (cm)":49.86
+    },
+    {
+        "Sunlight (hours)":6.85,
+        "Water (liters)":7.5,
+        "Growth (cm)":68.48
+    },
+    {
+        "Sunlight (hours)":7.32,
+        "Water (liters)":7.48,
+        "Growth (cm)":64.47
+    },
+    {
+        "Sunlight (hours)":8.16,
+        "Water (liters)":6.77,
+        "Growth (cm)":57.42
+    },
+    {
+        "Sunlight (hours)":9.01,
+        "Water (liters)":7.25,
+        "Growth (cm)":74.5
+    },
+    {
+        "Sunlight (hours)":4.04,
+        "Water (liters)":5.88,
+        "Growth (cm)":9.38
+    },
+    {
+        "Sunlight (hours)":4.38,
+        "Water (liters)":3.27,
+        "Growth (cm)":43.19
+    },
+    {
+        "Sunlight (hours)":1.85,
+        "Water (liters)":4.11,
+        "Growth (cm)":4.17
+    },
+    {
+        "Sunlight (hours)":6.2,
+        "Water (liters)":2.63,
+        "Growth (cm)":35.3
+    },
+    {
+        "Sunlight (hours)":1.32,
+        "Water (liters)":9.18,
+        "Growth (cm)":22.95
+    },
+    {
+        "Sunlight (hours)":5.19,
+        "Water (liters)":6.25,
+        "Growth (cm)":31.76
+    },
+    {
+        "Sunlight (hours)":5.88,
+        "Water (liters)":4.61,
+        "Growth (cm)":54.85
+    },
+    {
+        "Sunlight (hours)":3.58,
+        "Water (liters)":5.16,
+        "Growth (cm)":28.69
+    },
+    {
+        "Sunlight (hours)":6.32,
+        "Water (liters)":9.53,
+        "Growth (cm)":63.63
+    },
+    {
+        "Sunlight (hours)":1.27,
+        "Water (liters)":2.38,
+        "Growth (cm)":13.04
+    },
+    {
+        "Sunlight (hours)":1.34,
+        "Water (liters)":6.28,
+        "Growth (cm)":30.28
+    },
+    {
+        "Sunlight (hours)":8.4,
+        "Water (liters)":5.55,
+        "Growth (cm)":59.44
+    },
+    {
+        "Sunlight (hours)":4.24,
+        "Water (liters)":6.5,
+        "Growth (cm)":27.89
+    },
+    {
+        "Sunlight (hours)":2.14,
+        "Water (liters)":1.16,
+        "Growth (cm)":24.17
+    },
+    {
+        "Sunlight (hours)":5.7,
+        "Water (liters)":8.85,
+        "Growth (cm)":50.11
+    },
+    {
+        "Sunlight (hours)":7.93,
+        "Water (liters)":9.39,
+        "Growth (cm)":52.25
+    },
+    {
+        "Sunlight (hours)":2.94,
+        "Water (liters)":6.09,
+        "Growth (cm)":28.69
+    },
+    {
+        "Sunlight (hours)":6.61,
+        "Water (liters)":7.27,
+        "Growth (cm)":69.85
+    },
+    {
+        "Sunlight (hours)":1.77,
+        "Water (liters)":9.3,
+        "Growth (cm)":45.25
+    },
+    {
+        "Sunlight (hours)":1.47,
+        "Water (liters)":7.37,
+        "Growth (cm)":25.93
+    },
+    {
+        "Sunlight (hours)":5.78,
+        "Water (liters)":2.37,
+        "Growth (cm)":32.54
+    },
+    {
+        "Sunlight (hours)":5.87,
+        "Water (liters)":6.19,
+        "Growth (cm)":44.67
+    },
+    {
+        "Sunlight (hours)":6.74,
+        "Water (liters)":6.46,
+        "Growth (cm)":73.83
+    },
+    {
+        "Sunlight (hours)":7.53,
+        "Water (liters)":4.82,
+        "Growth (cm)":55.94
+    },
+    {
+        "Sunlight (hours)":9.78,
+        "Water (liters)":7.63,
+        "Growth (cm)":76.1
+    },
+    {
+        "Sunlight (hours)":5.65,
+        "Water (liters)":9.41,
+        "Growth (cm)":66.76
+    },
+    {
+        "Sunlight (hours)":3.91,
+        "Water (liters)":9.33,
+        "Growth (cm)":49.91
+    },
+    {
+        "Sunlight (hours)":8.16,
+        "Water (liters)":5.06,
+        "Growth (cm)":53.37
+    },
+    {
+        "Sunlight (hours)":3.44,
+        "Water (liters)":2.02,
+        "Growth (cm)":21.28
+    },
+    {
+        "Sunlight (hours)":4.95,
+        "Water (liters)":9.86,
+        "Growth (cm)":53.63
+    },
+    {
+        "Sunlight (hours)":1.71,
+        "Water (liters)":8.55,
+        "Growth (cm)":33.81
+    },
+    {
+        "Sunlight (hours)":1.23,
+        "Water (liters)":2.12,
+        "Growth (cm)":19.78
+    },
+    {
+        "Sunlight (hours)":9.66,
+        "Water (liters)":9.29,
+        "Growth (cm)":76.7
+    },
+    {
+        "Sunlight (hours)":8.52,
+        "Water (liters)":8.83,
+        "Growth (cm)":76.43
+    },
+    {
+        "Sunlight (hours)":7.26,
+        "Water (liters)":5.67,
+        "Growth (cm)":52.52
+    },
+    {
+        "Sunlight (hours)":4.68,
+        "Water (liters)":6.32,
+        "Growth (cm)":43.15
+    },
+    {
+        "Sunlight (hours)":2.56,
+        "Water (liters)":4.59,
+        "Growth (cm)":6.59
+    },
+    {
+        "Sunlight (hours)":2.41,
+        "Water (liters)":1.49,
+        "Growth (cm)":25.68
+    },
+    {
+        "Sunlight (hours)":3.25,
+        "Water (liters)":4.02,
+        "Growth (cm)":31.78
+    },
+    {
+        "Sunlight (hours)":5.94,
+        "Water (liters)":8.23,
+        "Growth (cm)":64.37
+    },
+    {
+        "Sunlight (hours)":7.43,
+        "Water (liters)":1.04,
+        "Growth (cm)":11.32
+    },
+    {
+        "Sunlight (hours)":6.94,
+        "Water (liters)":4.0,
+        "Growth (cm)":67.6
+    },
+    {
+        "Sunlight (hours)":3.52,
+        "Water (liters)":4.58,
+        "Growth (cm)":29.95
+    },
+    {
+        "Sunlight (hours)":9.59,
+        "Water (liters)":5.84,
+        "Growth (cm)":76.56
+    },
+    {
+        "Sunlight (hours)":7.64,
+        "Water (liters)":9.28,
+        "Growth (cm)":55.64
+    },
+    {
+        "Sunlight (hours)":5.99,
+        "Water (liters)":4.12,
+        "Growth (cm)":48.43
+    },
+    {
+        "Sunlight (hours)":6.51,
+        "Water (liters)":4.12,
+        "Growth (cm)":34.36
+    },
+    {
+        "Sunlight (hours)":4.78,
+        "Water (liters)":7.64,
+        "Growth (cm)":40.56
+    },
+    {
+        "Sunlight (hours)":3.23,
+        "Water (liters)":5.07,
+        "Growth (cm)":50.5
+    },
+    {
+        "Sunlight (hours)":4.2,
+        "Water (liters)":3.02,
+        "Growth (cm)":28.18
+    },
+    {
+        "Sunlight (hours)":7.82,
+        "Water (liters)":5.07,
+        "Growth (cm)":56.49
+    },
+    {
+        "Sunlight (hours)":1.13,
+        "Water (liters)":2.27,
+        "Growth (cm)":21.15
+    },
+    {
+        "Sunlight (hours)":2.04,
+        "Water (liters)":2.59,
+        "Growth (cm)":22.94
+    },
+    {
+        "Sunlight (hours)":1.41,
+        "Water (liters)":5.49,
+        "Growth (cm)":25.03
+    },
+    {
+        "Sunlight (hours)":1.37,
+        "Water (liters)":4.77,
+        "Growth (cm)":24.79
+    },
+    {
+        "Sunlight (hours)":8.7,
+        "Water (liters)":9.23,
+        "Growth (cm)":95.23
+    },
+    {
+        "Sunlight (hours)":7.33,
+        "Water (liters)":4.26,
+        "Growth (cm)":48.87
+    },
+    {
+        "Sunlight (hours)":5.27,
+        "Water (liters)":6.23,
+        "Growth (cm)":47.02
+    },
+    {
+        "Sunlight (hours)":1.88,
+        "Water (liters)":6.69,
+        "Growth (cm)":39.98
+    },
+    {
+        "Sunlight (hours)":5.42,
+        "Water (liters)":1.12,
+        "Growth (cm)":41.53
+    },
+    {
+        "Sunlight (hours)":5.26,
+        "Water (liters)":6.97,
+        "Growth (cm)":59.09
+    },
+    {
+        "Sunlight (hours)":2.56,
+        "Water (liters)":2.6,
+        "Growth (cm)":26.99
+    },
+    {
+        "Sunlight (hours)":4.9,
+        "Water (liters)":9.65,
+        "Growth (cm)":42.04
+    },
+    {
+        "Sunlight (hours)":4.59,
+        "Water (liters)":2.34,
+        "Growth (cm)":46.28
+    },
+    {
+        "Sunlight (hours)":6.54,
+        "Water (liters)":4.73,
+        "Growth (cm)":35.44
+    },
+    {
+        "Sunlight (hours)":6.72,
+        "Water (liters)":1.77,
+        "Growth (cm)":41.91
+    },
+    {
+        "Sunlight (hours)":1.41,
+        "Water (liters)":9.97,
+        "Growth (cm)":29.41
+    },
+    {
+        "Sunlight (hours)":4.37,
+        "Water (liters)":5.52,
+        "Growth (cm)":37.78
+    },
+    {
+        "Sunlight (hours)":6.63,
+        "Water (liters)":6.36,
+        "Growth (cm)":55.53
+    },
+    {
+        "Sunlight (hours)":5.53,
+        "Water (liters)":1.6,
+        "Growth (cm)":35.67
+    },
+    {
+        "Sunlight (hours)":8.71,
+        "Water (liters)":7.75,
+        "Growth (cm)":71.01
+    },
+    {
+        "Sunlight (hours)":6.93,
+        "Water (liters)":2.89,
+        "Growth (cm)":59.45
+    },
+    {
+        "Sunlight (hours)":2.47,
+        "Water (liters)":9.08,
+        "Growth (cm)":44.11
+    },
+    {
+        "Sunlight (hours)":1.64,
+        "Water (liters)":2.85,
+        "Growth (cm)":14.27
+    },
+    {
+        "Sunlight (hours)":6.78,
+        "Water (liters)":2.72,
+        "Growth (cm)":51.7
+    },
+    {
+        "Sunlight (hours)":1.24,
+        "Water (liters)":1.33,
+        "Growth (cm)":22.07
+    },
+    {
+        "Sunlight (hours)":6.27,
+        "Water (liters)":5.25,
+        "Growth (cm)":34.83
+    },
+    {
+        "Sunlight (hours)":9.46,
+        "Water (liters)":6.08,
+        "Growth (cm)":71.54
+    },
+    {
+        "Sunlight (hours)":6.18,
+        "Water (liters)":1.59,
+        "Growth (cm)":42.68
+    },
+    {
+        "Sunlight (hours)":4.49,
+        "Water (liters)":7.98,
+        "Growth (cm)":43.43
+    },
+    {
+        "Sunlight (hours)":6.79,
+        "Water (liters)":5.08,
+        "Growth (cm)":62.94
+    },
+    {
+        "Sunlight (hours)":5.12,
+        "Water (liters)":5.72,
+        "Growth (cm)":41.28
+    },
+    {
+        "Sunlight (hours)":5.91,
+        "Water (liters)":4.97,
+        "Growth (cm)":45.71
+    },
+    {
+        "Sunlight (hours)":9.47,
+        "Water (liters)":4.61,
+        "Growth (cm)":59.46
+    },
+    {
+        "Sunlight (hours)":4.47,
+        "Water (liters)":6.04,
+        "Growth (cm)":40.64
+    },
+    {
+        "Sunlight (hours)":9.65,
+        "Water (liters)":2.4,
+        "Growth (cm)":44.48
+    },
+    {
+        "Sunlight (hours)":9.15,
+        "Water (liters)":2.64,
+        "Growth (cm)":39.25
+    },
+    {
+        "Sunlight (hours)":2.76,
+        "Water (liters)":8.76,
+        "Growth (cm)":56.02
+    },
+    {
+        "Sunlight (hours)":1.62,
+        "Water (liters)":9.52,
+        "Growth (cm)":28.2
+    },
+    {
+        "Sunlight (hours)":1.91,
+        "Water (liters)":4.36,
+        "Growth (cm)":12.7
+    },
+    {
+        "Sunlight (hours)":1.16,
+        "Water (liters)":3.44,
+        "Growth (cm)":0.0
+    },
+    {
+        "Sunlight (hours)":1.85,
+        "Water (liters)":6.8,
+        "Growth (cm)":23.25
+    },
+    {
+        "Sunlight (hours)":7.15,
+        "Water (liters)":4.68,
+        "Growth (cm)":36.54
+    },
+    {
+        "Sunlight (hours)":1.64,
+        "Water (liters)":1.23,
+        "Growth (cm)":28.31
+    },
+    {
+        "Sunlight (hours)":3.87,
+        "Water (liters)":2.41,
+        "Growth (cm)":36.67
+    },
+    {
+        "Sunlight (hours)":8.6,
+        "Water (liters)":7.44,
+        "Growth (cm)":58.47
+    },
+    {
+        "Sunlight (hours)":1.21,
+        "Water (liters)":6.93,
+        "Growth (cm)":49.36
+    },
+    {
+        "Sunlight (hours)":8.33,
+        "Water (liters)":1.24,
+        "Growth (cm)":55.2
+    },
+    {
+        "Sunlight (hours)":3.54,
+        "Water (liters)":3.0,
+        "Growth (cm)":23.43
+    },
+    {
+        "Sunlight (hours)":2.06,
+        "Water (liters)":3.08,
+        "Growth (cm)":0.0
+    },
+    {
+        "Sunlight (hours)":7.27,
+        "Water (liters)":7.05,
+        "Growth (cm)":80.4
+    },
+    {
+        "Sunlight (hours)":6.66,
+        "Water (liters)":1.18,
+        "Growth (cm)":22.94
+    },
+    {
+        "Sunlight (hours)":8.9,
+        "Water (liters)":1.94,
+        "Growth (cm)":33.84
+    },
+    {
+        "Sunlight (hours)":7.62,
+        "Water (liters)":8.2,
+        "Growth (cm)":72.9
+    },
+    {
+        "Sunlight (hours)":8.23,
+        "Water (liters)":2.61,
+        "Growth (cm)":73.37
+    },
+    {
+        "Sunlight (hours)":3.54,
+        "Water (liters)":6.87,
+        "Growth (cm)":52.16
+    },
+    {
+        "Sunlight (hours)":2.6,
+        "Water (liters)":3.14,
+        "Growth (cm)":28.05
+    },
+    {
+        "Sunlight (hours)":7.76,
+        "Water (liters)":1.89,
+        "Growth (cm)":50.41
+    },
+    {
+        "Sunlight (hours)":8.26,
+        "Water (liters)":3.19,
+        "Growth (cm)":59.41
+    },
+    {
+        "Sunlight (hours)":9.91,
+        "Water (liters)":7.5,
+        "Growth (cm)":79.66
+    },
+    {
+        "Sunlight (hours)":4.71,
+        "Water (liters)":8.7,
+        "Growth (cm)":52.48
+    },
+    {
+        "Sunlight (hours)":4.35,
+        "Water (liters)":8.47,
+        "Growth (cm)":48.2
+    },
+    {
+        "Sunlight (hours)":7.99,
+        "Water (liters)":4.57,
+        "Growth (cm)":53.04
+    },
+    {
+        "Sunlight (hours)":4.07,
+        "Water (liters)":7.01,
+        "Growth (cm)":33.83
+    },
+    {
+        "Sunlight (hours)":9.38,
+        "Water (liters)":2.84,
+        "Growth (cm)":52.61
+    },
+    {
+        "Sunlight (hours)":8.73,
+        "Water (liters)":3.64,
+        "Growth (cm)":37.61
+    },
+    {
+        "Sunlight (hours)":4.86,
+        "Water (liters)":9.07,
+        "Growth (cm)":50.52
+    },
+    {
+        "Sunlight (hours)":7.76,
+        "Water (liters)":1.12,
+        "Growth (cm)":32.25
+    },
+    {
+        "Sunlight (hours)":7.79,
+        "Water (liters)":1.77,
+        "Growth (cm)":33.23
+    },
+    {
+        "Sunlight (hours)":1.93,
+        "Water (liters)":2.87,
+        "Growth (cm)":20.05
+    },
+    {
+        "Sunlight (hours)":9.12,
+        "Water (liters)":1.24,
+        "Growth (cm)":63.25
+    },
+    {
+        "Sunlight (hours)":5.55,
+        "Water (liters)":2.63,
+        "Growth (cm)":44.82
+    },
+    {
+        "Sunlight (hours)":8.44,
+        "Water (liters)":6.25,
+        "Growth (cm)":45.23
+    },
+    {
+        "Sunlight (hours)":3.88,
+        "Water (liters)":4.79,
+        "Growth (cm)":23.88
+    },
+    {
+        "Sunlight (hours)":9.06,
+        "Water (liters)":9.03,
+        "Growth (cm)":81.81
+    },
+    {
+        "Sunlight (hours)":4.5,
+        "Water (liters)":8.36,
+        "Growth (cm)":37.76
+    },
+    {
+        "Sunlight (hours)":1.1,
+        "Water (liters)":4.08,
+        "Growth (cm)":15.47
+    },
+    {
+        "Sunlight (hours)":9.15,
+        "Water (liters)":3.33,
+        "Growth (cm)":61.25
+    },
+    {
+        "Sunlight (hours)":1.82,
+        "Water (liters)":4.42,
+        "Growth (cm)":12.68
+    },
+    {
+        "Sunlight (hours)":3.87,
+        "Water (liters)":6.31,
+        "Growth (cm)":39.36
+    },
+    {
+        "Sunlight (hours)":9.55,
+        "Water (liters)":3.41,
+        "Growth (cm)":44.65
+    },
+    {
+        "Sunlight (hours)":9.56,
+        "Water (liters)":6.62,
+        "Growth (cm)":61.62
+    },
+    {
+        "Sunlight (hours)":6.16,
+        "Water (liters)":4.68,
+        "Growth (cm)":48.06
+    },
+    {
+        "Sunlight (hours)":6.69,
+        "Water (liters)":5.97,
+        "Growth (cm)":35.41
+    },
+    {
+        "Sunlight (hours)":5.04,
+        "Water (liters)":4.93,
+        "Growth (cm)":44.36
+    },
+    {
+        "Sunlight (hours)":3.64,
+        "Water (liters)":3.65,
+        "Growth (cm)":28.95
+    },
+    {
+        "Sunlight (hours)":3.96,
+        "Water (liters)":9.54,
+        "Growth (cm)":53.92
+    },
+    {
+        "Sunlight (hours)":7.05,
+        "Water (liters)":7.87,
+        "Growth (cm)":61.12
+    },
+    {
+        "Sunlight (hours)":7.77,
+        "Water (liters)":2.26,
+        "Growth (cm)":59.28
+    },
+    {
+        "Sunlight (hours)":8.12,
+        "Water (liters)":8.82,
+        "Growth (cm)":68.32
+    },
+    {
+        "Sunlight (hours)":8.11,
+        "Water (liters)":5.39,
+        "Growth (cm)":52.4
+    },
+    {
+        "Sunlight (hours)":1.82,
+        "Water (liters)":9.05,
+        "Growth (cm)":37.48
+    },
+    {
+        "Sunlight (hours)":5.45,
+        "Water (liters)":8.2,
+        "Growth (cm)":57.28
+    },
+    {
+        "Sunlight (hours)":1.52,
+        "Water (liters)":4.83,
+        "Growth (cm)":22.56
+    },
+    {
+        "Sunlight (hours)":5.95,
+        "Water (liters)":1.2,
+        "Growth (cm)":33.74
+    },
+    {
+        "Sunlight (hours)":4.97,
+        "Water (liters)":3.42,
+        "Growth (cm)":28.1
+    },
+    {
+        "Sunlight (hours)":8.99,
+        "Water (liters)":5.87,
+        "Growth (cm)":55.94
+    },
+    {
+        "Sunlight (hours)":4.16,
+        "Water (liters)":6.7,
+        "Growth (cm)":26.87
+    },
+    {
+        "Sunlight (hours)":2.05,
+        "Water (liters)":3.32,
+        "Growth (cm)":37.73
+    },
+    {
+        "Sunlight (hours)":2.29,
+        "Water (liters)":2.25,
+        "Growth (cm)":5.76
+    },
+    {
+        "Sunlight (hours)":7.85,
+        "Water (liters)":8.51,
+        "Growth (cm)":57.88
+    },
+    {
+        "Sunlight (hours)":6.56,
+        "Water (liters)":9.86,
+        "Growth (cm)":55.21
+    },
+    {
+        "Sunlight (hours)":1.91,
+        "Water (liters)":5.73,
+        "Growth (cm)":35.69
+    },
+    {
+        "Sunlight (hours)":1.76,
+        "Water (liters)":2.55,
+        "Growth (cm)":13.47
+    },
+    {
+        "Sunlight (hours)":7.31,
+        "Water (liters)":3.45,
+        "Growth (cm)":59.37
+    },
+    {
+        "Sunlight (hours)":1.65,
+        "Water (liters)":1.17,
+        "Growth (cm)":5.04
+    },
+    {
+        "Sunlight (hours)":8.4,
+        "Water (liters)":9.23,
+        "Growth (cm)":72.46
+    },
+    {
+        "Sunlight (hours)":7.36,
+        "Water (liters)":2.06,
+        "Growth (cm)":34.61
+    },
+    {
+        "Sunlight (hours)":1.73,
+        "Water (liters)":6.19,
+        "Growth (cm)":48.68
+    },
+    {
+        "Sunlight (hours)":1.76,
+        "Water (liters)":3.47,
+        "Growth (cm)":7.34
+    },
+    {
+        "Sunlight (hours)":9.88,
+        "Water (liters)":5.99,
+        "Growth (cm)":70.46
+    },
+    {
+        "Sunlight (hours)":4.37,
+        "Water (liters)":6.86,
+        "Growth (cm)":48.77
+    },
+    {
+        "Sunlight (hours)":4.34,
+        "Water (liters)":8.47,
+        "Growth (cm)":51.22
+    },
+    {
+        "Sunlight (hours)":8.32,
+        "Water (liters)":2.86,
+        "Growth (cm)":48.3
+    },
+    {
+        "Sunlight (hours)":9.53,
+        "Water (liters)":1.1,
+        "Growth (cm)":49.62
+    },
+    {
+        "Sunlight (hours)":9.87,
+        "Water (liters)":2.23,
+        "Growth (cm)":56.5
+    },
+    {
+        "Sunlight (hours)":7.78,
+        "Water (liters)":9.1,
+        "Growth (cm)":64.73
+    },
+    {
+        "Sunlight (hours)":4.39,
+        "Water (liters)":8.87,
+        "Growth (cm)":58.17
+    },
+    {
+        "Sunlight (hours)":1.75,
+        "Water (liters)":6.38,
+        "Growth (cm)":49.99
+    },
+    {
+        "Sunlight (hours)":7.99,
+        "Water (liters)":6.4,
+        "Growth (cm)":53.61
+    },
+    {
+        "Sunlight (hours)":6.03,
+        "Water (liters)":6.99,
+        "Growth (cm)":37.39
+    },
+    {
+        "Sunlight (hours)":4.82,
+        "Water (liters)":2.58,
+        "Growth (cm)":30.94
+    },
+    {
+        "Sunlight (hours)":9.16,
+        "Water (liters)":9.23,
+        "Growth (cm)":99.27
+    },
+    {
+        "Sunlight (hours)":2.0,
+        "Water (liters)":4.77,
+        "Growth (cm)":16.27
+    },
+    {
+        "Sunlight (hours)":5.43,
+        "Water (liters)":4.45,
+        "Growth (cm)":56.9
+    },
+    {
+        "Sunlight (hours)":1.1,
+        "Water (liters)":5.67,
+        "Growth (cm)":39.3
+    },
+    {
+        "Sunlight (hours)":5.22,
+        "Water (liters)":1.42,
+        "Growth (cm)":24.82
+    },
+    {
+        "Sunlight (hours)":1.51,
+        "Water (liters)":2.5,
+        "Growth (cm)":20.71
+    },
+    {
+        "Sunlight (hours)":2.07,
+        "Water (liters)":7.64,
+        "Growth (cm)":49.56
+    },
+    {
+        "Sunlight (hours)":2.06,
+        "Water (liters)":1.75,
+        "Growth (cm)":11.73
+    },
+    {
+        "Sunlight (hours)":6.84,
+        "Water (liters)":6.43,
+        "Growth (cm)":51.46
+    },
+    {
+        "Sunlight (hours)":7.71,
+        "Water (liters)":3.21,
+        "Growth (cm)":42.38
+    },
+    {
+        "Sunlight (hours)":6.25,
+        "Water (liters)":4.5,
+        "Growth (cm)":34.62
+    },
+    {
+        "Sunlight (hours)":9.66,
+        "Water (liters)":3.6,
+        "Growth (cm)":52.6
+    },
+    {
+        "Sunlight (hours)":4.37,
+        "Water (liters)":4.2,
+        "Growth (cm)":22.23
+    },
+    {
+        "Sunlight (hours)":3.57,
+        "Water (liters)":7.47,
+        "Growth (cm)":40.61
+    },
+    {
+        "Sunlight (hours)":8.82,
+        "Water (liters)":3.67,
+        "Growth (cm)":47.41
+    },
+    {
+        "Sunlight (hours)":3.01,
+        "Water (liters)":6.1,
+        "Growth (cm)":35.69
+    },
+    {
+        "Sunlight (hours)":9.67,
+        "Water (liters)":5.28,
+        "Growth (cm)":48.64
+    },
+    {
+        "Sunlight (hours)":1.11,
+        "Water (liters)":6.97,
+        "Growth (cm)":29.77
+    },
+    {
+        "Sunlight (hours)":9.73,
+        "Water (liters)":9.43,
+        "Growth (cm)":85.27
+    },
+    {
+        "Sunlight (hours)":1.39,
+        "Water (liters)":7.59,
+        "Growth (cm)":9.78
+    },
+    {
+        "Sunlight (hours)":9.02,
+        "Water (liters)":2.93,
+        "Growth (cm)":57.65
+    },
+    {
+        "Sunlight (hours)":5.75,
+        "Water (liters)":1.28,
+        "Growth (cm)":44.87
+    },
+    {
+        "Sunlight (hours)":9.94,
+        "Water (liters)":3.36,
+        "Growth (cm)":47.67
+    },
+    {
+        "Sunlight (hours)":1.66,
+        "Water (liters)":6.36,
+        "Growth (cm)":44.11
+    },
+    {
+        "Sunlight (hours)":5.98,
+        "Water (liters)":1.46,
+        "Growth (cm)":38.5
+    },
+    {
+        "Sunlight (hours)":9.72,
+        "Water (liters)":5.47,
+        "Growth (cm)":57.97
+    },
+    {
+        "Sunlight (hours)":5.71,
+        "Water (liters)":6.37,
+        "Growth (cm)":47.1
+    },
+    {
+        "Sunlight (hours)":6.66,
+        "Water (liters)":4.01,
+        "Growth (cm)":50.93
+    },
+    {
+        "Sunlight (hours)":7.26,
+        "Water (liters)":7.94,
+        "Growth (cm)":60.88
+    },
+    {
+        "Sunlight (hours)":5.09,
+        "Water (liters)":1.96,
+        "Growth (cm)":36.72
+    },
+    {
+        "Sunlight (hours)":6.65,
+        "Water (liters)":1.68,
+        "Growth (cm)":29.06
+    },
+    {
+        "Sunlight (hours)":6.26,
+        "Water (liters)":7.55,
+        "Growth (cm)":55.65
+    },
+    {
+        "Sunlight (hours)":9.11,
+        "Water (liters)":5.46,
+        "Growth (cm)":47.79
+    },
+    {
+        "Sunlight (hours)":1.41,
+        "Water (liters)":7.2,
+        "Growth (cm)":27.52
+    },
+    {
+        "Sunlight (hours)":3.53,
+        "Water (liters)":4.91,
+        "Growth (cm)":23.34
+    },
+    {
+        "Sunlight (hours)":9.55,
+        "Water (liters)":3.22,
+        "Growth (cm)":50.07
+    },
+    {
+        "Sunlight (hours)":9.01,
+        "Water (liters)":8.37,
+        "Growth (cm)":82.54
+    },
+    {
+        "Sunlight (hours)":5.1,
+        "Water (liters)":8.19,
+        "Growth (cm)":61.0
+    },
+    {
+        "Sunlight (hours)":6.58,
+        "Water (liters)":7.25,
+        "Growth (cm)":60.75
+    },
+    {
+        "Sunlight (hours)":3.5,
+        "Water (liters)":3.45,
+        "Growth (cm)":16.91
+    },
+    {
+        "Sunlight (hours)":2.69,
+        "Water (liters)":6.31,
+        "Growth (cm)":29.24
+    },
+    {
+        "Sunlight (hours)":5.17,
+        "Water (liters)":4.25,
+        "Growth (cm)":50.74
+    },
+    {
+        "Sunlight (hours)":4.18,
+        "Water (liters)":1.82,
+        "Growth (cm)":27.79
+    },
+    {
+        "Sunlight (hours)":6.25,
+        "Water (liters)":9.26,
+        "Growth (cm)":82.23
+    },
+    {
+        "Sunlight (hours)":1.7,
+        "Water (liters)":2.23,
+        "Growth (cm)":19.13
+    },
+    {
+        "Sunlight (hours)":9.77,
+        "Water (liters)":9.55,
+        "Growth (cm)":79.42
+    },
+    {
+        "Sunlight (hours)":9.88,
+        "Water (liters)":5.01,
+        "Growth (cm)":61.33
+    }
+]
