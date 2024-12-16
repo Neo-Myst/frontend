@@ -1,6 +1,7 @@
-// Home.tsx
 import { Brain, Target } from "lucide-react";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import useUser from "../hooks/useUser";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -42,6 +43,7 @@ const DotGrid = () => {
         return (
           <div
             key={i}
+            role="gridcell"
             className={`w-5 h-5 rounded-full animate-bounce transition-colors duration-500 ${
               colorIndex === 0
                 ? "bg-cyan-400"
@@ -62,6 +64,17 @@ const DotGrid = () => {
 };
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
+  const { user } = useUser();
+
+  const handleStartLearning = () => {
+    if (user) {
+      navigate("/game"); // Redirect to MVP page if logged in
+    } else {
+      navigate("/login"); // Redirect to login page if not logged in
+    }
+  };
+
   return (
     <div
       className="min-h-screen bg-slate-900 text-white p-1 mt-24"
@@ -82,7 +95,10 @@ const Home: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex gap-4 justify-center mt-8">
-              <button className="bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-lg font-medium flex items-center gap-2 transition-colors">
+              <button
+                onClick={handleStartLearning}
+                className="bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-lg font-medium flex items-center gap-2 transition-colors"
+              >
                 Start Learning
                 <span className="text-lg">→</span>
               </button>
