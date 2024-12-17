@@ -5,10 +5,13 @@
     { "path": "./tsconfig.node.json" }
   ],
   "exclude": [
-    "**/*.test.tsx",
-    "**/*.spec.tsx",
     "**/*.test.ts",
+    "**/*.test.tsx",
     "**/*.spec.ts",
+    "**/*.spec.tsx",
     "node_modules"
-  ]
+  ],
+  "compilerOptions": {
+    "types": ["jest", "@testing-library/jest-dom"] // Correct types
+  }
 }
