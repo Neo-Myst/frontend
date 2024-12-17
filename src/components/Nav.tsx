@@ -1,4 +1,3 @@
-import "../css/Nav.css";
 import { useNavigate } from "react-router-dom";
 import useUser from "../hooks/useUser";
 import { useState } from "react";

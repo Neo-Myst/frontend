@@ -77,7 +77,7 @@ const Home: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen bg-slate-900 text-white p-1 mt-24"
+      className="min-h-screen bg-slate-900 text-white p-1 mt-24 pb-10"
       style={{ backgroundColor: "#001A27" }}
     >
       <div className="max-w-5xl mx-auto">

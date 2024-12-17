@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
@@ -8,7 +7,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Game from "./pages/Game";
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <Router>
       <Nav />
