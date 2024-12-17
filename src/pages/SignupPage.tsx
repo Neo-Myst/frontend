@@ -36,7 +36,7 @@ const SignupPage: React.FC = () => {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/user/signup", {
+      const response = await fetch("http://18.232.187.175:8000/user/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const SignupPage: React.FC = () => {
   };
 
   const handleGoogleSignup = () => {
-    window.location.href = "http://127.0.0.1:8000/user/google/login";
+    window.location.href = "http://18.232.187.175:8000/user/google/login";
   };
 
   return (
