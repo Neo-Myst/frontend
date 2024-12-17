@@ -36,7 +36,7 @@ const SignupForm: React.FC = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/user/signup", {
+      const response = await fetch("http://18.232.187.175:8000/user/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
