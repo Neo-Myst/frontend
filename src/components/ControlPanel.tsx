@@ -110,6 +110,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             max="90"
             step="10"
             value={trainSplit}
+            disabled 
             onChange={(e) =>
               onUpdate({ trainSplit: parseInt(e.target.value, 10) })
             }

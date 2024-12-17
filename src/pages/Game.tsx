@@ -80,7 +80,7 @@ const Game = () => {
       sunlight: 6,
       water: 4,
       growth: 0,
-      trainSplit: 20,
+      trainSplit: 80,
       xAxis: "sunlight",
       yAxis: "growth",
       plantTypeFilter: "all",
