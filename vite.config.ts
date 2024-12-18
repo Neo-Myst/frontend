@@ -17,8 +17,5 @@ export default defineConfig({
   build: {
     outDir: "dist", // Specify the output directory for production build
     sourcemap: true, // Generate source maps for debugging
-    rollupOptions: {
-      external: [/.*\.test\.tsx?$/], // Exclude test files
-    },
   },
 });

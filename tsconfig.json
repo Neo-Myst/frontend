@@ -3,15 +3,5 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ],
-  "exclude": [
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.spec.ts",
-    "**/*.spec.tsx",
-    "node_modules"
-  ],
-  "compilerOptions": {
-    "types": ["jest", "@testing-library/jest-dom"] // Correct types
-  }
+  ]
 }
