@@ -10,6 +10,8 @@ export default {
       colors: {
         customBlue: "#001A27",
         buttonBlue: "#339DD2",
+        darkBlue: "#0D1B2A", // Ensure this color exists
+        neonBlue: "#007BFF",
       },
     },
   },

@@ -2,6 +2,8 @@ import { Brain, Target } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useUser from "../hooks/useUser";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -69,13 +71,15 @@ const Home: React.FC = () => {
 
   const handleStartLearning = () => {
     if (user) {
-      navigate("/game"); // Redirect to MVP page if logged in
+      navigate("/pages/Module1A"); // Redirect to MVP page if logged in
     } else {
       navigate("/login"); // Redirect to login page if not logged in
     }
   };
 
   return (
+    <>
+    <Nav/>
     <div
       className="min-h-screen bg-slate-900 text-white p-1 mt-24 pb-10"
       style={{ backgroundColor: "#001A27" }}
@@ -131,6 +135,8 @@ const Home: React.FC = () => {
         </main>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
