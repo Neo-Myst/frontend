@@ -34,7 +34,7 @@ const RightPanel: React.FC = () => {
   const handleCheckAnswer = () => {
     if (!quiz || !selectedAnswer) return;
     // For validation, pass the quiz id and the answer (using uppercase letters for consistency)
-    fetch(`http://0.0.0.0:8000/quiz/validate/${quiz.id}?user_answer=${selectedAnswer}`, {
+    fetch(`http://localhost:8000/quiz/validate/${quiz.id}?user_answer=${selectedAnswer}`, {
       method: "POST",
     })
       .then((res) => res.json())
