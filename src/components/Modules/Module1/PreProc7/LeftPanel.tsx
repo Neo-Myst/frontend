@@ -22,8 +22,7 @@ const LeftPanel: React.FC = () => {
         {/* Section Subtitle & Archive Label */}
         <div className="flex justify-between items-center text-lg text-gray-400 italic">
           <span>
-            | Splitting the Timeline:{" "}
-            <span className="underline">Data Splitting</span>
+            | Splitting the Timeline: <span>Data Splitting</span>
           </span>
           <span className="text-blue-400 underline italic">Archive 1.7</span>
         </div>

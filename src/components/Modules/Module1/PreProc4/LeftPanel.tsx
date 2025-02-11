@@ -22,8 +22,7 @@ const LeftPanel: React.FC = () => {
         {/* Section Subtitle & Archive Label */}
         <div className="flex justify-between items-center text-lg text-gray-400 italic">
           <span>
-            | Filtering the Noise:{" "}
-            <span className="underline">Outlier Detection</span>
+            | Filtering the Noise: <span>Outlier Detection</span>
           </span>
           <span className="text-blue-400 underline italic">Archive 1.4</span>
         </div>

@@ -22,8 +22,7 @@ const LeftPanel: React.FC = () => {
         {/* Section Subtitle & Archive Label */}
         <div className="flex justify-between items-center text-lg text-gray-400 italic">
           <span>
-            | Scaling the Matrix:{" "}
-            <span className="underline">Feature Scaling</span>
+            | Scaling the Matrix: <span>Feature Scaling</span>
           </span>
           <span className="text-blue-400 underline italic">Archive 1.5</span>
         </div>

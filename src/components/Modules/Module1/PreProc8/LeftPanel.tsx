@@ -22,8 +22,7 @@ const LeftPanel: React.FC = () => {
         {/* Section Subtitle & Archive Label */}
         <div className="flex justify-between items-center text-lg text-gray-400 italic">
           <span>
-            | The Final Clue:{" "}
-            <span className="underline">Dimensionality Reduction</span>
+            | The Final Clue: <span>Dimensionality Reduction</span>
           </span>
           <span className="text-blue-400 underline italic">Archive 1.8</span>
         </div>

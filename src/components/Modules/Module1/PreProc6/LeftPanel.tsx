@@ -22,8 +22,7 @@ const LeftPanel: React.FC = () => {
         {/* Section Subtitle & Archive Label */}
         <div className="flex justify-between items-center text-lg text-gray-400 italic">
           <span>
-            | Mergin Realities:{" "}
-            <span className="underline">Data Integration</span>
+            | Mergin Realities: <span>Data Integration</span>
           </span>
           <span className="text-blue-400 underline italic">Archive 1.6</span>
         </div>

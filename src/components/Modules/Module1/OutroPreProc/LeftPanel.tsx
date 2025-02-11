@@ -68,8 +68,8 @@ In the next chapter, Riley will use visualizations and statistical techniques to
           className="flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full relative transition duration-300 
           hover:bg-yellow-400 hover:scale-105 hover:shadow-lg"
         >
-          <span>Investigate Further</span>
-          <span className="text-xl">&raquo;&raquo;</span>
+          <span>Finish</span>
+          <span className="text-xl">&raquo;</span>
           <span className="absolute inset-0 blur-lg opacity-50 bg-yellow-500 rounded-full"></span>
         </button>
       </div>
