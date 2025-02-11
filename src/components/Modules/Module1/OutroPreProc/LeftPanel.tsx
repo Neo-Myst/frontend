@@ -8,24 +8,19 @@ const LeftPanel: React.FC = () => {
 
   const [text] = useTypewriter({
     words: [
-      `In the year 2045, the world is obsessed with NeoVerse, 
-a hyper-immersive virtual reality game where players can 
-live out their wildest dreams. NeoVerse isn’t just a game—
-it’s a second reality, a thriving digital universe with its 
-own economy, politics, and culture.
+      `Cliffhanger: The Plot Thickens
+      
+With the data preprocessed, Riley is ready to analyze it and uncover the truth. But as they dig deeper, a new clue emerges: a mysterious user account that appeared just before the shutdown. Who is this user? And what role do they play in the disappearance of NeoVerse?  
 
-But one day, disaster strikes. NeoVerse goes offline 
-without warning, leaving millions of players stranded 
-and confused. The developers are baffled, and rumors 
-of a cyberattack begin to spread.
+To Be Continued...  
 
-Enter Riley Carter, a brilliant young data scientist 
-and amateur hacker. Riley is recruited by the creators 
-of NeoVerse to investigate the shutdown. The only clues 
-are fragmented server logs, corrupted user data, and 
-cryptic error messages. To solve the mystery, Riley must 
-dive deep into the data, clean it, organize it, and uncover 
-the truth behind the disappearance of NeoVerse.`,
+
+Next Module: Exploratory Data Analysis (EDA)  
+In the next chapter, Riley will use visualizations and statistical techniques to uncover patterns in the data. The mystery deepens as the detective gets closer to the truth...  
+
+
+This detailed, story-based approach not only teaches every concept of data preprocessing but also sets the stage for future modules, creating a cohesive and engaging learning experience for the 18-24 age group. The futuristic setting and relatable protagonist make the story both exciting and relevant.
+`,
     ],
     loop: 1, // Type only once
     typeSpeed: 20,
@@ -71,7 +66,7 @@ the truth behind the disappearance of NeoVerse.`,
 
         {/* Investigate Further Button - Right Aligned */}
         <button
-          onClick={() => navigate("/pages/PreProc1")}
+          onClick={() => navigate("/next-page")}
           className="flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full relative transition duration-300 
           hover:bg-yellow-400 hover:scale-105 hover:shadow-lg"
         >
