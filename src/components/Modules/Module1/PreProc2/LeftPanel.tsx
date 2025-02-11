@@ -5,7 +5,7 @@ const LeftPanel: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen">
+    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen font-oxanium">
       {/* Main content wrapper */}
       <div className="flex-grow space-y-8">
         {/* NeoMyst Logo with Blue Glow */}
@@ -31,9 +31,9 @@ const LeftPanel: React.FC = () => {
         {/* Main Heading */}
         <h2 className="text-xl md:text-2xl font-bold text-white leading-relaxed">
           Riley notices that many server logs have
-          <span className="text-yellow-400">missing timestamps</span>, and some
-          <span className="text-yellow-400">user profiles are incomplete</span>.
-          Without this data, it's impossible to reconstruct the events leading
+          <span className="text-yellow-400"> missing timestamps</span>, and some
+          <span className="text-yellow-400"> user profiles are incomplete</span>
+          . Without this data, it's impossible to reconstruct the events leading
           up to the shutdown.
         </h2>
 

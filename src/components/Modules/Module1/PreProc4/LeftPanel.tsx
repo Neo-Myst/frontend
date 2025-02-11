@@ -5,7 +5,7 @@ const LeftPanel: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen">
+    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen font-oxanium">
       {/* Main content wrapper */}
       <div className="flex-grow space-y-8">
         {/* NeoMyst Logo with Blue Glow */}
@@ -31,12 +31,12 @@ const LeftPanel: React.FC = () => {
         {/* Main Heading */}
         <h2 className="text-xl md:text-2xl font-bold text-white leading-relaxed">
           Riley notices that some transaction records are
-          <span className="text-yellow-400">way off</span>—like a player
+          <span className="text-yellow-400"> way off</span> — like a player
           suddenly spending
-          <span className="text-yellow-400">$1 million in NeoVerse coins</span>.
-          These <span className="text-yellow-400">outliers</span> could skew the
-          analysis and lead to
-          <span className="text-yellow-400">false conclusions</span>.
+          <span className="text-yellow-400"> $1 million in NeoVerse coins</span>
+          . These <span className="text-yellow-400"> outliers</span> could skew
+          the analysis and lead to
+          <span className="text-yellow-400"> false conclusions</span>.
         </h2>
 
         <hr className="border-gray-500 w-full" />

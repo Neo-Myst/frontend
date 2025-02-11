@@ -7,26 +7,27 @@ const LeftPanel: React.FC = () => {
   const [doneTyping, setDoneTyping] = useState(false);
 
   const [text] = useTypewriter({
+    // words: [
+    //   `In the year 2045, the world is obsessed with NeoVerse, a hyper-immersive virtual reality game where players can live out their wildest dreams. NeoVerse isn’t just a game - it’s a second reality, a thriving digital universe with its  own economy, politics, and culture.
+
+    //   But one day, disaster strikes. NeoVerse goes offline without warning, leaving millions of players stranded and confused. The developers are baffled, and rumors of a cyberattack begin to spread.
+
+    //   Enter Riley Carter, a brilliant young data scientist and amateur hacker. Riley is recruited by the creators  of NeoVerse to investigate the shutdown. The only clues are fragmented server logs, corrupted user data, and cryptic error messages. To solve the mystery, Riley must dive deep into the data, clean it, organize it, and uncover the truth behind the disappearance of NeoVerse.`,
+    // ],
     words: [
-      `In the year 2045, the world is obsessed with NeoVerse, 
-a hyper-immersive virtual reality game where players can 
-live out their wildest dreams. NeoVerse isn’t just a game—
-it’s a second reality, a thriving digital universe with its 
-own economy, politics, and culture.
+      `In the year 2045, the world is obsessed with NeoVerse, a hyper-immersive virtual reality game where players can live out their wildest dreams. NeoVerse isn't just a game - it's a second reality, a thriving digital universe with its own economy, politics, and culture.
 
-But one day, disaster strikes. NeoVerse goes offline 
-without warning, leaving millions of players stranded 
-and confused. The developers are baffled, and rumors 
-of a cyberattack begin to spread.
+But one day, disaster strikes. NeoVerse goes offline without warning, leaving millions of players stranded and confused. The developers are baffled, and rumors of a cyberattack begin to spread.
 
-Enter Riley Carter, a brilliant young data scientist 
-and amateur hacker. Riley is recruited by the creators 
-of NeoVerse to investigate the shutdown. The only clues 
-are fragmented server logs, corrupted user data, and 
-cryptic error messages. To solve the mystery, Riley must 
-dive deep into the data, clean it, organize it, and uncover 
-the truth behind the disappearance of NeoVerse.`,
+Enter Riley Carter, a brilliant young data scientist and amateur hacker. Riley is recruited by the creators of NeoVerse to investigate the shutdown. The only clues are fragmented server logs, corrupted user data, and cryptic error messages. To solve the mystery, Riley must dive deep into the data, clean it, organize it, and uncover the truth behind the disappearance of NeoVerse.`,
     ],
+    // words: [
+    //   `In the year 2045, the world is obsessed with NeoVerse, a hyper-immersive virtual reality game where players can live out their wildest dreams. NeoVerse isn't just a game - it's a second reality, a thriving digital universe with its own economy, politics, and culture.
+
+    //   But one day, disaster strikes. NeoVerse goes offline without warning, leaving millions of players stranded and confused. The developers are baffled, and rumors of a cyberattack begin to spread.
+
+    //   Enter Riley Carter, a brilliant young data scientist and amateur hacker. Riley is recruited by the creators of NeoVerse to investigate the shutdown. The only clues are fragmented server logs, corrupted user data, and cryptic error messages. To solve the mystery, Riley must dive deep into the data, clean it, organize it, and uncover the truth behind the disappearance of NeoVerse.`,
+    // ],
     loop: 1, // Type only once
     typeSpeed: 20,
     deleteSpeed: 0,
@@ -35,7 +36,7 @@ the truth behind the disappearance of NeoVerse.`,
   });
 
   return (
-    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen">
+    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen font-oxanium">
       {/* Main content wrapper */}
       <div className="flex-grow space-y-8">
         <button
@@ -54,13 +55,13 @@ the truth behind the disappearance of NeoVerse.`,
         </h2>
 
         {/* Typewriter Text */}
-        <p className="whitespace-pre-wrap text-lg md:text-2xl leading-relaxed">
+        <p className="whitespace-pre-wrap text-lg md:text-2xl leading-relaxed text-justify w-full">
           {text} {!doneTyping && <span className="animate-blink">|</span>}
         </p>
       </div>
 
       {/* Buttons Section - Fixed at bottom with margin */}
-      <div className="flex items-center justify-between mt-auto mb-0">
+      <div className="flex items-center justify-between mt-auto mb-0 font-oxanium font-medium">
         {/* Go Back Button - Left Aligned */}
         <button
           onClick={() => navigate("/")}

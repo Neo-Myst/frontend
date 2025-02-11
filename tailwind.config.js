@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        orbitron: ["Orbitron", "sans-serif"],
+        oxanium: ["Oxanium", "sans-serif"],
+      },
       colors: {
         customBlue: "#001A27",
         buttonBlue: "#339DD2",

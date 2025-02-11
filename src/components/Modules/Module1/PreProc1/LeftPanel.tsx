@@ -94,7 +94,7 @@ const LeftPanel: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen">
+    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen font-oxanium">
       {/* Main content wrapper */}
       <div className="flex-grow space-y-8">
         {/* NeoMyst Logo with Blue Glow */}

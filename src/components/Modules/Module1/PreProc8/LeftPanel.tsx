@@ -5,7 +5,7 @@ const LeftPanel: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen">
+    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen font-oxanium">
       {/* Main content wrapper */}
       <div className="flex-grow space-y-8">
         {/* NeoMyst Logo with Blue Glow */}
@@ -31,13 +31,13 @@ const LeftPanel: React.FC = () => {
         {/* Main Heading */}
         <h2 className="text-xl md:text-2xl font-bold text-white leading-relaxed">
           As Riley digs deeper, they notice that the dataset has
-          <span className="text-yellow-400">too many features</span>—some of
+          <span className="text-yellow-400"> too many features</span> — some of
           which are
-          <span className="text-yellow-400">redundant</span> or
-          <span className="text-yellow-400">irrelevant</span>. For example, user
-          profiles include both
-          <span className="text-yellow-400">“age”</span> and
-          <span className="text-yellow-400">“birth year”</span>, which convey
+          <span className="text-yellow-400"> redundant</span> or
+          <span className="text-yellow-400"> irrelevant</span>. For example,
+          user profiles include both
+          <span className="text-yellow-400"> “age”</span> and
+          <span className="text-yellow-400"> “birth year”</span>, which convey
           the same information.
         </h2>
 

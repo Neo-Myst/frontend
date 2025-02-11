@@ -5,7 +5,7 @@ const LeftPanel: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen">
+    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen font-oxanium">
       {/* Main content wrapper */}
       <div className="flex-grow space-y-8">
         {/* NeoMyst Logo with Blue Glow */}
@@ -31,11 +31,11 @@ const LeftPanel: React.FC = () => {
         {/* Main Heading */}
         <h2 className="text-xl md:text-2xl font-bold text-white leading-relaxed">
           Riley discovers that the user profiles contain
-          <span className="text-yellow-400">categorical data</span> like
-          <span className="text-yellow-400">“player level”</span> (e.g.,
+          <span className="text-yellow-400"> categorical data</span> like
+          <span className="text-yellow-400"> “player level”</span> (e.g.,
           Beginner, Intermediate, Advanced) and{" "}
-          <span className="text-yellow-400">“region”</span> (e.g., North
-          America, Europe, Asia). To analyze this data, Riley needs to
+          <span className="text-yellow-400"> “region”</span> (e.g., North
+          America, Europe, Asia). To analyze this data, Riley needs to {""}
           <span className="text-yellow-400">
             convert it into a numerical format
           </span>

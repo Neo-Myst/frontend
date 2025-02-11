@@ -9,18 +9,13 @@ const LeftPanel: React.FC = () => {
   const [text] = useTypewriter({
     words: [
       `Cliffhanger: The Plot Thickens
-      
+
 With the data preprocessed, Riley is ready to analyze it and uncover the truth. But as they dig deeper, a new clue emerges: a mysterious user account that appeared just before the shutdown. Who is this user? And what role do they play in the disappearance of NeoVerse?  
 
 To Be Continued...  
 
-
 Next Module: Exploratory Data Analysis (EDA)  
-In the next chapter, Riley will use visualizations and statistical techniques to uncover patterns in the data. The mystery deepens as the detective gets closer to the truth...  
-
-
-This detailed, story-based approach not only teaches every concept of data preprocessing but also sets the stage for future modules, creating a cohesive and engaging learning experience for the 18-24 age group. The futuristic setting and relatable protagonist make the story both exciting and relevant.
-`,
+In the next chapter, Riley will use visualizations and statistical techniques to uncover patterns in the data. The mystery deepens as the detective gets closer to the truth...  `,
     ],
     loop: 1, // Type only once
     typeSpeed: 20,
@@ -30,7 +25,7 @@ This detailed, story-based approach not only teaches every concept of data prepr
   });
 
   return (
-    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen">
+    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen font-oxanium">
       {/* Main content wrapper */}
       <div className="flex-grow space-y-8">
         <button
@@ -49,13 +44,13 @@ This detailed, story-based approach not only teaches every concept of data prepr
         </h2>
 
         {/* Typewriter Text */}
-        <p className="whitespace-pre-wrap text-lg md:text-2xl leading-relaxed">
+        <p className="whitespace-pre-wrap text-lg md:text-2xl leading-relaxed text-justify w-full">
           {text} {!doneTyping && <span className="animate-blink">|</span>}
         </p>
       </div>
 
       {/* Buttons Section - Fixed at bottom with margin */}
-      <div className="flex items-center justify-between mt-auto mb-0">
+      <div className="flex items-center justify-between mt-auto mb-0 font-oxanium font-medium">
         {/* Go Back Button - Left Aligned */}
         <button
           onClick={() => navigate("/pages/PreProc8")}
