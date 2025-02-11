@@ -327,7 +327,7 @@ const RightPanel: React.FC = () => {
   };
 
   return (
-    <div className="w-full md:w-1/2 p-10 bg-[#0d0f16] text-white min-h-screen flex flex-col justify-between relative">
+    <div className="w-full md:w-1/2 p-10 bg-[#0d0f16] text-white min-h-screen flex flex-col justify-between relative font-oxanium">
       {/* Locked Overlay */}
       {!isUnlocked && (
         <div className="absolute inset-0 backdrop-blur-md bg-black/50 flex flex-col items-center justify-center z-10">
@@ -414,9 +414,9 @@ const RightPanel: React.FC = () => {
       </div>
 
       {/* Footer */}
-      <p className="text-gray-400 text-sm border-t border-gray-500 pt-4 mt-6">
+      <p className="text-gray-400 text-sm border-t border-gray-500 pt-4 mt-6 text-end">
         Data Preprocessing - Riley's Digital Toolkit |{" "}
-        <span className="text-white font-bold">Introduction</span>
+        <span className="text-white font-bold">INTRODUCTION</span>
       </p>
     </div>
   );
