@@ -64,7 +64,7 @@ In the next chapter, Riley will use visualizations and statistical techniques to
 
         {/* Investigate Further Button - Right Aligned */}
         <button
-          onClick={() => navigate("/next-page")}
+          onClick={() => navigate("/")}
           className="flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full relative transition duration-300 
           hover:bg-yellow-400 hover:scale-105 hover:shadow-lg"
         >
