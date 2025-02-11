@@ -35,29 +35,32 @@ the truth behind the disappearance of NeoVerse.`,
   });
 
   return (
-    <div className="w-full md:w-1/2 p-10 space-y-8 bg-black text-white relative">
-      <button
-        onClick={() => navigate("/")}
-        className="text-3xl font-bold text-blue-400 relative hover:text-blue-300 transition duration-300"
-      >
-        NeoMyst
-        <span className="absolute inset-0 blur-lg opacity-75 text-blue-500">
+    <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen">
+      {/* Main content wrapper */}
+      <div className="flex-grow space-y-8">
+        <button
+          onClick={() => navigate("/")}
+          className="text-3xl font-bold text-blue-400 relative hover:text-blue-300 transition duration-300"
+        >
           NeoMyst
-        </span>
-      </button>
+          <span className="absolute inset-0 blur-lg opacity-75 text-blue-500">
+            NeoMyst
+          </span>
+        </button>
 
-      {/* Incoming Transmission Title */}
-      <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-wide border-b border-gray-500 pb-2">
-        Incoming Transmission
-      </h2>
+        {/* Incoming Transmission Title */}
+        <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-wide border-b border-gray-500 pb-2">
+          Incoming Transmission
+        </h2>
 
-      {/* Typewriter Text */}
-      <p className="whitespace-pre-wrap text-lg md:text-2xl leading-relaxed">
-        {text} {!doneTyping && <span className="animate-blink">|</span>}
-      </p>
+        {/* Typewriter Text */}
+        <p className="whitespace-pre-wrap text-lg md:text-2xl leading-relaxed">
+          {text} {!doneTyping && <span className="animate-blink">|</span>}
+        </p>
+      </div>
 
-      {/* Buttons Section (Aligned Left & Right) */}
-      <div className="flex items-center justify-between pt-6">
+      {/* Buttons Section - Fixed at bottom with margin */}
+      <div className="flex items-center justify-between mt-auto mb-0">
         {/* Go Back Button - Left Aligned */}
         <button
           onClick={() => navigate("/")}
@@ -76,7 +79,7 @@ the truth behind the disappearance of NeoVerse.`,
           hover:bg-yellow-400 hover:scale-105 hover:shadow-lg"
         >
           <span>Investigate Further</span>
-          <span className="text-xl">&raquo;&raquo;</span>
+          <span className="text-xl">&raquo;</span>
           <span className="absolute inset-0 blur-lg opacity-50 bg-yellow-500 rounded-full"></span>
         </button>
       </div>
