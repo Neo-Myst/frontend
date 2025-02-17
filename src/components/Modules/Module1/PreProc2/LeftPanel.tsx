@@ -46,7 +46,7 @@ const LeftPanel: React.FC = () => {
         <ul className="list-disc pl-6 text-lg md:text-xl text-gray-300 space-y-2">
           <li>Removing rows with missing values (if they're not critical). </li>
           <li>
-            mputing values (e.g., filling in missing timestamps with averages or
+            Imputing values (e.g., filling in missing timestamps with averages or
             predictions)
           </li>
         </ul>
