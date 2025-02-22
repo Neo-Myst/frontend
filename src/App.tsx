@@ -13,6 +13,12 @@ import PreProc6 from "./pages/Modules/Module1/PreProc6";
 import PreProc7 from "./pages/Modules/Module1/PreProc7";
 import PreProc8 from "./pages/Modules/Module1/PreProc8";
 import OutroPreProc from "./pages/Modules/Module1/OutroPreProc";
+import EdaIntro from "./pages/Modules/Module2/EdaIntro";
+import Eda1 from "./pages/Modules/Module2/Eda1";
+import Eda2 from "./pages/Modules/Module2/Eda2";
+import Eda3 from "./pages/Modules/Module2/Eda3";
+import EdaOuter from "./pages/Modules/Module2/EdaOuter";
+
 
 const App = () => {
   return (
@@ -32,6 +38,11 @@ const App = () => {
         <Route path="/pages/PreProc7" element={<PreProc7 />} />
         <Route path="/pages/PreProc8" element={<PreProc8 />} />
         <Route path="/pages/OutroPreProc" element={<OutroPreProc />} />
+        <Route path="/pages/EdaIntro" element={<EdaIntro />} />
+        <Route path="/pages/Eda1" element={<Eda1 />} />
+        <Route path="/pages/Eda2" element={<Eda2 />} />
+        <Route path="/pages/Eda3" element={<Eda3 />} />
+        <Route path="/pages/EdaOuter" element={<EdaOuter />} />
       </Routes>
     </Router>
   );
