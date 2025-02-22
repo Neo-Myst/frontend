@@ -21,9 +21,9 @@ const RightPanel: React.FC = () => {
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [isUnlocked, setIsUnlocked] = useState<boolean>(false);
 
-  // Fetch quiz data for chapter 1 on mount
+  // Fetch quiz data for chapter 2 on mount
   useEffect(() => {
-    fetch("http://localhost:8000/quiz/1")
+    fetch("http://localhost:8000/quiz/2")
       .then((res) => res.json())
       .then((data: Quiz[]) => {
         if (data && data.length > 0) {
