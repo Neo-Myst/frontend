@@ -67,25 +67,30 @@ const LeftPanel: React.FC = () => {
               Riley begins by creating boxplots for features such as Hours Played, Transaction Amounts, and Neural Link Stability.
               These boxplots reveal feature distributions and help identify outliers.
             </p>
-            <Plot
-  data={[
-    {
-      y: [10, 20, 15, 30, 40],
-      type: "box",
-      name: "Transaction Amounts",
-      marker: { color: "yellow" },
-      boxpoints: "all"
-    }
-  ]}
-  layout={{
-    title: "Box Plot Example",
-    paper_bgcolor: "black",
-    plot_bgcolor: "black",
-    font: { color: "white" },
-    showlegend: false
-  }}
-  config={{ displayModeBar: false }} // Correct way to hide the mode bar
-/>
+            <div className="w-full">
+              <Plot
+                data={[
+                  {
+                    y: [10, 20, 15, 30, 40],
+                    type: "box",
+                    name: "Transaction Amounts",
+                    marker: { color: "yellow" },
+                    boxpoints: "all"
+                  }
+                ]}
+                layout={{
+                  title: "Box Plot Example",
+                  paper_bgcolor: "black",
+                  plot_bgcolor: "black",
+                  font: { color: "white" },
+                  showlegend: false,
+                  autosize: true
+                }}
+                useResizeHandler={true}
+                style={{ width: "100%", height: "300px" }}
+                config={{ displayModeBar: false }}
+              />
+            </div>
           </div>
           <div>
             <h3 className="text-yellow-400 font-semibold text-2xl">Scatterplot</h3>
@@ -121,33 +126,26 @@ const LeftPanel: React.FC = () => {
           </div>
         </div>
         <div className="flex items-center justify-between mt-auto mb-0">
-        {/* Go Back Button */}
-        <button
-          onClick={() => navigate("/pages/EdaIntro")}
-          className="flex items-center space-x-2 px-6 py-3 bg-gray-900 text-gray-500 rounded-full relative transition duration-300 
-          hover:bg-gray-700 hover:scale-105 hover:shadow-lg"
-        >
-          <span className="text-xl">&laquo;</span>
-          <span>Go Back</span>
-          <span className="absolute inset-0 blur-lg opacity-50 bg-gray-500 rounded-full"></span>
-        </button>
-
-        {/* Investigate Further Button */}
-        <button
-          onClick={() => navigate("/pages/Eda2")}
-          className="flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full relative transition duration-300 
-          hover:bg-yellow-400 hover:scale-105 hover:shadow-lg"
-        >
-          <span>Investigate Further</span>
-          <span className="text-xl">&raquo;</span>
-          <span className="absolute inset-0 blur-lg opacity-50 bg-yellow-500 rounded-full"></span>
-        </button>
-      </div>
+          <button
+            onClick={() => navigate("/pages/EdaIntro")}
+            className="flex items-center space-x-2 px-6 py-3 bg-gray-900 text-gray-500 rounded-full relative transition duration-300 hover:bg-gray-700 hover:scale-105 hover:shadow-lg"
+          >
+            <span className="text-xl">&laquo;</span>
+            <span>Go Back</span>
+            <span className="absolute inset-0 blur-lg opacity-50 bg-gray-500 rounded-full"></span>
+          </button>
+          <button
+            onClick={() => navigate("/pages/Eda2")}
+            className="flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full relative transition duration-300 hover:bg-yellow-400 hover:scale-105 hover:shadow-lg"
+          >
+            <span>Investigate Further</span>
+            <span className="text-xl">&raquo;</span>
+            <span className="absolute inset-0 blur-lg opacity-50 bg-yellow-500 rounded-full"></span>
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
 export default LeftPanel;
-
-
