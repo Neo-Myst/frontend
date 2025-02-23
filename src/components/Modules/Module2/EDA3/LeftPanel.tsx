@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import PageNavigation from "../../../navigation/PageNavigation";
 
 const LeftPanel: React.FC = () => {
   const navigate = useNavigate();
@@ -55,26 +56,11 @@ const LeftPanel: React.FC = () => {
         </p>
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="mt-8 flex items-center justify-between p-4">
-        <button
-          onClick={() => navigate("/pages/Eda2")}
-          className="flex items-center space-x-2 px-6 py-3 bg-gray-900 text-gray-500 rounded-full relative transition duration-300 hover:bg-gray-700 hover:scale-105 hover:shadow-lg"
-        >
-          <span className="text-xl">&laquo;</span>
-          <span>Go Back</span>
-          <span className="absolute inset-0 blur-lg opacity-50 bg-gray-500 rounded-full"></span>
-        </button>
-
-        <button
-          onClick={() => navigate("/pages/EdaOuter")}
-          className="flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full relative transition duration-300 hover:bg-yellow-400 hover:scale-105 hover:shadow-lg"
-        >
-          <span>Investigate Further</span>
-          <span className="text-xl">&raquo;</span>
-          <span className="absolute inset-0 blur-lg opacity-50 bg-yellow-500 rounded-full"></span>
-        </button>
-      </div>
+      <PageNavigation 
+        goBackRoute="/pages/Eda2" 
+        investigateRoute="/pages/EdaOuter" 
+        checkInvestigate={true}
+      />
     </div>
   );
 };

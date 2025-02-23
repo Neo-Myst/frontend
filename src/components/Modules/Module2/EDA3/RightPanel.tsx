@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Lock, Unlock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface Quiz {
   id: number;
@@ -20,9 +21,12 @@ const RightPanel: React.FC = () => {
   const [feedback, setFeedback] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [isUnlocked, setIsUnlocked] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   // Fetch quiz data for chapter 2 on mount
   useEffect(() => {
+    // Optionally, you might want to reset quiz status for each page load:
+    localStorage.setItem("quizStatus", "locked");
     fetch("http://localhost:8000/quiz/2")
       .then((res) => res.json())
       .then((data: Quiz[]) => {
@@ -35,7 +39,6 @@ const RightPanel: React.FC = () => {
 
   const getHintForAnswer = (answer: string): string | null => {
     if (!quiz) return null;
-
     switch (answer) {
       case "A":
         return quiz.hint_a || null;
@@ -50,18 +53,14 @@ const RightPanel: React.FC = () => {
 
   const handleCheckAnswer = () => {
     if (!quiz || !selectedAnswer) return;
-
-    fetch(
-      `http://localhost:8000/quiz/validate/${quiz.id}?user_answer=${selectedAnswer}`,
-      {
-        method: "POST",
-      }
-    )
+    fetch(`http://localhost:8000/quiz/validate/${quiz.id}?user_answer=${selectedAnswer}`, {
+      method: "POST",
+    })
       .then((res) => res.json())
       .then((data) => {
         const isAnswerCorrect = data.result === "correct";
         setIsCorrect(isAnswerCorrect);
-
+        localStorage.setItem("quizStatus", isAnswerCorrect ? "correct" : "wrong");
         const hint = getHintForAnswer(selectedAnswer);
         if (isAnswerCorrect) {
           setFeedback(hint ? `✅ ${hint}` : "Correct!");
@@ -74,6 +73,19 @@ const RightPanel: React.FC = () => {
 
   const handleUnlock = () => {
     setIsUnlocked(true);
+    localStorage.setItem("quizStatus", "unlocked");
+  };
+
+  // Investigate Further button logic: Only navigate if quiz is unlocked and answered correctly.
+  const handleInvestigateFurther = () => {
+    const status = localStorage.getItem("quizStatus");
+    if (!status || status === "locked" || status === "unlocked") {
+      alert("Please unlock the quiz and select the correct answer before proceeding.");
+    } else if (status === "wrong") {
+      alert("Your answer is incorrect. Please select the correct answer before proceeding.");
+    } else if (status === "correct") {
+      navigate("/pages/EdaOuter"); // Adjust this route as needed.
+    }
   };
 
   return (
@@ -87,8 +99,7 @@ const RightPanel: React.FC = () => {
             </div>
             <h3 className="text-2xl font-bold mb-4">Quiz Locked</h3>
             <p className="text-gray-300 mb-6">
-              Click the button below to unlock this quiz and test your
-              knowledge!
+              Click the button below to unlock this quiz and test your knowledge!
             </p>
             <button
               onClick={handleUnlock}
@@ -106,9 +117,7 @@ const RightPanel: React.FC = () => {
         <h2 className="text-3xl font-bold mb-4">Quiz!</h2>
         {quiz ? (
           <>
-            <p className="text-lg md:text-xl mb-6 text-gray-300">
-              {quiz.question}
-            </p>
+            <p className="text-lg md:text-xl mb-6 text-gray-300">{quiz.question}</p>
             <div className="space-y-4">
               {[
                 { text: quiz.option_a, value: "A" },
@@ -136,9 +145,7 @@ const RightPanel: React.FC = () => {
               <div
                 className={`block w-full text-left p-4 rounded-lg border border-gray-500 text-lg md:text-xl mt-4 
                   ${
-                    isCorrect
-                      ? "bg-green-300 text-green-700"
-                      : "bg-red-300 text-red-700"
+                    isCorrect ? "bg-green-300 text-green-700" : "bg-red-300 text-red-700"
                   }`}
               >
                 {feedback}
@@ -149,11 +156,7 @@ const RightPanel: React.FC = () => {
               onClick={handleCheckAnswer}
               disabled={!isUnlocked}
               className={`block w-full mt-6 py-4 bg-blue-600 text-lg font-bold text-white rounded-lg transition duration-300
-                ${
-                  isUnlocked
-                    ? "hover:bg-blue-500"
-                    : "opacity-75 cursor-not-allowed"
-                }`}
+                ${isUnlocked ? "hover:bg-blue-500" : "opacity-75 cursor-not-allowed"}`}
             >
               Check your knowledge
             </button>
@@ -161,6 +164,18 @@ const RightPanel: React.FC = () => {
         ) : (
           <p>Loading quiz...</p>
         )}
+      </div>
+
+      {/* Investigate Further Button */}
+      <div className="mt-6">
+        <button
+          onClick={handleInvestigateFurther}
+          disabled={!isUnlocked}
+          className={`block w-full py-4 bg-yellow-500 text-lg font-bold text-black rounded-lg transition duration-300
+                ${isUnlocked ? "hover:bg-yellow-400" : "opacity-75 cursor-not-allowed"}`}
+        >
+          Investigate Further
+        </button>
       </div>
 
       {/* Footer */}
