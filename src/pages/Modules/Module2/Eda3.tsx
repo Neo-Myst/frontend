@@ -1,7 +1,7 @@
 import React from "react";
 import TwoPanelLayout from "../../../layouts/TwoPanelLayout";
 import LeftPanel from "../../../components/Modules/Module2/EDA3/LeftPanel";
-import RightPanel from "../../../components/Modules/Module2/EDA3/RightPanel";
+import RightPanel from "../../../components/Modules/Module2/common/RightPanelTemplate";
 
 const EDA3: React.FC = () => {
   return (
