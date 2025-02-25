@@ -49,7 +49,7 @@ const LeftPanel: React.FC = () => {
           className="text-3xl font-bold text-blue-400 relative hover:text-blue-300 transition duration-300"
         >
           NeoMyst
-          <span className="absolute inset-0 blur-lg opacity-75 text-blue-500">
+          <span aria-hidden="true" className="absolute inset-0 blur-lg opacity-75 text-blue-500">
             NeoMyst
           </span>
         </button>
@@ -71,8 +71,7 @@ const LeftPanel: React.FC = () => {
           <div>
             <h2 className="text-yellow-400 font-semibold text-2xl">Boxplot</h2>
             <p className="text-lg text-gray-300">
-              Riley begins by creating boxplots for features such as Hours Played, Transaction Amounts, and Neural Link Stability.
-              These boxplots reveal feature distributions and help identify outliers.
+              Riley creates a boxplot for Transaction Amounts to reveal distributions and identify outliers.
             </p>
             <div className="max-w-lg mx-auto">
               <Suspense fallback={<div className="text-center text-white">Loading Plot...</div>}>
