@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useCallback, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import { LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import Plot from "react-plotly.js";
 import PageNavigation from "../../../navigation/PageNavigation";
+
+// Dynamically import Plotly only where needed
+const Plot = React.lazy(() => import("react-plotly.js"));
 
 const LeftPanel: React.FC = () => {
   const navigate = useNavigate();
+
+  const goHome = useCallback(() => navigate("/"), [navigate]);
 
   const scatterPlotData = [
     { HoursPlayed: 5, MoneySpent: 10 },
@@ -41,11 +45,13 @@ const LeftPanel: React.FC = () => {
     <div className="w-full md:w-1/2 p-12 bg-black text-white relative flex flex-col min-h-screen font-oxanium overflow-y-auto max-h-screen">
       <div className="flex-grow space-y-8">
         <button
-          onClick={() => navigate("/")}
+          onClick={goHome}
           className="text-3xl font-bold text-blue-400 relative hover:text-blue-300 transition duration-300"
         >
           NeoMyst
-          <span className="absolute inset-0 blur-lg opacity-75 text-blue-500">NeoMyst</span>
+          <span className="absolute inset-0 blur-lg opacity-75 text-blue-500">
+            NeoMyst
+          </span>
         </button>
 
         <div className="flex justify-between items-center text-lg text-gray-400 italic">
@@ -55,8 +61,8 @@ const LeftPanel: React.FC = () => {
 
         <h2 className="text-xl md:text-2xl font-bold text-white leading-relaxed">
           After all the preprocessing, Riley's unified dataset is now ready for
-          exploration through visuals. With a clean slate, Riley sets out to let the data
-          tell its story through various plots that highlight different aspects of the information.
+          exploration through visuals. With a clean slate, Riley sets out to let the
+          data tell its story through various plots that highlight different aspects of the information.
         </h2>
 
         <hr className="border-gray-500 w-full" />
@@ -69,28 +75,30 @@ const LeftPanel: React.FC = () => {
               These boxplots reveal feature distributions and help identify outliers.
             </p>
             <div className="max-w-lg mx-auto">
-              <Plot
-                data={[
-                  {
-                    y: [10, 20, 15, 30, 40],
-                    type: "box",
-                    name: "Transaction Amounts",
-                    marker: { color: "yellow" },
-                    boxpoints: "all"
-                  }
-                ]}
-                layout={{
-                  title: "Box Plot Example",
-                  paper_bgcolor: "black",
-                  plot_bgcolor: "black",
-                  font: { color: "white" },
-                  showlegend: false,
-                  autosize: true
-                }}
-                useResizeHandler={true}
-                style={{ width: "100%", height: "300px" }}
-                config={{ displayModeBar: false }}
-              />
+              <Suspense fallback={<div className="text-center text-white">Loading Plot...</div>}>
+                <Plot
+                  data={[
+                    {
+                      y: [10, 20, 15, 30, 40],
+                      type: "box",
+                      name: "Transaction Amounts",
+                      marker: { color: "yellow" },
+                      boxpoints: "all",
+                    },
+                  ]}
+                  layout={{
+                    title: "Box Plot Example",
+                    paper_bgcolor: "black",
+                    plot_bgcolor: "black",
+                    font: { color: "white" },
+                    showlegend: false,
+                    autosize: true,
+                  }}
+                  useResizeHandler={true}
+                  style={{ width: "100%", height: "300px" }}
+                  config={{ displayModeBar: false }}
+                />
+              </Suspense>
             </div>
           </div>
           <div>
@@ -104,7 +112,7 @@ const LeftPanel: React.FC = () => {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis type="number" dataKey="HoursPlayed" name="HoursPlayed Value" stroke="white" />
                 <YAxis type="number" dataKey="MoneySpent" name="MoneySpent Value" stroke="white" />
-                <Tooltip cursor={{ strokeDasharray: '3 3' }} wrapperClassName="text-black" />
+                <Tooltip cursor={{ strokeDasharray: "3 3" }} wrapperClassName="text-black" />
                 <Scatter data={scatterPlotData} fill="yellow" />
               </ScatterChart>
             </ResponsiveContainer>
@@ -128,14 +136,13 @@ const LeftPanel: React.FC = () => {
         </div>
 
         <PageNavigation 
-        goBackRoute="/pages/EdaIntro" 
-        investigateRoute="/pages/Eda2" 
-        checkInvestigate={true}
-      />
-
+          goBackRoute="/pages/EdaIntro" 
+          investigateRoute="/pages/Eda2" 
+          checkInvestigate={true}
+        />
       </div>
     </div>
   );
 };
 
-export default LeftPanel;
+export default React.memo(LeftPanel);
