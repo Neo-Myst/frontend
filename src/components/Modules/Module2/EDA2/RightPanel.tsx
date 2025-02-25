@@ -164,18 +164,6 @@ const RightPanel: React.FC = () => {
         )}
       </div>
 
-      {/* Investigate Further Button in Right Panel */}
-      <div className="mt-6">
-        <button
-          onClick={handleInvestigateFurther}
-          disabled={!isUnlocked}
-          className={`block w-full py-4 bg-yellow-500 text-lg font-bold text-black rounded-lg transition duration-300
-                ${isUnlocked ? "hover:bg-yellow-400" : "opacity-75 cursor-not-allowed"}`}
-        >
-          Investigate Further
-        </button>
-      </div>
-
       {/* Footer */}
       <p className="text-gray-400 text-sm border-t border-gray-500 pt-4 mt-6 text-end">
         Data Preprocessing - Riley's Digital Toolkit |{" "}
