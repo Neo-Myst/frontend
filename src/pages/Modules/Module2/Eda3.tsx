@@ -1,12 +1,15 @@
 import React from "react";
 import TwoPanelLayout from "../../../layouts/TwoPanelLayout";
 import LeftPanel from "../../../components/Modules/Module2/EDA3/LeftPanel";
-import RightPanel from "../../../components/Modules/Module2/common/RightPanelTemplate";
+import RightPanelTemplate from "../../../components/Modules/Module2/common/RightPanelTemplate";
 
-const EDA3: React.FC = () => {
+const Eda3: React.FC = () => {
   return (
-    <TwoPanelLayout leftPanel={<LeftPanel />} rightPanel={<RightPanel />} />
+    <TwoPanelLayout 
+      leftPanel={<LeftPanel />} 
+      rightPanel={<RightPanelTemplate quizId={11} />} 
+    />
   );
 };
 
-export default EDA3;
+export default Eda3;

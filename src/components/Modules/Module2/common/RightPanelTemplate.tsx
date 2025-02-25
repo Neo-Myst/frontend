@@ -14,25 +14,35 @@ interface Quiz {
   hint_c?: string | null;
 }
 
-const RightPanel: React.FC = () => {
+interface RightPanelTemplateProps {
+  quizId: number;
+}
+
+const RightPanelTemplate: React.FC<RightPanelTemplateProps> = ({ quizId }) => {
   const [quiz, setQuiz] = useState<Quiz | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [isUnlocked, setIsUnlocked] = useState<boolean>(false);
 
-  // On mount, set quiz status to "locked" and fetch quiz data
   useEffect(() => {
+    // Set status to "locked" on mount
     localStorage.setItem("quizStatus", "locked");
+    
+    // Fetch the quiz data (assumes backend returns an array for chapter 2)
     fetch("http://localhost:8000/quiz/2")
       .then((res) => res.json())
       .then((data: Quiz[]) => {
-        if (data && data.length > 0) {
-          setQuiz(data[1]);
+        // Filter the returned array to find the quiz with the matching id
+        const foundQuiz = data.find((q) => q.id === quizId);
+        if (foundQuiz) {
+          setQuiz(foundQuiz);
+        } else {
+          console.error(`Quiz with id ${quizId} not found.`);
         }
       })
       .catch((err) => console.error("Error fetching quiz data:", err));
-  }, []);
+  }, [quizId]);
 
   const getHintForAnswer = (answer: string): string | null => {
     if (!quiz) return null;
@@ -113,13 +123,11 @@ const RightPanel: React.FC = () => {
                   key={index}
                   onClick={() => isUnlocked && setSelectedAnswer(option.value)}
                   disabled={!isUnlocked}
-                  className={`block w-full text-left p-4 rounded-lg border border-gray-500 text-lg md:text-xl 
-                    ${
-                      selectedAnswer === option.value
-                        ? "bg-orange-500 text-white"
-                        : "bg-gray-200 text-black hover:bg-gray-300 transition"
-                    }
-                    ${!isUnlocked ? "cursor-not-allowed opacity-75" : ""}`}
+                  className={`block w-full text-left p-4 rounded-lg border border-gray-500 text-lg md:text-xl ${
+                    selectedAnswer === option.value
+                      ? "bg-orange-500 text-white"
+                      : "bg-gray-200 text-black hover:bg-gray-300 transition"
+                  } ${!isUnlocked ? "cursor-not-allowed opacity-75" : ""}`}
                 >
                   {option.text}
                 </button>
@@ -128,10 +136,9 @@ const RightPanel: React.FC = () => {
 
             {feedback && (
               <div
-                className={`block w-full text-left p-4 rounded-lg border border-gray-500 text-lg md:text-xl mt-4 
-                  ${
-                    isCorrect ? "bg-green-300 text-green-700" : "bg-red-300 text-red-700"
-                  }`}
+                className={`block w-full text-left p-4 rounded-lg border border-gray-500 text-lg md:text-xl mt-4 ${
+                  isCorrect ? "bg-green-300 text-green-700" : "bg-red-300 text-red-700"
+                }`}
               >
                 {feedback}
               </div>
@@ -140,10 +147,9 @@ const RightPanel: React.FC = () => {
             <button
               onClick={handleCheckAnswer}
               disabled={!isUnlocked}
-              className={`block w-full mt-6 py-4 bg-blue-600 text-lg font-bold text-white rounded-lg transition duration-300
-                ${
-                  isUnlocked ? "hover:bg-blue-500" : "opacity-75 cursor-not-allowed"
-                }`}
+              className={`block w-full mt-6 py-4 bg-blue-600 text-lg font-bold text-white rounded-lg transition duration-300 ${
+                isUnlocked ? "hover:bg-blue-500" : "opacity-75 cursor-not-allowed"
+              }`}
             >
               Check your knowledge
             </button>
@@ -161,4 +167,4 @@ const RightPanel: React.FC = () => {
   );
 };
 
-export default RightPanel;
+export default RightPanelTemplate;
