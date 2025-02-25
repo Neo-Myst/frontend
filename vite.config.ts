@@ -17,5 +17,15 @@ export default defineConfig({
   build: {
     outDir: "dist", // Specify the output directory for production build
     sourcemap: true, // Generate source maps for debugging
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("react-plotly.js")) {
+            return "react-plotly";
+          }
+        },
+      },
+    },
+    chunkSizeWarningLimit: 500, // Adjust the chunk size warning limit if necessary
   },
 });
