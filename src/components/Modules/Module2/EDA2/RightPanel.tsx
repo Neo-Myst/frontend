@@ -75,17 +75,6 @@ const RightPanel: React.FC = () => {
     localStorage.setItem("quizStatus", "unlocked");
   };
 
-  const handleInvestigateFurther = () => {
-    const status = localStorage.getItem("quizStatus");
-    if (!status || status === "locked" || status === "unlocked") {
-      alert("Please unlock the quiz and select the correct answer before proceeding.");
-    } else if (status === "wrong") {
-      alert("Your answer is incorrect. Please select the correct answer before proceeding.");
-    } else if (status === "correct") {
-      navigate("/pages/EdaOuter"); // Adjust this route as needed.
-    }
-  };
-
   return (
     <div className="w-full md:w-1/2 p-10 bg-[#0d0f16] text-white min-h-screen flex flex-col justify-between relative font-oxanium">
       {/* Locked Overlay */}

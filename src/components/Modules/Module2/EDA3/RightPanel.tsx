@@ -21,7 +21,6 @@ const RightPanel: React.FC = () => {
   const [feedback, setFeedback] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [isUnlocked, setIsUnlocked] = useState<boolean>(false);
-  const navigate = useNavigate();
 
   // Fetch quiz data for chapter 2 on mount
   useEffect(() => {
@@ -74,18 +73,6 @@ const RightPanel: React.FC = () => {
   const handleUnlock = () => {
     setIsUnlocked(true);
     localStorage.setItem("quizStatus", "unlocked");
-  };
-
-  // Investigate Further button logic: Only navigate if quiz is unlocked and answered correctly.
-  const handleInvestigateFurther = () => {
-    const status = localStorage.getItem("quizStatus");
-    if (!status || status === "locked" || status === "unlocked") {
-      alert("Please unlock the quiz and select the correct answer before proceeding.");
-    } else if (status === "wrong") {
-      alert("Your answer is incorrect. Please select the correct answer before proceeding.");
-    } else if (status === "correct") {
-      navigate("/pages/EdaOuter"); // Adjust this route as needed.
-    }
   };
 
   return (
