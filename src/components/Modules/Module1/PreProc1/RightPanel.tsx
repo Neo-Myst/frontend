@@ -23,7 +23,7 @@ const RightPanel: React.FC = () => {
 
   // Fetch quiz data for chapter 1 on mount
   useEffect(() => {
-    fetch("http://localhost:8000/quiz/1")
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/quiz/1`)
       .then((res) => res.json())
       .then((data: Quiz[]) => {
         if (data && data.length > 0) {
@@ -52,7 +52,7 @@ const RightPanel: React.FC = () => {
     if (!quiz || !selectedAnswer) return;
 
     fetch(
-      `http://localhost:8000/quiz/validate/${quiz.id}?user_answer=${selectedAnswer}`,
+      `${import.meta.env.VITE_API_BASE_URL}/quiz/validate/${quiz.id}?user_answer=${selectedAnswer}`,
       {
         method: "POST",
       }

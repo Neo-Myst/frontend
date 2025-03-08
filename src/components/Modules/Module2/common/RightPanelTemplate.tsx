@@ -30,7 +30,7 @@ const RightPanelTemplate: React.FC<RightPanelTemplateProps> = ({ quizId }) => {
     localStorage.setItem("quizStatus", "locked");
     
     // Fetch the quiz data (assumes backend returns an array for chapter 2)
-    fetch("http://localhost:8000/quiz/2")
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/quiz/2`)
       .then((res) => res.json())
       .then((data: Quiz[]) => {
         // Filter the returned array to find the quiz with the matching id
@@ -60,7 +60,7 @@ const RightPanelTemplate: React.FC<RightPanelTemplateProps> = ({ quizId }) => {
 
   const handleCheckAnswer = () => {
     if (!quiz || !selectedAnswer) return;
-    fetch(`http://localhost:8000/quiz/validate/${quiz.id}?user_answer=${selectedAnswer}`, {
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/quiz/validate/${quiz.id}?user_answer=${selectedAnswer}`, {
       method: "POST",
     })
       .then((res) => res.json())
