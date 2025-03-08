@@ -22,37 +22,37 @@ const LeftPanel: React.FC = () => {
         {/* Section Subtitle & Archive Label */}
         <div className="flex justify-between items-center text-lg text-gray-400 italic">
           <span>
-            | The Final Clue: <span>Dimensionality Reduction</span>
+            | Unveiling the Patterns: <span>Exploratory Data Analysis</span>
           </span>
-          <span className="text-blue-400 underline italic">Archive 1.8</span>
+          {/* <span className="text-blue-400 underline italic">Archive 2.1</span> */}
         </div>
 
         {/* Main Heading */}
         <h2 className="text-xl md:text-2xl font-bold text-white leading-relaxed">
-          As Riley digs deeper, they notice that the dataset has
-          <span className="text-yellow-400"> too many features</span> — some of
-          which are
-          <span className="text-yellow-400"> redundant</span> or
-          <span className="text-yellow-400"> irrelevant</span>. For example,
-          user profiles include both
-          <span className="text-yellow-400"> “age”</span> and
-          <span className="text-yellow-400"> “birth year”</span>, which convey
-          the same information.
+          After all the meticulous preprocessing in Chapter 1, Riley’s dataset
+          is now
+          <span className="text-yellow-400"> polished and ready</span> for
+          deeper exploration. In this chapter, Riley steps into the realm of
+          <span className="text-yellow-400">
+            {" "}
+            Exploratory Data Analysis (EDA)
+          </span>
+          , where the clean data is transformed into visual insights.
         </h2>
 
         <hr className="border-gray-500 w-full" />
 
         {/* Story Content */}
         <p className="text-lg md:text-xl leading-relaxed text-gray-300">
-          Dimensionality reduction simplifies the dataset by removing redundant
-          or irrelevant features. Common techniques include:
+          EDA is like shining a flashlight into a dark room—suddenly, the
+          once-murky data begins to reveal its secrets. By using various
+          visualization techniques, Riley will explore:
         </p>
 
         <ul className="list-disc pl-6 text-lg md:text-xl text-gray-300 space-y-2">
-          <li>Principal Component Analysis (PCA).</li>
-          <li>
-            Feature selection (e.g., removing highly correlated features).
-          </li>
+          <li>Distributions of key variables.</li>
+          <li>Relationships between different features.</li>
+          <li>Trends, patterns, and anomalies in the dataset.</li>
         </ul>
       </div>
 
@@ -60,7 +60,7 @@ const LeftPanel: React.FC = () => {
       <div className="flex items-center justify-between mt-auto mb-0">
         {/* Go Back Button */}
         <button
-          onClick={() => navigate("/pages/PreProc7")}
+          onClick={() => navigate("/pages/PreProc8")}
           className="flex items-center space-x-2 px-6 py-3 bg-gray-900 text-gray-500 rounded-full relative transition duration-300 
           hover:bg-gray-700 hover:scale-105 hover:shadow-lg"
         >
@@ -71,7 +71,7 @@ const LeftPanel: React.FC = () => {
 
         {/* Investigate Further Button */}
         <button
-          onClick={() => navigate("/pages/EdaIntro")}
+          onClick={() => navigate("/pages/Eda1")}
           className="flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full relative transition duration-300 
           hover:bg-yellow-400 hover:scale-105 hover:shadow-lg"
         >
