@@ -33,6 +33,17 @@ const Module3IntroPage: React.FC = () => {
           <span className="absolute inset-0 blur-lg opacity-50 bg-gray-500 rounded-full"></span>
         </button>
 
+        {/* Investigate Further Button */}
+        <button
+          onClick={() => navigate("/modules/game-module1/preprocessing")}
+          className="flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full relative transition duration-300 
+          hover:bg-yellow-400 hover:scale-105 hover:shadow-lg"
+        >
+          <span>Investigate Further</span>
+          <span className="text-xl">&raquo;</span>
+          <span className="absolute inset-0 blur-lg opacity-50 bg-yellow-500 rounded-full"></span>
+        </button>
+
       </div>
     </div>
   );
