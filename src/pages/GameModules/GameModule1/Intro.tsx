@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const Module3IntroPage: React.FC = () => {
+const GameModule1Intro: React.FC = () => {
   const navigate = useNavigate();
 ;
 
@@ -49,4 +49,4 @@ const Module3IntroPage: React.FC = () => {
   );
 };
 
-export default Module3IntroPage;
+export default GameModule1Intro;
