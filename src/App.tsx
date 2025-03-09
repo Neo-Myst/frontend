@@ -28,7 +28,7 @@ const EdaOuter = lazy(() => import("./pages/Modules/Module2/EdaOuter"));
 
 // Game Module 1: Predictive Modeling
 const GameModule1Intro = lazy(() => import("./pages/GameModules/GameModule1/Intro"));
-// const GameModule1Preprocessing = lazy(() => import("./pages/GameModules/GameModule1/Preprocessing"));
+const GameModule1Preprocessing = lazy(() => import("./pages/GameModules/GameModule1/Preprocessing"));
 // const GameModule1Outliers = lazy(() => import("./pages/GameModules/GameModule1/Outliers"));
 // const GameModule1Heatmap = lazy(() => import("./pages/GameModules/GameModule1/Heatmap"));
 // const GameModule1RandomForest = lazy(() => import("./pages/GameModules/GameModule1/RandomForest"));
@@ -65,9 +65,9 @@ const App = () => {
           <Route path="/pages/EdaOuter" element={<EdaOuter />} />
 
           {/* Game Module 1 Routes */}
-          /* <Route path="/modules/game-module1/intro" element={<GameModule1Intro />} />
-          {/* <Route path="/modules/game-module1/preprocessing" element={<GameModule1Preprocessing />} />
-          <Route path="/modules/game-module1/outliers" element={<GameModule1Outliers />} />
+          <Route path="/modules/game-module1/intro" element={<GameModule1Intro />} />
+          <Route path="/modules/game-module1/preprocessing" element={<GameModule1Preprocessing />} />
+          {/* <Route path="/modules/game-module1/outliers" element={<GameModule1Outliers />} />
           <Route path="/modules/game-module1/heatmap" element={<GameModule1Heatmap />} />
           <Route path="/modules/game-module1/randomforest" element={<GameModule1RandomForest />} />
           <Route path="/modules/game-module1/outro" element={<GameModule1Outro />} />  */}
