@@ -18,11 +18,6 @@ const Module3IntroPage: React.FC = () => {
           </span>
         </button>
 
-        {/* Incoming Transmission Title */}
-        <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-wide border-b border-gray-500 pb-2">
-          Incoming Transmission
-        </h2>
-
       </div>
 
       {/* Buttons Section - Fixed at bottom with margin */}
