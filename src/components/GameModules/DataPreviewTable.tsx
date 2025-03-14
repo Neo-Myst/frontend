@@ -1,6 +1,7 @@
 import React from "react";
 
 const DataPreviewTable: React.FC = () => {
+  
   const dummyData = [
     {
       playerId: "P1001",

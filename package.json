@@ -13,9 +13,16 @@
     "test:watch": "vitest --watch"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@types/d3": "^7.4.3",
     "@types/react-plotly.js": "^2.6.3",
     "chart.js": "^4.4.8",
     "chartjs-chart-matrix": "^2.0.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "d3": "^7.9.0",
+    "framer-motion": "^12.5.0",
     "lucide-react": "^0.460.0",
     "plotly.js": "^3.0.1",
     "react": "^18.3.1",
@@ -25,7 +32,9 @@
     "react-router-dom": "^7.0.1",
     "react-simple-typewriter": "^5.0.1",
     "recharts": "^2.15.1",
-    "resize-observer-polyfill": "^1.5.1"
+    "resize-observer-polyfill": "^1.5.1",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

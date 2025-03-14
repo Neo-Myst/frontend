@@ -9,6 +9,7 @@ const GoogleLogin = lazy(() => import("./pages/GoogleLogin"));
 
 // Module 1: Preprocessing
 const IntroStory = lazy(() => import("./pages/Modules/Module1/IntroStory"));
+// const DataPreprocessing = lazy(() => import("./pages/GameModules/GameModule1/Preprocessing"));
 const PreProc1 = lazy(() => import("./pages/Modules/Module1/PreProc1"));
 const PreProc2 = lazy(() => import("./pages/Modules/Module1/PreProc2"));
 const PreProc3 = lazy(() => import("./pages/Modules/Module1/PreProc3"));
@@ -29,10 +30,9 @@ const EdaOuter = lazy(() => import("./pages/Modules/Module2/EdaOuter"));
 // Game Module 1: Predictive Modeling
 const GameModule1Intro = lazy(() => import("./pages/GameModules/GameModule1/Intro"));
 const GameModule1Preprocessing = lazy(() => import("./pages/GameModules/GameModule1/Preprocessing"));
-// const GameModule1Outliers = lazy(() => import("./pages/GameModules/GameModule1/Outliers"));
-// const GameModule1Heatmap = lazy(() => import("./pages/GameModules/GameModule1/Heatmap"));
-// const GameModule1RandomForest = lazy(() => import("./pages/GameModules/GameModule1/RandomForest"));
-// const GameModule1Outro = lazy(() => import("./pages/GameModules/GameModule1/Outro"));
+const GameModule1Outliers = lazy(() => import("./pages/GameModules/GameModule1/OutlierDetection"));
+const GameModule1HeatMaps = lazy(() => import("./pages/GameModules/GameModule1/HeatMaps"));
+const GameModule1RandomForest = lazy(() => import("./pages/GameModules/GameModule1/RandomForest"));
 
 const App = () => {
   return (
@@ -47,6 +47,7 @@ const App = () => {
 
           {/* Module 1 Routes */}
           <Route path="/pages/IntroStory" element={<IntroStory />} />
+          {/* <Route path="/pages/data-preprocessing" element={<DataPreprocessing />} /> */}
           <Route path="/pages/PreProc1" element={<PreProc1 />} />
           <Route path="/pages/PreProc2" element={<PreProc2 />} />
           <Route path="/pages/PreProc3" element={<PreProc3 />} />
@@ -67,10 +68,9 @@ const App = () => {
           {/* Game Module 1 Routes */}
           <Route path="/modules/game-module1/intro" element={<GameModule1Intro />} />
           <Route path="/modules/game-module1/preprocessing" element={<GameModule1Preprocessing />} />
-          {/* <Route path="/modules/game-module1/outliers" element={<GameModule1Outliers />} />
-          <Route path="/modules/game-module1/heatmap" element={<GameModule1Heatmap />} />
+          <Route path="/modules/game-module1/outliers" element={<GameModule1Outliers />} />
+          <Route path="/modules/game-module1/heatmaps" element={<GameModule1HeatMaps />} />
           <Route path="/modules/game-module1/randomforest" element={<GameModule1RandomForest />} />
-          <Route path="/modules/game-module1/outro" element={<GameModule1Outro />} />  */}
         </Routes>
       </Suspense>
     </Router>
