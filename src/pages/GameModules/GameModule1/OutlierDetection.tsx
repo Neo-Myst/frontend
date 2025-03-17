@@ -35,7 +35,7 @@ const OutlierDetection: FC = () => {
       } else {
         newSelected = [...prev, columnId];
       }
-      // If outliers were already removed and selection changes, re-enable the action.
+      // Reset outliersRemoved state when selection changes.
       if (outliersRemoved) {
         setOutliersRemoved(false);
       }
@@ -52,17 +52,24 @@ const OutlierDetection: FC = () => {
           className="text-3xl font-bold text-[#66c0f4] relative hover:text-[#4fa3e3] transition duration-300 font-mono"
         >
           NeoMyst
-          <span className="absolute inset-0 blur-lg opacity-75 text-[#66c0f4]">NeoMyst</span>
+          <span className="absolute inset-0 blur-lg opacity-75 text-[#66c0f4]">
+            NeoMyst
+          </span>
         </button>
       </div>
 
-      {/* Header */}
+      {/* Banner with DETECT OUTLIERS and explanatory text */}
       <div className="w-full py-4 mb-12">
         <div className="max-w-4xl mx-auto px-8">
           <div className="bg-[#1B465D] rounded-lg border border-[#66c0f4]/30">
             <h1 className="text-2xl font-bold text-[#F1CC75] text-center py-4 font-mono">
               DETECT OUTLIERS
             </h1>
+            <p className="text-center text-sm text-gray-300 px-4 pb-4">
+              Outliers are extreme values that can distort data analysis and predictions.
+              In this module, you'll identify the columns with anomalous data and remove these outliers.
+              Use the interactive tools to select the affected columns, then proceed to clean your dataset for better model accuracy.
+            </p>
           </div>
         </div>
       </div>
@@ -78,7 +85,7 @@ const OutlierDetection: FC = () => {
               className="w-full bg-[#0A2533] text-[#F1CC75] p-3 rounded-lg border border-[#66c0f4]/20 flex justify-between items-center hover:bg-[#1B465D] transition-colors font-mono shadow-lg shadow-[#66c0f4]/10"
             >
               <span className="text-lg">
-                VIEW: {selectedColumn ? selectedColumn.name : 'Select Data Column'}
+                VIEW: {selectedColumn ? selectedColumn.name : "Select Data Column"}
               </span>
               <motion.span
                 animate={{ rotate: dropdownOpen ? 180 : 0 }}
@@ -87,8 +94,6 @@ const OutlierDetection: FC = () => {
                 ▼
               </motion.span>
             </button>
-
-            {/* Dropdown Menu */}
             {dropdownOpen && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
@@ -129,10 +134,12 @@ const OutlierDetection: FC = () => {
           </div>
         </div>
 
-        {/* Right Column */}
+        {/* Right Column: Outlier Removal */}
         <div className="space-y-6">
           <div className="bg-[#1B465D]/50 rounded-lg border border-[#66c0f4]/30 p-4 h-[520px] flex flex-col shadow-lg shadow-[#66c0f4]/10">
-            <h3 className="text-[#F1CC75] text-lg mb-4 font-mono">Select Columns to Remove Outliers</h3>
+            <h3 className="text-[#F1CC75] text-lg mb-2 font-mono">
+              Select Columns to Remove Outliers
+            </h3>
             <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
               <div className="grid gap-2">
                 {columns.map((column) => (
@@ -140,8 +147,8 @@ const OutlierDetection: FC = () => {
                     key={column.id} 
                     className={`flex items-center space-x-3 p-2 rounded-lg transition-all ${
                       selectedColumns.includes(column.id) 
-                        ? 'bg-[#2C5A73] border border-[#66c0f4]/30 shadow-lg shadow-[#66c0f4]/10' 
-                        : 'hover:bg-[#1B465D] border border-transparent hover:border-[#66c0f4]/20'
+                        ? "bg-[#2C5A73] border border-[#66c0f4]/30 shadow-lg shadow-[#66c0f4]/10" 
+                        : "hover:bg-[#1B465D] border border-transparent hover:border-[#66c0f4]/20"
                     }`}
                   >
                     <input
@@ -157,33 +164,31 @@ const OutlierDetection: FC = () => {
             </div>
 
             <div className="mt-auto pt-3 space-y-2 border-t border-[#66c0f4]/20">
-              {/* Message Box */}
               <div className={`p-2 rounded-lg ${
-                outliersRemoved ? 'bg-[#2C5A73] border-[#66c0f4] shadow-lg shadow-[#66c0f4]/20' : 'bg-[#1B465D] border-[#66c0f4]/30'
+                outliersRemoved ? "bg-[#2C5A73] border-[#66c0f4] shadow-lg shadow-[#66c0f4]/20" : "bg-[#1B465D] border-[#66c0f4]/30"
               } border text-sm`}>
                 <p className="text-center text-[#F1CC75] font-mono">
                   {selectedColumns.length === 0 
-                    ? 'Select columns to remove outliers'
+                    ? "Select columns to remove outliers"
                     : outliersRemoved 
-                      ? `Outliers removed from ${selectedColumns.length} column${selectedColumns.length > 1 ? 's' : ''}!`
-                      : `Ready to remove outliers from ${selectedColumns.length} column${selectedColumns.length > 1 ? 's' : ''}`
+                      ? `Outliers removed from ${selectedColumns.length} column${selectedColumns.length > 1 ? "s" : ""}!`
+                      : `Ready to remove outliers from ${selectedColumns.length} column${selectedColumns.length > 1 ? "s" : ""}`
                   }
                 </p>
               </div>
 
-              {/* Action Button */}
               <button
                 onClick={() => setOutliersRemoved(true)}
                 disabled={selectedColumns.length === 0 || outliersRemoved}
                 className={`w-full p-2 rounded-lg text-sm font-medium transition-all transform hover:scale-[1.02] font-mono ${
                   selectedColumns.length === 0
-                    ? 'bg-[#F1CC75]/30 text-[#0A2533]/50 cursor-not-allowed'
+                    ? "bg-[#F1CC75]/30 text-[#0A2533]/50 cursor-not-allowed"
                     : outliersRemoved
-                    ? 'bg-[#F1CC75]/50 text-[#0A2533]/70 cursor-not-allowed shadow-lg shadow-[#F1CC75]/20'
-                    : 'bg-[#F1CC75] hover:bg-[#F1CC75]/90 text-[#0A2533] shadow-lg shadow-[#F1CC75]/20'
+                    ? "bg-[#F1CC75]/50 text-[#0A2533]/70 cursor-not-allowed shadow-lg shadow-[#F1CC75]/20"
+                    : "bg-[#F1CC75] hover:bg-[#F1CC75]/90 text-[#0A2533] shadow-lg shadow-[#F1CC75]/20"
                 }`}
               >
-                {outliersRemoved ? 'Outliers Removed' : 'Remove Outliers'}
+                {outliersRemoved ? "Outliers Removed" : "Remove Outliers"}
               </button>
             </div>
           </div>
@@ -213,6 +218,7 @@ const OutlierDetection: FC = () => {
           )}
         </motion.button>
       </div>
+
       <style>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 6px;
