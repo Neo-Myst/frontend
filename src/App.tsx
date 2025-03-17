@@ -33,6 +33,7 @@ const GameModule1Preprocessing = lazy(() => import("./pages/GameModules/GameModu
 const GameModule1Outliers = lazy(() => import("./pages/GameModules/GameModule1/OutlierDetection"));
 const GameModule1HeatMaps = lazy(() => import("./pages/GameModules/GameModule1/HeatMaps"));
 const GameModule1RandomForest = lazy(() => import("./pages/GameModules/GameModule1/RandomForest"));
+const GameModule1Outro = lazy(() => import("./pages/GameModules/GameModule1/Outro"));
 
 const App = () => {
   return (
@@ -71,6 +72,8 @@ const App = () => {
           <Route path="/modules/game-module1/outliers" element={<GameModule1Outliers />} />
           <Route path="/modules/game-module1/heatmaps" element={<GameModule1HeatMaps />} />
           <Route path="/modules/game-module1/randomforest" element={<GameModule1RandomForest />} />
+          <Route path="/modules/game-module1/outro" element={<GameModule1Outro />} />
+
         </Routes>
       </Suspense>
     </Router>

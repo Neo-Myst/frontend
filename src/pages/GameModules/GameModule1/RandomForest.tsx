@@ -295,7 +295,7 @@ const RandomForest: FC = () => {
       {/* Finish Button */}
       <div className="max-w-6xl mx-auto mt-6 flex justify-end">
         <button 
-          onClick={() => navigate('/modules/game-module1/final')}
+          onClick={() => navigate('/modules/game-module1/Outro')}
           className="bg-[#F1CC75] text-[#0A2533] px-10 py-2.5 rounded text-lg font-medium transition-all duration-300 hover:bg-[#F1CC75]/90 shadow-lg hover:shadow-[#F1CC75]/50"
         >
           FINISH
