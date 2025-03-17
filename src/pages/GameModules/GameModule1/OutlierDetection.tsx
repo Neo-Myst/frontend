@@ -1,6 +1,6 @@
-import { FC, useState } from 'react';
-import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { FC, useState } from "react";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 interface Column {
   id: number;
@@ -26,13 +26,20 @@ const OutlierDetection: FC = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [outliersRemoved, setOutliersRemoved] = useState(false);
   const [clicked, setClicked] = useState(false);
+
   const handleColumnSelection = (columnId: number) => {
-    setSelectedColumns(prev => {
+    setSelectedColumns((prev) => {
+      let newSelected: number[];
       if (prev.includes(columnId)) {
-        return prev.filter(id => id !== columnId);
+        newSelected = prev.filter((id) => id !== columnId);
       } else {
-        return [...prev, columnId];
+        newSelected = [...prev, columnId];
       }
+      // If outliers were already removed and selection changes, re-enable the action.
+      if (outliersRemoved) {
+        setOutliersRemoved(false);
+      }
+      return newSelected;
     });
   };
 
@@ -45,9 +52,7 @@ const OutlierDetection: FC = () => {
           className="text-3xl font-bold text-[#66c0f4] relative hover:text-[#4fa3e3] transition duration-300 font-mono"
         >
           NeoMyst
-          <span className="absolute inset-0 blur-lg opacity-75 text-[#66c0f4]">
-            NeoMyst
-          </span>
+          <span className="absolute inset-0 blur-lg opacity-75 text-[#66c0f4]">NeoMyst</span>
         </button>
       </div>
 
