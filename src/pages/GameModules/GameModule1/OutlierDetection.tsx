@@ -65,7 +65,7 @@ const OutlierDetection: FC = () => {
             <h1 className="text-2xl font-bold text-[#F1CC75] text-center py-4 font-mono">
               DETECT OUTLIERS
             </h1>
-            <p className="text-center text-sm text-gray-300 px-4 pb-4">
+            <p className="text-center text-lm text-gray-300 px-4 pb-4">
               Outliers are extreme values that can distort data analysis and predictions.
               In this module, you'll identify the columns with anomalous data and remove these outliers.
               Use the interactive tools to select the affected columns, then proceed to clean your dataset for better model accuracy.
