@@ -9,14 +9,14 @@ interface Column {
 }
 
 const columns: Column[] = [
-  { id: 1, name: 'Column 1', image: '/images/outliers/column1.png' },
-  { id: 2, name: 'Column 2', image: '/images/outliers/column2.png' },
-  { id: 3, name: 'Column 3', image: '/images/outliers/column3.png' },
-  { id: 4, name: 'Column 4', image: '/images/outliers/column4.png' },
-  { id: 5, name: 'Column 5', image: '/images/outliers/column5.png' },
-  { id: 6, name: 'Column 6', image: '/images/outliers/column6.png' },
-  { id: 7, name: 'Column 7', image: '/images/outliers/column7.png' },
-  { id: 8, name: 'Column 8', image: '/images/outliers/column8.png' }
+  { id: 1, name: "Column 1", image: "/images/outliers/column1.png" },
+  { id: 2, name: "Column 2", image: "/images/outliers/column2.png" },
+  { id: 3, name: "Column 3", image: "/images/outliers/column3.png" },
+  { id: 4, name: "Column 4", image: "/images/outliers/column4.png" },
+  { id: 5, name: "Column 5", image: "/images/outliers/column5.png" },
+  { id: 6, name: "Column 6", image: "/images/outliers/column6.png" },
+  { id: 7, name: "Column 7", image: "/images/outliers/column7.png" },
+  { id: 8, name: "Column 8", image: "/images/outliers/column8.png" },
 ];
 
 const OutlierDetection: FC = () => {
@@ -46,7 +46,7 @@ const OutlierDetection: FC = () => {
   return (
     <div className="min-h-screen bg-black text-white pt-20">
       {/* Header Button */}
-      <div className="max-w-4xl mx-auto px-8 mb-8">
+      <div className="max-w-6xl mx-auto px-12 mb-8">
         <button
           onClick={() => navigate("/")}
           className="text-3xl font-bold text-[#66c0f4] relative hover:text-[#4fa3e3] transition duration-300 font-mono"
@@ -58,9 +58,9 @@ const OutlierDetection: FC = () => {
         </button>
       </div>
 
-      {/* Banner with DETECT OUTLIERS and explanatory text */}
+      {/* Banner Section */}
       <div className="w-full py-4 mb-12">
-        <div className="max-w-4xl mx-auto px-8">
+        <div className="max-w-6xl mx-auto px-12">
           <div className="bg-[#1B465D] rounded-lg border border-[#66c0f4]/30">
             <h1 className="text-2xl font-bold text-[#F1CC75] text-center py-4 font-mono">
               DETECT OUTLIERS
@@ -75,7 +75,7 @@ const OutlierDetection: FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-8 grid grid-cols-[2fr,1fr] gap-12">
+      <div className="max-w-6xl mx-auto px-12 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
         {/* Left Column */}
         <div className="space-y-6">
           {/* Dropdown */}
@@ -87,10 +87,7 @@ const OutlierDetection: FC = () => {
               <span className="text-lg">
                 VIEW: {selectedColumn ? selectedColumn.name : "Select Data Column"}
               </span>
-              <motion.span
-                animate={{ rotate: dropdownOpen ? 180 : 0 }}
-                className="text-lg"
-              >
+              <motion.span animate={{ rotate: dropdownOpen ? 180 : 0 }} className="text-lg">
                 ▼
               </motion.span>
             </button>
@@ -143,11 +140,11 @@ const OutlierDetection: FC = () => {
             <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
               <div className="grid gap-2">
                 {columns.map((column) => (
-                  <div 
-                    key={column.id} 
+                  <div
+                    key={column.id}
                     className={`flex items-center space-x-3 p-2 rounded-lg transition-all ${
-                      selectedColumns.includes(column.id) 
-                        ? "bg-[#2C5A73] border border-[#66c0f4]/30 shadow-lg shadow-[#66c0f4]/10" 
+                      selectedColumns.includes(column.id)
+                        ? "bg-[#2C5A73] border border-[#66c0f4]/30 shadow-lg shadow-[#66c0f4]/10"
                         : "hover:bg-[#1B465D] border border-transparent hover:border-[#66c0f4]/20"
                     }`}
                   >
@@ -157,7 +154,9 @@ const OutlierDetection: FC = () => {
                       onChange={() => handleColumnSelection(column.id)}
                       className="w-4 h-4 accent-[#F1CC75]"
                     />
-                    <label className="text-[#F1CC75]/90 text-sm cursor-pointer font-mono">{column.name}</label>
+                    <label className="text-[#F1CC75]/90 text-sm cursor-pointer font-mono">
+                      {column.name}
+                    </label>
                   </div>
                 ))}
               </div>
@@ -168,12 +167,11 @@ const OutlierDetection: FC = () => {
                 outliersRemoved ? "bg-[#2C5A73] border-[#66c0f4] shadow-lg shadow-[#66c0f4]/20" : "bg-[#1B465D] border-[#66c0f4]/30"
               } border text-sm`}>
                 <p className="text-center text-[#F1CC75] font-mono">
-                  {selectedColumns.length === 0 
+                  {selectedColumns.length === 0
                     ? "Select columns to remove outliers"
-                    : outliersRemoved 
-                      ? `Outliers removed from ${selectedColumns.length} column${selectedColumns.length > 1 ? "s" : ""}!`
-                      : `Ready to remove outliers from ${selectedColumns.length} column${selectedColumns.length > 1 ? "s" : ""}`
-                  }
+                    : outliersRemoved
+                    ? `Outliers removed from ${selectedColumns.length} column${selectedColumns.length > 1 ? "s" : ""}!`
+                    : `Ready to remove outliers from ${selectedColumns.length} column${selectedColumns.length > 1 ? "s" : ""}`}
                 </p>
               </div>
 
@@ -196,7 +194,7 @@ const OutlierDetection: FC = () => {
       </div>
 
       {/* Navigation Button */}
-      <div className="max-w-4xl mx-auto px-8 mt-10 flex justify-end">
+      <div className="max-w-6xl mx-auto px-12 mt-10 flex justify-end">
         <motion.button
           className="w-48 h-12 rounded-lg flex items-center justify-center bg-[#F1CC75] text-[#0A2533] text-lg font-semibold transition-all hover:bg-[#F1CC75]/90 shadow-lg hover:shadow-[#F1CC75]/50"
           onClick={() => {
