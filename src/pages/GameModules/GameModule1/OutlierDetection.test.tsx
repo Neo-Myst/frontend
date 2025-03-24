@@ -2,9 +2,12 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import OutlierDetection from "./OutlierDetection";
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
-// Mock dependencies
+// Mock navigate function
+const mockNavigate = vi.fn();
+
+// Mock react-router-dom's useNavigate
 vi.mock("react-router-dom", async () => {
   const actual = await vi.importActual("react-router-dom");
   return {
@@ -13,48 +16,62 @@ vi.mock("react-router-dom", async () => {
   };
 });
 
-// Use a simplified mock for framer-motion to avoid animation-related issues
-vi.mock("framer-motion", () => ({
-  motion: {
-    div: ({ className, children, ...props }: Record<string, unknown>) => (
-      <div data-testid="motion-div" className={className} {...props}>
-        {children}
-      </div>
-    ),
-    button: ({
-      className,
-      onClick,
-      children,
-      ...props
-    }: Record<string, unknown>) => (
-      <button
-        data-testid="motion-button"
-        className={className}
-        onClick={onClick}
-        {...props}
-      >
-        {children}
-      </button>
-    ),
-    span: ({ className, children, ...props }: Record<string, unknown>) => (
-      <span data-testid="motion-span" className={className} {...props}>
-        {children}
-      </span>
-    ),
-  },
-  AnimatePresence: ({ children }: { children: ReactNode }) => (
+// A type-safe mock for framer-motion
+vi.mock("framer-motion", () => {
+  const MotionDiv = ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLDivElement>) => (
+    <div data-testid="motion-div" className={className} {...props}>
+      {children}
+    </div>
+  );
+
+  const MotionButton = ({
+    className,
+    onClick,
+    children,
+    ...props
+  }: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
+    <button
+      data-testid="motion-button"
+      className={className}
+      onClick={onClick}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+
+  const MotionSpan = ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLSpanElement>) => (
+    <span data-testid="motion-span" className={className} {...props}>
+      {children}
+    </span>
+  );
+
+  // Minimal mock of AnimatePresence
+  const AnimatePresence = ({ children }: { children: ReactNode }) => (
     <div data-testid="animate-presence">{children}</div>
-  ),
-}));
+  );
 
-// Mock navigate function
-const mockNavigate = vi.fn();
+  return {
+    motion: {
+      div: MotionDiv,
+      button: MotionButton,
+      span: MotionSpan,
+    },
+    AnimatePresence,
+  };
+});
 
-// Helper function to find elements by text content
+// Helper function to find elements by partial text content
 const getByTextContent = (text: string) => {
-  return screen.getByText((content) => {
-    return content.includes(text);
-  });
+  return screen.getByText((content) => content.includes(text));
 };
 
 describe("OutlierDetection Component", () => {
