@@ -188,8 +188,7 @@ const HeatMaps: FC = () => {
             <span
               className="absolute inset-0 blur-lg opacity-75 text-[#66c0f4]"
               aria-hidden="true"
-            >
-            </span>
+            ></span>
           </button>
         </div>
 
@@ -379,6 +378,19 @@ const HeatMaps: FC = () => {
           </motion.button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {showPopup && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed top-24 left-1/2 transform -translate-x-1/2 bg-red-600/80 text-white px-4 py-2 rounded z-50 shadow-md"
+          >
+            {popupMessage}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style>{`
         .custom-scrollbar::-webkit-scrollbar {
