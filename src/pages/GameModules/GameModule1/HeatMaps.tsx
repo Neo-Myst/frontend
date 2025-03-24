@@ -57,10 +57,7 @@ const Dropdown: FC<DropdownProps> = ({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };
@@ -87,7 +84,6 @@ const Dropdown: FC<DropdownProps> = ({
           {isOpen ? "▲" : "▼"}
         </span>
       </button>
-
       {isOpen && (
         <div className="absolute z-10 mt-1 w-full bg-[#0A2533] rounded-lg border border-[#66c0f4]/20 shadow-lg">
           <div className="max-h-[200px] overflow-y-auto py-1">
@@ -99,9 +95,7 @@ const Dropdown: FC<DropdownProps> = ({
                   setIsOpen(false);
                 }}
                 className={`w-full text-left px-4 py-2.5 hover:bg-[#1B465D] transition-colors duration-200 font-mono ${
-                  selected?.id === column.id
-                    ? "bg-[#1B465D] text-[#F1CC75]"
-                    : "text-[#F1CC75]"
+                  selected?.id === column.id ? "bg-[#1B465D] text-[#F1CC75]" : "text-[#F1CC75]"
                 }`}
               >
                 {column.name}
@@ -127,6 +121,7 @@ const HeatMaps: FC = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [selectionChecked, setSelectionChecked] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleGenerateHeatmap = () => {
     setHeatmapGenerated(true);
@@ -141,13 +136,8 @@ const HeatMaps: FC = () => {
 
   const handleCheck = () => {
     if (!selectedColumn1 || !selectedColumn2) return;
-
-    const isValidPair = isPairCorrect(
-      selectedColumn1.name,
-      selectedColumn2.name
-    );
-
-    setIsCorrect(isValidPair);
+    const isCorrectPair = isPairCorrect(selectedColumn1.name, selectedColumn2.name);
+    setIsCorrect(isCorrectPair);
     setShowMessage(true);
     setSelectionChecked(true);
   };
@@ -159,31 +149,24 @@ const HeatMaps: FC = () => {
       setTimeout(() => setShowPopup(false), 3000);
       return;
     }
-
     if (!selectedColumn1 || !selectedColumn2) {
       setPopupMessage("Select two columns to check for correlation first!");
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 3000);
       return;
     }
-
     if (!selectionChecked) {
       setPopupMessage("Click 'Check!' to verify your selection first!");
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 3000);
       return;
     }
-
     if (!isCorrect) {
-      setPopupMessage(
-        "You must identify a strong correlation before continuing!"
-      );
+      setPopupMessage("You must identify a strong correlation before continuing!");
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 3000);
       return;
     }
-
-    // All conditions met, proceed to next page
     setClicked(true);
     setTimeout(() => navigate("/modules/game-module1/randomforest"), 500);
   };
@@ -212,16 +195,13 @@ const HeatMaps: FC = () => {
                 HeatMaps
               </h2>
               <p className="text-center text-lm text-gray-300 px-4 pb-4">
-                After outlier removal, Riley now uses heatmaps to reveal the
-                relationships between key features. By selecting two columns,
-                the heatmap will display the correlation between these features.
-                This insight will help Riley choose the most influential
-                predictors for the regression model.
+                After outlier removal, Riley now uses heatmaps to reveal the relationships between key features.
+                By selecting two columns, the heatmap will display the correlation between these features.
+                This insight will help Riley choose the most influential predictors for the regression model.
               </p>
               <p className="text-center text-lm text-gray-300 px-4 pb-4">
-                In this step, you'll see a generated heatmap of all features,
-                then select two columns that show a strong correlation. Your
-                selection will guide the next phase of the analysis.
+                In this step, you'll see a generated heatmap of all features, then select two columns that show a strong correlation.
+                Your selection will guide the next phase of the analysis.
               </p>
             </div>
           </div>
@@ -244,7 +224,10 @@ const HeatMaps: FC = () => {
 
         {/* Heatmap Display */}
         <div className="max-w-6xl mx-auto px-12 mb-8">
-          <div className="h-[550px] bg-[#0A2533] rounded-lg border border-[#66c0f4]/20 flex items-center justify-center p-8 shadow-lg shadow-[#66c0f4]/10">
+          <div
+            className="h-[550px] bg-[#0A2533] rounded-lg border border-[#66c0f4]/20 flex items-center justify-center p-8 shadow-lg shadow-[#66c0f4]/10 cursor-pointer"
+            onClick={() => setShowModal(true)}
+          >
             {heatmapGenerated ? (
               <img
                 src={heatmapImage}
@@ -259,11 +242,36 @@ const HeatMaps: FC = () => {
           </div>
         </div>
 
+        {/* Modal for Full-Screen Heatmap */}
+        <AnimatePresence>
+          {showModal && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90"
+            >
+              <div className="relative max-w-5xl mx-auto p-4">
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="absolute top-2 right-2 text-3xl text-[#F1CC75] hover:text-[#FFD700] transition"
+                >
+                  &times;
+                </button>
+                <img
+                  src={heatmapImage}
+                  alt="Full Screen Correlation Heatmap"
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Question Section */}
         <div className="max-w-6xl mx-auto px-12 space-y-8 mb-8">
           <p className="text-center text-[#F1CC75] font-mono">
-            Based on the heatmap, which features appear to have a strong
-            relationship? Select two columns:
+            Based on the heatmap, which features appear to have a strong relationship? Select two columns:
           </p>
           <div className="space-y-4">
             <Dropdown
@@ -332,9 +340,7 @@ const HeatMaps: FC = () => {
                 {Array(10)
                   .fill(0)
                   .map((_, i) => (
-                    <span key={i} className="text-[#0A2533] text-xl">
-                      &raquo;
-                    </span>
+                    <span key={i} className="text-[#0A2533] text-xl">&raquo;</span>
                   ))}
               </div>
             ) : (
@@ -343,20 +349,6 @@ const HeatMaps: FC = () => {
           </motion.button>
         </div>
       </div>
-
-      {/* Popup notification */}
-      <AnimatePresence>
-        {showPopup && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed top-32 left-1/2 transform -translate-x-1/2 px-6 py-3 bg-[#73282C] text-white rounded-lg border border-[#E34F4F] shadow-lg z-50"
-          >
-            <p className="font-mono text-center">{popupMessage}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       <style>{`
         .custom-scrollbar::-webkit-scrollbar {
