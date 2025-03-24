@@ -1,5 +1,5 @@
 import createPlotlyComponent from "react-plotly.js/factory";
-import Plotly from "plotly.js-basic-dist-min";
+import PlotlyCartesian from "plotly.js-cartesian-dist-min";
 
-const Plot = createPlotlyComponent(Plotly);
+const Plot = createPlotlyComponent(PlotlyCartesian);
 export default Plot;
