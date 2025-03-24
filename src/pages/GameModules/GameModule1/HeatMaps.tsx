@@ -250,11 +250,12 @@ const HeatMaps: FC = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90"
+              onClick={() => setShowModal(false)}
             >
-              <div className="relative max-w-5xl mx-auto p-4">
+              <div className="relative max-w-5xl mx-auto p-4" onClick={(e) => e.stopPropagation()}>
                 <button
                   onClick={() => setShowModal(false)}
-                  className="absolute top-2 right-2 text-3xl text-[#F1CC75] hover:text-[#FFD700] transition"
+                  className="absolute top-2 right-2 bg-black bg-opacity-80 rounded-full px-3 py-1 text-3xl text-[#F1CC75] hover:text-[#FFD700] transition"
                 >
                   &times;
                 </button>
