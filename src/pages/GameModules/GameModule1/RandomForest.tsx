@@ -1,9 +1,10 @@
 import { FC, useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import DarkMarketTransactions from "../../../../public/images/outliers/feature_importance_Dark_Market_Transactions_encoded.png";
-import QuestExploitScore from "../../../../public/images/outliers/feature_importance_Quest_Exploit_Score.png";
-import TransactionAmount from "../../../../public/images/outliers/feature_importance_Transaction_Amount_$.png";
+
+const darkMarketTransactionsUrl = "/images/outliers/feature_importance_Dark_Market_Transactions_encoded.png";
+const questExploitScoreUrl = "/images/outliers/feature_importance_Quest_Exploit_Score.png";
+const transactionAmountUrl = "/images/outliers/feature_importance_Transaction_Amount_$.png";
 
 const targetVariables = [
   "Dark Market Transactions",
@@ -12,9 +13,7 @@ const targetVariables = [
 ];
 
 // Define the correct features for each target variable
-const correctFeaturesByTarget: {
-  [key: string]: string[];
-} = {
+const correctFeaturesByTarget: { [key: string]: string[] } = {
   "Dark Market Transactions": [
     "Transaction Amount ($)",
     "Cash on Hand ($)",
@@ -158,11 +157,11 @@ const RandomForest: FC = () => {
 
       // Set the appropriate image based on selected target
       if (selectedTarget === "Dark Market Transactions") {
-        setChartImagePath(DarkMarketTransactions);
+        setChartImagePath(darkMarketTransactionsUrl);
       } else if (selectedTarget === "Quest Exploit Score") {
-        setChartImagePath(QuestExploitScore);
+        setChartImagePath(questExploitScoreUrl);
       } else if (selectedTarget === "Transaction Amount ($)") {
-        setChartImagePath(TransactionAmount);
+        setChartImagePath(transactionAmountUrl);
       }
     } else {
       setMessage("Please select a target variable");
