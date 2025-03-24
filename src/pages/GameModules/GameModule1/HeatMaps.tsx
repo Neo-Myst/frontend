@@ -95,7 +95,9 @@ const Dropdown: FC<DropdownProps> = ({
                   setIsOpen(false);
                 }}
                 className={`w-full text-left px-4 py-2.5 hover:bg-[#1B465D] transition-colors duration-200 font-mono ${
-                  selected?.id === column.id ? "bg-[#1B465D] text-[#F1CC75]" : "text-[#F1CC75]"
+                  selected?.id === column.id
+                    ? "bg-[#1B465D] text-[#F1CC75]"
+                    : "text-[#F1CC75]"
                 }`}
               >
                 {column.name}
@@ -130,7 +132,8 @@ const HeatMaps: FC = () => {
   const isPairCorrect = (col1: string, col2: string) => {
     return correctPairs.some(
       ([pair1, pair2]) =>
-        (col1 === pair1 && col2 === pair2) || (col1 === pair2 && col2 === pair1)
+        (col1 === pair1 && col2 === pair2) ||
+        (col1 === pair2 && col2 === pair1)
     );
   };
 
@@ -177,12 +180,15 @@ const HeatMaps: FC = () => {
         {/* Header */}
         <div className="max-w-6xl mx-auto px-12 mb-8">
           <button
+            data-testid="neoMystNavButton"
             onClick={() => navigate("/")}
             className="text-3xl font-bold text-[#66c0f4] relative hover:text-[#4fa3e3] transition duration-300 font-mono"
           >
             NeoMyst
-            <span className="absolute inset-0 blur-lg opacity-75 text-[#66c0f4]">
-              NeoMyst
+            <span
+              className="absolute inset-0 blur-lg opacity-75 text-[#66c0f4]"
+              aria-hidden="true"
+            >
             </span>
           </button>
         </div>
@@ -191,7 +197,10 @@ const HeatMaps: FC = () => {
         <div className="w-full py-4 mb-12">
           <div className="max-w-6xl mx-auto px-12">
             <div className="bg-[#0A2533] rounded-lg border border-[#66c0f4]/30">
-              <h2 className="text-2xl font-bold text-[#F1CC75] text-center py-4 font-mono uppercase">
+              <h2
+                data-testid="heatMapsHeading"
+                className="text-2xl font-bold text-[#F1CC75] text-center py-4 font-mono uppercase"
+              >
                 HeatMaps
               </h2>
               <p className="text-center text-lm text-gray-300 px-4 pb-4">
@@ -211,6 +220,7 @@ const HeatMaps: FC = () => {
         <div className="max-w-6xl mx-auto px-12 mb-8">
           <button
             onClick={handleGenerateHeatmap}
+            data-testid="generateHeatmapButton"
             className={`w-full p-3 rounded-lg ${
               heatmapGenerated
                 ? "bg-[#F1CC75]/50 text-[#0A2533]/70"
@@ -225,17 +235,22 @@ const HeatMaps: FC = () => {
         {/* Heatmap Display */}
         <div className="max-w-6xl mx-auto px-12 mb-8">
           <div
+            data-testid="heatmapContainer"
             className="h-[550px] bg-[#0A2533] rounded-lg border border-[#66c0f4]/20 flex items-center justify-center p-8 shadow-lg shadow-[#66c0f4]/10 cursor-pointer"
             onClick={() => setShowModal(true)}
           >
             {heatmapGenerated ? (
               <img
+                data-testid="heatmapImage"
                 src={heatmapImage}
                 alt="Correlation Heatmap"
                 className="w-full h-full object-contain rounded-lg"
               />
             ) : (
-              <div className="text-center text-xl text-[#F1CC75]/50 font-mono uppercase">
+              <div
+                data-testid="heatmapPlaceholder"
+                className="text-center text-xl text-[#F1CC75]/50 font-mono uppercase"
+              >
                 Correlation Heatmap Will Appear Here
               </div>
             )}
@@ -246,20 +261,26 @@ const HeatMaps: FC = () => {
         <AnimatePresence>
           {showModal && (
             <motion.div
+              data-testid="modalBackdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90"
               onClick={() => setShowModal(false)}
             >
-              <div className="relative max-w-5xl mx-auto p-4" onClick={(e) => e.stopPropagation()}>
+              <div
+                className="relative max-w-5xl mx-auto p-4"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <button
+                  data-testid="closeModalButton"
                   onClick={() => setShowModal(false)}
                   className="absolute top-2 right-2 bg-black bg-opacity-80 rounded-full px-3 py-1 text-3xl text-[#F1CC75] hover:text-[#FFD700] transition"
                 >
                   &times;
                 </button>
                 <img
+                  data-testid="fullScreenHeatmap"
                   src={heatmapImage}
                   alt="Full Screen Correlation Heatmap"
                   className="w-full h-full object-contain rounded-lg"
@@ -282,8 +303,11 @@ const HeatMaps: FC = () => {
               setSelected={setSelectedColumn1}
               placeholder="Column 1"
             />
+            {/* Use a different symbol so we don't duplicate '&times;' */}
             <div className="flex justify-center">
-              <span className="text-3xl text-[#F1CC75]">×</span>
+              <span className="text-3xl text-[#F1CC75]" aria-hidden="true">
+                *
+              </span>
             </div>
             <Dropdown
               isOpen={dropdownOpen2}
@@ -294,6 +318,7 @@ const HeatMaps: FC = () => {
             />
           </div>
           <button
+            data-testid="checkButton"
             onClick={handleCheck}
             disabled={
               !selectedColumn1 ||
@@ -312,6 +337,7 @@ const HeatMaps: FC = () => {
           </button>
           {showMessage && (
             <div
+              data-testid="checkFeedback"
               className={`text-center font-mono border rounded-lg p-3 ${
                 isCorrect
                   ? "text-green-400 border-green-400/30 bg-green-400/10"
@@ -328,6 +354,7 @@ const HeatMaps: FC = () => {
         {/* Navigation */}
         <div className="max-w-6xl mx-auto px-12 mt-10 flex justify-end">
           <motion.button
+            data-testid="continueButton"
             className={`w-48 h-12 rounded-lg flex items-center justify-center text-lg font-semibold transition-all ${
               isCorrect && selectionChecked
                 ? "bg-[#F1CC75] text-[#0A2533] hover:bg-[#F1CC75]/90 shadow-lg hover:shadow-[#F1CC75]/50"
@@ -341,7 +368,9 @@ const HeatMaps: FC = () => {
                 {Array(10)
                   .fill(0)
                   .map((_, i) => (
-                    <span key={i} className="text-[#0A2533] text-xl">&raquo;</span>
+                    <span key={i} className="text-[#0A2533] text-xl">
+                      &raquo;
+                    </span>
                   ))}
               </div>
             ) : (
