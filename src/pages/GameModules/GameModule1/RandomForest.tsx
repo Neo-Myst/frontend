@@ -205,16 +205,21 @@ const RandomForest: FC = () => {
   // Get a checkmark for completed targets
   const getTargetCheckmark = (target: string) => {
     return completedTargets[target] ? (
-      <span className="text-green-400 ml-2">✓</span>
+      <span data-testid="targetCheckmark" className="text-green-400 ml-2">
+        ✓
+      </span>
     ) : null;
   };
 
   return (
-    <div className="min-h-screen bg-[#001219] p-6">
+    <div data-testid="randomForestPage" className="min-h-screen bg-[#001219] p-6">
       {/* Logo */}
       <div className="max-w-6xl mx-auto mb-6">
         <div className="flex items-center gap-3">
-          <span className="text-[#66c0f4] text-3xl font-bold tracking-wide">
+          <span
+            data-testid="neoMystLabel"
+            className="text-[#66c0f4] text-3xl font-bold tracking-wide"
+          >
             NeoMyst
           </span>
         </div>
@@ -223,7 +228,10 @@ const RandomForest: FC = () => {
       {/* Title */}
       <div className="mb-6">
         <div className="bg-[#0A2533] rounded-lg py-3 px-6 text-center max-w-6xl mx-auto border border-[#66c0f4]/50">
-          <h2 className="text-[#F1CC75] text-2xl font-bold tracking-wide uppercase">
+          <h2
+            data-testid="randomForestHeading"
+            className="text-[#F1CC75] text-2xl font-bold tracking-wide uppercase"
+          >
             Feature Selection: Random Forest
           </h2>
         </div>
@@ -231,13 +239,19 @@ const RandomForest: FC = () => {
 
       {/* Progress Tracker */}
       <div className="max-w-6xl mx-auto mb-4">
-        <div className="bg-[#0A2533] rounded-lg p-3 border border-[#66c0f4]/20">
+        <div
+          data-testid="progressTracker"
+          className="bg-[#0A2533] rounded-lg p-3 border border-[#66c0f4]/20"
+        >
           <div className="flex justify-between items-center">
-            <span className="text-[#F1CC75]">{getProgressMessage()}</span>
+            <span data-testid="progressMessage" className="text-[#F1CC75]">
+              {getProgressMessage()}
+            </span>
             <div className="flex space-x-4">
               {targetVariables.map((target) => (
                 <div
                   key={target}
+                  data-testid={`progressBadge-${target}`}
                   className={`px-3 py-1 rounded-full text-sm ${
                     completedTargets[target]
                       ? "bg-green-900/50 border border-green-600 text-green-400"
@@ -255,15 +269,28 @@ const RandomForest: FC = () => {
       <div className="max-w-6xl mx-auto flex gap-8">
         {/* Left Panel */}
         <div className="w-[70%]">
-          <div className="bg-[#0A2533] rounded-lg p-6 border border-[#66c0f4]/20 h-[700px] flex flex-col">
+          <div
+            data-testid="chartPanel"
+            className="bg-[#0A2533] rounded-lg p-6 border border-[#66c0f4]/20 h-[700px] flex flex-col"
+          >
             {/* Target Variable Selection */}
             <div className="mb-4">
-              <label className="block text-[#F1CC75] mb-2 text-lg">
+              <label
+                data-testid="targetVariableLabel"
+                className="block text-[#F1CC75] mb-2 text-lg"
+              >
                 VIEW: Select Target Variable
               </label>
-              <div className="relative" ref={targetDropdownRef}>
+              <div
+                data-testid="targetDropdownRef"
+                className="relative"
+                ref={targetDropdownRef}
+              >
                 <button
-                  onClick={() => setIsTargetDropdownOpen(!isTargetDropdownOpen)}
+                  data-testid="targetDropdownButton"
+                  onClick={() =>
+                    setIsTargetDropdownOpen((prev) => !prev)
+                  }
                   className="w-full bg-[#0A2533] rounded-lg p-2.5 border border-[#66c0f4]/20 text-left flex justify-between items-center hover:bg-[#1B465D] transition-colors duration-200"
                 >
                   <div className="flex-1 flex items-center gap-2 overflow-x-auto py-0.5">
@@ -273,7 +300,10 @@ const RandomForest: FC = () => {
                         {getTargetCheckmark(selectedTarget)}
                       </div>
                     ) : (
-                      <span className="text-[#F1CC75] text-lg">
+                      <span
+                        data-testid="targetDropdownPlaceholder"
+                        className="text-[#F1CC75] text-lg"
+                      >
                         Select Target Variable
                       </span>
                     )}
@@ -284,11 +314,15 @@ const RandomForest: FC = () => {
                 </button>
 
                 {isTargetDropdownOpen && (
-                  <div className="absolute z-10 mt-1 w-full bg-[#0A2533] rounded-lg border border-[#66c0f4]/20 shadow-lg">
+                  <div
+                    data-testid="targetDropdownList"
+                    className="absolute z-10 mt-1 w-full bg-[#0A2533] rounded-lg border border-[#66c0f4]/20 shadow-lg"
+                  >
                     <div className="max-h-[200px] overflow-y-auto py-1">
                       {targetVariables.map((target) => (
                         <button
                           key={target}
+                          data-testid={`targetOption-${target}`}
                           onClick={() => {
                             setSelectedTarget(target);
                             setIsTargetDropdownOpen(false);
@@ -316,15 +350,22 @@ const RandomForest: FC = () => {
             </div>
 
             {/* Chart Area */}
-            <div className="flex-1 bg-[#0A2533] rounded-lg border border-[#66c0f4]/20 flex items-center justify-center">
+            <div
+              data-testid="chartArea"
+              className="flex-1 bg-[#0A2533] rounded-lg border border-[#66c0f4]/20 flex items-center justify-center"
+            >
               {chartGenerated ? (
                 <div className="flex flex-col items-center">
-                  <div className="text-[#F1CC75] text-lg mb-4">
+                  <div
+                    data-testid="chartTitle"
+                    className="text-[#F1CC75] text-lg mb-4"
+                  >
                     Chart showing importance of features for predicting{" "}
                     {selectedTarget}
                   </div>
                   {chartImagePath && (
                     <img
+                      data-testid="chartImage"
                       src={chartImagePath}
                       alt={`Feature importance for ${selectedTarget}`}
                       className="max-w-full max-h-[400px] object-contain"
@@ -332,7 +373,7 @@ const RandomForest: FC = () => {
                   )}
                 </div>
               ) : (
-                <div className="text-[#F1CC75]/70 text-lg">
+                <div data-testid="chartPlaceholder" className="text-[#F1CC75]/70 text-lg">
                   Select target variable and generate chart
                 </div>
               )}
@@ -341,6 +382,7 @@ const RandomForest: FC = () => {
             {/* Action Buttons */}
             <div className="mt-4 flex justify-end">
               <button
+                data-testid="generateChartButton"
                 onClick={handleGenerateChart}
                 className={`
                   px-6 py-2.5 rounded text-lg font-medium transition-all duration-300
@@ -355,18 +397,27 @@ const RandomForest: FC = () => {
               </button>
             </div>
 
-            {message && <div className="mt-2 text-red-500">{message}</div>}
+            {message && (
+              <div data-testid="errorMessage" className="mt-2 text-red-500">
+                {message}
+              </div>
+            )}
           </div>
         </div>
 
         {/* Right Panel */}
         <div className="w-[30%]">
-          <div className="bg-[#0A2533] rounded-lg p-6 border border-[#66c0f4]/20 h-[700px] flex flex-col">
-            <h3 className="text-[#F1CC75] text-lg mb-4">
+          <div
+            data-testid="featuresPanel"
+            className="bg-[#0A2533] rounded-lg p-6 border border-[#66c0f4]/20 h-[700px] flex flex-col"
+          >
+            <h3 data-testid="featuresHeader" className="text-[#F1CC75] text-lg mb-4">
               Select Most Important Features
             </h3>
+
             {showFeedback && (
               <div
+                data-testid="relevanceFeedback"
                 className={`p-3 mb-4 rounded ${
                   relevanceFeedback.includes("Correct")
                     ? "bg-green-900/50 border border-green-600"
@@ -378,10 +429,15 @@ const RandomForest: FC = () => {
                 <p className="text-[#F1CC75] text-sm">{relevanceFeedback}</p>
               </div>
             )}
-            <div className="flex-1 overflow-y-auto space-y-3 pr-2 custom-scrollbar">
+
+            <div
+              data-testid="featuresList"
+              className="flex-1 overflow-y-auto space-y-3 pr-2 custom-scrollbar"
+            >
               {features.map((feature) => (
                 <label
                   key={feature.id}
+                  data-testid={`featureOption-${feature.name}`}
                   className={`
                     flex items-center gap-3 text-md cursor-pointer p-1.5 rounded
                     ${
@@ -403,6 +459,7 @@ const RandomForest: FC = () => {
                       // Reset feedback when selection changes
                       setShowFeedback(false);
                     }}
+                    data-testid={`featureCheckbox-${feature.name}`}
                     className="w-4 h-4 rounded border-[#66c0f4]/20 text-[#F1CC75] focus:ring-[#F1CC75] bg-[#1B465D]"
                   />
                   {feature.name}
@@ -410,6 +467,7 @@ const RandomForest: FC = () => {
               ))}
             </div>
             <button
+              data-testid="checkRelevanceButton"
               onClick={handleCheckRelevance}
               className={`
                 w-full mt-4 px-6 py-2.5 rounded text-lg font-medium transition-all duration-300
@@ -436,6 +494,7 @@ const RandomForest: FC = () => {
       {/* Finish Button */}
       <div className="max-w-6xl mx-auto mt-6 flex justify-end">
         <motion.button
+          data-testid="finishButton"
           onClick={handleFinish}
           className={`
             px-10 py-2.5 rounded text-lg font-medium transition-all duration-300
@@ -448,7 +507,7 @@ const RandomForest: FC = () => {
           whileTap={{ scale: allTargetsCompleted ? 0.95 : 1 }}
         >
           {clicked ? (
-            <div className="flex gap-1">
+            <div data-testid="finishAnimation" className="flex gap-1">
               {Array(10)
                 .fill(0)
                 .map((_, i) => (
@@ -467,6 +526,7 @@ const RandomForest: FC = () => {
       <AnimatePresence>
         {showPopup && (
           <motion.div
+            data-testid="popupNotification"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
