@@ -4,7 +4,7 @@ import { LineChart, Line, ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, To
 import PageNavigation from "../../../navigation/PageNavigation";
 
 // Dynamically import Plotly only where needed
-const Plot = React.lazy(() => import("react-plotly.js"));
+import Plot from "../../../Plot";
 
 const LeftPanel: React.FC = () => {
   const navigate = useNavigate();
