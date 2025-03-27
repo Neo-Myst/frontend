@@ -1,10 +1,10 @@
 import { createContext } from "react";
 
-interface User {
+export interface User {
   username: string;
 }
 
-interface UserContextType {
+export interface UserContextType {
   user: User | null;
   login: (username: string) => void;
   logout: () => void;

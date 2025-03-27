@@ -53,7 +53,7 @@ const LeftPanel: React.FC = () => {
         </button>
 
         <button
-          onClick={() => navigate("/pages/Regression1")}
+          onClick={() => navigate("/modules/game-module1/intro")}
           className="flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full relative transition duration-300 hover:bg-yellow-400 hover:scale-105 hover:shadow-lg"
         >
           <span>Finish</span>
