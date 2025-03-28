@@ -28,12 +28,29 @@ const Eda3 = lazy(() => import("./pages/Modules/Module2/Eda3"));
 const EdaOuter = lazy(() => import("./pages/Modules/Module2/EdaOuter"));
 
 // Game Module 1: Predictive Modeling
-const GameModule1Intro = lazy(() => import("./pages/GameModules/GameModule1/Intro"));
-const GameModule1Preprocessing = lazy(() => import("./pages/GameModules/GameModule1/Preprocessing"));
-const GameModule1Outliers = lazy(() => import("./pages/GameModules/GameModule1/OutlierDetection"));
-const GameModule1HeatMaps = lazy(() => import("./pages/GameModules/GameModule1/HeatMaps"));
-const GameModule1RandomForest = lazy(() => import("./pages/GameModules/GameModule1/RandomForest"));
-const GameModule1Outro = lazy(() => import("./pages/GameModules/GameModule1/Outro"));
+const GameModule1Intro = lazy(
+  () => import("./pages/GameModules/GameModule1/Intro")
+);
+const GameModule1Preprocessing = lazy(
+  () => import("./pages/GameModules/GameModule1/Preprocessing")
+);
+const GameModule1Outliers = lazy(
+  () => import("./pages/GameModules/GameModule1/OutlierDetection")
+);
+const GameModule1HeatMaps = lazy(
+  () => import("./pages/GameModules/GameModule1/HeatMaps")
+);
+const GameModule1RandomForest = lazy(
+  () => import("./pages/GameModules/GameModule1/RandomForest")
+);
+const GameModule1Outro = lazy(
+  () => import("./pages/GameModules/GameModule1/Outro")
+);
+
+// Game Module 2: Regression
+const GameModule2Regression = lazy(
+  () => import("./pages/GameModules/GameModule2/LinearRegression")
+);
 
 const App = () => {
   return (
@@ -45,7 +62,6 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/google-login" element={<GoogleLogin />} />
-
           {/* Module 1 Routes */}
           <Route path="/pages/IntroStory" element={<IntroStory />} />
           {/* <Route path="/pages/data-preprocessing" element={<DataPreprocessing />} /> */}
@@ -58,22 +74,42 @@ const App = () => {
           <Route path="/pages/PreProc7" element={<PreProc7 />} />
           <Route path="/pages/PreProc8" element={<PreProc8 />} />
           <Route path="/pages/OutroPreProc" element={<OutroPreProc />} />
-
           {/* Module 2 Routes */}
           <Route path="/pages/EdaIntro" element={<EdaIntro />} />
           <Route path="/pages/Eda1" element={<Eda1 />} />
           <Route path="/pages/Eda2" element={<Eda2 />} />
           <Route path="/pages/Eda3" element={<Eda3 />} />
           <Route path="/pages/EdaOuter" element={<EdaOuter />} />
-
           {/* Game Module 1 Routes */}
-          <Route path="/modules/game-module1/intro" element={<GameModule1Intro />} />
-          <Route path="/modules/game-module1/preprocessing" element={<GameModule1Preprocessing />} />
-          <Route path="/modules/game-module1/outliers" element={<GameModule1Outliers />} />
-          <Route path="/modules/game-module1/heatmaps" element={<GameModule1HeatMaps />} />
-          <Route path="/modules/game-module1/randomforest" element={<GameModule1RandomForest />} />
-          <Route path="/modules/game-module1/outro" element={<GameModule1Outro />} />
-
+          <Route
+            path="/modules/game-module1/intro"
+            element={<GameModule1Intro />}
+          />
+          <Route
+            path="/modules/game-module1/preprocessing"
+            element={<GameModule1Preprocessing />}
+          />
+          <Route
+            path="/modules/game-module1/outliers"
+            element={<GameModule1Outliers />}
+          />
+          <Route
+            path="/modules/game-module1/heatmaps"
+            element={<GameModule1HeatMaps />}
+          />
+          <Route
+            path="/modules/game-module1/randomforest"
+            element={<GameModule1RandomForest />}
+          />
+          <Route
+            path="/modules/game-module1/outro"
+            element={<GameModule1Outro />}
+          />
+          \{/* Game Module 2 Route*/}
+          <Route
+            path="/modules/game-module2/regression"
+            element={<GameModule2Regression />}
+          />
         </Routes>
       </Suspense>
     </Router>
