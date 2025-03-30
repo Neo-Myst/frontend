@@ -47,6 +47,17 @@ const GameModule1Outro = lazy(
   () => import("./pages/GameModules/GameModule1/Outro")
 );
 
+// Module 3: Predictive Analytics
+const Module3DataSplitting = lazy(
+  () => import("./pages/Modules/Module3/DataSplittingPage")
+);
+const Module3Intro = lazy(
+  () => import("./pages/Modules/Module3/IntroPage")
+);
+const Module3Regression = lazy(
+  () => import("./pages/Modules/Module3/RegressionPage")
+);
+
 // Game Module 2: Regression
 const GameModule2Regression = lazy(
   () => import("./pages/GameModules/GameModule2/LinearRegression")
@@ -105,7 +116,13 @@ const App = () => {
             path="/modules/game-module1/outro"
             element={<GameModule1Outro />}
           />
-          \{/* Game Module 2 Route*/}
+
+          {/* Module 3 Routes */}
+          <Route path="/module3/data-splitting" element={<Module3DataSplitting />} />
+          <Route path="/module3/intro" element={<Module3Intro />} />
+          <Route path="/module3/regression" element={<Module3Regression />} />
+
+          {/* Game Module 2 Route */}
           <Route
             path="/modules/game-module2/regression"
             element={<GameModule2Regression />}
