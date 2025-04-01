@@ -14,33 +14,43 @@ interface FeatureSelectorProps {
   selectedFeatures: string[];
   onChange: (features: string[]) => void;
 }
-
 // Define all available features with descriptions for tooltips
 const ALL_FEATURES = [
   {
     name: "Hours Played",
-    description: "Total time spent in-game by the player",
+    description:
+      "Total time a player has spent in the Neoverse, reflecting dedication and gameplay frequency.",
     icon: "⏱️",
   },
   {
     name: "Quest Exploit Score",
-    description: "Indicates how much a player is exploiting game mechanics",
+    description:
+      "Indicates how aggressively the player uses exploits or shortcuts during missions and quests.",
     icon: "🎯",
   },
   {
-    name: "Player Level",
-    description: "Current experience level of the player",
-    icon: "⬆️",
-  },
-  {
     name: "Criminal Score",
-    description: "Measure of in-game illegal activities",
+    description:
+      "A metric of how often the player engages in illegal or grey-area activities within the Neoverse.",
     icon: "🚨",
   },
   {
-    name: "Dark Market Transaction Amount",
-    description: "Volume of trades in the game's black market",
-    icon: "💰",
+    name: "VIP Status_encoded",
+    description:
+      "Whether the player holds VIP privileges in the game, affecting access to exclusive areas and rewards.",
+    icon: "👑",
+  },
+  {
+    name: "Team Affiliation_encoded",
+    description:
+      "Encoded representation of a player’s allegiance or team in the Neoverse world.",
+    icon: "🛡️",
+  },
+  {
+    name: "Dark Market Transactions_encoded",
+    description:
+      "Encoded count of player interactions with the in-game black market, hinting at underground purchases.",
+    icon: "🕵️‍♂️",
   },
 ];
 
@@ -108,7 +118,7 @@ const FeatureSelector: React.FC<FeatureSelectorProps> = ({
     <Box>
       <Box sx={{ mb: 2 }}>
         <Typography variant="caption" sx={{ color: "#8599b9" }}>
-          Selected features: {selectedFeatures.length}/5
+          Selected features: {selectedFeatures.length}/6
         </Typography>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}>
           {selectedFeatures.length > 0 ? (

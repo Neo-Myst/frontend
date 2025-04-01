@@ -211,6 +211,7 @@ const LinearRegression: React.FC = () => {
         {/* Main Layout */}
         <MainLayout>
           {/* Left Panel - Model Configuration */}
+          {/* Left Panel - Model Configuration */}
           <LeftPanel>
             <NeoversePaper sx={{ height: { md: result ? "100%" : "auto" } }}>
               <NeoTitle variant="h5">Model Configuration</NeoTitle>
@@ -226,17 +227,6 @@ const LinearRegression: React.FC = () => {
                   Train-Test Split
                 </Typography>
                 <Box sx={{ px: 1 }}>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "#4ec9ff",
-                      mb: 1,
-                      textAlign: "center",
-                    }}
-                  >
-                    Training: {Math.round(selectedSplit * 100)}% / Testing:{" "}
-                    {Math.round((1 - selectedSplit) * 100)}%
-                  </Typography>
                   <TrainTestSplitSlider
                     value={selectedSplit}
                     onChange={setSelectedSplit}
@@ -292,7 +282,6 @@ const LinearRegression: React.FC = () => {
                 }}
               >
                 <NeoTitle variant="h5">Model Performance</NeoTitle>
-
                 {noResult && (
                   <Alert
                     severity="warning"
@@ -310,7 +299,6 @@ const LinearRegression: React.FC = () => {
                     a different set of features or split.
                   </Alert>
                 )}
-
                 {isLoading && (
                   <Box
                     sx={{
@@ -330,9 +318,8 @@ const LinearRegression: React.FC = () => {
                     </Box>
                   </Box>
                 )}
-
                 {result && !isLoading && (
-                  <Box sx={{ flex: 1, overflowY: "auto" }}>
+                  <Box sx={{ flex: 1, overflowY: "auto", marginTop: 4 }}>
                     <Box sx={{ mb: 3 }}>
                       <ModelPerformancePanel rmse={result.rmse} />
                     </Box>
@@ -345,11 +332,13 @@ const LinearRegression: React.FC = () => {
                     </Box>
 
                     <Box>
-                      <PlayerInsightSummary rmse={result.rmse} />
+                      <PlayerInsightSummary
+                        rmse={result.rmse}
+                        result={result}
+                      />
                     </Box>
                   </Box>
                 )}
-
                 {!result && !isLoading && !noResult && (
                   <Box
                     sx={{

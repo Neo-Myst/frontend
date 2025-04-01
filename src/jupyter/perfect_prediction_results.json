@@ -1,0 +1,74 @@
+[
+  {
+    "model": "Linear Regression",
+    "feature_set": [
+      "Hours Played",
+      "Quest Exploit Score",
+      "Criminal Score",
+      "VIP Status_encoded",
+      "Team_Cyber Sentinels",
+      "Team_Shadow Collective",
+      "Team_Lone Wolf",
+      "DM_ByteBandit",
+      "DM_CyberWraith",
+      "DM_DataDrifter",
+      "DM_Error404",
+      "DM_GhostCoder",
+      "DM_GlitchChip",
+      "DM_NeonShifter",
+      "DM_PixelPirate",
+      "DM_QuantumBreaker",
+      "DM_RealityBender"
+    ],
+    "rmse": 319.73,
+    "r2_score": 0.9967
+  },
+  {
+    "model": "Random Forest",
+    "feature_set": [
+      "Hours Played",
+      "Quest Exploit Score",
+      "Criminal Score",
+      "VIP Status_encoded",
+      "Team_Cyber Sentinels",
+      "Team_Shadow Collective",
+      "Team_Lone Wolf",
+      "DM_ByteBandit",
+      "DM_CyberWraith",
+      "DM_DataDrifter",
+      "DM_Error404",
+      "DM_GhostCoder",
+      "DM_GlitchChip",
+      "DM_NeonShifter",
+      "DM_PixelPirate",
+      "DM_QuantumBreaker",
+      "DM_RealityBender"
+    ],
+    "rmse": 77.02,
+    "r2_score": 0.9998
+  },
+  {
+    "model": "Gradient Boosting",
+    "feature_set": [
+      "Hours Played",
+      "Quest Exploit Score",
+      "Criminal Score",
+      "VIP Status_encoded",
+      "Team_Cyber Sentinels",
+      "Team_Shadow Collective",
+      "Team_Lone Wolf",
+      "DM_ByteBandit",
+      "DM_CyberWraith",
+      "DM_DataDrifter",
+      "DM_Error404",
+      "DM_GhostCoder",
+      "DM_GlitchChip",
+      "DM_NeonShifter",
+      "DM_PixelPirate",
+      "DM_QuantumBreaker",
+      "DM_RealityBender"
+    ],
+    "rmse": 86.56,
+    "r2_score": 0.9998
+  }
+]

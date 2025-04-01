@@ -111,12 +111,13 @@ const Graph: React.FC<GraphProps> = ({
 
   const options = {
     scales: {
+      // For the callback function in ticks
       x: {
         min: 1,
         max: 10,
         ticks: {
-          callback: function (value: any) {
-            return parseFloat(value).toFixed(2); // Limit to 2 decimal places
+          callback: function (value: number | string) {
+            return parseFloat(value.toString()).toFixed(2); // Limit to 2 decimal places
           },
         },
         title: {
