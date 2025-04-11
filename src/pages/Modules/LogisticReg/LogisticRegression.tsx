@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
+import HackerDetectionTable from "./HackerDetectionTable";
 
 // Types for hackers table
 interface Hacker {
@@ -33,7 +34,7 @@ const LogisticRegression: React.FC = () => {
   const [, setHackers] = useState<Hacker[]>([]);
   const [, setHeaders] = useState<string[]>([]);
   const [, setIsLoading] = useState<boolean>(true);
-
+  const [isHackerTableOpen, setIsHackerTableOpen] = useState<boolean>(false);
   // Load CSV data on component mount
   useEffect(() => {
     const fetchCSV = async () => {
@@ -150,7 +151,7 @@ const LogisticRegression: React.FC = () => {
           <h1 className="text-4xl text-[#F2B138] mb-3 font-bold tracking-wide">
             The Infiltrators: Hunting Hackers in NeoVerse
           </h1>
-          <p className="text-left font-light italic text-teal-300 opacity-80">
+          <p className="text-left font-light italic text-teal-300 opacity-80 text-center">
             A logistic regression adventure
           </p>
         </header>
@@ -1274,6 +1275,38 @@ const LogisticRegression: React.FC = () => {
               learning.
             </p>
 
+            {/* Add the button to open the hacker detection table */}
+            <div className="my-6 flex justify-center">
+              <button
+                onClick={() => setIsHackerTableOpen(true)}
+                className="group relative overflow-hidden bg-gradient-to-r from-[#052740] to-[#031520] px-6 py-3 rounded-md border border-teal-400/30 hover:border-teal-400/70 transition-all duration-300 shadow-lg hover:shadow-teal-400/20"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-400/0 via-teal-400/10 to-teal-400/0 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <div className="flex items-center">
+                  <span className="text-teal-300 mr-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span className="font-mono tracking-wider text-teal-300">
+                    VIEW DETECTED HACKERS
+                  </span>
+                  <span className="ml-2 text-xs bg-red-500/20 text-red-300 px-2 py-0.5 rounded-full animate-pulse">
+                    TOP 9
+                  </span>
+                </div>
+              </button>
+            </div>
+
             <p className="mb-4 text-left leading-7">Riley's team had:</p>
             <ul className="list-none pl-0 mb-6 text-left space-y-3">
               <BulletPoint>
@@ -1327,6 +1360,11 @@ const LogisticRegression: React.FC = () => {
             </p>
           </div>
         </section>
+        {/* Import and use the HackerDetectionTable component */}
+        <HackerDetectionTable
+          isOpen={isHackerTableOpen}
+          onClose={() => setIsHackerTableOpen(false)}
+        />
       </div>
     </div>
   );
