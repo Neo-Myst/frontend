@@ -51,9 +51,7 @@ const GameModule1Outro = lazy(
 const Module3DataSplitting = lazy(
   () => import("./pages/Modules/Module3/DataSplittingPage")
 );
-const Module3Intro = lazy(
-  () => import("./pages/Modules/Module3/IntroPage")
-);
+const Module3Intro = lazy(() => import("./pages/Modules/Module3/IntroPage"));
 const Module3Regression = lazy(
   () => import("./pages/Modules/Module3/RegressionPage")
 );
@@ -61,6 +59,12 @@ const Module3Regression = lazy(
 // Game Module 2: Regression
 const GameModule2Regression = lazy(
   () => import("./pages/GameModules/GameModule2/LinearRegression")
+);
+
+// // Logistic Regression
+// Uncomment the import for LogisticRegression
+const LogisticRegression = lazy(
+  () => import("./pages/Modules/LogisticReg/LogisticRegression")
 );
 
 const App = () => {
@@ -118,7 +122,10 @@ const App = () => {
           />
 
           {/* Module 3 Routes */}
-          <Route path="/module3/data-splitting" element={<Module3DataSplitting />} />
+          <Route
+            path="/module3/data-splitting"
+            element={<Module3DataSplitting />}
+          />
           <Route path="/module3/intro" element={<Module3Intro />} />
           <Route path="/module3/regression" element={<Module3Regression />} />
 
@@ -126,6 +133,12 @@ const App = () => {
           <Route
             path="/modules/game-module2/regression"
             element={<GameModule2Regression />}
+          />
+
+          {/* Logistic Regression Route - Move this inside the Routes component */}
+          <Route
+            path="/modules/logistic-regression"
+            element={<LogisticRegression />}
           />
         </Routes>
       </Suspense>
