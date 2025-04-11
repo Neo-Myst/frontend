@@ -272,61 +272,86 @@ const LogisticRegression: React.FC = () => {
               <span className="text-teal-400 mr-2">⚙️</span>
               FEATURE ENGINEERING
             </h3>
-            
+
             <div className="space-y-6">
               {/* Feature 1 */}
               <div className="bg-[#021722] bg-opacity-60 p-4 rounded-lg border-l-4 border-teal-400 hover:shadow-[0_0_15px_rgba(45,212,191,0.3)] transition-all duration-300">
                 <div className="flex items-center mb-3">
-                  <code className="bg-[#052740] px-3 py-1 rounded-md text-teal-300 font-mono">money_per_hour</code>
-                  <div className="ml-auto bg-[#06384f] text-xs px-2 py-1 rounded-full text-teal-300">Economic Pattern</div>
+                  <code className="bg-[#052740] px-3 py-1 rounded-md text-teal-300 font-mono">
+                    money_per_hour
+                  </code>
+                  <div className="ml-auto bg-[#06384f] text-xs px-2 py-1 rounded-full text-teal-300">
+                    Economic Pattern
+                  </div>
                 </div>
                 <p className="leading-7 text-gray-300">
                   Riley's eyes narrowed at a data point on his screen.{" "}
                   <span className="italic text-teal-300">
-                    "Look at this player—they've spent 50,000 credits in just three hours of gameplay."
+                    "Look at this player—they've spent 50,000 credits in just
+                    three hours of gameplay."
                   </span>{" "}
-                  He created a ratio dividing total spending by hours played, instantly revealing suspicious economic patterns that would have been invisible in the raw data.
+                  He created a ratio dividing total spending by hours played,
+                  instantly revealing suspicious economic patterns that would
+                  have been invisible in the raw data.
                 </p>
               </div>
 
               {/* Feature 2 */}
               <div className="bg-[#021722] bg-opacity-60 p-4 rounded-lg border-l-4 border-[#F2B138] hover:shadow-[0_0_15px_rgba(242,177,56,0.3)] transition-all duration-300">
                 <div className="flex items-center mb-3">
-                  <code className="bg-[#052740] px-3 py-1 rounded-md text-[#F2B138] font-mono">quest_efficiency</code>
-                  <div className="ml-auto bg-[#06384f] text-xs px-2 py-1 rounded-full text-[#F2B138]">Gameplay Anomaly</div>
+                  <code className="bg-[#052740] px-3 py-1 rounded-md text-[#F2B138] font-mono">
+                    quest_efficiency
+                  </code>
+                  <div className="ml-auto bg-[#06384f] text-xs px-2 py-1 rounded-full text-[#F2B138]">
+                    Gameplay Anomaly
+                  </div>
                 </div>
                 <p className="leading-7 text-gray-300">
                   <span className="italic text-[#F2B138]">
-                    "This player completed the Dragon's Lair quest in two minutes,"
+                    "This player completed the Dragon's Lair quest in two
+                    minutes,"
                   </span>{" "}
                   Riley noted, pointing to another anomaly.{" "}
                   <span className="italic text-[#F2B138]">
                     "That's physically impossible without code manipulation."
                   </span>{" "}
-                  By dividing quest completion scores by time played, the team created a metric that highlighted players moving through content at superhuman speeds.
+                  By dividing quest completion scores by time played, the team
+                  created a metric that highlighted players moving through
+                  content at superhuman speeds.
                 </p>
               </div>
 
               {/* Feature 3 */}
               <div className="bg-[#021722] bg-opacity-60 p-4 rounded-lg border-l-4 border-teal-400 hover:shadow-[0_0_15px_rgba(45,212,191,0.3)] transition-all duration-300">
                 <div className="flex items-center mb-3">
-                  <code className="bg-[#052740] px-3 py-1 rounded-md text-teal-300 font-mono">crime_to_play_ratio</code>
-                  <div className="ml-auto bg-[#06384f] text-xs px-2 py-1 rounded-full text-teal-300">Behavioral Signal</div>
+                  <code className="bg-[#052740] px-3 py-1 rounded-md text-teal-300 font-mono">
+                    crime_to_play_ratio
+                  </code>
+                  <div className="ml-auto bg-[#06384f] text-xs px-2 py-1 rounded-full text-teal-300">
+                    Behavioral Signal
+                  </div>
                 </div>
                 <p className="leading-7 text-gray-300">
                   The security officer pointed to a cluster of accounts.{" "}
                   <span className="italic text-teal-300">
-                    "These players have criminal activity scores that don't match their playtime."
+                    "These players have criminal activity scores that don't
+                    match their playtime."
                   </span>{" "}
-                  Riley nodded, creating a new feature that normalized criminal activity against hours played, revealing accounts with disproportionate illegal actions.
+                  Riley nodded, creating a new feature that normalized criminal
+                  activity against hours played, revealing accounts with
+                  disproportionate illegal actions.
                 </p>
               </div>
 
               {/* Feature 4 */}
               <div className="bg-[#021722] bg-opacity-60 p-4 rounded-lg border-l-4 border-[#F2B138] hover:shadow-[0_0_15px_rgba(242,177,56,0.3)] transition-all duration-300">
                 <div className="flex items-center mb-3">
-                  <code className="bg-[#052740] px-3 py-1 rounded-md text-[#F2B138] font-mono">has_dark_market</code>
-                  <div className="ml-auto bg-[#06384f] text-xs px-2 py-1 rounded-full text-[#F2B138]">Binary Flag</div>
+                  <code className="bg-[#052740] px-3 py-1 rounded-md text-[#F2B138] font-mono">
+                    has_dark_market
+                  </code>
+                  <div className="ml-auto bg-[#06384f] text-xs px-2 py-1 rounded-full text-[#F2B138]">
+                    Binary Flag
+                  </div>
                 </div>
                 <p className="leading-7 text-gray-300">
                   <span className="italic text-[#F2B138]">
@@ -334,99 +359,132 @@ const LogisticRegression: React.FC = () => {
                   </span>{" "}
                   Riley explained, creating a binary flag in the system.{" "}
                   <span className="italic text-[#F2B138]">
-                    "Every transaction there has a digital signature we can detect."
+                    "Every transaction there has a digital signature we can
+                    detect."
                   </span>{" "}
-                  This simple 0/1 feature immediately highlighted players connected to NeoVerse's underground economy.
+                  This simple 0/1 feature immediately highlighted players
+                  connected to NeoVerse's underground economy.
                 </p>
               </div>
 
               {/* Feature 5 */}
               <div className="bg-[#021722] bg-opacity-60 p-4 rounded-lg border-l-4 border-teal-400 hover:shadow-[0_0_15px_rgba(45,212,191,0.3)] transition-all duration-300">
                 <div className="flex items-center mb-3">
-                  <code className="bg-[#052740] px-3 py-1 rounded-md text-teal-300 font-mono">suspicious_activity</code>
-                  <div className="ml-auto bg-[#06384f] text-xs px-2 py-1 rounded-full text-teal-300">Composite Metric</div>
+                  <code className="bg-[#052740] px-3 py-1 rounded-md text-teal-300 font-mono">
+                    suspicious_activity
+                  </code>
+                  <div className="ml-auto bg-[#06384f] text-xs px-2 py-1 rounded-full text-teal-300">
+                    Composite Metric
+                  </div>
                 </div>
                 <p className="leading-7 text-gray-300">
-                  Riley combined multiple signals, flagging players who ranked in both the top 5% for crime ratios and quest exploits.{" "}
+                  Riley combined multiple signals, flagging players who ranked
+                  in both the top 5% for crime ratios and quest exploits.{" "}
                   <span className="italic text-teal-300">
-                    "If they're outliers in both categories, that's no coincidence,"
+                    "If they're outliers in both categories, that's no
+                    coincidence,"
                   </span>{" "}
-                  he explained as the system automatically tagged these high-risk accounts.
+                  he explained as the system automatically tagged these
+                  high-risk accounts.
                 </p>
               </div>
 
               {/* Feature 6 */}
               <div className="bg-[#021722] bg-opacity-60 p-4 rounded-lg border-l-4 border-[#F2B138] hover:shadow-[0_0_15px_rgba(242,177,56,0.3)] transition-all duration-300">
                 <div className="flex items-center mb-3">
-                  <code className="bg-[#052740] px-3 py-1 rounded-md text-[#F2B138] font-mono">suspicion_score</code>
-                  <div className="ml-auto bg-[#06384f] text-xs px-2 py-1 rounded-full text-[#F2B138]">Master Metric</div>
+                  <code className="bg-[#052740] px-3 py-1 rounded-md text-[#F2B138] font-mono">
+                    suspicion_score
+                  </code>
+                  <div className="ml-auto bg-[#06384f] text-xs px-2 py-1 rounded-full text-[#F2B138]">
+                    Master Metric
+                  </div>
                 </div>
                 <p className="leading-7 text-gray-300">
-                  <span className="italic text-[#F2B138]">"Our master metric,"</span> Riley said, unveiling his final creation. 
-                  The team watched as the algorithm weighted criminal activity (30%), quest exploits (20%), 
-                  spending patterns (20%), and dark market presence (30%) into a single comprehensive score 
-                  that quantified how suspicious each player's behavior truly was.
+                  <span className="italic text-[#F2B138]">
+                    "Our master metric,"
+                  </span>{" "}
+                  Riley said, unveiling his final creation. The team watched as
+                  the algorithm weighted criminal activity (30%), quest exploits
+                  (20%), spending patterns (20%), and dark market presence (30%)
+                  into a single comprehensive score that quantified how
+                  suspicious each player's behavior truly was.
                 </p>
               </div>
             </div>
           </div>
 
           {/* Removing the first LABELING section and keeping only the improved one */}
-          
+
           {/* Improved Labeling section with fixed suspicion threshold visualization */}
           <div className="border border-[#06384f] p-6 my-5 bg-gradient-to-b from-[#052740] to-[#031520] rounded-lg shadow-lg">
             <h3 className="text-xl text-[#F2B138] mb-6 font-mono tracking-wide flex items-center">
               <span className="text-teal-400 mr-2">🏷️</span>
               LABELING
             </h3>
-            
+
             <div className="bg-[#021722] bg-opacity-80 p-5 rounded-lg border border-[#06384f] relative overflow-hidden">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-teal-400/10 to-transparent rounded-bl-full"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#F2B138]/10 to-transparent rounded-tr-full"></div>
-              
+
               <div className="flex flex-col md:flex-row items-start gap-6">
                 {/* Left side - visualization with fixed threshold */}
                 <div className="w-full md:w-1/3 bg-[#011A27] p-4 rounded-lg border border-[#06384f] shadow-inner">
-                  <div className="text-center mb-3 text-sm text-gray-400">SUSPICION THRESHOLD</div>
+                  <div className="text-center mb-3 text-sm text-gray-400">
+                    SUSPICION THRESHOLD
+                  </div>
                   <div className="h-40 relative bg-gradient-to-t from-[#021722] to-[#052740] rounded-md overflow-hidden">
                     {/* Normal players area (99.8%) */}
                     <div className="absolute bottom-0 left-0 right-0 h-[80%] bg-gradient-to-t from-[#021722] to-[#031520]"></div>
-                    
+
                     {/* Threshold line */}
                     <div className="absolute bottom-[80%] left-0 right-0 flex items-center">
                       <div className="h-px w-full bg-red-500"></div>
-                      <div className="absolute right-0 bg-red-500 text-xs text-white px-1 py-0.5 rounded-sm transform translate-x-1/2">99.8%</div>
+                      <div className="absolute right-2 bg-red-500 text-xs text-white px-1 py-0.5 rounded-sm">
+                        99.8%
+                      </div>
                     </div>
-                    
+
                     {/* Suspicious area (0.2%) */}
                     <div className="absolute top-0 left-0 right-0 h-[20%] bg-gradient-to-b from-red-500/10 to-transparent"></div>
-                    
+
                     {/* Dots representing suspicious players */}
                     <div className="absolute bottom-[85%] left-[20%] w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
                     <div className="absolute bottom-[90%] left-[70%] w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
                     <div className="absolute bottom-[87%] left-[40%] w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
                   </div>
-                  <div className="mt-3 text-xs text-center text-gray-400">Top 0.2% flagged as potential hackers</div>
+                  <div className="mt-3 text-xs text-center text-gray-400">
+                    Top 0.2% flagged as potential hackers
+                  </div>
                 </div>
-                
+
                 {/* Right side - explanation */}
                 <div className="w-full md:w-2/3">
                   <p className="mb-4 text-left leading-7">
-                    With the suspicion score in hand, Riley identified the top 0.2% most suspicious players—those lurking above the 99.8th percentile.
+                    With the suspicion score in hand, Riley identified the top
+                    0.2% most suspicious players—those lurking above the 99.8th
+                    percentile.
                   </p>
-                  
+
                   <div className="bg-[#031520] p-3 rounded-md border-l-4 border-[#F2B138] mb-4">
                     <p className="italic text-[#F2B138]">
-                      "These are our targets," 
+                      "These are our targets,"
                     </p>
-                    <p className="text-sm text-gray-400 mt-1">— Riley, pointing to the red dots above the threshold</p>
+                    <p className="text-sm text-gray-400 mt-1">
+                      — Riley, pointing to the red dots above the threshold
+                    </p>
                   </div>
-                  
+
                   <p className="text-left leading-7">
-                    By marking these outliers in the system as potential hackers, Riley created a <span className="text-teal-300 font-semibold">target variable</span> that the model could learn to recognize, separating the digital wheat from the chaff.
+                    By marking these outliers in the system as potential
+                    hackers, Riley created a{" "}
+                    <span className="text-teal-300 font-semibold">
+                      target variable
+                    </span>{" "}
+                    that the model could learn to recognize, separating the
+                    digital wheat from the chaff.
                   </p>
-                  
+
                   <div className="mt-4 flex items-center">
                     <div className="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
                     <span className="text-sm">Normal Players (99.8%)</span>
@@ -444,36 +502,57 @@ const LogisticRegression: React.FC = () => {
               <span className="text-teal-400 mr-2">🧠</span>
               TRAINING THE MODEL
             </h3>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Step 1: Feature Selection */}
               <div className="bg-[#021722] p-4 rounded-lg border border-[#06384f] hover:shadow-[0_0_15px_rgba(45,212,191,0.2)] transition-all duration-300">
                 <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400 font-bold mr-2">1</div>
-                  <h4 className="text-teal-300 font-semibold">Feature Selection</h4>
+                  <div className="w-8 h-8 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400 font-bold mr-2">
+                    1
+                  </div>
+                  <h4 className="text-teal-300 font-semibold">
+                    Feature Selection
+                  </h4>
                 </div>
                 <p className="text-sm leading-6 text-gray-300">
-                  Riley fed 12 carefully selected features into his logistic regression model, each one chosen to highlight different aspects of suspicious behavior.
+                  Riley fed 12 carefully selected features into his logistic
+                  regression model, each one chosen to highlight different
+                  aspects of suspicious behavior.
                 </p>
                 <div className="mt-3 flex flex-wrap gap-1">
-                  <span className="text-xs bg-[#052740] px-1 py-0.5 rounded text-teal-300">money_per_hour</span>
-                  <span className="text-xs bg-[#052740] px-1 py-0.5 rounded text-teal-300">quest_efficiency</span>
-                  <span className="text-xs bg-[#052740] px-1 py-0.5 rounded text-teal-300">has_dark_market</span>
-                  <span className="text-xs bg-[#052740] px-1 py-0.5 rounded text-teal-300">+9 more</span>
+                  <span className="text-xs bg-[#052740] px-1 py-0.5 rounded text-teal-300">
+                    money_per_hour
+                  </span>
+                  <span className="text-xs bg-[#052740] px-1 py-0.5 rounded text-teal-300">
+                    quest_efficiency
+                  </span>
+                  <span className="text-xs bg-[#052740] px-1 py-0.5 rounded text-teal-300">
+                    has_dark_market
+                  </span>
+                  <span className="text-xs bg-[#052740] px-1 py-0.5 rounded text-teal-300">
+                    +9 more
+                  </span>
                 </div>
               </div>
-              
+
               {/* Step 2: Class Balancing */}
               <div className="bg-[#021722] p-4 rounded-lg border border-[#06384f] hover:shadow-[0_0_15px_rgba(45,212,191,0.2)] transition-all duration-300">
                 <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400 font-bold mr-2">2</div>
-                  <h4 className="text-teal-300 font-semibold">Class Balancing</h4>
+                  <div className="w-8 h-8 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400 font-bold mr-2">
+                    2
+                  </div>
+                  <h4 className="text-teal-300 font-semibold">
+                    Class Balancing
+                  </h4>
                 </div>
                 <div className="italic text-[#F2B138] mb-2 text-sm">
-                  "Hackers are rare. They're needles in NeoVerse's digital haystack."
+                  "Hackers are rare. They're needles in NeoVerse's digital
+                  haystack."
                 </div>
                 <p className="text-sm leading-6 text-gray-300">
-                  To account for this imbalance, Riley balanced the class weights, giving these outliers proper attention in the training process.
+                  To account for this imbalance, Riley balanced the class
+                  weights, giving these outliers proper attention in the
+                  training process.
                 </p>
                 <div className="mt-3 h-6 w-full bg-[#031520] rounded-full overflow-hidden">
                   <div className="h-full w-[0.2%] bg-red-500"></div>
@@ -483,32 +562,91 @@ const LogisticRegression: React.FC = () => {
                   <span>99.8% Normal</span>
                 </div>
               </div>
-              
+
               {/* Step 3: Threshold Setting */}
               <div className="bg-[#021722] p-4 rounded-lg border border-[#06384f] hover:shadow-[0_0_15px_rgba(45,212,191,0.2)] transition-all duration-300">
                 <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400 font-bold mr-2">3</div>
-                  <h4 className="text-teal-300 font-semibold">Precision Focus</h4>
+                  <div className="w-8 h-8 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400 font-bold mr-2">
+                    3
+                  </div>
+                  <h4 className="text-teal-300 font-semibold">
+                    Precision Focus
+                  </h4>
                 </div>
                 <p className="text-sm leading-6 text-gray-300">
-                  Rather than setting an arbitrary threshold, Riley programmed the system to flag exactly the top 10 players with the highest predicted probabilities.
+                  Rather than setting an arbitrary threshold, Riley programmed
+                  the system to flag exactly the top 10 players with the highest
+                  predicted probabilities.
                 </p>
                 <div className="italic text-[#F2B138] my-2 text-sm">
-                  "A precise strike force is better than a wide net. We'll focus our investigation on the most suspicious cases first."
+                  "A precise strike force is better than a wide net. We'll focus
+                  our investigation on the most suspicious cases first."
                 </div>
                 <div className="mt-3 flex items-center justify-center">
-                  <div className="w-8 h-8 rounded-full bg-red-500/20 border border-red-500 flex items-center justify-center text-red-400 font-bold">10</div>
+                  <div className="w-8 h-8 rounded-full bg-red-500/20 border border-red-500 flex items-center justify-center text-red-400 font-bold">
+                    10
+                  </div>
                   <div className="h-px w-12 bg-gray-600"></div>
-                  <div className="w-8 h-8 rounded-full bg-gray-800/50 border border-gray-700 flex items-center justify-center text-gray-500 font-bold">?</div>
+                  <div className="w-8 h-8 rounded-full bg-gray-800/50 border border-gray-700 flex items-center justify-center text-gray-500 font-bold">
+                    ?
+                  </div>
                   <div className="h-px w-12 bg-gray-600"></div>
-                  <div className="w-8 h-8 rounded-full bg-gray-800/50 border border-gray-700 flex items-center justify-center text-gray-500 font-bold">?</div>
+                  <div className="w-8 h-8 rounded-full bg-gray-800/50 border border-gray-700 flex items-center justify-center text-gray-500 font-bold">
+                    ?
+                  </div>
                 </div>
               </div>
             </div>
-            
+
+            {/* Add Step 4: Model Validation */}
+            <div className="mt-6 grid grid-cols-1 gap-6">
+              <div className="bg-[#021722] p-4 rounded-lg border border-[#06384f] hover:shadow-[0_0_15px_rgba(45,212,191,0.2)] transition-all duration-300">
+                <div className="flex items-center mb-3">
+                  <div className="w-8 h-8 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-400 font-bold mr-2">
+                    4
+                  </div>
+                  <h4 className="text-teal-300 font-semibold">
+                    Model Validation
+                  </h4>
+                </div>
+                <p className="text-sm leading-6 text-gray-300">
+                  Riley split the data into training (80%) and testing (20%)
+                  sets to ensure the model could generalize to new, unseen
+                  players.
+                </p>
+                <div className="mt-3 flex flex-col md:flex-row gap-4 items-center">
+                  <div className="bg-[#031520] p-3 rounded-md w-full md:w-1/2">
+                    <div className="text-xs text-center text-gray-400 mb-2">
+                      TRAINING DATA
+                    </div>
+                    <div className="h-16 relative bg-gradient-to-r from-teal-400/20 to-teal-400/5 rounded overflow-hidden">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-teal-300 font-mono">80%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-[#031520] p-3 rounded-md w-full md:w-1/2">
+                    <div className="text-xs text-center text-gray-400 mb-2">
+                      TESTING DATA
+                    </div>
+                    <div className="h-16 relative bg-gradient-to-r from-[#F2B138]/20 to-[#F2B138]/5 rounded overflow-hidden">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-[#F2B138] font-mono">20%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="italic text-[#F2B138] mt-3 text-sm">
+                  "We need to be sure our model works on players it's never seen
+                  before. That's the true test."
+                </div>
+              </div>
+            </div>
+
             <div className="mt-6 bg-[#031520] p-4 rounded-lg border border-[#06384f] text-center">
               <p className="text-sm text-gray-300">
-                The model was trained on historical data with known hackers, then deployed to scan the entire player base in real-time.
+                The model was trained on historical data with known hackers,
+                then deployed to scan the entire player base in real-time.
               </p>
             </div>
           </div>
