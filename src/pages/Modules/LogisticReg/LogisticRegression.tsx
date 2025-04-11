@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
-import HackerDetectionTable from "./HackerDetectionTable";
+import MissionAccomplished from "./MissionAccomplished";
 
 // Types for hackers table
 interface Hacker {
@@ -34,7 +34,6 @@ const LogisticRegression: React.FC = () => {
   const [, setHackers] = useState<Hacker[]>([]);
   const [, setHeaders] = useState<string[]>([]);
   const [, setIsLoading] = useState<boolean>(true);
-  const [isHackerTableOpen, setIsHackerTableOpen] = useState<boolean>(false);
   // Load CSV data on component mount
   useEffect(() => {
     const fetchCSV = async () => {
@@ -131,16 +130,6 @@ const LogisticRegression: React.FC = () => {
 
     fetchCSV();
   }, []);
-
-  // Custom bullet point component
-  const BulletPoint: React.FC<{ children: React.ReactNode }> = ({
-    children,
-  }) => (
-    <li className="mb-2 relative pl-5">
-      <span className="absolute left-0 top-0 text-teal-400">•</span>
-      {children}
-    </li>
-  );
 
   return (
     <div className="bg-[#011A27] text-gray-200 p-5 min-h-screen">
@@ -1259,112 +1248,7 @@ const LogisticRegression: React.FC = () => {
           </div>
         </div>
 
-        {/* Final section with improved formatting */}
-        <section className="my-12">
-          <h3 className="text-xl text-[#F2B138] mb-6 relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400 before:shadow-[0_0_10px_rgba(45,212,191,0.7)]">
-            <span className="font-mono tracking-wider text-2xl">
-              MISSION ACCOMPLISHED
-            </span>
-          </h3>
-
-          <div className="bg-[#021722] bg-opacity-60 p-6 rounded-lg shadow-lg border border-[#06384f]">
-            <p className="mb-5 text-left leading-7">
-              The NeoVerse control room erupted in applause as the final hacker
-              was removed from the system. What had begun as a security Crisis
-              had transformed into a triumph of data science and machine
-              learning.
-            </p>
-
-            {/* Add the button to open the hacker detection table */}
-            <div className="my-6 flex justify-center">
-              <button
-                onClick={() => setIsHackerTableOpen(true)}
-                className="group relative overflow-hidden bg-gradient-to-r from-[#052740] to-[#031520] px-6 py-3 rounded-md border border-teal-400/30 hover:border-teal-400/70 transition-all duration-300 shadow-lg hover:shadow-teal-400/20"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-400/0 via-teal-400/10 to-teal-400/0 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                <div className="flex items-center">
-                  <span className="text-teal-300 mr-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <span className="font-mono tracking-wider text-teal-300">
-                    VIEW DETECTED HACKERS
-                  </span>
-                  <span className="ml-2 text-xs bg-red-500/20 text-red-300 px-2 py-0.5 rounded-full animate-pulse">
-                    TOP 9
-                  </span>
-                </div>
-              </button>
-            </div>
-
-            <p className="mb-4 text-left leading-7">Riley's team had:</p>
-            <ul className="list-none pl-0 mb-6 text-left space-y-3">
-              <BulletPoint>
-                Transformed raw gameplay data into powerful predictive features
-                that exposed hidden patterns
-              </BulletPoint>
-              <BulletPoint>
-                Deployed logistic regression to calculate the precise
-                probability of each player being a hacker
-              </BulletPoint>
-              <BulletPoint>
-                Created intuitive visualizations that made complex statistical
-                concepts clear to everyone
-              </BulletPoint>
-              <BulletPoint>
-                Successfully identified and removed 9 sophisticated hackers who
-                had been damaging the game economy
-              </BulletPoint>
-            </ul>
-
-            <p className="mb-6 text-left leading-7">
-              <span className="italic">
-                "The system is now self-sustaining,"
-              </span>{" "}
-              Riley explained to the executive team.{" "}
-              <span className="italic">
-                "It will continuously monitor player behavior and flag
-                suspicious accounts before they can do significant damage.
-                NeoVerse is more secure than it's ever been."
-              </span>
-            </p>
-
-            <p className="mb-6 text-left leading-7">
-              As the meeting ended, Riley walked to the observation deck
-              overlooking the virtual cityscape of NeoVerse. Millions of players
-              were going about their digital lives, unaware of how close their
-              world had come to chaos—or how a mathematical model had saved it.
-            </p>
-
-            <blockquote className="bg-gradient-to-r from-[#052740] to-[#021722] border-l-4 border-teal-400 p-5 my-6 italic rounded-r-lg shadow-lg">
-              <p className="m-0 text-lg">
-                Sometimes the most powerful weapons aren't the flashiest.
-                Sometimes they're just elegant equations that separate truth
-                from deception.
-              </p>
-            </blockquote>
-
-            <p className="mb-4 text-left leading-7 text-teal-300">
-              As the virtual sun set over NeoVerse, Riley knew the game was safe
-              once more.
-            </p>
-          </div>
-        </section>
-        {/* Import and use the HackerDetectionTable component */}
-        <HackerDetectionTable
-          isOpen={isHackerTableOpen}
-          onClose={() => setIsHackerTableOpen(false)}
-        />
+        <MissionAccomplished nextPath="/completion" />
       </div>
     </div>
   );

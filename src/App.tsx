@@ -61,11 +61,13 @@ const GameModule2Regression = lazy(
   () => import("./pages/GameModules/GameModule2/LinearRegression")
 );
 
-// // Logistic Regression
-// Uncomment the import for LogisticRegression
+// Logistic Regression
 const LogisticRegression = lazy(
   () => import("./pages/Modules/LogisticReg/LogisticRegression")
 );
+
+// Completion Screen
+const CompletionScreen = lazy(() => import("./pages/Modules/CompletionScreen"));
 
 const App = () => {
   return (
@@ -77,6 +79,7 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/google-login" element={<GoogleLogin />} />
+
           {/* Module 1 Routes */}
           <Route path="/pages/IntroStory" element={<IntroStory />} />
           {/* <Route path="/pages/data-preprocessing" element={<DataPreprocessing />} /> */}
@@ -89,12 +92,14 @@ const App = () => {
           <Route path="/pages/PreProc7" element={<PreProc7 />} />
           <Route path="/pages/PreProc8" element={<PreProc8 />} />
           <Route path="/pages/OutroPreProc" element={<OutroPreProc />} />
+
           {/* Module 2 Routes */}
           <Route path="/pages/EdaIntro" element={<EdaIntro />} />
           <Route path="/pages/Eda1" element={<Eda1 />} />
           <Route path="/pages/Eda2" element={<Eda2 />} />
           <Route path="/pages/Eda3" element={<Eda3 />} />
           <Route path="/pages/EdaOuter" element={<EdaOuter />} />
+
           {/* Game Module 1 Routes */}
           <Route
             path="/modules/game-module1/intro"
@@ -135,11 +140,14 @@ const App = () => {
             element={<GameModule2Regression />}
           />
 
-          {/* Logistic Regression Route - Move this inside the Routes component */}
+          {/* Logistic Regression Route */}
           <Route
             path="/modules/logistic-regression"
             element={<LogisticRegression />}
           />
+
+          {/* Completion Screen Route */}
+          <Route path="/completion" element={<CompletionScreen />} />
         </Routes>
       </Suspense>
     </Router>
