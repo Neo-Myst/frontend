@@ -699,70 +699,94 @@ const LogisticRegression: React.FC = () => {
               LOGISTIC REGRESSION BOUNDARY
             </span>
           </h3>
-          
+
           {/* Enhanced image container with interactive elements */}
           <div className="bg-gradient-to-b from-[#052740] to-[#031520] p-6 rounded-lg shadow-lg border border-[#06384f] mb-4 overflow-hidden">
             <div className="flex flex-col md:flex-row gap-6 items-center">
               {/* Left side - image with overlay elements */}
               <div className="w-full md:w-3/5 relative group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#011A27]/80 via-transparent to-transparent z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300"></div>
-                
+
                 <img
                   src="/src/assets/logistic_reg/logistic_regression_boundary.png"
                   alt="Decision Boundary showing the classification regions"
                   className="w-full block rounded-md shadow-lg transform group-hover:scale-[1.02] transition-all duration-300"
                 />
-                
+
                 {/* Overlay annotations that appear on hover */}
                 <div className="absolute top-2 right-2 bg-[#031520]/90 text-xs text-teal-300 px-2 py-1 rounded z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   Hover to explore
                 </div>
-                
+
                 {/* Legend overlay */}
                 <div className="absolute bottom-3 left-3 bg-[#031520]/90 p-2 rounded z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex items-center mb-1">
                     <div className="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
-                    <span className="text-xs text-blue-300">Normal Players (Type 0)</span>
+                    <span className="text-xs text-blue-300">
+                      Normal Players (Type 0)
+                    </span>
                   </div>
                   <div className="flex items-center mb-1">
                     <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-                    <span className="text-xs text-red-300">Hackers (Type 1)</span>
+                    <span className="text-xs text-red-300">
+                      Hackers (Type 1)
+                    </span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-3 h-3 rounded-full border-2 border-green-500 mr-2"></div>
-                    <span className="text-xs text-green-300">Detected Hackers</span>
+                    <span className="text-xs text-green-300">
+                      Detected Hackers
+                    </span>
                   </div>
                 </div>
               </div>
-              
+
               {/* Right side - key insights */}
               <div className="w-full md:w-2/5 bg-[#021722] p-4 rounded-lg border border-[#06384f] shadow-inner">
                 <h4 className="text-teal-300 font-semibold mb-3 flex items-center">
                   <span className="mr-2">🔍</span>Key Insights
                 </h4>
-                
+
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-start">
                     <span className="text-teal-400 mr-2">•</span>
-                    <span>The <span className="text-blue-300">blue regions</span> show where normal players cluster</span>
+                    <span>
+                      The <span className="text-blue-300">blue regions</span>{" "}
+                      show where normal players cluster
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-teal-400 mr-2">•</span>
-                    <span>The <span className="text-red-300">red regions</span> indicate where hackers are likely to be found</span>
+                    <span>
+                      The <span className="text-red-300">red regions</span>{" "}
+                      indicate where hackers are likely to be found
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-teal-400 mr-2">•</span>
-                    <span>The <span className="text-green-300">green circles</span> highlight hackers our model successfully detected</span>
+                    <span>
+                      The <span className="text-green-300">green circles</span>{" "}
+                      highlight hackers our model successfully detected
+                    </span>
                   </li>
-                  <li className="flex items-start">
+                  {/* <li className="flex items-start">
                     <span className="text-teal-400 mr-2">•</span>
                     <span>Notice how the boundary creates a clear separation between player types</span>
+                  </li> */}
+                  <li className="flex items-start">
+                    <span className="text-teal-400 mr-2">•</span>
+                    <span>
+                      One green-circled dot in the blue region is a hacker
+                      disguising as normal, but our model detected it!
+                    </span>
                   </li>
                 </ul>
-                
+
                 <div className="mt-4 p-3 bg-[#031520] rounded-md border-l-2 border-[#F2B138]">
                   <p className="italic text-[#F2B138] text-sm">
-                    "This visualization is a 2D projection of our 12-dimensional model. Even in this simplified view, the separation is remarkably clear."
+                    "This visualization is a 2D projection of our 12-dimensional
+                    model. Even in this simplified view, the separation is
+                    remarkably clear."
                   </p>
                   <p className="text-xs text-gray-400 mt-1">— Riley</p>
                 </div>
@@ -770,31 +794,22 @@ const LogisticRegression: React.FC = () => {
             </div>
           </div>
 
+          {/* Riley's quote about the visualization */}
           <div className="bg-[#052740] bg-opacity-60 p-4 rounded-lg shadow-inner">
-            <p className="mb-4 text-left leading-7">
-              This visualization shows how the logistic regression model separates players in a simplified 2D space:
-            </p>
-
-            <ul className="list-none pl-0 mb-4 text-left">
-              <BulletPoint>
-                <span className="text-teal-300 font-semibold">Background colors:</span> The red-blue gradient shows the model's decision boundary. Blue regions are where the model predicts normal players (Player Type 0), while red regions are where it predicts hackers (Player Type 1).
-              </BulletPoint>
-              <BulletPoint>
-                <span className="text-teal-300 font-semibold">Blue dots:</span> Normal players (Player Type 0) - legitimate users enjoying the game.
-              </BulletPoint>
-              <BulletPoint>
-                <span className="text-teal-300 font-semibold">Red dots:</span> Hackers (Player Type 1) - players using unauthorized tools or exploits.
-              </BulletPoint>
-              <BulletPoint>
-                <span className="text-teal-300 font-semibold">Green circles:</span> True positives - actual hackers correctly identified by the model. Notice how most of these appear in the red regions of the boundary.
-              </BulletPoint>
-              <BulletPoint>
-                <span className="text-teal-300 font-semibold">Interesting case:</span> One of the green-circled dots appears to be in a blue region, but it's actually a red dot (hacker) overlapping with blue dots (normal players). This represents a hacker who's cleverly disguising their behavior to appear normal, but our model still detected them!
-              </BulletPoint>
-            </ul>
-            
-            <p className="mt-4 text-left leading-7">
-              Riley pointed to the visualization with pride. <span className="italic text-[#F2B138]">"See how cleanly the model separates the two groups? Even in this simplified 2D view, the boundary is remarkably clear. And look here,"</span> he said, indicating the green-circled dot in the blue region, <span className="italic text-[#F2B138]">"this hacker was trying to blend in with normal players, but our model saw through the disguise. That's the power of using multiple features - patterns emerge that wouldn't be visible otherwise."</span>
+            <p className="text-left leading-7">
+              Riley pointed to the visualization with pride.{" "}
+              <span className="italic text-[#F2B138]">
+                "See how cleanly the model separates the two groups? Even in
+                this simplified 2D view, the boundary is remarkably clear. And
+                look here,"
+              </span>{" "}
+              he said, indicating the green-circled dot in the blue region,{" "}
+              <span className="italic text-[#F2B138]">
+                "this hacker was trying to blend in with normal players, but our
+                model saw through the disguise. That's the power of using
+                multiple features - patterns emerge that wouldn't be visible
+                otherwise."
+              </span>
             </p>
           </div>
         </section>
