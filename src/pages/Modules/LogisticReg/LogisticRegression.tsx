@@ -371,22 +371,9 @@ const LogisticRegression: React.FC = () => {
             </div>
           </div>
 
-          {/* Continue with improved formatting for other sections */}
-          <div className="border border-[#06384f] p-6 my-5 bg-[#052740] rounded-lg shadow-lg">
-            <h3 className="text-xl text-[#F2B138] mb-4 font-mono tracking-wide relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400 before:shadow-[0_0_10px_rgba(45,212,191,0.7)]">
-              <span className="font-mono tracking-wider">LABELING</span>
-            </h3>
-            <p className="mb-4 text-left leading-7">
-              With the suspicion score in hand, Riley identified the top 0.2%
-              most suspicious players—those lurking above the 99.8th percentile.
-              <span className="italic ml-2">"These are our targets,"</span> he
-              said, marking them in the system as potential hackers. This
-              created a target variable that the model could learn to recognize,
-              separating the digital wheat from the chaff.
-            </p>
-          </div>
-
-          {/* Improved Labeling section with new design */}
+          {/* Removing the first LABELING section and keeping only the improved one */}
+          
+          {/* Improved Labeling section with fixed suspicion threshold visualization */}
           <div className="border border-[#06384f] p-6 my-5 bg-gradient-to-b from-[#052740] to-[#031520] rounded-lg shadow-lg">
             <h3 className="text-xl text-[#F2B138] mb-6 font-mono tracking-wide flex items-center">
               <span className="text-teal-400 mr-2">🏷️</span>
@@ -399,24 +386,26 @@ const LogisticRegression: React.FC = () => {
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#F2B138]/10 to-transparent rounded-tr-full"></div>
               
               <div className="flex flex-col md:flex-row items-start gap-6">
-                {/* Left side - visualization */}
+                {/* Left side - visualization with fixed threshold */}
                 <div className="w-full md:w-1/3 bg-[#011A27] p-4 rounded-lg border border-[#06384f] shadow-inner">
                   <div className="text-center mb-3 text-sm text-gray-400">SUSPICION THRESHOLD</div>
                   <div className="h-40 relative bg-gradient-to-t from-[#021722] to-[#052740] rounded-md overflow-hidden">
-                    {/* Percentile visualization */}
-                    <div className="absolute bottom-0 left-0 right-0 h-[99.8%] bg-gradient-to-t from-[#021722] to-[#031520] border-t border-dashed border-gray-600"></div>
-                    <div className="absolute bottom-0 left-0 right-0 h-[0.2%] bg-gradient-to-r from-red-500/70 to-red-600/70"></div>
+                    {/* Normal players area (99.8%) */}
+                    <div className="absolute bottom-0 left-0 right-0 h-[80%] bg-gradient-to-t from-[#021722] to-[#031520]"></div>
                     
                     {/* Threshold line */}
-                    <div className="absolute bottom-[99.8%] left-0 right-0 flex items-center">
+                    <div className="absolute bottom-[80%] left-0 right-0 flex items-center">
                       <div className="h-px w-full bg-red-500"></div>
                       <div className="absolute right-0 bg-red-500 text-xs text-white px-1 py-0.5 rounded-sm transform translate-x-1/2">99.8%</div>
                     </div>
                     
-                    {/* Dots representing players */}
-                    <div className="absolute bottom-[99.9%] left-[20%] w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                    <div className="absolute bottom-[99.85%] left-[70%] w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                    <div className="absolute bottom-[99.83%] left-[40%] w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                    {/* Suspicious area (0.2%) */}
+                    <div className="absolute top-0 left-0 right-0 h-[20%] bg-gradient-to-b from-red-500/10 to-transparent"></div>
+                    
+                    {/* Dots representing suspicious players */}
+                    <div className="absolute bottom-[85%] left-[20%] w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                    <div className="absolute bottom-[90%] left-[70%] w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                    <div className="absolute bottom-[87%] left-[40%] w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
                   </div>
                   <div className="mt-3 text-xs text-center text-gray-400">Top 0.2% flagged as potential hackers</div>
                 </div>
