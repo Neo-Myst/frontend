@@ -146,7 +146,7 @@ const LogisticRegression: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         {/* Header remains the same */}
         <header className="text-center py-8 mb-10 border-b border-[#06384f] relative overflow-hidden">
-          <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-teal-400 via-[#F2B138] to-teal-400"></div>
+          <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-teal-400/10 to-teal-400"></div>
           <h1 className="text-4xl text-[#F2B138] mb-3 font-bold tracking-wide">
             The Infiltrators: Hunting Hackers in NeoVerse
           </h1>
@@ -662,32 +662,210 @@ const LogisticRegression: React.FC = () => {
             </span>
           </h3>
 
-          <div className="bg-[#021722] bg-opacity-60 p-6 rounded-lg shadow-lg border border-[#06384f]">
-            <p className="mb-6 text-left leading-7">The model gave us:</p>
+          <div className="bg-gradient-to-b from-[#052740] to-[#031520] p-6 rounded-lg shadow-lg border border-[#06384f] mb-4 overflow-hidden">
+            <div className="flex flex-col md:flex-row gap-6 items-stretch">
+              {/* Left side - interactive confusion matrix */}
+              <div className="w-full md:w-3/5 relative group flex">
+                {/* <div className="absolute inset-0 bg-gradient-to-tr from-[#011A27]/80 via-transparent to-transparent z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300"></div> */}
 
-            {/* Metrics cards - adding these back */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-6">
-              <div className="bg-gradient-to-br from-[#052740] to-[#021722] py-4 px-3 rounded-lg shadow-lg border border-[#06384f] text-center">
-                <div className="text-sm text-gray-400 mb-1">Accuracy</div>
-                <div className="text-teal-400 font-bold text-2xl">99.91%</div>
+                {/* Interactive Confusion Matrix */}
+                {/* Interactive Confusion Matrix */}
+                <div className="w-full h-full flex items-center justify-center bg-[#03121A] rounded-lg border border-[#06384f] p-4 group">
+                  <div className="relative w-full max-w-lg aspect-square flex flex-col">
+                    {/* Matrix title */}
+                    <div className="text-center text-sm text-teal-300 font-mono tracking-wider mb-6">
+                      CONFUSION MATRIX
+                    </div>
+
+                    <div className="flex flex-1">
+                      {/* Left column with labels */}
+                      <div className="flex flex-col">
+                        <div className="flex-1 flex items-center justify-end pr-4">
+                          <span className="text-blue-300 text-sm">Normal</span>
+                        </div>
+                        <div className="flex-1 flex items-center justify-end pr-4">
+                          <span className="text-red-300 text-sm">Hacker</span>
+                        </div>
+                      </div>
+
+                      {/* Matrix content */}
+                      <div className="flex-1 flex flex-col">
+                        {/* Top headers */}
+                        <div className="flex mb-2">
+                          <div className="flex-1 text-center text-blue-300 text-sm">
+                            Normal
+                          </div>
+                          <div className="flex-1 text-center text-red-300 text-sm">
+                            Hacker
+                          </div>
+                        </div>
+
+                        {/* Matrix cells */}
+                        <div className="flex-1 flex flex-col gap-2">
+                          {/* First row */}
+                          <div className="flex-1 flex gap-2">
+                            {/* True Negative */}
+                            <div className="flex-1 bg-[#052740] border border-blue-700/30 rounded-md flex flex-col items-center justify-center p-3 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all duration-300">
+                              <div className="text-3xl font-bold text-blue-400">
+                                9,981
+                              </div>
+                              <div className="text-xs text-blue-300 uppercase tracking-wider">
+                                TRUE NEGATIVE
+                              </div>
+                              <div className="text-xs text-gray-400 mt-1 text-center">
+                                Normal players correctly identified
+                              </div>
+                            </div>
+
+                            {/* False Positive */}
+                            <div className="flex-1 bg-[#3A2A22] border border-orange-700/30 rounded-md flex flex-col items-center justify-center p-3 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)] transition-all duration-300">
+                              <div className="text-3xl font-bold text-orange-400">
+                                1
+                              </div>
+                              <div className="text-xs text-orange-300 uppercase tracking-wider">
+                                FALSE POSITIVE
+                              </div>
+                              <div className="text-xs text-gray-400 mt-1 text-center">
+                                Normal player wrongly flagged
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Second row */}
+                          <div className="flex-1 flex gap-2">
+                            {/* False Negative */}
+                            <div className="flex-1 bg-[#2D1E1E] border border-red-700/30 rounded-md flex flex-col items-center justify-center p-3 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)] transition-all duration-300">
+                              <div className="text-3xl font-bold text-red-400">
+                                6
+                              </div>
+                              <div className="text-xs text-red-300 uppercase tracking-wider">
+                                FALSE NEGATIVE
+                              </div>
+                              <div className="text-xs text-gray-400 mt-1 text-center">
+                                Hackers we missed
+                              </div>
+                            </div>
+
+                            {/* True Positive */}
+                            <div className="flex-1 bg-[#1A2A1A] border border-green-700/30 rounded-md flex flex-col items-center justify-center p-3 hover:shadow-[0_0_15px_rgba(34,197,94,0.3)] transition-all duration-300">
+                              <div className="text-3xl font-bold text-green-400">
+                                9
+                              </div>
+                              <div className="text-xs text-green-300 uppercase tracking-wider">
+                                TRUE POSITIVE
+                              </div>
+                              <div className="text-xs text-gray-400 mt-1 text-center">
+                                Hackers successfully caught
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Bottom label */}
+                        <div className="text-center text-xs text-gray-400 mt-2">
+                          Predicted Class
+                        </div>
+                      </div>
+
+                      {/* Right side label - pulled closer */}
+                      <div className="flex items-center">
+                        <div className="text-xs text-gray-400 transform rotate-90 origin-center whitespace-nowrap">
+                          Actual Class
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="bg-gradient-to-br from-[#052740] to-[#021722] py-4 px-3 rounded-lg shadow-lg border border-[#06384f] text-center">
-                <div className="text-sm text-gray-400 mb-1">Precision</div>
-                <div className="text-teal-400 font-bold text-2xl">90%</div>
-              </div>
-              <div className="bg-gradient-to-br from-[#052740] to-[#021722] py-4 px-3 rounded-lg shadow-lg border border-[#06384f] text-center">
-                <div className="text-sm text-gray-400 mb-1">Recall</div>
-                <div className="text-teal-400 font-bold text-2xl">60%</div>
-              </div>
-              <div className="bg-gradient-to-br from-[#052740] to-[#021722] py-4 px-3 rounded-lg shadow-lg border border-[#06384f] text-center">
-                <div className="text-sm text-gray-400 mb-1">AUC</div>
-                <div className="text-teal-400 font-bold text-2xl">0.9996</div>
+
+              {/* Right side - key insights */}
+              <div className="w-full md:w-2/5 bg-[#021722] p-4 rounded-lg border border-[#06384f] shadow-inner flex flex-col justify-between">
+                <div>
+                  <h4 className="text-teal-300 font-semibold mb-3 flex items-center">
+                    <span className="mr-2">🔍</span>Key Insights
+                  </h4>
+
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-teal-400 mr-2">•</span>
+                      <span>
+                        <span className="text-green-300">
+                          True Positives (9):
+                        </span>{" "}
+                        Hackers correctly identified by our model
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-teal-400 mr-2">•</span>
+                      <span>
+                        <span className="text-blue-300">
+                          True Negatives (9,981):
+                        </span>{" "}
+                        Normal players correctly classified
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-teal-400 mr-2">•</span>
+                      <span>
+                        <span className="text-orange-300">
+                          False Positives (1):
+                        </span>{" "}
+                        Normal player wrongly flagged as hacker
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-teal-400 mr-2">•</span>
+                      <span>
+                        <span className="text-red-300">
+                          False Negatives (6):
+                        </span>{" "}
+                        Hackers that our model missed
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-4 p-3 bg-[#031520] rounded-md border-l-2 border-[#F2B138]">
+                  <p className="italic text-[#F2B138] text-sm">
+                    "Our priority was to minimize false positives. We'd rather
+                    miss a few hackers than wrongly accuse legitimate players.
+                    With only one false positive, we achieved that goal."
+                  </p>
+                  <p className="text-xs text-gray-400 mt-1">— Riley</p>
+                </div>
               </div>
             </div>
+          </div>
 
-            <p className="mb-4 text-left leading-7">
-              The team caught 9 real hackers. Only 1 innocent player was wrongly
-              flagged, and they were cleared after further investigation.
+          {/* Metrics cards - adding these back */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-6">
+            <div className="bg-gradient-to-br from-[#052740] to-[#021722] py-4 px-3 rounded-lg shadow-lg border border-[#06384f] text-center">
+              <div className="text-sm text-gray-400 mb-1">Accuracy</div>
+              <div className="text-teal-400 font-bold text-2xl">99.91%</div>
+            </div>
+            <div className="bg-gradient-to-br from-[#052740] to-[#021722] py-4 px-3 rounded-lg shadow-lg border border-[#06384f] text-center">
+              <div className="text-sm text-gray-400 mb-1">Precision</div>
+              <div className="text-teal-400 font-bold text-2xl">90%</div>
+            </div>
+            <div className="bg-gradient-to-br from-[#052740] to-[#021722] py-4 px-3 rounded-lg shadow-lg border border-[#06384f] text-center">
+              <div className="text-sm text-gray-400 mb-1">Recall</div>
+              <div className="text-teal-400 font-bold text-2xl">60%</div>
+            </div>
+            <div className="bg-gradient-to-br from-[#052740] to-[#021722] py-4 px-3 rounded-lg shadow-lg border border-[#06384f] text-center">
+              <div className="text-sm text-gray-400 mb-1">AUC</div>
+              <div className="text-teal-400 font-bold text-2xl">0.9996</div>
+            </div>
+          </div>
+
+          <div className="bg-[#052740] bg-opacity-60 p-4 rounded-lg shadow-inner">
+            <p className="text-left leading-7">
+              Riley's team successfully caught 9 real hackers while only wrongly
+              flagging one innocent player, who was quickly cleared after
+              further investigation. The model achieved an impressive 99.91%
+              accuracy, with high precision (90%) ensuring minimal false
+              accusations. While the recall (60%) indicates some hackers escaped
+              detection, the team prioritized avoiding false accusations over
+              catching every hacker.
             </p>
           </div>
         </section>
@@ -784,9 +962,10 @@ const LogisticRegression: React.FC = () => {
 
                 <div className="mt-4 p-3 bg-[#031520] rounded-md border-l-2 border-[#F2B138]">
                   <p className="italic text-[#F2B138] text-sm">
-                    "This visualization is a 2D projection of our 12-dimensional
-                    model. Even in this simplified view, the separation is
-                    remarkably clear."
+                    "This visualization is a simplified 2D representation of our
+                    multi-feature analysis. Even with this reduction in
+                    complexity, the boundary between player types remains
+                    strikingly clear."
                   </p>
                   <p className="text-xs text-gray-400 mt-1">— Riley</p>
                 </div>
@@ -821,16 +1000,128 @@ const LogisticRegression: React.FC = () => {
               PRECISION-RECALL CURVE
             </span>
           </h3>
-          <div className="bg-[#021722] p-6 rounded-lg shadow-lg border border-[#06384f] mb-4 overflow-hidden">
-            <img
-              src="/src/assets/logistic_reg/precision_recall_curve.png"
-              alt="Precision-Recall Curve showing model performance"
-              className="w-full block rounded-md transform hover:scale-[1.02] transition-transform duration-300"
-            />
+
+          {/* Enhanced image container with interactive elements */}
+          <div className="bg-gradient-to-b from-[#052740] to-[#031520] p-6 rounded-lg shadow-lg border border-[#06384f] mb-4 overflow-hidden">
+            <div className="flex flex-col md:flex-row gap-6 items-stretch">
+              {/* Left side - image with overlay elements */}
+              <div className="w-full md:w-3/5 relative group flex">
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#011A27]/80 via-transparent to-transparent z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300"></div>
+
+                <img
+                  src="/src/assets/logistic_reg/precision_recall_curve.png"
+                  alt="Precision-Recall Curve showing model performance"
+                  className="w-full h-full object-cover rounded-md shadow-lg transform group-hover:scale-[1.02] transition-all duration-300"
+                />
+
+                {/* Overlay annotations that appear on hover */}
+                <div className="absolute top-2 right-2 bg-[#031520]/90 text-xs text-teal-300 px-2 py-1 rounded z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Hover to explore
+                </div>
+
+                {/* Interactive overlay elements that appear on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
+                  {/* High Precision Zone - semi-transparent green area in top-left */}
+                  <div className="absolute top-[15%] left-[10%] w-[30%] h-[30%] bg-green-500/20 border border-green-500/50 rounded-md">
+                    <div className="absolute -top-6 left-0 bg-[#031520]/90 text-xs text-green-300 px-2 py-1 rounded whitespace-nowrap">
+                      High Precision Zone
+                    </div>
+                  </div>
+
+                  {/* Operating Point - red dot with pulsing effect */}
+                  <div className="absolute top-[25%] left-[25%]">
+                    <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
+                    <div className="absolute -top-6 left-0 bg-[#031520]/90 text-xs text-red-300 px-2 py-1 rounded whitespace-nowrap">
+                      Operating Point (P=0.7, R=0.6)
+                    </div>
+                    {/* Dotted lines extending from operating point */}
+                    <div className="absolute top-2 left-2 w-[200px] h-px border-t border-dashed border-red-400/70"></div>
+                    <div className="absolute top-2 left-2 w-px h-[150px] border-l border-dashed border-red-400/70"></div>
+                  </div>
+                </div>
+
+                {/* Legend overlay */}
+                <div className="absolute bottom-3 left-3 bg-[#031520]/90 p-2 rounded z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center mb-1">
+                    <div className="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
+                    <span className="text-xs text-blue-300">
+                      Precision-Recall Curve
+                    </span>
+                  </div>
+                  <div className="flex items-center mb-1">
+                    <div className="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                    <span className="text-xs text-green-300">
+                      High Precision Zone
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                    <span className="text-xs text-red-300">
+                      Operating Point
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right side - key insights */}
+              <div className="w-full md:w-2/5 bg-[#021722] p-4 rounded-lg border border-[#06384f] shadow-inner flex flex-col justify-between">
+                <div>
+                  <h4 className="text-teal-300 font-semibold mb-3 flex items-center">
+                    <span className="mr-2">🔍</span>Key Insights
+                  </h4>
+
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-teal-400 mr-2">•</span>
+                      <span>
+                        The curve shows the trade-off between precision
+                        (accuracy of positive predictions) and recall (ability
+                        to find all positives)
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-teal-400 mr-2">•</span>
+                      <span>
+                        Our model maintains high precision even as recall
+                        increases, showing strong performance
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-teal-400 mr-2">•</span>
+                      <span>
+                        The{" "}
+                        <span className="text-green-300">
+                          high precision zone
+                        </span>{" "}
+                        allows us to catch hackers with minimal false alarms
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-teal-400 mr-2">•</span>
+                      <span>
+                        The{" "}
+                        <span className="text-red-300">operating point</span> we
+                        selected balances catching hackers while minimizing
+                        false accusations
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-4 p-3 bg-[#031520] rounded-md border-l-2 border-[#F2B138]">
+                  <p className="italic text-[#F2B138] text-sm">
+                    "This curve is critical for our security team. It shows we
+                    can reliably identify hackers without disrupting the
+                    experience for legitimate players."
+                  </p>
+                  <p className="text-xs text-gray-400 mt-1">— Riley</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="bg-[#052740] bg-opacity-60 p-4 rounded-lg shadow-inner">
-            <p className="mb-4 text-left leading-7">
+            <p className="text-left leading-7">
               Riley explained that this curve shows they can catch hackers while
               avoiding too many false alarms. Even if they adjust how strict
               they are, the model still performs well. The precision stays high
@@ -845,22 +1136,117 @@ const LogisticRegression: React.FC = () => {
           <h3 className="text-xl text-[#F2B138] mb-6 text-left relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400 before:shadow-[0_0_10px_rgba(45,212,191,0.7)]">
             <span className="font-mono tracking-wider text-2xl">ROC CURVE</span>
           </h3>
-          <div className="bg-[#021722] p-6 rounded-lg shadow-lg border border-[#06384f] mb-4 overflow-hidden">
-            <img
-              src="/src/assets/logistic_reg/roc_curve.png"
-              alt="ROC Curve showing true positive vs. false positive rate"
-              className="w-full block rounded-md transform hover:scale-[1.02] transition-transform duration-300"
-            />
+
+          {/* Enhanced image container with interactive elements */}
+          <div className="bg-gradient-to-b from-[#052740] to-[#031520] p-6 rounded-lg shadow-lg border border-[#06384f] mb-4 overflow-hidden">
+            <div className="flex flex-col md:flex-row gap-6 items-stretch">
+              {/* Left side - image with overlay elements */}
+              <div className="w-full md:w-3/5 relative group flex">
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#011A27]/80 via-transparent to-transparent z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300"></div>
+
+                <img
+                  src="/src/assets/logistic_reg/roc_curve.png"
+                  alt="ROC Curve showing model performance"
+                  className="w-full h-full object-cover rounded-md shadow-lg transform group-hover:scale-[1.02] transition-all duration-300"
+                />
+
+                {/* Overlay annotations that appear on hover */}
+                <div className="absolute top-2 right-2 bg-[#031520]/90 text-xs text-teal-300 px-2 py-1 rounded z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Hover to explore
+                </div>
+
+                {/* Interactive overlay elements that appear on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
+                  {/* Random Classifier Line - diagonal line from bottom-left to top-right */}
+                  <div className="absolute top-0 left-0 w-full h-full">
+                    <div className="absolute top-[5%] left-[5%] w-[90%] h-[90%] overflow-hidden">
+                      <div className="absolute top-0 left-0 w-full h-full border-b border-dashed border-red-500/70 transform rotate-45 origin-bottom-left"></div>
+                    </div>
+                    <div className="absolute top-[40%] left-[40%] bg-[#031520]/90 text-xs text-red-300 px-2 py-1 rounded whitespace-nowrap">
+                      Random Classifier Line
+                    </div>
+                  </div>
+                </div>
+
+                {/* Legend overlay */}
+                <div className="absolute bottom-3 left-3 bg-[#031520]/90 p-2 rounded z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center mb-1">
+                    <div className="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
+                    <span className="text-xs text-blue-300">ROC Curve</span>
+                  </div>
+                  <div className="flex items-center mb-1">
+                    <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                    <span className="text-xs text-red-300">
+                      Random Classifier Line
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                    <span className="text-xs text-green-300">AUC = 0.9996</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right side - key insights */}
+              <div className="w-full md:w-2/5 bg-[#021722] p-4 rounded-lg border border-[#06384f] shadow-inner flex flex-col justify-between">
+                <div>
+                  <h4 className="text-teal-300 font-semibold mb-3 flex items-center">
+                    <span className="mr-2">🔍</span>Key Insights
+                  </h4>
+
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-teal-400 mr-2">•</span>
+                      <span>
+                        The ROC curve plots true positive rate against false
+                        positive rate at various thresholds
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-teal-400 mr-2">•</span>
+                      <span>
+                        Our curve hugs the top-left corner, showing near-perfect
+                        classification
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-teal-400 mr-2">•</span>
+                      <span>
+                        The{" "}
+                        <span className="text-green-300">AUC of 0.9996</span>{" "}
+                        means our model is 99.96% effective at ranking hackers
+                        higher than normal players
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-teal-400 mr-2">•</span>
+                      <span>
+                        The <span className="text-red-300">diagonal line</span>{" "}
+                        represents a random classifier (50% accuracy)
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-4 p-3 bg-[#031520] rounded-md border-l-2 border-[#F2B138]">
+                  <p className="italic text-[#F2B138] text-sm">
+                    "This curve confirms our model's exceptional discriminative
+                    power. It can separate hackers from normal players with
+                    remarkable accuracy."
+                  </p>
+                  <p className="text-xs text-gray-400 mt-1">— Riley</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="bg-[#052740] bg-opacity-60 p-4 rounded-lg shadow-inner">
-            <p className="mb-4 text-left leading-7">
-              Riley pointed out that this curve tells us that their model is
-              very good at telling hackers apart from innocent players. The area
-              under the curve is nearly perfect at 0.9996. In practical terms,
-              that means if they randomly select a hacker and a non-hacker,
-              their model will correctly identify which is which 99.96% of the
-              time.
+            <p className="text-left leading-7">
+              Riley explained that the ROC curve shows how well the model can
+              distinguish between hackers and normal players. The curve's
+              proximity to the top-left corner and the high AUC value of 0.9996
+              demonstrate that the model has exceptional discriminative power,
+              even at different threshold settings.
             </p>
           </div>
         </section>
