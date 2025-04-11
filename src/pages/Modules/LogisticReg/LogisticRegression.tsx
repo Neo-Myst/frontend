@@ -148,121 +148,168 @@ const LogisticRegression: React.FC = () => {
       <div className="max-w-3xl mx-auto">
         <header className="text-center py-5 mb-8 border-b border-[#06384f]">
           <h1 className="text-3xl text-[#F2B138] mb-2">
-            Chapter 6: Finding the Hackers of NeoVerse
+            The Infiltrators: Hunting Hackers in NeoVerse
           </h1>
-          <p className="text-left">Using Logistic Regression</p>
+          <p className="text-left font-light italic">A logistic regression adventure</p>
         </header>
 
         <section>
           <p className="mb-4 text-left">
-            Things were finally settling down in NeoVerse after we figured out
-            how players were spending their credits. Our linear regression tools
-            had done the job. But just when we thought we could relax, a new
-            alert came in:
+            The NeoVerse control room was quiet, the glow of monitors casting blue light across Riley's face. 
+            After successfully modeling player spending with linear regression, the team had earned a moment of peace. 
+            The economy was stable, players were happy, and the virtual world hummed along smoothly.
+          </p>
+
+          <p className="mb-4 text-left">
+            Then, a red alert flashed across the main screen:
           </p>
 
           <div className="bg-[#052740] border-l-4 border-teal-400 p-3 my-4">
             <p className="m-0">
-              ⚠️ Warning: Suspicious activity detected. Multiple users showing
-              signs of hacking.
+              ⚠️ <span className="text-red-400 font-bold">SECURITY BREACH DETECTED:</span> Multiple accounts exhibiting impossible gameplay patterns. Suspected hacking activity in sectors 7 through 12.
             </p>
           </div>
 
           <p className="mb-4 text-left">
-            This time, it wasn't about how much someone spent. It was a yes or
-            no situation: Is this player a hacker or not?
+            Riley's fingers flew across the keyboard. This wasn't about predicting continuous values anymore. 
+            This was binary: either a player was a hacker, or they weren't. A completely different kind of problem 
+            that called for a completely different solution.
           </p>
         </section>
 
         <div className="border-t border-[#06384f] my-8"></div>
 
         <section>
-          <h3 className="text-xl text-[#F2B138] mb-4">
-            🧠 Why Logistic Regression?
+          <h3 className="text-xl text-[#F2B138] mb-4 relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400">
+            <span className="font-mono tracking-wider">
+              WHY LOGISTIC REGRESSION
+            </span>
           </h3>
 
           <p className="mb-4 text-left">
-            We needed a way to classify players into two groups—hackers and
-            non-hackers. That's where <strong>logistic regression</strong> came
-            in. It helps answer simple questions:
+            "We need a classification model," Riley explained to the team gathered around the holographic display. 
+            "Linear regression won't work here because we're not predicting a continuous value. We need to separate 
+            players into two distinct categories."
           </p>
 
-          <p className="mb-4 text-left">Is this a hacker?</p>
-          <ul className="list-none pl-0 mb-4 text-left">
-            <BulletPoint>Yes or No.</BulletPoint>
-          </ul>
+          <p className="mb-4 text-left">
+            He pulled up a visualization showing two clusters of data points.
+          </p>
 
           <p className="mb-4 text-left">
-            Unlike linear regression, which gives us a number, logistic
-            regression gives us a probability. That means we could rank players
-            based on how suspicious they were.
+            "Logistic regression will give us exactly what we need—a probability score between 0 and 1 that tells us 
+            how likely each player is to be a hacker. We can then set a threshold to make our final decision."
+          </p>
+
+          <p className="mb-4 text-left">
+            The security chief nodded. "So instead of predicting how much someone will spend, we're predicting the 
+            likelihood they're breaking into our systems?"
+          </p>
+
+          <p className="mb-4 text-left">
+            "Precisely," Riley confirmed. "And the beauty of logistic regression is that it not only classifies but 
+            also ranks players by suspicion level, letting us prioritize our investigation."
           </p>
         </section>
 
+        {/* Continue with the rest of the sections with enhanced storytelling */}
         <div className="border-t border-[#06384f] my-8"></div>
 
         <section>
-          <h3 className="text-xl text-[#F2B138] mb-4">
-            🛠️ How We Built Our Model
+          <h3 className="text-xl text-[#F2B138] mb-4 relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400">
+            <span className="font-mono tracking-wider">
+              BUILDING THE DETECTION SYSTEM
+            </span>
           </h3>
 
-          <p className="mb-4 text-left">We started by improving our data:</p>
+          <p className="mb-4 text-left">
+            Riley projected a holographic timeline onto the wall. "First, we need to engineer features that will help 
+            our model distinguish between normal players and hackers. Raw data won't be enough—we need to transform it 
+            into meaningful signals."
+          </p>
 
           <div className="border border-[#06384f] p-4 my-5 bg-[#052740]">
-            <h3 className="text-xl text-[#F2B138] mb-3">
-              🧩 Feature Engineering
+            <h3 className="text-xl text-[#F2B138] mb-3 font-mono tracking-wide">
+              FEATURE ENGINEERING
             </h3>
             <ul className="list-none pl-0 mb-4 text-left">
               <BulletPoint>
                 <code className="bg-[#021722] px-1 rounded">
                   money_per_hour
                 </code>
-                : Big spenders with short playtime? Could be a red flag.
+                : Riley's eyes narrowed at a data point on his screen. "Look at this player—they've spent 50,000 credits in just 
+                three hours of gameplay." He created a ratio dividing total spending by hours played, instantly revealing 
+                suspicious economic patterns that would have been invisible in the raw data.
               </BulletPoint>
               <BulletPoint>
                 <code className="bg-[#021722] px-1 rounded">
                   quest_efficiency
                 </code>
-                : Completing too many quests too quickly? Another sign.
+                : "This player completed the Dragon's Lair quest in two minutes," Riley noted, pointing to another anomaly. 
+                "That's physically impossible without code manipulation." By dividing quest completion scores by time played, 
+                the team created a metric that highlighted players moving through content at superhuman speeds.
               </BulletPoint>
               <BulletPoint>
                 <code className="bg-[#021722] px-1 rounded">
                   crime_to_play_ratio
                 </code>
-                : Lots of crime in little time? Suspicious.
+                : The security officer pointed to a cluster of accounts. "These players have criminal activity scores that 
+                don't match their playtime." Riley nodded, creating a new feature that normalized criminal activity against 
+                hours played, revealing accounts with disproportionate illegal actions.
               </BulletPoint>
               <BulletPoint>
                 <code className="bg-[#021722] px-1 rounded">
                   has_dark_market
                 </code>
-                : Were they involved in black market trades?
+                : "The Dark Market leaves traces," Riley explained, creating a binary flag in the system. "Every transaction 
+                there has a digital signature we can detect." This simple 0/1 feature immediately highlighted players 
+                connected to NeoVerse's underground economy.
+              </BulletPoint>
+              <BulletPoint>
+                <code className="bg-[#021722] px-1 rounded">
+                  suspicious_activity
+                </code>
+                : Riley combined multiple signals, flagging players who ranked in both the top 5% for crime ratios and quest 
+                exploits. "If they're outliers in both categories, that's no coincidence," he explained as the system 
+                automatically tagged these high-risk accounts.
               </BulletPoint>
               <BulletPoint>
                 <code className="bg-[#021722] px-1 rounded">
                   suspicion_score
                 </code>
-                : Combined all of this into a single score.
+                : "Our master metric," Riley said, unveiling his final creation. The team watched as the algorithm weighted 
+                criminal activity (30%), quest exploits (20%), spending patterns (20%), and dark market presence (30%) into 
+                a single comprehensive score that quantified how suspicious each player's behavior truly was.
               </BulletPoint>
             </ul>
           </div>
 
           <div className="border border-[#06384f] p-4 my-5 bg-[#052740]">
-            <h3 className="text-xl text-[#F2B138] mb-3">🔐 Labeling</h3>
+            <h3 className="text-xl text-[#F2B138] mb-3 font-mono tracking-wide relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400">
+              <span className="font-mono tracking-wider">LABELING</span>
+            </h3>
             <p className="mb-4 text-left">
-              We combined all of this into a single score:{" "}
-              <strong>suspicion_score</strong>. Then, we marked the top 0.2% as
-              potential hackers and used that as our target.
+              With the suspicion score in hand, Riley identified the top 0.2%
+              most suspicious players—those lurking above the 99.8th percentile.
+              He marked these players in the system as potential hackers,
+              creating a target that the model could learn to recognize.
             </p>
           </div>
 
           <div className="border border-[#06384f] p-4 my-5 bg-[#052740]">
-            <h3 className="text-xl text-[#F2B138] mb-3">
-              🧪 Training the Model
+            <h3 className="text-xl text-[#F2B138] mb-3 font-mono tracking-wide relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400">
+              <span className="font-mono tracking-wider">
+                TRAINING THE MODEL
+              </span>
             </h3>
             <p className="mb-4 text-left">
-              We trained a logistic regression model on this data using 12
-              features. Instead of using a fixed threshold, we picked the top 10
-              most suspicious players. This helped reduce false alarms.
+              Riley fed 12 carefully selected features into his logistic
+              regression model. He knew hackers were rare—a needle in NeoVerse's
+              digital haystack—so he balanced the class weights to give these
+              outliers proper attention. Rather than setting an arbitrary
+              threshold, Riley programmed the system to flag exactly the top 10
+              players with the highest predicted probabilities. A precise strike
+              force was better than a wide net.
             </p>
           </div>
         </section>
@@ -270,8 +317,10 @@ const LogisticRegression: React.FC = () => {
         <div className="border-t border-[#06384f] my-8"></div>
 
         <section>
-          <h3 className="text-xl text-[#F2B138] mb-4">
-            📊 How Well Did It Work?
+          <h3 className="text-xl text-[#F2B138] mb-4 relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400">
+            <span className="font-mono tracking-wider">
+              HOW WELL DID IT WORK
+            </span>
           </h3>
 
           <p className="mb-4 text-left">The model gave us:</p>
@@ -292,16 +341,16 @@ const LogisticRegression: React.FC = () => {
           </div>
 
           <p className="mb-4 text-left">
-            We caught 9 real hackers. Only 1 innocent player was wrongly
-            flagged, and they were cleared immediately.
+            The team caught 9 real hackers. Only 1 innocent player was wrongly
+            flagged, and they were cleared after further investigation.
           </p>
         </section>
 
         <div className="border-t border-[#06384f] my-8"></div>
 
         <section className="my-8">
-          <h3 className="text-xl text-[#F2B138] mb-4 text-left">
-            📷 Hacker Truth Table
+          <h3 className="text-xl text-[#F2B138] mb-4 text-left relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400">
+            <span className="font-mono tracking-wider">HACKER TRUTH TABLE</span>
           </h3>
           <div className="bg-[#052740] p-4 rounded-md mb-4">
             <img
@@ -382,18 +431,22 @@ const LogisticRegression: React.FC = () => {
             </div>
           )}
 
-          <p className="mb-4 text-left">All of them had a mix of:</p>
+          <p className="mb-4 text-left">
+            Riley's analysis showed all hackers had a mix of:
+          </p>
           <ul className="list-none pl-0 mb-4 text-left">
-            <BulletPoint>High quest scores</BulletPoint>
-            <BulletPoint>Big spending</BulletPoint>
-            <BulletPoint>Dark market activity</BulletPoint>
-            <BulletPoint>Long hours of play</BulletPoint>
+            <BulletPoint>Abnormally high quest efficiency</BulletPoint>
+            <BulletPoint>Suspicious spending patterns</BulletPoint>
+            <BulletPoint>Dark market connections</BulletPoint>
+            <BulletPoint>Irregular login patterns</BulletPoint>
           </ul>
         </section>
 
         <section className="my-8">
-          <h3 className="text-xl text-[#F2B138] mb-4 text-left">
-            🧭 Logistic Regression Boundary
+          <h3 className="text-xl text-[#F2B138] mb-4 text-left relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400">
+            <span className="font-mono tracking-wider">
+              LOGISTIC REGRESSION BOUNDARY
+            </span>
           </h3>
           <div className="bg-[#052740] p-4 rounded-md mb-4">
             <img
@@ -419,8 +472,10 @@ const LogisticRegression: React.FC = () => {
         </section>
 
         <section className="my-8">
-          <h3 className="text-xl text-[#F2B138] mb-4 text-left">
-            🧮 Precision-Recall Curve
+          <h3 className="text-xl text-[#F2B138] mb-4 text-left relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400">
+            <span className="font-mono tracking-wider">
+              PRECISION-RECALL CURVE
+            </span>
           </h3>
           <div className="bg-[#052740] p-4 rounded-md mb-4">
             <img
@@ -438,8 +493,8 @@ const LogisticRegression: React.FC = () => {
         </section>
 
         <section className="my-8">
-          <h3 className="text-xl text-[#F2B138] mb-4 text-left">
-            📈 ROC Curve
+          <h3 className="text-xl text-[#F2B138] mb-4 text-left relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400">
+            <span className="font-mono tracking-wider">ROC CURVE</span>
           </h3>
           <div className="bg-[#052740] p-4 rounded-md mb-4">
             <img
@@ -458,40 +513,49 @@ const LogisticRegression: React.FC = () => {
         <div className="border-t border-[#06384f] my-8"></div>
 
         <section>
-          <h3 className="text-xl text-[#F2B138] mb-4">📘 Final Thoughts</h3>
+          <h3 className="text-xl text-[#F2B138] mb-4 relative overflow-hidden pl-3 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-teal-400">
+            <span className="font-mono tracking-wider">MISSION ACCOMPLISHED</span>
+          </h3>
 
           <p className="mb-4 text-left">
-            We didn't just build a model. We built a system to protect NeoVerse.
+            The NeoVerse control room erupted in applause as the final hacker was removed from the system. What had begun 
+            as a security Crisis had transformed into a triumph of data science and machine learning.
           </p>
 
-          <p className="mb-4 text-left">We:</p>
+          <p className="mb-4 text-left">Riley's team had:</p>
           <ul className="list-none pl-0 mb-4 text-left">
             <BulletPoint>
-              Made smart features to detect suspicious activity
+              Transformed raw gameplay data into powerful predictive features that exposed hidden patterns
             </BulletPoint>
             <BulletPoint>
-              Used logistic regression to identify hackers
+              Deployed logistic regression to calculate the precise probability of each player being a hacker
             </BulletPoint>
-            <BulletPoint>Visualized our findings clearly</BulletPoint>
-            <BulletPoint>Found 9 real infiltrators</BulletPoint>
+            <BulletPoint>
+              Created intuitive visualizations that made complex statistical concepts clear to everyone
+            </BulletPoint>
+            <BulletPoint>
+              Successfully identified and removed 9 sophisticated hackers who had been damaging the game economy
+            </BulletPoint>
           </ul>
 
           <p className="mb-4 text-left">
-            Now, NeoVerse is safer. And with this model in place, any future
-            threat can be caught before it spreads.
+            "The system is now self-sustaining," Riley explained to the executive team. "It will continuously monitor player 
+            behavior and flag suspicious accounts before they can do significant damage. NeoVerse is more secure than it's 
+            ever been."
           </p>
 
           <p className="mb-4 text-left">
-            Riley Carter—the analyst who led the charge—finally leans back,
-            files closed, case solved. She packs her things, walks outside, and
-            looks up at the clear night sky. It's quiet. Peaceful.
+            As the meeting ended, Riley walked to the observation deck overlooking the virtual cityscape of NeoVerse. Millions 
+            of players were going about their digital lives, unaware of how close their world had come to chaos—or how a 
+            mathematical model had saved it.
           </p>
 
           <blockquote className="bg-[#052740] border-l-4 border-teal-400 p-3 my-4 italic">
-            <p className="m-0">"Time for a break."</p>
+            <p className="m-0">"Sometimes the most powerful weapons aren't the flashiest," he thought. "Sometimes they're 
+            just elegant equations that separate truth from deception."</p>
           </blockquote>
 
-          <p className="mb-4 text-left">NeoVerse is safe again.</p>
+          <p className="mb-4 text-left">As the virtual sun set over NeoVerse, Riley knew the game was safe once more.</p>
         </section>
       </div>
     </div>
