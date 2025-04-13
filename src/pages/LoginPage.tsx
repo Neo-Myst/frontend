@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useUser from "../hooks/useUser";
 
 const LoginPage: React.FC = () => {
-  const { login } = useUser(); // Destructure login from the hook
+  const { login, user } = useUser();
   const navigate = useNavigate();
+
+  // Redirect automatically if user is already logged in
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   const [usernameOrEmail, setUsernameOrEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,13 +41,19 @@ const LoginPage: React.FC = () => {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username_or_email: usernameOrEmail, password }),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL}/user/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username_or_email: usernameOrEmail,
+            password,
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Invalid credentials");
@@ -48,15 +61,16 @@ const LoginPage: React.FC = () => {
 
       const data = await response.json();
 
-      // Ensure the backend response includes the username
-      if (!data.username) {
-        throw new Error("Username not found in response");
+      if (!data.username || !data.email) {
+        throw new Error("Username or email not found in response");
       }
 
-      // Store token and username
+      // Store token and update user context with both username and email.
       localStorage.setItem("token", data.access_token);
-      login(data.username); // Update user context with the username
-      navigate("/"); // Redirect to homepage
+      // Make sure the token is available for future API calls
+      localStorage.setItem("isAuthenticated", "true");
+      login({ username: data.username, email: data.email });
+      navigate("/");
     } catch (error) {
       console.error("Login failed:", error);
       setError("Invalid credentials. Please try again.");
@@ -64,7 +78,7 @@ const LoginPage: React.FC = () => {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://127.0.0.1:8000/user/google/login";
+    window.location.href = `${import.meta.env.VITE_API_BASE_URL}/user/google/login`;
   };
 
   return (

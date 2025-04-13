@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useUser from "../hooks/useUser";
 
 const SignupPage: React.FC = () => {
+  const { login } = useUser();
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({});
-  const navigate = useNavigate();
 
   const validateForm = () => {
     let valid = true;
@@ -30,42 +34,48 @@ const SignupPage: React.FC = () => {
     return valid;
   };
 
-  const handleSignup = async () => {
-    if (!validateForm()) {
-      return;
-    }
-
+  // Looking at the handleSignup function to see which endpoint is used
+  const handleSignup = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError("");
+    
     try {
-      const response = await fetch("http://127.0.0.1:8000/user/signup", {
+      // This is the endpoint being used for registration
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/user/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, email, password }),
+        body: JSON.stringify({
+          username,
+          email,
+          password,
+        }),
       });
-
-      if (response.redirected) {
-        const redirectMessage =
-          response.headers.get("message") ||
-          "User already exists. Please login.";
-        alert(redirectMessage);
-        navigate("/login");
-        return;
-      }
-
+      
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.detail || "Signup failed");
+        throw new Error("Registration failed");
       }
 
+      const data = await response.json();
+
+      // Store token and update user context
+      localStorage.setItem("token", data.access_token);
+      // Make sure the token is available for future API calls
+      localStorage.setItem("isAuthenticated", "true");
+      login({ username: data.username, email: data.email });
       navigate("/");
-    } catch {
-      setError("Signup failed. Please try again.");
+    } catch (error) {
+      console.error("Signup failed:", error);
+      setError("Registration failed. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const handleGoogleSignup = () => {
-    window.location.href = "http://127.0.0.1:8000/user/google/login";
+    window.location.href = `${import.meta.env.VITE_API_BASE_URL}/user/google/login`;
   };
 
   return (
