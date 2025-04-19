@@ -1,5 +1,10 @@
 import { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { UserProvider } from "./contexts/UserContext";
 import Navbar from "./components/Navbar";
 
@@ -53,9 +58,7 @@ const GameModule1Outro = lazy(
 const Module3DataSplitting = lazy(
   () => import("./pages/Modules/Module3/DataSplittingPage")
 );
-const Module3Intro = lazy(
-  () => import("./pages/Modules/Module3/IntroPage")
-);
+const Module3Intro = lazy(() => import("./pages/Modules/Module3/IntroPage"));
 const Module3Regression = lazy(
   () => import("./pages/Modules/Module3/RegressionPage")
 );
@@ -65,14 +68,21 @@ const GameModule2Regression = lazy(
   () => import("./pages/GameModules/GameModule2/LinearRegression")
 );
 
+const LogisticRegression = lazy(
+  () => import("./pages/Modules/LogisticReg/LogisticRegression")
+);
+
+// Completion Screen
+const CompletionScreen = lazy(() => import("./pages/Modules/CompletionScreen"));
+
 // Component to conditionally render Navbar
 const NavbarWrapper = () => {
   const location = useLocation();
-  const showNavbarPaths = ['/', '/login', '/signup'];
-  
+  const showNavbarPaths = ["/", "/login", "/signup"];
+
   // Only show navbar on home, login, and signup pages
   const shouldShowNavbar = showNavbarPaths.includes(location.pathname);
-  
+
   return shouldShowNavbar ? <Navbar /> : null;
 };
 
@@ -133,7 +143,10 @@ const App = () => {
             />
 
             {/* Module 3 Routes */}
-            <Route path="/module3/data-splitting" element={<Module3DataSplitting />} />
+            <Route
+              path="/module3/data-splitting"
+              element={<Module3DataSplitting />}
+            />
             <Route path="/module3/intro" element={<Module3Intro />} />
             <Route path="/module3/regression" element={<Module3Regression />} />
 
@@ -142,6 +155,15 @@ const App = () => {
               path="/modules/game-module2/regression"
               element={<GameModule2Regression />}
             />
+
+            {/* Logistic Regression Route */}
+            <Route
+              path="/modules/logistic-regression"
+              element={<LogisticRegression />}
+            />
+
+            {/* Completion Screen Route */}
+            <Route path="/completion" element={<CompletionScreen />} />
           </Routes>
         </Suspense>
       </Router>
