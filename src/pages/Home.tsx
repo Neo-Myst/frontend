@@ -65,11 +65,11 @@ const Home: React.FC = () => {
       <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center py-16">
-          <div className="inline-block bg-gradient-to-r from-teal-500 to-teal-400 text-white px-4 py-1 rounded-full text-sm font-medium mb-6">
+          <div className="inline-block bg-teal-600 text-white px-4 py-1 rounded-full text-sm font-medium mb-6">
             Interactive ML Learning Experience
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-200">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Welcome to NeoMyst
           </h1>
           
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <button
               onClick={() => navigate(user ? "/pages/IntroStory" : "/login")}
-              className="bg-gradient-to-r from-teal-500 to-teal-400 hover:from-teal-600 hover:to-teal-500 text-white py-3 px-8 rounded-lg text-lg font-medium flex items-center justify-center group"
+              className="bg-teal-600 hover:bg-teal-700 text-white py-3 px-8 rounded-lg text-lg font-medium flex items-center justify-center group"
             >
               {user ? "Continue Your Journey" : "Begin Your Adventure"}
               <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
@@ -129,23 +129,23 @@ const Home: React.FC = () => {
         </div>
         
         {/* Call to Action */}
-        <div className="text-center py-16 bg-[#011A27]/70 rounded-2xl border border-teal-500/20 mt-16 relative overflow-hidden">
+        <div className="text-center py-16 bg-[#011A27]/90 rounded-2xl border border-teal-500/20 mt-16 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-40 h-40 bg-teal-500/10 rounded-full blur-2xl"></div>
           <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#F2B138]/10 rounded-full blur-2xl"></div>
           
           <h2 className="text-3xl font-bold text-white mb-6">Ready to Save NeoVerse?</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-            The clock is ticking. Millions of users are counting on Riley and you to solve 
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-8">
+            The clock is ticking. Millions of users are counting on Riley—and you—to solve 
             this digital mystery. Apply real machine learning techniques in an immersive 
             storyline where your decisions shape the future of this virtual world.
           </p>
-          <div className="inline-block text-xs font-mono text-teal-400 mb-8 bg-[#011A27] px-4 py-2 rounded-md border border-teal-500/30">
+          <div className="inline-block text-xs font-mono text-white mb-8 bg-teal-700 px-4 py-2 rounded-md border border-teal-500/30">
             System Alert: Critical data fragments detected. Immediate analysis required.
           </div>
           <div>
             <button
               onClick={() => navigate(user ? "/pages/IntroStory" : "/login")}
-              className="bg-gradient-to-r from-teal-500 to-teal-400 hover:from-teal-600 hover:to-teal-500 text-white py-3 px-8 rounded-lg text-lg font-medium"
+              className="bg-teal-600 hover:bg-teal-700 text-white py-3 px-8 rounded-lg text-lg font-medium"
             >
               {user ? "Resume Mission" : "Accept Mission"}
             </button>
