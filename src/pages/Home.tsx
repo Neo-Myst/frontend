@@ -44,9 +44,9 @@ const StoryHighlight = () => (
     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500 to-[#F2B138]"></div>
     <h3 className="text-2xl font-bold text-teal-400 mb-4">The NeoVerse Crisis</h3>
     <p className="text-gray-300 leading-relaxed mb-6">
-      In 2045, NeoVerse a hyper-immersive virtual reality universe with millions of users suddenly goes offline. 
-      As Riley Carter, a brilliant data scientist recruited to investigate the shutdown, you'll use machine learning 
-      techniques to analyze fragmented data, identify patterns, and uncover the truth behind the digital catastrophe.
+      The developers of NeoVerse are baffled by the sudden shutdown. As part of an elite team led by Riley Carter, 
+      you'll dive into fragmented server logs and corrupted user data to uncover the truth. Your mission requires 
+      learning and applying machine learning techniques to restore this digital world that millions depend on.
     </p>
     <div className="flex justify-end">
       <div className="text-[#F2B138] text-sm font-mono">// System Status: Critical</div>
