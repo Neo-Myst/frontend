@@ -17,24 +17,27 @@ describe("Home Component", () => {
 
   it("renders the hero section", () => {
     renderWithProviders(<Home />);
-    expect(screen.getByText(/Learn Machine Learning/i)).toBeInTheDocument();
+    expect(screen.getByText(/Welcome to NeoMyst/i)).toBeInTheDocument();
     expect(
       screen.getByText(
-        /Master ML concepts through hands-on experiments and real-time visualizations/i
+        /Your interactive learning platform for mastering machine learning concepts/i
       )
     ).toBeInTheDocument();
   });
 
-  it("renders two CTA buttons", () => {
+  it("renders the CTA button", () => {
     renderWithProviders(<Home />);
-    expect(screen.getByText("Start Learning")).toBeInTheDocument();
-    expect(screen.getByText("Watch Demo")).toBeInTheDocument();
+    const button = screen.getByRole('button', { 
+      name: /Start Learning|Login to Begin/i 
+    });
+    expect(button).toBeInTheDocument();
   });
 
   it("renders the FeatureCards with correct titles", () => {
     renderWithProviders(<Home />);
     expect(screen.getByText("Interactive Learning")).toBeInTheDocument();
-    expect(screen.getByText("Guided Modules")).toBeInTheDocument();
+    expect(screen.getByText("Practical Applications")).toBeInTheDocument();
+    expect(screen.getByText("Progress Tracking")).toBeInTheDocument();
   });
 
   it("renders the DotGrid", () => {

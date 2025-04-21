@@ -1,6 +1,7 @@
 import { FC, useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { useUser } from "../../../contexts/UserContext";
 
 const darkMarketTransactionsUrl = "/images/outliers/feature_importance_Dark_Market_Transactions_encoded.png";
 const questExploitScoreUrl = "/images/outliers/feature_importance_Quest_Exploit_Score.png";
@@ -12,7 +13,6 @@ const targetVariables = [
   "Transaction Amount ($)",
 ];
 
-// Define the correct features for each target variable
 const correctFeaturesByTarget: { [key: string]: string[] } = {
   "Dark Market Transactions": [
     "Transaction Amount ($)",
@@ -48,8 +48,12 @@ const features = [
   { id: 18, name: "Dark Market Transactions_encoded" },
 ];
 
+const LOCAL_STORAGE_KEY = "randomForestState";
+
 const RandomForest: FC = () => {
   const navigate = useNavigate();
+  const { user } = useUser();
+  
   const [selectedTarget, setSelectedTarget] = useState("");
   const [message, setMessage] = useState("");
   const [chartGenerated, setChartGenerated] = useState(false);
@@ -60,7 +64,6 @@ const RandomForest: FC = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
 
-  // Track completion status for each target variable
   const [completedTargets, setCompletedTargets] = useState<{
     [key: string]: boolean;
   }>({
@@ -69,15 +72,58 @@ const RandomForest: FC = () => {
     "Transaction Amount ($)": false,
   });
 
-  // Add image path state and feedback state
   const [chartImagePath, setChartImagePath] = useState("");
   const [relevanceFeedback, setRelevanceFeedback] = useState("");
   const [showFeedback, setShowFeedback] = useState(false);
 
-  // Calculate overall completion
   const allTargetsCompleted = Object.values(completedTargets).every(
     (status) => status === true
   );
+
+  // Load state from localStorage on mount
+  useEffect(() => {
+    const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (stored) {
+      try {
+        const state = JSON.parse(stored);
+        setSelectedTarget(state.selectedTarget || "");
+        setSelectedColumns(state.selectedColumns || []);
+        setCompletedTargets(state.completedTargets || {
+          "Dark Market Transactions": false,
+          "Quest Exploit Score": false,
+          "Transaction Amount ($)": false,
+        });
+        setChartGenerated(state.chartGenerated || false);
+        setChartImagePath(state.chartImagePath || "");
+        setRelevanceFeedback(state.relevanceFeedback || "");
+        setShowFeedback(state.showFeedback || false);
+      } catch (e) {
+        console.error("Error parsing stored state", e);
+      }
+    }
+  }, []);
+
+  // Save state to localStorage on any relevant state change
+  useEffect(() => {
+    const stateToStore = {
+      selectedTarget,
+      selectedColumns,
+      completedTargets,
+      chartGenerated,
+      chartImagePath,
+      relevanceFeedback,
+      showFeedback,
+    };
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(stateToStore));
+  }, [
+    selectedTarget,
+    selectedColumns,
+    completedTargets,
+    chartGenerated,
+    chartImagePath,
+    relevanceFeedback,
+    showFeedback,
+  ]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -90,17 +136,16 @@ const RandomForest: FC = () => {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Reset selections when target changes
   useEffect(() => {
     setSelectedColumns([]);
     setShowFeedback(false);
     setRelevanceFeedback("");
   }, [selectedTarget]);
 
-  // Function to handle the Check Relevance button
   const handleCheckRelevance = () => {
     if (selectedColumns.length === 0 || !selectedTarget) {
       if (!selectedTarget) {
@@ -111,7 +156,6 @@ const RandomForest: FC = () => {
       return;
     }
 
-    // Show feedback based on selected target and features
     setShowFeedback(true);
     setMessage("");
 
@@ -128,8 +172,6 @@ const RandomForest: FC = () => {
       setRelevanceFeedback(
         `Correct! You've identified the most important features for ${selectedTarget}.`
       );
-
-      // Mark this target as completed
       setCompletedTargets((prev) => ({
         ...prev,
         [selectedTarget]: true,
@@ -145,17 +187,13 @@ const RandomForest: FC = () => {
     }
   };
 
-  // Function to handle the chart generation
   const handleGenerateChart = () => {
     if (selectedTarget) {
       setChartGenerated(true);
       setMessage("");
-
-      // Reset feedback when generating a new chart
       setShowFeedback(false);
       setRelevanceFeedback("");
 
-      // Set the appropriate image based on selected target
       if (selectedTarget === "Dark Market Transactions") {
         setChartImagePath(darkMarketTransactionsUrl);
       } else if (selectedTarget === "Quest Exploit Score") {
@@ -168,40 +206,69 @@ const RandomForest: FC = () => {
     }
   };
 
-  // Function to handle the Finish button
-  const handleFinish = () => {
+  const handleFinish = async () => {
     if (!allTargetsCompleted) {
-      // Count how many targets are completed
       const completedCount =
         Object.values(completedTargets).filter(Boolean).length;
       const remainingCount = targetVariables.length - completedCount;
 
-      // Show popup with appropriate message
       setPopupMessage(
         `You need to correctly identify the important features for ${remainingCount} more target variable${
           remainingCount > 1 ? "s" : ""
         } before proceeding.`
       );
-
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 4000);
       return;
     }
 
-    // All targets completed, proceed to next page
+    // Fallback: get user from localStorage if context is not populated
+    const currentUser = user || JSON.parse(localStorage.getItem("user") || "null");
+    if (!currentUser || !currentUser.email) {
+      console.error("User is not logged in or email is missing");
+      return;
+    }
+
+    const progressData = {
+      current_module: "gamemodule1/randomforest",
+      current_chapter: 1,
+    };
+
+    try {
+      const res = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL}/progress/update?user_email=${currentUser.email}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(progressData),
+        }
+      );
+      if (!res.ok) {
+        const errorData = await res.json();
+        console.error("Error storing progress:", errorData);
+        setPopupMessage("Error saving progress, please try again.");
+        setShowPopup(true);
+        return;
+      }
+    } catch (error) {
+      console.error("Error storing progress:", error);
+      setPopupMessage("Error saving progress, please try again.");
+      setShowPopup(true);
+      return;
+    }
+
     setClicked(true);
     setTimeout(() => navigate("/modules/game-module1/Outro"), 500);
   };
 
-  // Get progress message
   const getProgressMessage = () => {
     const completedCount =
       Object.values(completedTargets).filter(Boolean).length;
-
     return `Progress: ${completedCount}/${targetVariables.length} models analyzed`;
   };
 
-  // Get a checkmark for completed targets
   const getTargetCheckmark = (target: string) => {
     return completedTargets[target] ? (
       <span data-testid="targetCheckmark" className="text-green-400 ml-2">

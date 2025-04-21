@@ -23,7 +23,7 @@ const GameModule1Outro: React.FC = () => {
       </div>
       <div className="mt-12">
         <motion.button
-          onClick={() => navigate("/modules/game-module1/regression")}
+          onClick={() => navigate("/module3/data-splitting")}
           whileTap={{ scale: 0.9 }}
           className="px-8 py-4 bg-yellow-500 text-black font-semibold rounded-full transition duration-300 hover:bg-yellow-400 shadow-lg"
         >
