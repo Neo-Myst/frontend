@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       style={{ backgroundColor: "#001A27" }}
     >
       <p className="text-gray-400 text-sm">
-        © 2024 ML Group 6. All rights reserved.
+        © 2025 PBL Group 6. All rights reserved.
       </p>
     </footer>
   );
