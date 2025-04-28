@@ -67,6 +67,38 @@ const DataPreviewTable: React.FC = () => {
       transactionAmount: 70,
       neuralLinkStability: 82,
     },
+    {
+      playerId: "P1005",
+      hoursPlayed: 220,
+      moneySpent: 65,
+      criminalScore: 30,
+      missionsCompleted: 22,
+      playerRank: "Stellar Scout",
+      vipStatus: "No",
+      cashOnHand: 50,
+      syncStability: "--",
+      questExploitScore: null,
+      playerLevel: "Galactic Cadet",
+      darkMarketTransactions: 4,
+      transactionAmount: null,
+      neuralLinkStability: 86,
+    },
+    {
+      playerId: "P1006",
+      hoursPlayed: 280,
+      moneySpent: 90,
+      criminalScore: 45,
+      missionsCompleted: 28,
+      playerRank: "Cosmic Ensign",
+      vipStatus: "Yes",
+      cashOnHand: 75,
+      syncStability: "--",
+      questExploitScore: null,
+      playerLevel: "Starborne Operative",
+      darkMarketTransactions: 5,
+      transactionAmount: null,
+      neuralLinkStability: 84,
+    },
   ];
 
   return (
@@ -102,10 +134,10 @@ const DataPreviewTable: React.FC = () => {
               <td className="px-4 py-2">{row.vipStatus}</td>
               <td className="px-4 py-2">{row.cashOnHand}</td>
               <td className="px-4 py-2">{row.syncStability}</td>
-              <td className="px-4 py-2">{row.questExploitScore}</td>
+              <td className="px-4 py-2">{row.questExploitScore === null ? '---' : row.questExploitScore}</td>
               <td className="px-4 py-2">{row.playerLevel}</td>
               <td className="px-4 py-2">{row.darkMarketTransactions}</td>
-              <td className="px-4 py-2">{row.transactionAmount}</td>
+              <td className="px-4 py-2">{row.transactionAmount === null ? '' : row.transactionAmount}</td>
               <td className="px-4 py-2">{row.neuralLinkStability}</td>
             </tr>
           ))}

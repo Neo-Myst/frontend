@@ -12,6 +12,7 @@ import {
   Pie,
   Cell
 } from 'recharts';
+import { motion } from 'framer-motion';
 import PageNavigation from '../../../components/navigation/PageNavigation';
 import { useNavigate } from 'react-router-dom';
 
@@ -79,9 +80,32 @@ const DataSplittingPage: React.FC = () => {
 
           {/* Title */}
           <div className="text-left">
-            <h1 className="text-4xl font-bold text-[#ff6b00] mb-4">Data Splitting</h1>
-            <p className="text-[#66c0f4] text-lg">
-              Learn how to split your data for training and testing your model
+            <motion.h1 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl font-bold text-[#ff6b00] mb-4 relative"
+            >
+              <span className="relative z-10">Data Splitting</span>
+              <span className="absolute inset-0 blur-sm opacity-50 text-[#ff6b00] z-0">Data Splitting</span>
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-[#66c0f4] text-lg mb-2"
+            >
+              Balancing Knowledge and Adaptability in the Digital War
+            </motion.p>
+            <p className="text-gray-300">
+              In the NeoVerse, Riley faces the challenge of predicting the Shadow Collective's next moves using player data. 
+              Proper data splitting is crucial to avoid <span className="text-[#FF5252] font-semibold">overfitting</span> (when a model memorizes training data but fails on new data) 
+              and <span className="text-[#FFD740] font-semibold">underfitting</span> (when a model is too simple to capture important patterns).
+            </p>
+            <p className="text-gray-300 mt-2">
+              The right balance ensures Riley's model can recognize genuine patterns in player behavior while remaining flexible enough 
+              to adapt to the Shadow Collective's evolving strategies. Finding this balance is part of the <span className="text-[#64FFDA] font-semibold">bias-variance tradeoff</span> - 
+              a fundamental concept in machine learning.
             </p>
           </div>
 
@@ -124,7 +148,7 @@ const DataSplittingPage: React.FC = () => {
             {/* Split Ratio Visualization */}
             <div className="bg-gray-900 p-6 rounded-lg">
               <h2 className="text-xl font-semibold mb-4 text-center text-[#66c0f4]">
-                Data Split Distribution
+                Neural Grid: Data Distribution
               </h2>
               <div className="h-[300px]">
                 <ResponsiveContainer>
@@ -152,7 +176,7 @@ const DataSplittingPage: React.FC = () => {
             {/* Performance Visualization */}
             <div className="bg-gray-900 p-6 rounded-lg">
               <h2 className="text-xl font-semibold mb-4 text-center text-[#66c0f4]">
-                Model Performance
+                Shadow Detection Accuracy
               </h2>
               <div className="h-[300px]">
                 <ResponsiveContainer>
@@ -193,7 +217,7 @@ const DataSplittingPage: React.FC = () => {
 
           {/* Explanation */}
           <div className="bg-gray-900 p-6 rounded-lg">
-            <h2 className="text-xl font-semibold mb-4 text-[#66c0f4]">Understanding the Split</h2>
+            <h2 className="text-xl font-semibold mb-4 text-[#66c0f4]">Riley's Strategic Data Division</h2>
             <div className="space-y-4 text-gray-300">
               <p>
                 <strong className="text-[#4CAF50]">Training Data ({splitSizes.train}%):</strong> This
@@ -225,6 +249,8 @@ const DataSplittingPage: React.FC = () => {
               )}
             </div>
           </div>
+          
+
         </div>
 
         {/* Navigation Buttons */}

@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 
 // Core pages
 const Home = lazy(() => import("./pages/Home"));
+const LearningPath = lazy(() => import("./pages/LearningPath"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));
 const SignupPage = lazy(() => import("./pages/SignupPage"));
 const GoogleLogin = lazy(() => import("./pages/GoogleLogin"));
@@ -95,6 +96,7 @@ const App = () => {
           <Routes>
             {/* Core pages */}
             <Route path="/" element={<Home />} />
+            <Route path="/learning-path" element={<LearningPath />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/google-login" element={<GoogleLogin />} />

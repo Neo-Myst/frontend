@@ -313,8 +313,9 @@ const Preprocessing: FC = () => {
           <div>
             <SectionHeader title="Handle Categorical Features" />
             <div className="flex justify-center items-center gap-24">
+            <Hexagon option="oneHot" label="ONE-HOT ENCODING" />
               <Hexagon option="labelEncoding" label="LABEL ENCODING" />
-              <Hexagon option="oneHot" label="ONE-HOT ENCODING" />
+            
             </div>
           </div>
 

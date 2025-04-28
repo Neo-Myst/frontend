@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
+// Define the component with explicit type
 const GameModule1Outro: React.FC = () => {
   const navigate = useNavigate();
+  
+  // Log when the component mounts to verify it's being rendered
+  useEffect(() => {
+    console.log('GameModule1Outro component mounted');
+  }, []);
+
+  // Handler for the continue button
+  const handleContinue = () => {
+    console.log('Navigating to data-splitting page');
+    navigate('/module3/data-splitting');
+  };
 
   return (
     <div className="min-h-screen bg-black text-white font-oxanium flex flex-col items-center justify-center px-12">
@@ -23,7 +35,7 @@ const GameModule1Outro: React.FC = () => {
       </div>
       <div className="mt-12">
         <motion.button
-          onClick={() => navigate("/module3/data-splitting")}
+          onClick={handleContinue}
           whileTap={{ scale: 0.9 }}
           className="px-8 py-4 bg-yellow-500 text-black font-semibold rounded-full transition duration-300 hover:bg-yellow-400 shadow-lg"
         >
@@ -34,4 +46,5 @@ const GameModule1Outro: React.FC = () => {
   );
 };
 
+// Make sure this is exported as default
 export default GameModule1Outro;

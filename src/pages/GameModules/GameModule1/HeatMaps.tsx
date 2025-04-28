@@ -268,7 +268,7 @@ const HeatMaps: FC = () => {
               onClick={() => setShowModal(false)}
             >
               <div
-                className="relative max-w-5xl mx-auto p-4"
+                className="relative max-w-[95%] w-[1500px] mx-auto p-2"
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
@@ -282,7 +282,8 @@ const HeatMaps: FC = () => {
                   data-testid="fullScreenHeatmap"
                   src={heatmapImage}
                   alt="Full Screen Correlation Heatmap"
-                  className="w-full h-full object-contain rounded-lg"
+                  className="w-full h-auto object-contain rounded-lg mx-auto"
+                  style={{ maxHeight: '90vh' }}
                 />
               </div>
             </motion.div>
