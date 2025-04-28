@@ -1,5 +1,4 @@
 import { FC, useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useUser } from "../../../contexts/UserContext";
 
@@ -51,7 +50,7 @@ const features = [
 const LOCAL_STORAGE_KEY = "randomForestState";
 
 const RandomForest: FC = () => {
-  const navigate = useNavigate();
+  // We're using window.location.href for navigation instead of useNavigate
   const { user } = useUser();
   
   const [selectedTarget, setSelectedTarget] = useState("");
@@ -172,10 +171,26 @@ const RandomForest: FC = () => {
       setRelevanceFeedback(
         `Correct! You've identified the most important features for ${selectedTarget}.`
       );
-      setCompletedTargets((prev) => ({
-        ...prev,
-        [selectedTarget]: true,
-      }));
+      
+      // Update completedTargets and log the update for debugging
+      const updatedTargets = {
+        ...completedTargets,
+        [selectedTarget]: true
+      };
+      console.log('Updating completedTargets:', updatedTargets);
+      setCompletedTargets(updatedTargets);
+      
+      // Force save to localStorage immediately
+      const stateToStore = {
+        selectedTarget,
+        selectedColumns,
+        completedTargets: updatedTargets,
+        chartGenerated,
+        chartImagePath,
+        relevanceFeedback,
+        showFeedback,
+      };
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(stateToStore));
     } else if (countCorrect > 0) {
       setRelevanceFeedback(
         `Partially correct. You've identified ${countCorrect} of the ${correctFeatures.length} most important features for ${selectedTarget}.`
@@ -207,9 +222,18 @@ const RandomForest: FC = () => {
   };
 
   const handleFinish = async () => {
-    if (!allTargetsCompleted) {
-      const completedCount =
-        Object.values(completedTargets).filter(Boolean).length;
+    // Log the current state of completedTargets for debugging
+    console.log('Current completedTargets:', completedTargets);
+    console.log('allTargetsCompleted value:', allTargetsCompleted);
+    
+    const completedCount = Object.values(completedTargets).filter(Boolean).length;
+    console.log('Completed count:', completedCount, 'out of', targetVariables.length);
+    
+    // Force check all targets again to be sure
+    const allCompleted = targetVariables.every(target => completedTargets[target] === true);
+    console.log('Direct check allCompleted:', allCompleted);
+
+    if (completedCount < targetVariables.length) {
       const remainingCount = targetVariables.length - completedCount;
 
       setPopupMessage(
@@ -221,6 +245,9 @@ const RandomForest: FC = () => {
       setTimeout(() => setShowPopup(false), 4000);
       return;
     }
+
+    // If we get here, all targets should be completed
+    console.log('All targets are completed, proceeding to outro');
 
     // Fallback: get user from localStorage if context is not populated
     const currentUser = user || JSON.parse(localStorage.getItem("user") || "null");
@@ -260,7 +287,9 @@ const RandomForest: FC = () => {
     }
 
     setClicked(true);
-    setTimeout(() => navigate("/modules/game-module1/Outro"), 500);
+    // Use window.location.href for direct navigation instead of React Router
+    console.log('Attempting direct navigation to outro page');
+    window.location.href = '/modules/game-module1/outro';
   };
 
   const getProgressMessage = () => {
@@ -561,7 +590,14 @@ const RandomForest: FC = () => {
       <div className="max-w-6xl mx-auto mt-6 flex justify-end">
         <motion.button
           data-testid="finishButton"
-          onClick={handleFinish}
+          onClick={() => {
+            if (allTargetsCompleted) {
+              // Force direct navigation to outro page
+              window.location.href = '/modules/game-module1/outro';
+            } else {
+              handleFinish();
+            }
+          }}
           className={`
             px-10 py-2.5 rounded text-lg font-medium transition-all duration-300
             ${

@@ -53,7 +53,7 @@ In the next chapter, Riley will use visualizations and statistical techniques to
       <div className="flex items-center justify-between mt-auto mb-0 font-oxanium font-medium">
         {/* Go Back Button - Left Aligned */}
         <button
-          onClick={() => navigate("/pages/PreProc8")}
+          onClick={() => navigate("/pages/PreProc5")}
           className="flex items-center space-x-2 px-6 py-3 bg-gray-900 text-gray-500 rounded-full relative transition duration-300 
           hover:bg-gray-700 hover:scale-105 hover:shadow-lg"
         >
@@ -64,7 +64,7 @@ In the next chapter, Riley will use visualizations and statistical techniques to
 
         {/* Investigate Further Button - Right Aligned */}
         <button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/pages/EdaIntro")}
           className="flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full relative transition duration-300 
           hover:bg-yellow-400 hover:scale-105 hover:shadow-lg"
         >

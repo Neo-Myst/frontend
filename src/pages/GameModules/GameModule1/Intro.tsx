@@ -10,6 +10,16 @@ const GamePage1: React.FC = () => {
     <div className="min-h-screen bg-black text-white flex flex-col justify-center px-20 py-12 w-full">
       {/* Full-width Content Section */}
       <div className="max-w-7xl w-full mx-auto space-y-6 flex flex-col">
+        <motion.button
+          onClick={() => navigate("/")}
+          className="text-3xl font-bold text-blue-400 relative hover:text-blue-300 transition duration-300 self-start mb-4"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          NeoMyst
+          <span className="absolute inset-0 blur-lg opacity-75 text-blue-500">NeoMyst</span>
+        </motion.button>
+        
         <h1 className="text-4xl font-bold flex items-center">
           📖 Mission Briefing: The Test Begins
         </h1>

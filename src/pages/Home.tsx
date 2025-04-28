@@ -1,4 +1,4 @@
-import { Brain, ChevronRight, BarChart2, Play, Code, Database } from "lucide-react";
+import { Brain, ChevronRight, BarChart2, Play, Database } from "lucide-react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useUser from "../hooks/useUser";
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <button
-              onClick={() => navigate(user ? "/pages/IntroStory" : "/login")}
+              onClick={() => navigate(user ? "/learning-path" : "/login")}
               className="bg-teal-600 hover:bg-teal-700 text-white py-3 px-8 rounded-lg text-lg font-medium flex items-center justify-center group"
             >
               {user ? "Continue Your Journey" : "Begin Your Adventure"}
@@ -144,7 +144,7 @@ const Home: React.FC = () => {
           </div>
           <div>
             <button
-              onClick={() => navigate(user ? "/pages/IntroStory" : "/login")}
+              onClick={() => navigate(user ? "/learning-path" : "/login")}
               className="bg-teal-600 hover:bg-teal-700 text-white py-3 px-8 rounded-lg text-lg font-medium"
             >
               {user ? "Resume Mission" : "Accept Mission"}

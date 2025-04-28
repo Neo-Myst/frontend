@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import PageNavigation from "../../../components/navigation/PageNavigation";
 import {
   XAxis,
@@ -57,29 +58,49 @@ const RegressionPage: React.FC = () => {
         </button>
 
         <div className="text-center mb-16">
-          <h1 className="text-3xl font-bold text-[#66c0f4] mb-4">
-          Predictive Protocol – Linear Regression Deep Dive
-          </h1>
-          <p className="text-lg text-gray-300">
-            Before Riley can predict the Shadow Collective's next move, they must master the tool that reveals the future: Linear Regression.
-          </p>
+          <motion.h1 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-3xl font-bold text-[#ff6b00] mb-4 relative"
+          >
+            <span className="relative z-10">Predictive Protocol – Echoes of the Future</span>
+            <span className="absolute inset-0 blur-sm opacity-50 text-[#ff6b00] z-0">Predictive Protocol</span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-xl text-[#66c0f4] font-semibold"
+          >
+            Mission: Forecast Player Spending to Disrupt the Shadow Collective's Economic Network
+          </motion.p>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="text-gray-300 mt-3 max-w-3xl mx-auto"
+          >
+            The Shadow Collective is no longer hiding—they're manipulating spending behavior across NeoVerse to destabilize the economy. 
+            Riley must build a regression model sharp enough to forecast player behavior—even when the Collective tries to throw it off course.
+          </motion.p>
         </div>
 
         <div className="space-y-16">
           {/* Section 1 - Introduction */}
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-[#66c0f4]">
-              1. The Data Detective
+              1. The Digital War of Deception
             </h2>
             <div className="text-gray-300 space-y-4">
               <p>
-                Riley stared at the streaming data from thousands of NeoVerse players. The numbers seemed random at first - hours played, money spent, quests completed. But as a data detective, Riley knew patterns hid beneath the surface.
+                Riley stared at the neural grid as streams of prediction data flowed across the screen. The numbers seemed random at first - hours played, money spent, quests completed - but the Shadow Collective's manipulation was hidden in plain sight.
               </p>
               <p className="text-yellow-400 italic">
-                "Linear regression will help me find the relationship between these variables. It's like drawing the best straight line through scattered points to reveal the hidden trend."
+                "Player P3021 was predicted to spend $3,200, but their actual spending was only $1,200. That's not random—it's deliberate distortion," Riley muttered, fingers flying across the holographic interface.
               </p>
               <p>
-                The technique would help predict how much money (dependent variable) players spend based on how many hours (independent variable) they play. Riley loaded the data into the Forecasting Core.
+                Linear regression would be Riley's weapon in this digital war—a tool to find the true relationship between variables and expose the Shadow Collective's attempts to throw the model off course. Riley loaded the player data into the Forecasting Core.
               </p>
             </div>
           </div>
@@ -87,16 +108,16 @@ const RegressionPage: React.FC = () => {
           {/* Section 2 - Scatter Plot */}
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-[#66c0f4]">
-              2. Visualizing the Relationship
+              2. Mapping the Distortion Patterns
             </h2>
             <div className="text-gray-300 space-y-4">
               <p>
-                The first step was creating a scatter plot. Each point represented one player:
+                "Something's off..." Riley muttered, creating a scatter plot to visualize the manipulation. Each point represented a player caught in the Shadow Collective's web:
               </p>
               <ul className="list-disc list-inside ml-4 space-y-1">
-                <li><strong>X-axis (horizontal):</strong> Hours played</li>
-                <li><strong>Y-axis (vertical):</strong> Money spent</li>
-                <li><strong>Each dot:</strong> One player's data</li>
+                <li><strong>X-axis (horizontal):</strong> Hours played in the NeoVerse</li>
+                <li><strong>Y-axis (vertical):</strong> Credits spent on digital assets</li>
+                <li><strong>Each dot:</strong> A player potentially influenced by the Collective</li>
               </ul>
               
               <div className="h-[400px] w-full bg-gray-900/30 backdrop-blur-sm rounded-lg p-6">
@@ -127,16 +148,17 @@ const RegressionPage: React.FC = () => {
                     <Tooltip
                       cursor={{ strokeDasharray: '3 3' }}
                       contentStyle={{
-                        backgroundColor: '#1a1a1a',
+                        backgroundColor: '#ffffff', // White background
                         border: '1px solid #66c0f4',
                         borderRadius: '8px',
-                        padding: '8px 12px'
+                        padding: '8px 12px',
+                        color: '#000000' // Black text for better visibility
                       }}
                       formatter={(value: any, name: string) => [
                         name === 'spent' ? `$${Number(value).toFixed(2)}` : `${Number(value).toFixed(1)} hrs`,
                         name === 'spent' ? 'Money Spent' : 'Hours Played'
                       ]}
-                      labelFormatter={(label) => `Player ${label}`}
+                      labelFormatter={() => ''}
                     />
                     <Legend verticalAlign="top" height={36} />
                     <Scatter
@@ -222,11 +244,10 @@ const RegressionPage: React.FC = () => {
               </div>
               
               {showRegression && (
-                <div className="text-center">
-                  <p className="text-[#4CAF50] font-mono">
-                    <strong>Regression Equation:</strong> y = {regressionCoefficients.slope.toFixed(2)}x + {regressionCoefficients.intercept.toFixed(2)}
+                <div className="text-center mt-4">
+                  <p className="text-[#4CAF50] font-mono text-xl bg-black/30 p-3 rounded-lg inline-block font-semibold">
+                    y = {regressionCoefficients.slope.toFixed(2)}x + {regressionCoefficients.intercept.toFixed(2)}
                   </p>
-                
                 </div>
               )}
             </div>
@@ -237,28 +258,28 @@ const RegressionPage: React.FC = () => {
           {/* Section 3 - The Equation */}
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-[#66c0f4]">
-              3. The Prediction Formula
+              3. Decoding the Pattern
             </h2>
             <div className="text-gray-300 space-y-4">
               <p>
-                The regression equation takes the form:
+                Riley's fingers flew across the neural interface, extracting the mathematical signature of normal player behavior:
               </p>
-              <p className="text-yellow-400 font-mono text-xl">
+              <p className="text-yellow-400 font-mono text-2xl bg-black/30 p-4 rounded-lg backdrop-blur-sm inline-block font-semibold">
                 y = mx + b
               </p>
-              <p>Or in our case:</p>
-              <p className="text-yellow-400 font-mono">
-                Money Spent = (Slope × Hours Played) + Base Amount
+              <p>Translated to the NeoVerse economy:</p>
+              <p className="text-yellow-400 font-mono text-xl bg-black/30 p-4 rounded-lg backdrop-blur-sm font-semibold">
+                Money Spent = (Engagement Factor × Hours in NeoVerse) + Base Spending
               </p>
               <p>
-                Breaking this down:
+                Riley analyzed the components of this digital fingerprint:
               </p>
               <ul className="list-disc list-inside ml-4 space-y-2">
-                <li><strong>Base Amount (b):</strong> ${regressionCoefficients.intercept.toFixed(2)} - What players spend even with 0 hours played</li>
-                <li><strong>Slope (m):</strong> {regressionCoefficients.slope.toFixed(2)} - The amount money spent increases per hour played</li>
+                <li><strong>Base Spending (b):</strong> ${regressionCoefficients.intercept.toFixed(2)} - The minimum credits players invest even before engaging with the NeoVerse</li>
+                <li><strong>Engagement Factor (m):</strong> {regressionCoefficients.slope.toFixed(2)} - How rapidly spending increases with each hour in the digital realm</li>
               </ul>
               <p className="text-yellow-400 italic">
-                "So for Player B who played 3.2 hours, we predict: (1.75 × 3.2) + 1.50 = ${(1.75 * 3.2 + 1.50).toFixed(2)}. They actually spent $4.99 - that ${(4.99 - (1.75 * 3.2 + 1.50)).toFixed(2)} difference is the residual."
+                Riley highlighted an anomaly on the holographic display. "Player B's data shows a critical deviation. With 3.2 hours logged, our model predicts ${(1.75 * 3.2 + 1.50).toFixed(2)} credits spent, but they actually spent $4.99. That ${(4.99 - (1.75 * 3.2 + 1.50)).toFixed(2)} gap isn't random—it's the Shadow Collective's fingerprint."
               </p>
             </div>
           </div>
@@ -266,112 +287,57 @@ const RegressionPage: React.FC = () => {
           {/* Section 4 - Model Evaluation */}
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-[#66c0f4]">
-              4. Checking the Model's Accuracy
+              4. Uncovering the Deception
             </h2>
             <div className="text-gray-300 space-y-4">
               <p>
-                Riley examined two key metrics to evaluate the model:
+                Riley examined two key metrics to see through the Shadow Collective's distortion attempts:
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-xl text-[#4CAF50]">R² Score: 0.67</h3>
                   <p>
-                    This tells us what percentage of the variation in money spent can be explained by hours played. 
-                    67% is good - hours played is a strong predictor of spending.
+                    This reveals what percentage of the spending variation can be explained by hours played. 
+                    At 67%, it's good—but the missing 33% could be where the Shadow Collective is operating.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-xl text-[#4fa3e3]">RMSE: $3.24</h3>
                   <p>
-                    Root Mean Square Error - our average prediction error. For most players spending $3-$25, 
-                    being off by $3.24 is reasonable but suggests room for improvement.
+                    Root Mean Square Error shows the average prediction gap. A $3.24 error in a $3-$25 range is significant—large enough for the Collective to hide their manipulations within these gaps.
                   </p>
                 </div>
               </div>
               
               <p className="text-yellow-400 italic">
-                "The model explains much of the pattern, but not all. That's where the Shadow Collective might be hiding - in the unexplained variation."
+                "Something's off... these gaps aren't random noise. The Shadow Collective is deliberately creating these prediction errors to mask their activities. They're distorting patterns to fool our models."
               </p>
             </div>
           </div>
 
-          {/* Section 5 - Feature Importance */}
-          <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-[#66c0f4]">
-              5. Identifying Key Factors
-            </h2>
-            <div className="text-gray-300 space-y-4">
-              <p>
-                Riley analyzed which factors best predict spending:
-              </p>
-              
-              <div className="h-[300px]">
-                <ResponsiveContainer>
-                  <BarChart data={featureImportance}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#444" />
-                    <XAxis 
-                      dataKey="feature" 
-                      stroke="#66c0f4"
-                      tick={{ fill: '#66c0f4' }}
-                    >
-                      <Label value="Player Features" position="insideBottom" offset={-20} fill="#66c0f4" />
-                    </XAxis>
-                    <YAxis 
-                      stroke="#66c0f4"
-                      tick={{ fill: '#66c0f4' }}
-                    >
-                      <Label value="Importance Score" angle={-90} position="insideLeft" offset={10} fill="#66c0f4" />
-                    </YAxis>
-                    <Tooltip 
-                      contentStyle={{ 
-                        backgroundColor: '#1a1a1a', 
-                        border: '1px solid #66c0f4',
-                        borderRadius: '4px'
-                      }}
-                    />
-                    <Bar 
-                      dataKey="importance" 
-                      fill="#4fa3e3"
-                      name="Importance"
-                      radius={[4, 4, 0, 0]}
-                    />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-              
-              <p className="text-yellow-400 italic">
-                "Hours played (80%) and quest scores (60%) are our strongest predictors. Dark market activity (40%) might be noise or could reveal Collective activity - we'll investigate further."
-              </p>
-            </div>
-          </div>
 
           {/* Section 6 - Final Steps */}
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-[#66c0f4]">
-              6. Preparing for Deployment
+              5. The Digital War Continues
             </h2>
             <div className="text-gray-300 space-y-4">
               <p>
-                Riley split the data to validate the model:
+                Riley prepared the model for the ongoing battle against the Shadow Collective:
               </p>
               <ul className="list-disc list-inside ml-4 space-y-2">
-                <li><strong>Training Set (80%):</strong> Used to build the model</li>
-                <li><strong>Test Set (20%):</strong> Unseen data to check real-world performance</li>
+                <li><strong>Training Set (80%):</strong> Historical data to build the prediction engine</li>
+                <li><strong>Test Set (20%):</strong> Recent data to verify the model can detect new manipulation tactics</li>
               </ul>
+{/*               
+              <p className="text-yellow-400 italic">
+                "This isn't just about behavior prediction anymore. It's a digital war of deception. The only way to fight back is to anticipate their next move."
+              </p> */}
+            
               
               <p className="text-yellow-400 italic">
-                "The model performs similarly on both sets, so it's not just memorizing patterns. Now we can:"
-              </p>
-              
-              <ol className="list-decimal list-inside ml-4 space-y-2">
-                <li>Predict normal spending patterns</li>
-                <li>Flag anomalies (like Player E spending less than expected)</li>
-                <li>Investigate potential Shadow Collective activity</li>
-              </ol>
-              
-              <p className="text-yellow-400 italic">
-                "With this model, we're not just reacting to the Collective's moves - we're anticipating them. Let's see what secrets these residuals hold..."
+                Riley stared at the final model output, a grim determination setting in. "The Collective thinks they can hide in the noise of our data. But with this regression model, we're not just reacting to their moves—we're forecasting their next steps. The economic stability of the NeoVerse depends on it."
               </p>
             </div>
           </div>

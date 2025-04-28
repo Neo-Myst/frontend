@@ -60,7 +60,7 @@ const LeftPanel: React.FC = () => {
       <div className="flex items-center justify-between mt-auto mb-0">
         {/* Go Back Button */}
         <button
-          onClick={() => navigate("/pages/PreProc8")}
+          onClick={() => navigate("/pages/OutroPreProc")}
           className="flex items-center space-x-2 px-6 py-3 bg-gray-900 text-gray-500 rounded-full relative transition duration-300 
           hover:bg-gray-700 hover:scale-105 hover:shadow-lg"
         >
