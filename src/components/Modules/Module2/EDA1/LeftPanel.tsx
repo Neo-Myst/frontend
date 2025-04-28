@@ -219,7 +219,7 @@ const LeftPanel: React.FC = () => {
                     data={scatterPlotData} 
                     fill="#FFD700"
                   >
-                    {scatterPlotData.map((entry, index) => (
+                    {scatterPlotData.map((_, index) => (
                       <Cell 
                         key={`cell-${index}`}
                         fill={highlightedPoint === index ? "#FF4500" : "#FFD700"}
