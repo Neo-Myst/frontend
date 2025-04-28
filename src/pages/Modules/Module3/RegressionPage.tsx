@@ -12,8 +12,6 @@ import {
   ScatterChart,
   Scatter,
   ReferenceLine,
-  BarChart,
-  Bar,
   Label
 } from "recharts";
 
@@ -31,13 +29,6 @@ const regressionCoefficients = {
   slope: 1.75,    // $1.75 more per hour played
   intercept: 1.50  // $1.50 base spending
 };
-
-const featureImportance = [
-  { feature: 'Hours Played', importance: 0.8 },
-  { feature: 'Quest Score', importance: 0.6 },
-  { feature: 'Dark Market', importance: 0.4 },
-  { feature: 'Other', importance: 0.2 }
-];
 
 const RegressionPage: React.FC = () => {
   const navigate = useNavigate();
