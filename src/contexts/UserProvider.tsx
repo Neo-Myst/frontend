@@ -3,24 +3,27 @@ import UserContext from "./UserContext";
 
 interface User {
   username: string;
+  email: string;
 }
 
 const UserProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
+    setLoading(false);
   }, []);
 
-  const login = (username: string) => {
-    setUser({ username });
-    localStorage.setItem("user", JSON.stringify({ username }));
-    console.log("User logged in with username:", username); // Debugging line
+  const login = (userData: User) => {
+    setUser(userData);
+    localStorage.setItem("user", JSON.stringify(userData));
+    console.log("User logged in with username:", userData.username);
   };
 
   const logout = () => {
@@ -30,7 +33,7 @@ const UserProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   return (
-    <UserContext.Provider value={{ user, login, logout }}>
+    <UserContext.Provider value={{ user, login, logout, loading }}>
       {children}
     </UserContext.Provider>
   );
