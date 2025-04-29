@@ -130,6 +130,17 @@ const Preprocessing: FC = () => {
     return Object.values(selectedOptions).some((value) => value);
   };
 
+  const hasAllSelections = () => {
+    // Check if user has selected one option from each category
+    const hasMissingValue = selectedOptions.median || selectedOptions.remove;
+    const hasCategorical =
+      selectedOptions.labelEncoding || selectedOptions.oneHot;
+    const hasScaling =
+      selectedOptions.normalized || selectedOptions.standardized;
+
+    return hasMissingValue && hasCategorical && hasScaling;
+  };
+
   const getFinalPath = () => {
     const path = [];
     if (selectedOptions.median) path.push("Median");
@@ -150,6 +161,50 @@ const Preprocessing: FC = () => {
       !selectedOptions.oneHot &&
       !selectedOptions.standardized
     );
+  };
+
+  const getIncorrectPathFeedback = () => {
+    const feedback = [];
+
+    // Add main heading
+    feedback.push(
+      "Consider how each step affects the data quality and model performance:"
+    );
+
+    // Missing Values feedback
+    if (selectedOptions.remove) {
+      feedback.push(
+        "• Removing rows with missing values discards potentially valuable data points and reduces your training set size, which can lead to less robust models."
+      );
+    } else if (!selectedOptions.median && !selectedOptions.remove) {
+      feedback.push(
+        "• You need to handle missing values - without addressing them, your model will fail to process the data properly."
+      );
+    }
+
+    // Categorical Features feedback
+    if (selectedOptions.oneHot) {
+      feedback.push(
+        "• One-hot encoding creates separate columns for each category value, which increases dimensionality and can lead to sparse matrices that are computationally inefficient."
+      );
+    } else if (!selectedOptions.labelEncoding && !selectedOptions.oneHot) {
+      feedback.push(
+        "• Categorical features need encoding - machine learning algorithms cannot process text categories directly."
+      );
+    }
+
+    // Scaling feedback
+    if (selectedOptions.standardized) {
+      feedback.push(
+        "• Standardization assumes normal distribution and can be heavily influenced by outliers, which may distort your feature relationships in this dataset."
+      );
+    } else if (!selectedOptions.normalized && !selectedOptions.standardized) {
+      feedback.push(
+        "• Numerical features need scaling - without it, features with larger ranges will dominate the model training process."
+      );
+    }
+
+    return feedback;
   };
 
   const handleContinue = () => {
@@ -313,9 +368,8 @@ const Preprocessing: FC = () => {
           <div>
             <SectionHeader title="Handle Categorical Features" />
             <div className="flex justify-center items-center gap-24">
-            <Hexagon option="oneHot" label="ONE-HOT ENCODING" />
+              <Hexagon option="oneHot" label="ONE-HOT ENCODING" />
               <Hexagon option="labelEncoding" label="LABEL ENCODING" />
-            
             </div>
           </div>
 
@@ -335,7 +389,17 @@ const Preprocessing: FC = () => {
           <div className="mt-12 text-center space-y-6">
             <div className="flex justify-center gap-4">
               <button
-                onClick={() => setShowResults(true)}
+                onClick={() => {
+                  if (hasAllSelections()) {
+                    setShowResults(true);
+                  } else {
+                    setPopupMessage(
+                      "Select one option from each category before submitting!"
+                    );
+                    setShowPopup(true);
+                    setTimeout(() => setShowPopup(false), 3000);
+                  }
+                }}
                 disabled={!hasAnySelection()}
                 className={`px-8 py-3 rounded-lg font-bold font-mono transition-all duration-300 ${
                   hasAnySelection()
@@ -365,15 +429,25 @@ const Preprocessing: FC = () => {
                   Selected Path:{" "}
                   <span className="text-[#66c0f4]">{getFinalPath()}</span>
                 </p>
-                <p
-                  className={`text-lg ${
-                    isCorrectPath() ? "text-green-400" : "text-red-400"
-                  }`}
-                >
-                  {isCorrectPath()
-                    ? "Perfect! You've chosen the optimal preprocessing path for this dataset."
-                    : "Not quite right. Consider how each step affects the data quality and model performance."}
-                </p>
+                {isCorrectPath() ? (
+                  <p className="text-lg text-green-400">
+                    Perfect! You've chosen the optimal preprocessing path for
+                    this dataset.
+                  </p>
+                ) : (
+                  <div className="text-lg text-red-400">
+                    <p className="mb-2">{getIncorrectPathFeedback()[0]}</p>
+                    <ul className="space-y-2 pl-4">
+                      {getIncorrectPathFeedback()
+                        .slice(1)
+                        .map((item, index) => (
+                          <li key={index} className="list-none">
+                            {item}
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             )}
           </div>
