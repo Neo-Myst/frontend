@@ -132,7 +132,7 @@ const Home: React.FC = () => {
               <div className="flex flex-wrap gap-4 pt-4">
                 <button
                   onClick={() =>
-                    navigate(user ? "/learning-path" : "/register")
+                    navigate(user ? "/pages/IntroStory" : "/register")
                   }
                   className="bg-gradient-to-r from-[#F2B138] to-amber-500 hover:from-amber-500 hover:to-amber-400 text-black py-4 px-8 rounded-md text-lg font-medium flex items-center justify-center group transition-all duration-300"
                 >
@@ -505,7 +505,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Testimonials */}
-      <div className="w-full bg-[#010A17]/80 py-24 reveal">
+      {/* <div className="w-full bg-[#010A17]/80 py-24 reveal">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-1 bg-teal-900/30 rounded-full text-teal-400 text-sm font-medium mb-4">
@@ -541,7 +541,7 @@ const Home: React.FC = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Call to Action */}
       <div className="w-full max-w-none px-6 py-24 reveal">
