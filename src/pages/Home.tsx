@@ -22,7 +22,6 @@ interface FeatureCardProps {
   description: string;
 }
 
-
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const { user } = useUser();
@@ -66,7 +65,7 @@ const Home: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-b from-[#010A17] to-[#011A27] text-gray-200 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="absolute inset-0 bg-[url('/src/assets/grid-pattern.png')] bg-repeat opacity-5"></div>
+        <div className="absolute inset-0 bg-[url('/grid-pattern.png')] bg-repeat opacity-5"></div>
 
         {/* Digital particles */}
         <div className="absolute top-0 left-0 w-full h-full">
@@ -189,7 +188,7 @@ const Home: React.FC = () => {
                     muted
                     loop
                     playsInline
-                    poster="/src/assets/dashboard-preview.png"
+                    poster="/dashboard-preview.png"
                     onError={(e) => {
                       const target = e.currentTarget;
                       target.style.height = "300px";
@@ -199,10 +198,7 @@ const Home: React.FC = () => {
                       target.style.justifyContent = "center";
                     }}
                   >
-                    <source
-                      src="/src/assets/DemoModule1.mp4"
-                      type="video/mp4"
-                    />
+                    <source src="/DemoModule1.mp4" type="video/mp4" />
                     <p className="text-teal-300 text-center">
                       Your browser doesn't support HTML5 video
                     </p>

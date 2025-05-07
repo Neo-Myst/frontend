@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImage from "../../../../assets/cinematic-galactic-civilization.jpg";
+import backgroundImage from "/cinematic-galactic-civilization.jpg";
 
 const RightPanel: React.FC = () => {
   return (

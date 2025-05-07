@@ -132,7 +132,7 @@ const HackerDetectionTable: React.FC<HackerDetectionTableProps> = ({
       try {
         setIsLoading(true);
         const response = await fetch(
-          "/src/assets/logistic_reg/true_positive_hackers_logistic_regression.csv"
+          "/logistic_reg/true_positive_hackers_logistic_regression.csv"
         );
         const csvText = await response.text();
 
@@ -482,7 +482,10 @@ const HackerDetectionTable: React.FC<HackerDetectionTableProps> = ({
                     </svg>
                     <span className="relative">
                       Scroll horizontally to view all data fields
-                      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-teal-400/30 to-transparent opacity-50 animate-[scan_3s_ease-in-out_infinite]" style={{ width: '200%', left: '-50%' }}></span>
+                      <span
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-teal-400/30 to-transparent opacity-50 animate-[scan_3s_ease-in-out_infinite]"
+                        style={{ width: "200%", left: "-50%" }}
+                      ></span>
                     </span>
                   </span>
                 </div>

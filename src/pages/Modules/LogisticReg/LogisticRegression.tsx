@@ -40,7 +40,7 @@ const LogisticRegression: React.FC = () => {
       try {
         setIsLoading(true);
         const response = await fetch(
-          "/src/assets/logistic_reg/true_positive_hackers_logistic_regression.csv"
+          "/logistic_reg/true_positive_hackers_logistic_regression.csv"
         );
         const csvText = await response.text();
 
@@ -876,7 +876,7 @@ const LogisticRegression: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#011A27]/80 via-transparent to-transparent z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300"></div>
 
                 <img
-                  src="/src/assets/logistic_reg/logistic_regression_boundary.png"
+                  src="/logistic_reg/logistic_regression_boundary.png"
                   alt="Decision Boundary showing the classification regions"
                   className="w-full block rounded-md shadow-lg transform group-hover:scale-[1.02] transition-all duration-300"
                 />
@@ -999,7 +999,7 @@ const LogisticRegression: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#011A27]/80 via-transparent to-transparent z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300"></div>
 
                 <img
-                  src="/src/assets/logistic_reg/precision_recall_curve.png"
+                  src="/logistic_reg/precision_recall_curve.png"
                   alt="Precision-Recall Curve showing model performance"
                   className="w-full h-full object-cover rounded-md shadow-lg transform group-hover:scale-[1.02] transition-all duration-300"
                 />
@@ -1135,7 +1135,7 @@ const LogisticRegression: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#011A27]/80 via-transparent to-transparent z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300"></div>
 
                 <img
-                  src="/src/assets/logistic_reg/roc_curve.png"
+                  src="/logistic_reg/roc_curve.png"
                   alt="ROC Curve showing model performance"
                   className="w-full h-full object-cover rounded-md shadow-lg transform group-hover:scale-[1.02] transition-all duration-300"
                 />
