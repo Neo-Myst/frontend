@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography, Paper, Container, styled } from "@mui/material";
 import Alert from "@mui/material/Alert";
+import { useNavigate } from "react-router-dom";
 import TrainTestSplitSlider from "../../../components/GameModules/GameModule2/TrainTestSplitSlider";
 import FeatureSelector from "../../../components/GameModules/GameModule2/FeatureSelector";
 import TrainPredictButton from "../../../components/GameModules/GameModule2/TrainPredictButton";
@@ -95,7 +96,37 @@ const SubText = styled(Typography)({
 
 const CustomStyle = styled("style")({});
 
+const NavigationButton = styled("button")({
+  position: "absolute",
+  bottom: "30px",
+  right: "30px",
+  width: "192px", // 48 * 4 to match w-48
+  height: "48px", // h-12
+  backgroundColor: "#60a5fa", // bg-blue-400
+  color: "#ffffff",
+  padding: "0",
+  borderRadius: "8px",
+  cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: "18px",
+  fontWeight: 600,
+  transition: "all 0.3s ease",
+  border: "none",
+  marginTop: "20px", // Added top margin
+  "&:hover": {
+    backgroundColor: "#3b82f6", // bg-blue-500
+    transform: "scale(1.05)",
+  },
+  "&:active": {
+    transform: "scale(0.9)",
+  },
+});
+
 const LinearRegression: React.FC = () => {
+  const navigate = useNavigate();
+  const [clicked, setClicked] = useState(false);
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
   const [selectedSplit, setSelectedSplit] = useState<number>(0.8);
   const [result, setResult] = useState<ModelResult | null>(null);
@@ -187,7 +218,10 @@ const LinearRegression: React.FC = () => {
 
   return (
     <PageContainer>
-      <Container maxWidth="xl">
+      <Container
+        maxWidth="xl"
+        sx={{ position: "relative", paddingBottom: "80px" }}
+      >
         {/* Header */}
         <NeoversePaper elevation={3}>
           <NeoTitle variant="h4">Predict Player Spending in NeoVerse</NeoTitle>
@@ -209,7 +243,7 @@ const LinearRegression: React.FC = () => {
         </NeoversePaper>
 
         {/* Main Layout */}
-        <MainLayout>
+        <MainLayout className="mb-5">
           {/* Left Panel - Model Configuration */}
           {/* Left Panel - Model Configuration */}
           <LeftPanel>
@@ -358,48 +392,71 @@ const LinearRegression: React.FC = () => {
             </NeoversePaper>
           </RightPanel>
         </MainLayout>
-      </Container>
 
-      {/* Custom CSS for loading animation - fixed jsx style issue */}
-      <CustomStyle>{`
-        .neo-loading-indicator {
-          position: relative;
-          width: 80px;
-          height: 80px;
-        }
-        
-        .neo-loading-circle {
-          position: absolute;
-          width: 64px;
-          height: 64px;
-          border: 4px solid transparent;
-          border-top-color: #4ec9ff;
-          border-radius: 50%;
-          animation: neo-loading-spin 1.2s linear infinite;
-        }
-        
-        .neo-loading-circle:before {
-          content: '';
-          position: absolute;
-          top: 4px;
-          left: 4px;
-          right: 4px;
-          bottom: 4px;
-          border: 4px solid transparent;
-          border-top-color: #3182ce;
-          border-radius: 50%;
-          animation: neo-loading-spin 1.8s linear infinite;
-        }
-        
-        @keyframes neo-loading-spin {
-          0% {
-            transform: rotate(0deg);
+        {/* Navigation Button */}
+        <NavigationButton
+          onClick={() => {
+            setClicked(true);
+            setTimeout(() => {
+              navigate("/modules/logistic-regression");
+            }, 500);
+          }}
+        >
+          {clicked ? (
+            <div className="flex gap-1">
+              {Array(10)
+                .fill(0)
+                .map((_, i) => (
+                  <span key={i} className="text-blue-800 text-xl">
+                    &raquo;
+                  </span>
+                ))}
+            </div>
+          ) : (
+            <span>Next Module &raquo;</span>
+          )}
+        </NavigationButton>
+
+        <CustomStyle>{`
+          .neo-loading-indicator {
+            position: relative;
+            width: 80px;
+            height: 80px;
           }
-          100% {
-            transform: rotate(360deg);
+          
+          .neo-loading-circle {
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            border: 4px solid transparent;
+            border-top-color: #4ec9ff;
+            border-radius: 50%;
+            animation: neo-loading-spin 1.2s linear infinite;
           }
-        }
-      `}</CustomStyle>
+          
+          .neo-loading-circle:before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 4px solid transparent;
+            border-top-color: #3182ce;
+            border-radius: 50%;
+            animation: neo-loading-spin 1.8s linear infinite;
+          }
+          
+          @keyframes neo-loading-spin {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+        `}</CustomStyle>
+      </Container>
     </PageContainer>
   );
 };

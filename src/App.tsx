@@ -100,6 +100,7 @@ const App = () => {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/google-login" element={<GoogleLogin />} />
+
             {/* Module 1 Routes */}
             <Route path="/pages/IntroStory" element={<IntroStory />} />
             {/* <Route path="/pages/data-preprocessing" element={<DataPreprocessing />} /> */}
@@ -112,6 +113,7 @@ const App = () => {
             <Route path="/pages/PreProc7" element={<PreProc7 />} />
             <Route path="/pages/PreProc8" element={<PreProc8 />} />
             <Route path="/pages/OutroPreProc" element={<OutroPreProc />} />
+
             {/* Module 2 Routes */}
             <Route path="/pages/EdaIntro" element={<EdaIntro />} />
             <Route path="/pages/Eda1" element={<Eda1 />} />

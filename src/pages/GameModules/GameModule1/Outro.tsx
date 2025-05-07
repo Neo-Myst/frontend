@@ -5,16 +5,16 @@ import { motion } from "framer-motion";
 // Define the component with explicit type
 const GameModule1Outro: React.FC = () => {
   const navigate = useNavigate();
-  
+
   // Log when the component mounts to verify it's being rendered
   useEffect(() => {
-    console.log('GameModule1Outro component mounted');
+    console.log("GameModule1Outro component mounted");
   }, []);
 
   // Handler for the continue button
   const handleContinue = () => {
-    console.log('Navigating to data-splitting page');
-    navigate('/module3/data-splitting');
+    console.log("Navigating to data-splitting page");
+    navigate("/module3/intro");
   };
 
   return (
@@ -22,15 +22,18 @@ const GameModule1Outro: React.FC = () => {
       <div className="max-w-3xl text-center space-y-6">
         <h1 className="text-4xl font-bold text-yellow-400">Module Complete!</h1>
         <p className="text-lg text-gray-300">
-          Riley has successfully navigated the challenges of data preprocessing and outlier removal in NeoVerse.
-          The dataset is now clean and structured—a strong foundation for predictive modeling.
+          Riley has successfully navigated the challenges of data preprocessing
+          and outlier removal in NeoVerse. The dataset is now clean and
+          structured—a strong foundation for predictive modeling.
         </p>
         <p className="text-lg text-gray-300">
-          With outliers removed and key features identified through interactive analysis, Riley is ready to build regression models
-          to forecast the next moves of the Shadow Collective.
+          With outliers removed and key features identified through interactive
+          analysis, Riley is ready to build regression models to forecast the
+          next moves of the Shadow Collective.
         </p>
         <p className="text-lg text-gray-300">
-          Your insights have shaped the journey so far. Press the button below to continue your adventure into Regression Analysis.
+          Your insights have shaped the journey so far. Press the button below
+          to continue your adventure into Regression Analysis.
         </p>
       </div>
       <div className="mt-12">
