@@ -12,6 +12,7 @@ import {
   ScatterChart,
   Scatter,
   ReferenceLine,
+  Label,
 } from "recharts";
 
 const playerData = [
