@@ -22,12 +22,6 @@ interface FeatureCardProps {
   description: string;
 }
 
-interface TestimonialProps {
-  quote: string;
-  author: string;
-  role: string;
-  image: string;
-}
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -634,52 +628,5 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 );
 
 // Testimonial component
-const Testimonial: React.FC<TestimonialProps> = ({
-  quote,
-  author,
-  role,
-  image,
-}) => (
-  <div className="bg-[#021722] rounded-lg p-8 border border-[#06384f] hover:border-teal-500/30 transition-all duration-300 flex flex-col h-full">
-    <div className="mb-6">
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M10.667 13.333H5.33366C5.33366 8 9.33366 8 10.667 8C10.667 5.333 8.66699 2.667 5.33366 2.667C2.00033 2.667 0.666992 6.667 0.666992 8H0.666992V18.667H10.667V13.333ZM26.667 13.333H21.3337C21.3337 8 25.3337 8 26.667 8C26.667 5.333 24.667 2.667 21.3337 2.667C18.0003 2.667 16.667 6.667 16.667 8H16.667V18.667H26.667V13.333Z"
-          fill="#F2B138"
-          fillOpacity="0.5"
-        />
-      </svg>
-    </div>
-
-    <p className="text-gray-300 italic mb-6 flex-grow">{quote}</p>
-
-    <div className="flex items-center">
-      <div className="w-12 h-12 rounded-full bg-[#052740] overflow-hidden mr-4">
-        <img
-          src={image}
-          alt={author}
-          className="w-full h-full object-cover"
-          onError={(e) => {
-            e.currentTarget.style.display = "flex";
-            e.currentTarget.style.alignItems = "center";
-            e.currentTarget.style.justifyContent = "center";
-            e.currentTarget.style.backgroundColor = "#052740";
-            e.currentTarget.alt = author.charAt(0);
-          }}
-        />
-      </div>
-      <div>
-        <div className="font-medium text-white">{author}</div>
-        <div className="text-sm text-teal-400">{role}</div>
-      </div>
-    </div>
-  </div>
-);
 
 export default Home;
