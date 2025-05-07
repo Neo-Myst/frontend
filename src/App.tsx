@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { UserProvider } from "./contexts/UserContext";
 import Navbar from "./components/Navbar";
+import About from "./pages/About";
 
 // Core pages
 const Home = lazy(() => import("./pages/Home"));
@@ -168,6 +169,7 @@ const App = () => {
 
             {/* Completion Screen Route */}
             <Route path="/completion" element={<CompletionScreen />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </Suspense>
       </Router>
