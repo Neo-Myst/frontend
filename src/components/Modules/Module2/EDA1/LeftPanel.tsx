@@ -395,18 +395,9 @@ const LeftPanel: React.FC = () => {
                     cursor={{ strokeDasharray: "3 3" }}
                     content={<CustomTooltip />}
                   />
-
                   <Scatter name="Players" data={scatterPlotData} fill="#FFD700">
                     {scatterPlotData.map((_, index) => (
                       <Cell
-                  <Scatter 
-                    name="Players" 
-                    data={scatterPlotData} 
-                    fill="#FFD700"
-                  >
-                    {scatterPlotData.map((_, index) => (
-                      <Cell 
-
                         key={`cell-${index}`}
                         fill={
                           highlightedPoint === index ? "#FF4500" : "#FFD700"
