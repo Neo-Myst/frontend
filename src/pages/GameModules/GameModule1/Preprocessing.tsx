@@ -28,7 +28,8 @@ const initialState: PreprocessingState = {
   standardized: false,
 };
 
-// Add global styles for hexagon shape
+// Add these to your globalStyles
+// Change these from let to const since they're never reassigned
 const globalStyles = `
   .clip-hexagon {
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -44,7 +45,66 @@ const globalStyles = `
   .animate-glow > div {
     animation: glow 2s ease-in-out infinite;
   }
+  
+  @keyframes terminal-scan {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
+  }
+  
+  .terminal-notification {
+    background: linear-gradient(180deg, rgba(10, 26, 42, 0.9) 0%, rgba(16, 42, 67, 0.9) 100%);
+    background-size: 100% 200%;
+    animation: terminal-scan 2s linear infinite;
+    border-left: 3px solid #66c0f4;
+  }
+  
+  @keyframes alert-pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+  }
+  
+  @keyframes alert-scan {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
+  }
+  
+  .alert-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .alert-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #66c0f4, transparent);
+    animation: alert-scan 2s linear infinite;
+  }
+  
+  .alert-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #66c0f4, transparent);
+    animation: alert-scan 2s linear infinite reverse;
+  }
+  
+  .alert-triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
 `;
+
+// Remove these module-level variables - they're causing the ESLint errors
+// and are redundant with the state variables inside the component
+// let showPopup = false;
+// let popupMessage = "";
 
 const Preprocessing: FC = () => {
   const navigate = useNavigate();
@@ -130,6 +190,17 @@ const Preprocessing: FC = () => {
     return Object.values(selectedOptions).some((value) => value);
   };
 
+  const hasAllSelections = () => {
+    // Check if user has selected one option from each category
+    const hasMissingValue = selectedOptions.median || selectedOptions.remove;
+    const hasCategorical =
+      selectedOptions.labelEncoding || selectedOptions.oneHot;
+    const hasScaling =
+      selectedOptions.normalized || selectedOptions.standardized;
+
+    return hasMissingValue && hasCategorical && hasScaling;
+  };
+
   const getFinalPath = () => {
     const path = [];
     if (selectedOptions.median) path.push("Median");
@@ -152,25 +223,67 @@ const Preprocessing: FC = () => {
     );
   };
 
+  const getIncorrectPathFeedback = () => {
+    const feedback = [];
+
+    // Add main heading
+    feedback.push(
+      "Consider how each step affects the data quality and model performance:"
+    );
+
+    // Missing Values feedback
+    if (selectedOptions.remove) {
+      feedback.push(
+        "• Removing rows with missing values discards potentially valuable data points and reduces your training set size, which can lead to less robust models."
+      );
+    } else if (!selectedOptions.median && !selectedOptions.remove) {
+      feedback.push(
+        "• You need to handle missing values - without addressing them, your model will fail to process the data properly."
+      );
+    }
+
+    // Categorical Features feedback
+    if (selectedOptions.oneHot) {
+      feedback.push(
+        "• One-hot encoding creates separate columns for each category value, which increases dimensionality and can lead to sparse matrices that are computationally inefficient."
+      );
+    } else if (!selectedOptions.labelEncoding && !selectedOptions.oneHot) {
+      feedback.push(
+        "• Categorical features need encoding - machine learning algorithms cannot process text categories directly."
+      );
+    }
+
+    // Scaling feedback
+    if (selectedOptions.standardized) {
+      feedback.push(
+        "• Standardization assumes normal distribution and can be heavily influenced by outliers, which may distort your feature relationships in this dataset."
+      );
+    } else if (!selectedOptions.normalized && !selectedOptions.standardized) {
+      feedback.push(
+        "• Numerical features need scaling - without it, features with larger ranges will dominate the model training process."
+      );
+    }
+
+    return feedback;
+  };
+
   const handleContinue = () => {
     if (!hasAnySelection()) {
-      setPopupMessage("Select preprocessing options before continuing!");
+      setPopupMessage("SYSTEM ALERT: No preprocessing algorithms detected");
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 3000);
       return;
     }
 
     if (!showResults) {
-      setPopupMessage("Submit your preprocessing path before continuing!");
+      setPopupMessage("SEQUENCE ERROR: Submit preprocessing path first");
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 3000);
       return;
     }
 
     if (!isCorrectPath()) {
-      setPopupMessage(
-        "Select Median, Label Encoding, and Normalized to optimize your preprocessing!"
-      );
+      setPopupMessage("OPTIMAL PATH REQUIRED!!!");
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 3000);
       return;
@@ -313,9 +426,8 @@ const Preprocessing: FC = () => {
           <div>
             <SectionHeader title="Handle Categorical Features" />
             <div className="flex justify-center items-center gap-24">
-            <Hexagon option="oneHot" label="ONE-HOT ENCODING" />
+              <Hexagon option="oneHot" label="ONE-HOT ENCODING" />
               <Hexagon option="labelEncoding" label="LABEL ENCODING" />
-            
             </div>
           </div>
 
@@ -335,7 +447,17 @@ const Preprocessing: FC = () => {
           <div className="mt-12 text-center space-y-6">
             <div className="flex justify-center gap-4">
               <button
-                onClick={() => setShowResults(true)}
+                onClick={() => {
+                  if (hasAllSelections()) {
+                    setShowResults(true);
+                  } else {
+                    setPopupMessage(
+                      "Select one option from each category before submitting!"
+                    );
+                    setShowPopup(true);
+                    setTimeout(() => setShowPopup(false), 3000);
+                  }
+                }}
                 disabled={!hasAnySelection()}
                 className={`px-8 py-3 rounded-lg font-bold font-mono transition-all duration-300 ${
                   hasAnySelection()
@@ -365,21 +487,30 @@ const Preprocessing: FC = () => {
                   Selected Path:{" "}
                   <span className="text-[#66c0f4]">{getFinalPath()}</span>
                 </p>
-                <p
-                  className={`text-lg ${
-                    isCorrectPath() ? "text-green-400" : "text-red-400"
-                  }`}
-                >
-                  {isCorrectPath()
-                    ? "Perfect! You've chosen the optimal preprocessing path for this dataset."
-                    : "Not quite right. Consider how each step affects the data quality and model performance."}
-                </p>
+                {isCorrectPath() ? (
+                  <p className="text-lg text-green-400">
+                    Perfect! You've chosen the optimal preprocessing path for
+                    this dataset.
+                  </p>
+                ) : (
+                  <div className="text-lg text-red-400">
+                    <p className="mb-2">{getIncorrectPathFeedback()[0]}</p>
+                    <ul className="space-y-2 pl-4">
+                      {getIncorrectPathFeedback()
+                        .slice(1)
+                        .map((item, index) => (
+                          <li key={index} className="list-none">
+                            {item}
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             )}
           </div>
         </div>
       </div>
-
       {/* Modal */}
       <Modal
         isOpen={!!activeModal}
@@ -420,16 +551,53 @@ const Preprocessing: FC = () => {
         </motion.button>
       </div>
 
-      {/* Popup notification */}
+      {/* Center Bottom Popup Alert - Responsive */}
       <AnimatePresence>
         {showPopup && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed top-32 left-1/2 transform -translate-x-1/2 px-6 py-3 bg-[#73282C] text-white rounded-lg border border-[#E34F4F] shadow-lg z-50"
+            exit={{ opacity: 0, y: 50 }}
+            transition={{
+              duration: 0.3,
+              type: "spring",
+              stiffness: 500,
+              damping: 30,
+            }}
+            className="fixed bottom-10 left-0 right-0 mx-auto z-50 pointer-events-none flex justify-center items-center w-full"
           >
-            <p className="font-mono text-center">{popupMessage}</p>
+            <div className="bg-[#1a0a0a] backdrop-blur-sm border-2 border-red-500/50 rounded-md overflow-hidden shadow-[0_0_20px_rgba(220,38,38,0.4)] max-w-md w-[90%]">
+              <div className="flex items-center px-6 py-4">
+                <div className="w-8 h-8 flex-shrink-0 mr-4">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="w-full h-full"
+                  >
+                    <path
+                      d="M12 8V12M12 16H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                      stroke="#dc2626"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center mb-1">
+                    <div className="h-1 w-4 bg-red-500/50 rounded-full mr-2"></div>
+                    <p className="text-xs text-red-400 font-mono uppercase tracking-widest">
+                      System Warning
+                    </p>
+                    <div className="h-1 flex-grow bg-red-500/20 rounded-full ml-2"></div>
+                  </div>
+                  <p className="font-mono text-white text-sm tracking-wide">
+                    {popupMessage}
+                  </p>
+                </div>
+              </div>
+              <div className="h-1 w-full bg-gradient-to-r from-transparent via-red-500 to-transparent animate-pulse"></div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -438,3 +606,5 @@ const Preprocessing: FC = () => {
 };
 
 export default Preprocessing;
+
+// Remove this semicolon that was causing an error

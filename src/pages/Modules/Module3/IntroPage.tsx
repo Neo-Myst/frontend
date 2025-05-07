@@ -10,7 +10,7 @@ const IntroPage: React.FC = () => {
     <div className="flex flex-col min-h-screen bg-black text-white">
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center px-8 py-12">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -25,7 +25,7 @@ const IntroPage: React.FC = () => {
               NeoMyst
             </span>
           </button>
-          <motion.h2 
+          <motion.h2
             initial={{ y: -10 }}
             animate={{ y: 0 }}
             transition={{ delay: 0.2 }}
@@ -39,7 +39,8 @@ const IntroPage: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="text-xl font-semibold mb-4 text-yellow-400"
           >
-            Mission: Forecast Player Spending to Disrupt the Shadow Collective's Economic Network
+            Mission: Forecast Player Spending to Disrupt the Shadow Collective's
+            Economic Network
           </motion.h3>
           <div className="text-lg space-y-4 font-mono text-gray-300">
             <motion.p
@@ -48,9 +49,10 @@ const IntroPage: React.FC = () => {
               transition={{ delay: 0.4 }}
               className="hover:text-gray-100 transition-colors"
             >
-              Riley stared at the screen as streams of prediction data flowed across the neural grid. 
-              The Shadow Collective was no longer hiding—they were manipulating spending behavior 
-              across NeoVerse to destabilize the economy.
+              Riley stared at the screen as streams of prediction data flowed
+              across the neural grid. The Shadow Collective was no longer
+              hiding—they were manipulating spending behavior across NeoVerse to
+              destabilize the economy.
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
@@ -58,8 +60,9 @@ const IntroPage: React.FC = () => {
               transition={{ delay: 0.6 }}
               className="text-yellow-400 hover:text-yellow-300 transition-colors"
             >
-              "Something's off… Player P3021 was predicted to spend $3,200, but their actual 
-              spending was only $1,200. That's a massive gap," Riley muttered.
+              "Something's off… Player P3021 was predicted to spend $3,200, but
+              their actual spending was only $1,200. That's a massive gap,"
+              Riley muttered.
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
@@ -75,9 +78,10 @@ const IntroPage: React.FC = () => {
               transition={{ delay: 1 }}
               className="hover:text-gray-100 transition-colors"
             >
-              This wasn't just about behavior prediction anymore. It was a digital war of deception. 
-              The only way to fight back? Build a regression model sharp enough to forecast player 
-              behavior—even when the Shadow Collective tries to throw it off course.
+              This wasn't just about behavior prediction anymore. It was a
+              digital war of deception. The only way to fight back? Build a
+              regression model sharp enough to forecast player behavior—even
+              when the Shadow Collective tries to throw it off course.
             </motion.p>
           </div>
         </motion.div>
@@ -85,8 +89,8 @@ const IntroPage: React.FC = () => {
         {/* Navigation Buttons */}
         <div className="w-full max-w-5xl mt-16">
           <PageNavigation
-            goBackRoute="/module3/data-splitting"
-            investigateRoute="/module3/regression"
+            goBackRoute="/modules/game-module1/outro"
+            investigateRoute="/module3/data-splitting"
           />
         </div>
       </div>

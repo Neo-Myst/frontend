@@ -12,7 +12,9 @@ const LeftPanel: React.FC = () => {
           className="text-3xl font-bold text-blue-400 relative hover:text-blue-300 transition duration-300"
         >
           NeoMyst
-          <span className="absolute inset-0 blur-lg opacity-75 text-blue-500">NeoMyst</span>
+          <span className="absolute inset-0 blur-lg opacity-75 text-blue-500">
+            NeoMyst
+          </span>
         </button>
 
         <div className="flex justify-between items-center text-lg text-gray-400 italic">
@@ -21,23 +23,41 @@ const LeftPanel: React.FC = () => {
         </div>
 
         <h2 className="text-xl md:text-2xl font-bold text-white leading-relaxed">
-          Riley took a sip of coffee and relaxed, a determined glint in their eyes as the pieces of the
-          <span className="text-yellow-400"> NeoVerse puzzle</span> began to fall into place.
+          Riley took a sip of coffee and relaxed, a determined glint in their
+          eyes as the pieces of the
+          <span className="text-yellow-400"> NeoVerse puzzle</span> began to
+          fall into place.
         </h2>
 
         <hr className="border-gray-500 w-full" />
 
         <p className="text-lg md:text-xl leading-relaxed text-gray-300">
-          With powerful visualizations unveiling hidden patterns, a heatmap spotlighting key correlations, and feature selection tools narrowing down the critical clues, the once-overwhelming data had transformed into a clear and focused narrative. The chaos of raw data had given way to a streamlined story—one that now held the essential elements needed to crack the mystery.
+          With powerful visualizations unveiling hidden patterns, a heatmap
+          spotlighting key correlations, and feature selection tools narrowing
+          down the critical clues, the once-overwhelming data had transformed
+          into a clear and focused narrative. The chaos of raw data had given
+          way to a streamlined story—one that now held the essential elements
+          needed to crack the mystery.
         </p>
 
         <p className="text-lg md:text-xl leading-relaxed text-gray-300">
-          But Riley knew the journey was far from over. With the major clues in hand, it was time to shift gears from exploration to prediction. In the next module, Riley will dive into
-          <span className="text-yellow-400"> Regression Analysis</span>—a technique that will allow them to build predictive models based on the key features identified. This step promises to reveal how the critical elements of NeoVerse’s collapse interact and, ultimately, to forecast what might have led to the downfall of the virtual world.
+          But Riley knew the journey was far from over. With the major clues in
+          hand, it was time to shift gears from exploration to prediction. In
+          the next module, Riley will dive into
+          <span className="text-yellow-400"> Regression Analysis</span>—a
+          technique that will allow them to build predictive models based on the
+          key features identified. This step promises to reveal how the critical
+          elements of NeoVerse’s collapse interact and, ultimately, to forecast
+          what might have led to the downfall of the virtual world.
         </p>
 
         <p className="text-lg md:text-xl leading-relaxed text-gray-300">
-          As Riley prepares to transition into regression analysis, every chart, every plot, and every clue gathered so far will serve as the foundation for predicting future outcomes. Stay tuned as the investigation evolves from understanding the past to forecasting the future, inching ever closer to exposing the secrets of the Shadow Collective.
+          As Riley prepares to transition into regression analysis, every chart,
+          every plot, and every clue gathered so far will serve as the
+          foundation for predicting future outcomes. Stay tuned as the
+          investigation evolves from understanding the past to forecasting the
+          future, inching ever closer to exposing the secrets of the Shadow
+          Collective.
         </p>
       </div>
 
