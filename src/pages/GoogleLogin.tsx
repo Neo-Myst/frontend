@@ -11,12 +11,13 @@ const GoogleLogin: React.FC = () => {
     const params = new URLSearchParams(location.search);
     const token = params.get("token");
     const username = params.get("username");
+    const email = params.get("email") || ""; // Add email with fallback
 
     if (token && username) {
       // Check if the token is already stored to prevent repeated login attempts
       if (!localStorage.getItem("token")) {
         localStorage.setItem("token", token);
-        login(username);
+        login({ username, email }); // Pass user object with username and email
         navigate("/"); // Redirect to homepage after successful login
         window.location.reload(); // Force a full page reload
       }

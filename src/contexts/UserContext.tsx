@@ -1,11 +1,11 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
 
-interface User {
+export interface User {
   username: string;
   email: string;
 }
 
-interface UserContextType {
+export interface UserContextType {
   user: User | null;
   login: (userData: User) => void;
   logout: () => void;
