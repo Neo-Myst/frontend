@@ -223,34 +223,6 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* Trusted By Section */}
-      <div className="w-full bg-[#010A17]/80 py-12 backdrop-blur-sm reveal">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-8">
-            <h2 className="text-xl font-medium text-gray-400">
-              Trusted by leading organizations
-            </h2>
-          </div>
-
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
-            {[
-              "TechCorp",
-              "DataSphere",
-              "AI Ventures",
-              "Neural Inc.",
-              "Quantum Labs",
-            ].map((company, i) => (
-              <div
-                key={i}
-                className="text-gray-500 font-bold text-xl opacity-70 hover:opacity-100 transition-opacity"
-              >
-                {company}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Key Benefits Section */}
       <div className="w-full max-w-none px-6 py-24 reveal">
         <div className="max-w-7xl mx-auto">
@@ -360,8 +332,6 @@ const Home: React.FC = () => {
                   "Data Cleaning & Preprocessing",
                   "Regression Analysis & Prediction",
                   "Classification & Pattern Recognition",
-                  "Neural Networks & Deep Learning",
-                  "Anomaly Detection & Security",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-teal-400 flex-shrink-0" />
@@ -549,7 +519,7 @@ const Home: React.FC = () => {
               <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
                 Join thousands of students who are mastering machine learning
                 through our immersive, story-driven platform. Start your
-                adventure now with a 7-day free trial.
+                adventure now.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
