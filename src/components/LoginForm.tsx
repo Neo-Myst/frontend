@@ -31,7 +31,7 @@ const LoginForm: React.FC = () => {
     }
 
     try {
-      const response = await fetch("http://10.0.0.8:8000/user/login", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
