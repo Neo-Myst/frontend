@@ -77,10 +77,6 @@ const LoginPage: React.FC = () => {
     }
   };
 
-  const handleGoogleLogin = () => {
-    window.location.href = `${import.meta.env.VITE_API_BASE_URL}/user/google/login`;
-  };
-
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="w-full max-w-md bg-gray-700 p-8 rounded-lg shadow-lg text-white">
@@ -118,12 +114,6 @@ const LoginPage: React.FC = () => {
           className="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-2 rounded-lg font-medium mb-4"
         >
           Login
-        </button>
-        <button
-          onClick={handleGoogleLogin}
-          className="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg font-medium"
-        >
-          Login with Google
         </button>
         {error && <p className="text-red-400 mt-4 text-center">{error}</p>}
       </div>
