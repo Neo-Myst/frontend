@@ -14,6 +14,8 @@ import {
   Award,
   ArrowRight,
   CheckCircle,
+  X,
+  PartyPopper,
 } from "lucide-react";
 
 interface FeatureCardProps {
@@ -29,6 +31,7 @@ const Home: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   // const statsRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState(0);
+  const [showPricingPopup, setShowPricingPopup] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -96,6 +99,61 @@ const Home: React.FC = () => {
           style={{ animationDelay: "1s" }}
         ></div>
       </div>
+
+      {/* Pricing Popup */}
+      {showPricingPopup && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+          <div className="bg-[#021722] border border-[#06384f] rounded-xl overflow-hidden shadow-2xl max-w-md w-full relative animate-fadeIn">
+            <button 
+              onClick={() => setShowPricingPopup(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white"
+            >
+              <X size={20} />
+            </button>
+            
+            <div className="p-8">
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 rounded-full bg-[#F2B138]/20 flex items-center justify-center text-[#F2B138]">
+                  <PartyPopper size={32} />
+                </div>
+              </div>
+              
+              <h3 className="text-2xl font-bold text-center text-white mb-4">
+                Hooray!
+              </h3>
+              
+              <p className="text-center text-gray-300 mb-6">
+                Since NeoMyst is still in development mode, it's <span className="text-[#F2B138] font-bold">free for all</span> users for now!
+              </p>
+              
+              <p className="text-center text-gray-400 text-sm mb-8">
+                Join our community today and be among the first to experience our revolutionary ML learning platform.
+              </p>
+              
+              <div className="flex justify-center">
+                <button
+                  onClick={() => {
+                    setShowPricingPopup(false);
+                    navigate(user ? "/pages/IntroStory" : "/register");
+                  }}
+                  className="bg-gradient-to-r from-[#F2B138] to-amber-500 hover:from-amber-500 hover:to-amber-400 text-black py-3 px-6 rounded-md font-medium flex items-center justify-center group transition-all duration-300"
+                >
+                  <span className="flex items-center">
+                    {user ? "Continue Learning" : "Start Free Trial"}
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </button>
+              </div>
+            </div>
+            
+            <div className="bg-[#052740]/50 p-4 border-t border-[#06384f]">
+              <p className="text-center text-teal-400 text-sm">
+                Premium features will be available in the future
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <div
@@ -536,7 +594,7 @@ const Home: React.FC = () => {
                 </button>
 
                 <button
-                  onClick={() => navigate("/pricing")}
+                  onClick={() => setShowPricingPopup(true)}
                   className="bg-transparent border border-teal-500 text-teal-400 hover:bg-teal-900/30 py-4 px-8 rounded-md text-lg font-medium transition-all duration-300"
                 >
                   View Pricing
