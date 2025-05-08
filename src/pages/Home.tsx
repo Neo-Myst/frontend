@@ -4,9 +4,6 @@ import useUser from "../hooks/useUser";
 import Footer from "../components/Footer";
 import {
   Brain,
-  // ChevronRight, - Removed unused import
-  // BarChart2, - Removed unused import
-  // Database, - Removed unused import
   Code,
   Shield,
   Zap,
@@ -398,12 +395,6 @@ const Home: React.FC = () => {
                 ))}
               </div>
 
-              <button
-                onClick={() => navigate("/curriculum")}
-                className="bg-transparent border border-teal-500 text-teal-400 hover:bg-teal-900/30 py-3 px-6 rounded-md font-medium transition-all duration-300"
-              >
-                View Full Curriculum
-              </button>
             </div>
 
             <div className="lg:w-1/2">
